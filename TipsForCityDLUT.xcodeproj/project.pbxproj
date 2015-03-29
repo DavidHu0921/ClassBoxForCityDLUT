@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DCA31A301AC863D40042200A /* NewsAndReportsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A2F1AC863D40042200A /* NewsAndReportsFetcher.m */; };
 		DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB41ABDB3CB00655FFB /* main.m */; };
 		DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */; };
 		DCCF8DBB1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB91ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DCA31A2E1AC863D40042200A /* NewsAndReportsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsAndReportsFetcher.h; sourceTree = "<group>"; };
+		DCA31A2F1AC863D40042200A /* NewsAndReportsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsAndReportsFetcher.m; sourceTree = "<group>"; };
 		DCCF8DAF1ABDB3CB00655FFB /* TipsForCityDLUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipsForCityDLUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCF8DB31ABDB3CB00655FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCCF8DB41ABDB3CB00655FFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				DCD3ECBA1AC54E7F0014971C /* NewsAndReportsAPI.h */,
+				DCA31A2E1AC863D40042200A /* NewsAndReportsFetcher.h */,
+				DCA31A2F1AC863D40042200A /* NewsAndReportsFetcher.m */,
 			);
 			name = "News & Reports Fetcher";
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				DCCF8DBB1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
 				DCCF8DBE1ABDB3CB00655FFB /* ViewController.m in Sources */,
+				DCA31A301AC863D40042200A /* NewsAndReportsFetcher.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
