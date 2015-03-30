@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="380" y="337"/>
         </scene>
-        <!--Item-->
+        <!--发现-->
         <scene sceneID="O1P-tj-8CE">
             <objects>
                 <tableViewController id="qVW-eb-19J" sceneMemberID="viewController">
@@ -45,19 +45,20 @@
                             <outlet property="delegate" destination="qVW-eb-19J" id="6eg-Eo-35X"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" badgeValue="个人" id="7Or-ma-o6k"/>
+                    <tabBarItem key="tabBarItem" title="发现" id="7Or-ma-o6k"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbo-kk-bOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1106" y="1111"/>
         </scene>
-        <!--Item-->
+        <!--课程表-->
         <scene sceneID="Pms-oc-Iuf">
             <objects>
                 <collectionViewController id="4Gl-Kc-M3k" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jQc-az-hGd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fKz-T4-n7X">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -80,7 +81,7 @@
                             <outlet property="delegate" destination="4Gl-Kc-M3k" id="zgB-j3-acb"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" badgeValue="课程表" id="gXK-HV-suq"/>
+                    <tabBarItem key="tabBarItem" title="课程表" image="ClassBox" id="gXK-HV-suq"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCS-1b-oYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,11 +148,11 @@
             </objects>
             <point key="canvasLocation" x="2662" y="337"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="07b-Hy-Gon">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Cs-dP-NpZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" badgeValue="新闻公告" id="jXg-xQ-OBb"/>
+                    <tabBarItem key="tabBarItem" id="jXg-xQ-OBb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NPv-8L-RQd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -167,4 +168,7 @@
             <point key="canvasLocation" x="1106" y="337"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ClassBox" width="30" height="30"/>
+    </resources>
 </document>
