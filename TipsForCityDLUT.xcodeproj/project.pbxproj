@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DCA31A301AC863D40042200A /* NewsAndReportsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A2F1AC863D40042200A /* NewsAndReportsFetcher.m */; };
 		DCA31A331AC99F8E0042200A /* ClassBox.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCA31A321AC99F8E0042200A /* ClassBox.pdf */; };
+		DCA31A351AC9A8A90042200A /* Explore.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCA31A341AC9A8A90042200A /* Explore.pdf */; };
+		DCA31A371AC9A8BD0042200A /* NewsAndReports.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCA31A361AC9A8BD0042200A /* NewsAndReports.pdf */; };
 		DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB41ABDB3CB00655FFB /* main.m */; };
 		DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */; };
 		DCCF8DBB1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB91ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld */; };
@@ -33,6 +35,8 @@
 		DCA31A2E1AC863D40042200A /* NewsAndReportsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsAndReportsFetcher.h; sourceTree = "<group>"; };
 		DCA31A2F1AC863D40042200A /* NewsAndReportsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsAndReportsFetcher.m; sourceTree = "<group>"; };
 		DCA31A321AC99F8E0042200A /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ClassBox.pdf; sourceTree = "<group>"; };
+		DCA31A341AC9A8A90042200A /* Explore.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Explore.pdf; sourceTree = "<group>"; };
+		DCA31A361AC9A8BD0042200A /* NewsAndReports.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = NewsAndReports.pdf; sourceTree = "<group>"; };
 		DCCF8DAF1ABDB3CB00655FFB /* TipsForCityDLUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipsForCityDLUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCF8DB31ABDB3CB00655FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCCF8DB41ABDB3CB00655FFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 		DCA31A311AC99F720042200A /* ImageSouce */ = {
 			isa = PBXGroup;
 			children = (
+				DCA31A361AC9A8BD0042200A /* NewsAndReports.pdf */,
+				DCA31A341AC9A8A90042200A /* Explore.pdf */,
 				DCA31A321AC99F8E0042200A /* ClassBox.pdf */,
 			);
 			name = ImageSouce;
@@ -231,7 +237,9 @@
 				DCCF8DC11ABDB3CB00655FFB /* Main.storyboard in Resources */,
 				DCCF8DC61ABDB3CB00655FFB /* LaunchScreen.xib in Resources */,
 				DCCF8DC31ABDB3CB00655FFB /* Images.xcassets in Resources */,
+				DCA31A371AC9A8BD0042200A /* NewsAndReports.pdf in Resources */,
 				DCA31A331AC99F8E0042200A /* ClassBox.pdf in Resources */,
+				DCA31A351AC9A8A90042200A /* Explore.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

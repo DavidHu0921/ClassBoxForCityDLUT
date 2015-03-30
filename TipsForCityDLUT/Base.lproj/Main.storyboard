@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="qVW-eb-19J" id="6eg-Eo-35X"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="发现" id="7Or-ma-o6k"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="Explore" id="7Or-ma-o6k"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbo-kk-bOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,11 +148,11 @@
             </objects>
             <point key="canvasLocation" x="2662" y="337"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--新闻公告-->
         <scene sceneID="07b-Hy-Gon">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Cs-dP-NpZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" id="jXg-xQ-OBb"/>
+                    <tabBarItem key="tabBarItem" title="新闻公告" image="NewsAndReports" id="jXg-xQ-OBb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NPv-8L-RQd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -170,5 +170,7 @@
     </scenes>
     <resources>
         <image name="ClassBox" width="30" height="30"/>
+        <image name="Explore" width="30" height="30"/>
+        <image name="NewsAndReports" width="30" height="30"/>
     </resources>
 </document>
