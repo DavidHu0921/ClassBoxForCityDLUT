@@ -96,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="News and Reports" textLabel="rW3-vU-70q" detailTextLabel="9oK-yv-GCh" style="IBUITableViewCellStyleSubtitle" id="fRu-va-QrY">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="News Cell" textLabel="rW3-vU-70q" detailTextLabel="9oK-yv-GCh" style="IBUITableViewCellStyleSubtitle" id="fRu-va-QrY">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fRu-va-QrY" id="jZm-Mu-ohC">
                                     <autoresizingMask key="autoresizingMask"/>

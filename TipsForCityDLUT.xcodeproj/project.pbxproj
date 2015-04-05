@@ -12,7 +12,7 @@
 		DCA31A371AC9A8BD0042200A /* NewsAndReports.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCA31A361AC9A8BD0042200A /* NewsAndReports.pdf */; };
 		DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A421ACDB94B0042200A /* NewsTableViewController.m */; };
 		DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A451ACDC63D0042200A /* JustPostNewsTVC.m */; };
-		DCA31A4E1ACFEA9F0042200A /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A4D1ACFEA9F0042200A /* DataFetcher.m */; };
+		DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */; };
 		DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB41ABDB3CB00655FFB /* main.m */; };
 		DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */; };
 		DCCF8DBB1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB91ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld */; };
@@ -43,8 +43,8 @@
 		DCA31A441ACDC63D0042200A /* JustPostNewsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JustPostNewsTVC.h; sourceTree = "<group>"; };
 		DCA31A451ACDC63D0042200A /* JustPostNewsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JustPostNewsTVC.m; sourceTree = "<group>"; };
 		DCA31A491ACFE50E0042200A /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
-		DCA31A4C1ACFEA9F0042200A /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
-		DCA31A4D1ACFEA9F0042200A /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
+		DCA31A4C1ACFEA9F0042200A /* NewsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFetcher.h; sourceTree = "<group>"; };
+		DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFetcher.m; sourceTree = "<group>"; };
 		DCCF8DAF1ABDB3CB00655FFB /* TipsForCityDLUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipsForCityDLUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCF8DB31ABDB3CB00655FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCCF8DB41ABDB3CB00655FFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -192,8 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				DCA31A491ACFE50E0042200A /* API.h */,
-				DCA31A4C1ACFEA9F0042200A /* DataFetcher.h */,
-				DCA31A4D1ACFEA9F0042200A /* DataFetcher.m */,
+				DCA31A4C1ACFEA9F0042200A /* NewsFetcher.h */,
+				DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */,
 			);
 			name = "API ";
 			sourceTree = "<group>";
@@ -313,7 +313,7 @@
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
-				DCA31A4E1ACFEA9F0042200A /* DataFetcher.m in Sources */,
+				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
 				DCCF8DBE1ABDB3CB00655FFB /* ViewController.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,

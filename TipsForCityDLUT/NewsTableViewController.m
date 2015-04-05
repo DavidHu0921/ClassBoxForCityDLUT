@@ -7,6 +7,7 @@
 //
 
 #import "NewsTableViewController.h"
+#import "NewsFetcher.h"
 
 @implementation NewsTableViewController
 
@@ -18,12 +19,34 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell;
-    cell = [self.tableView dequeueReusableCellWithIdentifier:@"News and Reports" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"News Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    if (cell) {
+        //configure the cell...
+        NSDictionary *new = self.news[indexPath.row];
+        NSLog(@"%@", new);
+        cell.textLabel.text = [new valueForKeyPath:NEWS_TITLE];
+        NSLog(@"%@", cell.textLabel.text);
+        cell.detailTextLabel.text = [new valueForKeyPath:NEWS_CONTENT];
+        NSLog(@"%@", cell.detailTextLabel.text);
+    }
+    else
+    {
+        NSLog(@"cell is null");
+    }
     
-    
-    return nil;
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.news count];
 }
 
 @end

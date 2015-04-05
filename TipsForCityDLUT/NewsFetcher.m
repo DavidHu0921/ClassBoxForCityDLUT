@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 
-#import "DataFetcher.h"
+#import "NewsFetcher.h"
 
-@implementation DataFetcher
+@implementation NewsFetcher
 
 + (NSURL *)URLForQuery:(NSString *)query
 {
