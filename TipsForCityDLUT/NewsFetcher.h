@@ -30,4 +30,6 @@
 
 + (NSURL *)URLforNews;
 
++ (NSURL *)URLforReport;
+
 @end

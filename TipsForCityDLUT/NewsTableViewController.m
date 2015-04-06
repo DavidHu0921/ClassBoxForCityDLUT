@@ -8,6 +8,9 @@
 
 #import "NewsTableViewController.h"
 #import "NewsFetcher.h"
+#import "NewsWebViewController.h"
+
+#define holiday @"放假"
 
 @implementation NewsTableViewController
 
@@ -21,21 +24,23 @@
 {
     static NSString *CellIdentifier = @"News Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    if (cell) {
-        //configure the cell...
-        NSDictionary *new = self.news[indexPath.row];
-        NSLog(@"%@", new);
-        cell.textLabel.text = [new valueForKeyPath:NEWS_TITLE];
-        NSLog(@"%@", cell.textLabel.text);
+
+    //configure the cell...
+    NSDictionary *new = self.news[indexPath.row];
+    NSString *newsTitle = [new valueForKeyPath:NEWS_TITLE];
+    cell.textLabel.text = newsTitle;
+    //放假嘛，当然要醒目   滚动时会出现红字错位，暂时注释掉
+//    if ([newsTitle rangeOfString:holiday].location != NSNotFound) {
+//        cell.textLabel.textColor = [UIColor redColor];
+//    }
+    if ([new valueForKeyPath:NEWS_CONTENT] != nil) {
         cell.detailTextLabel.text = [new valueForKeyPath:NEWS_CONTENT];
-        NSLog(@"%@", cell.detailTextLabel.text);
     }
     else
     {
-        NSLog(@"cell is null");
+        cell.detailTextLabel.text = nil;
     }
-    
+
     return cell;
 }
 
@@ -47,6 +52,22 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.news count];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        if (indexPath) {
+            if ([segue.identifier isEqualToString:@"Display News"]) {
+                if ([segue.destinationViewController isKindOfClass:[NewsWebViewController class]]) {
+                    NewsWebViewController *nwvc = (NewsWebViewController *)segue.destinationViewController;
+                    nwvc.newsWebURL = [NSURL URLWithString:[self.news[indexPath.row] valueForKeyPath:NEWS_HREF]];
+                    //nwvc.title = [NSString stringWithFormat:@"新闻资讯"];
+                }
+            }
+        }
+    }
 }
 
 @end

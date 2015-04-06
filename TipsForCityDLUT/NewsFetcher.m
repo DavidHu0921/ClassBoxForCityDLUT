@@ -21,4 +21,9 @@
     return [self URLForQuery:NewsAPI];
 }
 
++ (NSURL *)URLforReport
+{
+    return [self URLForQuery:ReportsAPI];
+}
+
 @end

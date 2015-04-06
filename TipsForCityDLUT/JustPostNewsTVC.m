@@ -9,7 +9,18 @@
 #import "JustPostNewsTVC.h"
 #import "NewsFetcher.h"
 
+@interface JustPostNewsTVC ()
+
+@property (assign, nonatomic)NSInteger *selectedSegment;
+
+@end
+
 @implementation JustPostNewsTVC
+
+- (void)setSelectedSegment:(NSInteger)selectedSegment
+{
+    _selectedSegment = &selectedSegment;
+}
 
 - (void)viewDidLoad
 {
@@ -17,10 +28,24 @@
     [self fetchNews];
 }
 
+- (IBAction)NewsAndReports:(UISegmentedControl *)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    _selectedSegment = segmentedControl.selectedSegmentIndex;
+    
+    [self fetchNews];
+}
+
+
 - (void)fetchNews
 {
     //fetch json data
-    NSURL *url = [NewsFetcher URLforNews];
+    NSURL *url;
+    if (_selectedSegment == 0) {
+        url = [NewsFetcher URLforNews];
+    }
+    else {
+        url = [NewsFetcher URLforReport];
+    }
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     NSURLResponse *response = nil;
     NSError *error = nil;
@@ -32,7 +57,7 @@
                                                              options:0
                                                                error: &error];
     NSArray *news = [newsList valueForKeyPath:NEWS_COLLECTION];
-    NSLog(@"%@", news);
+    //NSLog(@"%@", news);
     self.news = news;
     
     //NSLog(@"cityNews: %@", newsList);

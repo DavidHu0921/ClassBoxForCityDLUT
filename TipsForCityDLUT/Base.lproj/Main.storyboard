@@ -96,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="News Cell" textLabel="rW3-vU-70q" detailTextLabel="9oK-yv-GCh" style="IBUITableViewCellStyleSubtitle" id="fRu-va-QrY">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="News Cell" textLabel="rW3-vU-70q" detailTextLabel="9oK-yv-GCh" style="IBUITableViewCellStyleSubtitle" id="fRu-va-QrY">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fRu-va-QrY" id="jZm-Mu-ohC">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -115,6 +115,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mop-eF-FNC" kind="show" identifier="Display News" id="bcZ-bz-AZo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -131,17 +134,20 @@
                                 <segment title="新闻资讯"/>
                                 <segment title="城院公告"/>
                             </segments>
+                            <connections>
+                                <action selector="NewsAndReports:" destination="kwz-cu-5OJ" eventType="valueChanged" id="QZp-S6-5gw"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvq-BU-l1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1918" y="337"/>
+            <point key="canvasLocation" x="1820" y="337"/>
         </scene>
-        <!--View Controller-->
+        <!--News Web View Controller-->
         <scene sceneID="XL4-HE-H5T">
             <objects>
-                <viewController id="mop-eF-FNC" sceneMemberID="viewController">
+                <viewController id="mop-eF-FNC" customClass="NewsWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SvA-0J-ywD"/>
                         <viewControllerLayoutGuide type="bottom" id="KRc-zd-pmT"/>
@@ -150,17 +156,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJJ-YI-Uj3">
-                                <rect key="frame" x="-63" y="-87" width="676" height="687"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJJ-YI-Uj3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tJJ-YI-Uj3" secondAttribute="bottom" id="4lo-NP-eNh"/>
+                            <constraint firstItem="tJJ-YI-Uj3" firstAttribute="top" secondItem="3Xt-9t-ztG" secondAttribute="top" id="KoI-CX-mnE"/>
+                            <constraint firstItem="tJJ-YI-Uj3" firstAttribute="leading" secondItem="3Xt-9t-ztG" secondAttribute="leading" id="PHQ-IQ-4wR"/>
+                            <constraint firstAttribute="trailing" secondItem="tJJ-YI-Uj3" secondAttribute="trailing" id="Yhk-wa-h9s"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="T7y-kb-fpY"/>
+                    <connections>
+                        <outlet property="newsWebView" destination="tJJ-YI-Uj3" id="Pqh-4w-JVd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oP4-LS-cPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2662" y="337"/>
+            <point key="canvasLocation" x="2512" y="337"/>
         </scene>
         <!--新闻公告-->
         <scene sceneID="07b-Hy-Gon">

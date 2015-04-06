@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */; };
 		DCA31A331AC99F8E0042200A /* ClassBox.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCA31A321AC99F8E0042200A /* ClassBox.pdf */; };
 		DCA31A351AC9A8A90042200A /* Explore.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCA31A341AC9A8A90042200A /* Explore.pdf */; };
 		DCA31A371AC9A8BD0042200A /* NewsAndReports.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCA31A361AC9A8BD0042200A /* NewsAndReports.pdf */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
+		DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		DCA31A321AC99F8E0042200A /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ClassBox.pdf; sourceTree = "<group>"; };
 		DCA31A341AC9A8A90042200A /* Explore.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Explore.pdf; sourceTree = "<group>"; };
 		DCA31A361AC9A8BD0042200A /* NewsAndReports.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = NewsAndReports.pdf; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				DCA31A421ACDB94B0042200A /* NewsTableViewController.m */,
 				DCA31A441ACDC63D0042200A /* JustPostNewsTVC.h */,
 				DCA31A451ACDC63D0042200A /* JustPostNewsTVC.m */,
+				DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */,
+				DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				DCCF8DBB1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
+				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
 				DCCF8DBE1ABDB3CB00655FFB /* ViewController.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,

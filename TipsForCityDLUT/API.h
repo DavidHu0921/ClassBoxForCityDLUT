@@ -12,8 +12,8 @@
 
 #define ReportsAPI @"https://www.kimonolabs.com/api/arrsbbjc?apikey=600efbca1fa20767b1ab92a9283f2b1d"
 
-//http://1.csxyxzs.sinaapp.com/xygg.php 各10个，时间顺序从新到旧
-//http://1.csxyxzs.sinaapp.com/xyxw.php 各10个，时间顺序从新到旧
+//http://1.csxyxzs.sinaapp.com/xyxw.php 20个
+//http://1.csxyxzs.sinaapp.com/xygg.php 20个，时间顺序从新到旧
 
 /*
  图书馆 http://1.csxyxzs.sinaapp.com/library.php?book_name=%s
