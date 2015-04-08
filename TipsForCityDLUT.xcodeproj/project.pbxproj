@@ -82,6 +82,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC9E24611AD53C240068ACE8 /* News and Reports */ = {
+			isa = PBXGroup;
+			children = (
+				DCA31A411ACDB94B0042200A /* NewsTableViewController.h */,
+				DCA31A421ACDB94B0042200A /* NewsTableViewController.m */,
+				DCA31A441ACDC63D0042200A /* JustPostNewsTVC.h */,
+				DCA31A451ACDC63D0042200A /* JustPostNewsTVC.m */,
+				DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */,
+				DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */,
+			);
+			name = "News and Reports";
+			sourceTree = "<group>";
+		};
+		DC9E24621AD53C370068ACE8 /* ClassCalendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ClassCalendar;
+			sourceTree = "<group>";
+		};
 		DCA31A311AC99F720042200A /* ImageSouce */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,14 +124,10 @@
 		DCA31A391ACDB6290042200A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DC9E24621AD53C370068ACE8 /* ClassCalendar */,
+				DC9E24611AD53C240068ACE8 /* News and Reports */,
 				DCCF8DBC1ABDB3CB00655FFB /* ViewController.h */,
 				DCCF8DBD1ABDB3CB00655FFB /* ViewController.m */,
-				DCA31A411ACDB94B0042200A /* NewsTableViewController.h */,
-				DCA31A421ACDB94B0042200A /* NewsTableViewController.m */,
-				DCA31A441ACDC63D0042200A /* JustPostNewsTVC.h */,
-				DCA31A451ACDC63D0042200A /* JustPostNewsTVC.m */,
-				DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */,
-				DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
