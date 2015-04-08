@@ -12,6 +12,8 @@
 @interface JustPostNewsTVC ()
 
 @property (assign, nonatomic)NSInteger *selectedSegment;
+- (IBAction)changeSegmented:(UISegmentedControl *)sender;
+- (IBAction)refreshSpinner:(UIRefreshControl *)sender;
 
 @end
 
@@ -28,59 +30,46 @@
     [self fetchNews];
 }
 
-- (IBAction)NewsAndReports:(UISegmentedControl *)sender {
-    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
-    _selectedSegment = segmentedControl.selectedSegmentIndex;
-    
-    [self fetchNews];
-}
-
-
 - (void)fetchNews
 {
+    if (!self.refresh.refreshing) {
+        [self.refresh beginRefreshing];
+    }
+    
     //fetch json data
     NSURL *url;
     if (_selectedSegment == 0) {
-        url = [NewsFetcher URLforNews];
-    }
-    else {
         url = [NewsFetcher URLforReport];
     }
+    else {
+        url = [NewsFetcher URLforNews];
+    }
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    NSURLResponse *response = nil;
-    NSError *error = nil;
-#warning it's gonna block the main queue
-    NSData *jsonResults = [NSURLConnection sendSynchronousRequest:urlRequest
-                                                returningResponse:&response
-                                                            error:&error];
-    NSDictionary *newsList = [NSJSONSerialization JSONObjectWithData:jsonResults
-                                                             options:0
-                                                               error: &error];
-    NSArray *news = [newsList valueForKeyPath:NEWS_COLLECTION];
-    //NSLog(@"%@", news);
-    self.news = news;
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
-    //NSLog(@"cityNews: %@", newsList);
-    /*
-     [NSURLConnection sendAsynchronousRequest: urlRequest queue:queue
-     completionHandler:^(
-     NSURLResponse *response,
-     NSData *data,
-     NSError *error){
-     if(data  && error == nil){
-     NSLog(@"%@", data);
-     NSDictionary *newsList = [NSJSONSerialization JSONObjectWithData:data
-     options:0
-     error: &error];
-     NSLog(@"cityNews: %@", newsList);
-     //NSArray *news = [newsList valueForKeyPath:nil];
-     }else if([data length] == 0 && error == nil){
-     NSLog(@"Nothing was downloaded.");
-     }else if(error != nil){
-     NSLog(@"Error happened = %@",error);
-     }
-     }];
-     */
+    [NSURLConnection sendAsynchronousRequest:urlRequest
+           queue:queue
+            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                if (!connectionError) {
+                    if (response.URL == url) {
+                        NSDictionary *newsList = [NSJSONSerialization JSONObjectWithData:data
+                                                                                 options:0
+                                                                                   error: &connectionError];
+                        NSArray *news = [newsList valueForKeyPath:NEWS_COLLECTION];
+                        dispatch_async(dispatch_get_main_queue(), ^{ self.news = news; });
+                    }
+                }
+            }];
 }
 
+- (IBAction)changeSegmented:(UISegmentedControl *)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    _selectedSegment = segmentedControl.selectedSegmentIndex;
+    
+    [self refreshSpinner:self.refresh];
+}
+
+- (IBAction)refreshSpinner:(UIRefreshControl *)sender {
+    [self fetchNews];
+}
 @end

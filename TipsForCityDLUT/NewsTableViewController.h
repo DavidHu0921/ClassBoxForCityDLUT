@@ -11,5 +11,6 @@
 @interface NewsTableViewController : UITableViewController
 
 @property (strong, nonatomic)NSArray *news;
+@property (weak, nonatomic) IBOutlet UIRefreshControl *refresh;
 
 @end

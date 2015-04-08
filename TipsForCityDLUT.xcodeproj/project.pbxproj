@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */; };
-		DCA31A331AC99F8E0042200A /* ClassBox.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCA31A321AC99F8E0042200A /* ClassBox.pdf */; };
-		DCA31A351AC9A8A90042200A /* Explore.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCA31A341AC9A8A90042200A /* Explore.pdf */; };
-		DCA31A371AC9A8BD0042200A /* NewsAndReports.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCA31A361AC9A8BD0042200A /* NewsAndReports.pdf */; };
+		DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */; };
+		DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245C1AD3AB2D0068ACE8 /* Explore.pdf */; };
+		DC9E24601AD3AB2D0068ACE8 /* NewsAndReports.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245D1AD3AB2D0068ACE8 /* NewsAndReports.pdf */; };
 		DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A421ACDB94B0042200A /* NewsTableViewController.m */; };
 		DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A451ACDC63D0042200A /* JustPostNewsTVC.m */; };
 		DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */; };
@@ -37,9 +37,9 @@
 /* Begin PBXFileReference section */
 		DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
 		DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
-		DCA31A321AC99F8E0042200A /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ClassBox.pdf; sourceTree = "<group>"; };
-		DCA31A341AC9A8A90042200A /* Explore.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Explore.pdf; sourceTree = "<group>"; };
-		DCA31A361AC9A8BD0042200A /* NewsAndReports.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = NewsAndReports.pdf; sourceTree = "<group>"; };
+		DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ClassBox.pdf; path = Resoucre/ClassBox.pdf; sourceTree = "<group>"; };
+		DC9E245C1AD3AB2D0068ACE8 /* Explore.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Explore.pdf; path = Resoucre/Explore.pdf; sourceTree = "<group>"; };
+		DC9E245D1AD3AB2D0068ACE8 /* NewsAndReports.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = NewsAndReports.pdf; path = Resoucre/NewsAndReports.pdf; sourceTree = "<group>"; };
 		DCA31A3E1ACDB6870042200A /* TipsForCityDLUT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TipsForCityDLUT.entitlements; sourceTree = "<group>"; };
 		DCA31A411ACDB94B0042200A /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
 		DCA31A421ACDB94B0042200A /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
@@ -85,9 +85,9 @@
 		DCA31A311AC99F720042200A /* ImageSouce */ = {
 			isa = PBXGroup;
 			children = (
-				DCA31A361AC9A8BD0042200A /* NewsAndReports.pdf */,
-				DCA31A341AC9A8A90042200A /* Explore.pdf */,
-				DCA31A321AC99F8E0042200A /* ClassBox.pdf */,
+				DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */,
+				DC9E245C1AD3AB2D0068ACE8 /* Explore.pdf */,
+				DC9E245D1AD3AB2D0068ACE8 /* NewsAndReports.pdf */,
 			);
 			name = ImageSouce;
 			sourceTree = "<group>";
@@ -295,9 +295,9 @@
 				DCCF8DC11ABDB3CB00655FFB /* Main.storyboard in Resources */,
 				DCCF8DC61ABDB3CB00655FFB /* LaunchScreen.xib in Resources */,
 				DCCF8DC31ABDB3CB00655FFB /* Images.xcassets in Resources */,
-				DCA31A371AC9A8BD0042200A /* NewsAndReports.pdf in Resources */,
-				DCA31A331AC99F8E0042200A /* ClassBox.pdf in Resources */,
-				DCA31A351AC9A8A90042200A /* Explore.pdf in Resources */,
+				DC9E24601AD3AB2D0068ACE8 /* NewsAndReports.pdf in Resources */,
+				DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */,
+				DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

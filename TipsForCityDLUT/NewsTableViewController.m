@@ -12,11 +12,19 @@
 
 #define holiday @"放假"
 
+@interface NewsTableViewController ()
+
+@end
+
 @implementation NewsTableViewController
 
 - (void)setNews:(NSArray *)news
 {
     _news = news;
+    
+    if (self.refresh.refreshing) {
+        [self.refresh endRefreshing];
+    }
     [self.tableView reloadData];
 }
 

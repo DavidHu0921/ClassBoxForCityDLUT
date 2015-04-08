@@ -131,14 +131,23 @@
                             <rect key="frame" x="233.5" y="7" width="133" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="新闻资讯"/>
                                 <segment title="城院公告"/>
+                                <segment title="新闻资讯"/>
                             </segments>
                             <connections>
-                                <action selector="NewsAndReports:" destination="kwz-cu-5OJ" eventType="valueChanged" id="QZp-S6-5gw"/>
+                                <action selector="changeSegmented:" destination="kwz-cu-5OJ" eventType="valueChanged" id="tBL-yd-u4J"/>
                             </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="beV-RR-QIb">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshSpinner:" destination="kwz-cu-5OJ" eventType="valueChanged" id="zdJ-TS-7KS"/>
+                        </connections>
+                    </refreshControl>
+                    <connections>
+                        <outlet property="refresh" destination="beV-RR-QIb" id="akz-hC-0pK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvq-BU-l1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,18 +169,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mYW-7l-JYi">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="tJJ-YI-Uj3" secondAttribute="bottom" id="4lo-NP-eNh"/>
-                            <constraint firstItem="tJJ-YI-Uj3" firstAttribute="top" secondItem="3Xt-9t-ztG" secondAttribute="top" id="KoI-CX-mnE"/>
-                            <constraint firstItem="tJJ-YI-Uj3" firstAttribute="leading" secondItem="3Xt-9t-ztG" secondAttribute="leading" id="PHQ-IQ-4wR"/>
-                            <constraint firstAttribute="trailing" secondItem="tJJ-YI-Uj3" secondAttribute="trailing" id="Yhk-wa-h9s"/>
+                            <constraint firstAttribute="trailing" secondItem="tJJ-YI-Uj3" secondAttribute="trailing" id="CSM-TG-wuu"/>
+                            <constraint firstItem="tJJ-YI-Uj3" firstAttribute="leading" secondItem="3Xt-9t-ztG" secondAttribute="leading" id="FXY-fe-coX"/>
+                            <constraint firstItem="tJJ-YI-Uj3" firstAttribute="top" secondItem="3Xt-9t-ztG" secondAttribute="top" id="Rub-Nc-Y6K"/>
+                            <constraint firstAttribute="bottom" secondItem="tJJ-YI-Uj3" secondAttribute="bottom" id="axy-sL-Oe4"/>
+                            <constraint firstAttribute="centerX" secondItem="mYW-7l-JYi" secondAttribute="centerX" id="cna-8c-vNb"/>
+                            <constraint firstAttribute="centerY" secondItem="mYW-7l-JYi" secondAttribute="centerY" id="oGH-9s-9q0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T7y-kb-fpY"/>
                     <connections>
                         <outlet property="newsWebView" destination="tJJ-YI-Uj3" id="Pqh-4w-JVd"/>
+                        <outlet property="spinner" destination="mYW-7l-JYi" id="wJc-vG-XIr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oP4-LS-cPm" userLabel="First Responder" sceneMemberID="firstResponder"/>

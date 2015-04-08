@@ -11,6 +11,7 @@
 @interface NewsWebViewController ()
 
 @property (strong, nonatomic) IBOutlet UIWebView *newsWebView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -29,10 +30,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    NSURLRequest *request=[NSURLRequest requestWithURL:_newsWebURL];
     
-    [_newsWebView loadRequest:request];
+    [self.spinner startAnimating];
+    [self startLoadWeb];
+}
+
+- (void)startLoadWeb
+{
+    [self.spinner startAnimating];
+    //NSURLRequest *request=[NSURLRequest requestWithURL:_newsWebURL];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSURLRequest *request=[NSURLRequest requestWithURL:_newsWebURL];
+        [_newsWebView loadRequest:request];
+    });
+    [self.spinner stopAnimating];
+
 }
 
 @end
