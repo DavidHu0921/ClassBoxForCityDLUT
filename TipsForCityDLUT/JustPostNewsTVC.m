@@ -11,7 +11,7 @@
 
 @interface JustPostNewsTVC ()
 
-@property (assign, nonatomic)NSInteger *selectedSegment;
+@property (assign, nonatomic)NSInteger selectedSegment;
 - (IBAction)changeSegmented:(UISegmentedControl *)sender;
 - (IBAction)refreshSpinner:(UIRefreshControl *)sender;
 
@@ -21,21 +21,19 @@
 
 - (void)setSelectedSegment:(NSInteger)selectedSegment
 {
-    _selectedSegment = &selectedSegment;
+    _selectedSegment = selectedSegment;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self fetchNews];
+    
+    [self refreshSpinner:self.refresh];
+    //[self fetchNews];
 }
 
 - (void)fetchNews
 {
-    if (!self.refresh.refreshing) {
-        [self.refresh beginRefreshing];
-    }
-    
     //fetch json data
     NSURL *url;
     if (_selectedSegment == 0) {
@@ -70,6 +68,17 @@
 }
 
 - (IBAction)refreshSpinner:(UIRefreshControl *)sender {
+    
+    if (!self.refresh.refreshing) {
+        self.refresh.attributedTitle = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"下拉刷新..."]];
+        [self.refresh didMoveToWindow];
+        [self.refresh beginRefreshing];
+    }
+    if (self.refresh.refreshing) {
+        self.refresh.attributedTitle = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"正在刷新..."]];
+    }
+    
     [self fetchNews];
 }
+
 @end

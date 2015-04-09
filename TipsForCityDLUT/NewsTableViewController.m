@@ -23,6 +23,7 @@
     _news = news;
     
     if (self.refresh.refreshing) {
+        //NSLog(@"end");
         [self.refresh endRefreshing];
     }
     [self.tableView reloadData];
@@ -37,7 +38,7 @@
     NSDictionary *new = self.news[indexPath.row];
     NSString *newsTitle = [new valueForKeyPath:NEWS_TITLE];
     cell.textLabel.text = newsTitle;
-    //放假嘛，当然要醒目   滚动时会出现红字错位，暂时注释掉
+//  放假嘛，当然要醒目   滚动时会出现红字错位，暂时注释掉
 //    if ([newsTitle rangeOfString:holiday].location != NSNotFound) {
 //        cell.textLabel.textColor = [UIColor redColor];
 //    }
@@ -71,7 +72,6 @@
                 if ([segue.destinationViewController isKindOfClass:[NewsWebViewController class]]) {
                     NewsWebViewController *nwvc = (NewsWebViewController *)segue.destinationViewController;
                     nwvc.newsWebURL = [NSURL URLWithString:[self.news[indexPath.row] valueForKeyPath:NEWS_HREF]];
-                    //nwvc.title = [NSString stringWithFormat:@"新闻资讯"];
                 }
             }
         }

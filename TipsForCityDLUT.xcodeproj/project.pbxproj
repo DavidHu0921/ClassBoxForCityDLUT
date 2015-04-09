@@ -102,6 +102,13 @@
 			name = ClassCalendar;
 			sourceTree = "<group>";
 		};
+		DC9E24631AD6801D0068ACE8 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Discovery;
+			sourceTree = "<group>";
+		};
 		DCA31A311AC99F720042200A /* ImageSouce */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +131,7 @@
 		DCA31A391ACDB6290042200A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DC9E24631AD6801D0068ACE8 /* Discovery */,
 				DC9E24621AD53C370068ACE8 /* ClassCalendar */,
 				DC9E24611AD53C240068ACE8 /* News and Reports */,
 				DCCF8DBC1ABDB3CB00655FFB /* ViewController.h */,

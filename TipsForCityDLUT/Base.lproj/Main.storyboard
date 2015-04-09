@@ -85,7 +85,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCS-1b-oYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="-397"/>
+            <point key="canvasLocation" x="1060" y="-425"/>
         </scene>
         <!--Just Post NewsTVC-->
         <scene sceneID="Ra7-xO-0ah">
@@ -169,25 +169,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mYW-7l-JYi">
-                                <rect key="frame" x="282" y="281" width="37" height="37"/>
-                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BSe-a3-Bkj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="tJJ-YI-Uj3" secondAttribute="trailing" id="CSM-TG-wuu"/>
-                            <constraint firstItem="tJJ-YI-Uj3" firstAttribute="leading" secondItem="3Xt-9t-ztG" secondAttribute="leading" id="FXY-fe-coX"/>
-                            <constraint firstItem="tJJ-YI-Uj3" firstAttribute="top" secondItem="3Xt-9t-ztG" secondAttribute="top" id="Rub-Nc-Y6K"/>
-                            <constraint firstAttribute="bottom" secondItem="tJJ-YI-Uj3" secondAttribute="bottom" id="axy-sL-Oe4"/>
-                            <constraint firstAttribute="centerX" secondItem="mYW-7l-JYi" secondAttribute="centerX" id="cna-8c-vNb"/>
-                            <constraint firstAttribute="centerY" secondItem="mYW-7l-JYi" secondAttribute="centerY" id="oGH-9s-9q0"/>
+                            <constraint firstAttribute="trailing" secondItem="tJJ-YI-Uj3" secondAttribute="trailing" id="5ax-W2-wo7"/>
+                            <constraint firstItem="tJJ-YI-Uj3" firstAttribute="top" secondItem="3Xt-9t-ztG" secondAttribute="top" id="IzK-qv-LKY"/>
+                            <constraint firstAttribute="bottom" secondItem="tJJ-YI-Uj3" secondAttribute="bottom" id="SE0-zt-GQ9"/>
+                            <constraint firstItem="tJJ-YI-Uj3" firstAttribute="leading" secondItem="3Xt-9t-ztG" secondAttribute="leading" id="juA-va-kmJ"/>
+                            <constraint firstItem="BSe-a3-Bkj" firstAttribute="trailing" secondItem="tJJ-YI-Uj3" secondAttribute="trailing" id="moH-kV-lSE"/>
+                            <constraint firstItem="BSe-a3-Bkj" firstAttribute="top" secondItem="SvA-0J-ywD" secondAttribute="bottom" id="nIb-zE-lyq"/>
+                            <constraint firstItem="BSe-a3-Bkj" firstAttribute="leading" secondItem="tJJ-YI-Uj3" secondAttribute="leading" id="s3Q-rO-spP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T7y-kb-fpY"/>
                     <connections>
                         <outlet property="newsWebView" destination="tJJ-YI-Uj3" id="Pqh-4w-JVd"/>
-                        <outlet property="spinner" destination="mYW-7l-JYi" id="wJc-vG-XIr"/>
+                        <outlet property="progressView" destination="BSe-a3-Bkj" id="6Vo-lC-1cX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oP4-LS-cPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
