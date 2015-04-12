@@ -1,6 +1,6 @@
 //
-//  TipsForCityDLUTTests.m
-//  TipsForCityDLUTTests
+//  ClassBoxForCityDLUTTests.m
+//  ClassBoxForCityDLUTTests
 //
 //  Created by 胡啸晨 on 15/3/21.
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface TipsForCityDLUTTests : XCTestCase
+@interface ClassBoxForCityDLUTTests : XCTestCase
 
 @end
 
-@implementation TipsForCityDLUTTests
+@implementation ClassBoxForCityDLUTTests
 
 - (void)setUp {
     [super setUp];

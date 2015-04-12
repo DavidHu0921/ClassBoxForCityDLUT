@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCCF8DAE1ABDB3CB00655FFB"
-               BuildableName = "TipsForCityDLUT.app"
-               BlueprintName = "TipsForCityDLUT"
-               ReferencedContainer = "container:TipsForCityDLUT.xcodeproj">
+               BuildableName = "ClassBoxForCityDLUT.app"
+               BlueprintName = "ClassBoxForCityDLUT"
+               ReferencedContainer = "container:ClassBoxForCityDLUT.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCCF8DCA1ABDB3CB00655FFB"
-               BuildableName = "TipsForCityDLUTTests.xctest"
-               BlueprintName = "TipsForCityDLUTTests"
-               ReferencedContainer = "container:TipsForCityDLUT.xcodeproj">
+               BuildableName = "ClassBoxForCityDLUTTests.xctest"
+               BlueprintName = "ClassBoxForCityDLUTTests"
+               ReferencedContainer = "container:ClassBoxForCityDLUT.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCCF8DCA1ABDB3CB00655FFB"
-               BuildableName = "TipsForCityDLUTTests.xctest"
-               BlueprintName = "TipsForCityDLUTTests"
-               ReferencedContainer = "container:TipsForCityDLUT.xcodeproj">
+               BuildableName = "ClassBoxForCityDLUTTests.xctest"
+               BlueprintName = "ClassBoxForCityDLUTTests"
+               ReferencedContainer = "container:ClassBoxForCityDLUT.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCCF8DAE1ABDB3CB00655FFB"
-            BuildableName = "TipsForCityDLUT.app"
-            BlueprintName = "TipsForCityDLUT"
-            ReferencedContainer = "container:TipsForCityDLUT.xcodeproj">
+            BuildableName = "ClassBoxForCityDLUT.app"
+            BlueprintName = "ClassBoxForCityDLUT"
+            ReferencedContainer = "container:ClassBoxForCityDLUT.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCCF8DAE1ABDB3CB00655FFB"
-            BuildableName = "TipsForCityDLUT.app"
-            BlueprintName = "TipsForCityDLUT"
-            ReferencedContainer = "container:TipsForCityDLUT.xcodeproj">
+            BuildableName = "ClassBoxForCityDLUT.app"
+            BlueprintName = "ClassBoxForCityDLUT"
+            ReferencedContainer = "container:ClassBoxForCityDLUT.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCCF8DAE1ABDB3CB00655FFB"
-            BuildableName = "TipsForCityDLUT.app"
-            BlueprintName = "TipsForCityDLUT"
-            ReferencedContainer = "container:TipsForCityDLUT.xcodeproj">
+            BuildableName = "ClassBoxForCityDLUT.app"
+            BlueprintName = "ClassBoxForCityDLUT"
+            ReferencedContainer = "container:ClassBoxForCityDLUT.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

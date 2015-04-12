@@ -16,12 +16,12 @@
 		DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */; };
 		DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB41ABDB3CB00655FFB /* main.m */; };
 		DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */; };
-		DCCF8DBB1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB91ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld */; };
+		DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */; };
 		DCCF8DBE1ABDB3CB00655FFB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DBD1ABDB3CB00655FFB /* ViewController.m */; };
 		DCCF8DC11ABDB3CB00655FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DBF1ABDB3CB00655FFB /* Main.storyboard */; };
 		DCCF8DC31ABDB3CB00655FFB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DC21ABDB3CB00655FFB /* Images.xcassets */; };
 		DCCF8DC61ABDB3CB00655FFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DC41ABDB3CB00655FFB /* LaunchScreen.xib */; };
-		DCCF8DD21ABDB3CB00655FFB /* TipsForCityDLUTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DD11ABDB3CB00655FFB /* TipsForCityDLUTTests.m */; };
+		DCCF8DD21ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,7 @@
 		DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ClassBox.pdf; path = Resoucre/ClassBox.pdf; sourceTree = "<group>"; };
 		DC9E245C1AD3AB2D0068ACE8 /* Explore.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Explore.pdf; path = Resoucre/Explore.pdf; sourceTree = "<group>"; };
 		DC9E245D1AD3AB2D0068ACE8 /* NewsAndReports.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = NewsAndReports.pdf; path = Resoucre/NewsAndReports.pdf; sourceTree = "<group>"; };
-		DCA31A3E1ACDB6870042200A /* TipsForCityDLUT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TipsForCityDLUT.entitlements; sourceTree = "<group>"; };
+		DCA31A3E1ACDB6870042200A /* ClassBoxForCityDLUT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ClassBoxForCityDLUT.entitlements; sourceTree = "<group>"; };
 		DCA31A411ACDB94B0042200A /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
 		DCA31A421ACDB94B0042200A /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
 		DCA31A441ACDC63D0042200A /* JustPostNewsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JustPostNewsTVC.h; sourceTree = "<group>"; };
@@ -48,20 +48,20 @@
 		DCA31A491ACFE50E0042200A /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		DCA31A4C1ACFEA9F0042200A /* NewsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFetcher.h; sourceTree = "<group>"; };
 		DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFetcher.m; sourceTree = "<group>"; };
-		DCCF8DAF1ABDB3CB00655FFB /* TipsForCityDLUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipsForCityDLUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCCF8DAF1ABDB3CB00655FFB /* ClassBoxForCityDLUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassBoxForCityDLUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCF8DB31ABDB3CB00655FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCCF8DB41ABDB3CB00655FFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCCF8DB61ABDB3CB00655FFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DCCF8DBA1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TipsForCityDLUT.xcdatamodel; sourceTree = "<group>"; };
+		DCCF8DBA1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClassBoxForCityDLUT.xcdatamodel; sourceTree = "<group>"; };
 		DCCF8DBC1ABDB3CB00655FFB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DCCF8DBD1ABDB3CB00655FFB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DCCF8DC01ABDB3CB00655FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCCF8DC21ABDB3CB00655FFB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DCCF8DC51ABDB3CB00655FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		DCCF8DCB1ABDB3CB00655FFB /* TipsForCityDLUTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipsForCityDLUTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCCF8DCB1ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassBoxForCityDLUTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCF8DD01ABDB3CB00655FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCCF8DD11ABDB3CB00655FFB /* TipsForCityDLUTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipsForCityDLUTTests.m; sourceTree = "<group>"; };
+		DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassBoxForCityDLUTTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +152,7 @@
 		DCA31A3B1ACDB6570042200A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DCCF8DB91ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld */,
+				DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -160,8 +160,8 @@
 		DCCF8DA61ABDB3CB00655FFB = {
 			isa = PBXGroup;
 			children = (
-				DCCF8DB11ABDB3CB00655FFB /* TipsForCityDLUT */,
-				DCCF8DCE1ABDB3CB00655FFB /* TipsForCityDLUTTests */,
+				DCCF8DB11ABDB3CB00655FFB /* ClassBoxForCityDLUT */,
+				DCCF8DCE1ABDB3CB00655FFB /* ClassBoxForCityDLUTTests */,
 				DCCF8DB01ABDB3CB00655FFB /* Products */,
 				DCA31A311AC99F720042200A /* ImageSouce */,
 			);
@@ -170,16 +170,16 @@
 		DCCF8DB01ABDB3CB00655FFB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DCCF8DAF1ABDB3CB00655FFB /* TipsForCityDLUT.app */,
-				DCCF8DCB1ABDB3CB00655FFB /* TipsForCityDLUTTests.xctest */,
+				DCCF8DAF1ABDB3CB00655FFB /* ClassBoxForCityDLUT.app */,
+				DCCF8DCB1ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DCCF8DB11ABDB3CB00655FFB /* TipsForCityDLUT */ = {
+		DCCF8DB11ABDB3CB00655FFB /* ClassBoxForCityDLUT */ = {
 			isa = PBXGroup;
 			children = (
-				DCA31A3E1ACDB6870042200A /* TipsForCityDLUT.entitlements */,
+				DCA31A3E1ACDB6870042200A /* ClassBoxForCityDLUT.entitlements */,
 				DCA31A3B1ACDB6570042200A /* Data */,
 				DCA31A3A1ACDB6410042200A /* UI */,
 				DCA31A391ACDB6290042200A /* Controller */,
@@ -188,7 +188,7 @@
 				DCCF8DC21ABDB3CB00655FFB /* Images.xcassets */,
 				DCCF8DB21ABDB3CB00655FFB /* Supporting Files */,
 			);
-			path = TipsForCityDLUT;
+			path = ClassBoxForCityDLUT;
 			sourceTree = "<group>";
 		};
 		DCCF8DB21ABDB3CB00655FFB /* Supporting Files */ = {
@@ -200,13 +200,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DCCF8DCE1ABDB3CB00655FFB /* TipsForCityDLUTTests */ = {
+		DCCF8DCE1ABDB3CB00655FFB /* ClassBoxForCityDLUTTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCCF8DD11ABDB3CB00655FFB /* TipsForCityDLUTTests.m */,
+				DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */,
 				DCCF8DCF1ABDB3CB00655FFB /* Supporting Files */,
 			);
-			path = TipsForCityDLUTTests;
+			path = ClassBoxForCityDLUTTests;
 			sourceTree = "<group>";
 		};
 		DCCF8DCF1ABDB3CB00655FFB /* Supporting Files */ = {
@@ -230,9 +230,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DCCF8DAE1ABDB3CB00655FFB /* TipsForCityDLUT */ = {
+		DCCF8DAE1ABDB3CB00655FFB /* ClassBoxForCityDLUT */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DCCF8DD51ABDB3CB00655FFB /* Build configuration list for PBXNativeTarget "TipsForCityDLUT" */;
+			buildConfigurationList = DCCF8DD51ABDB3CB00655FFB /* Build configuration list for PBXNativeTarget "ClassBoxForCityDLUT" */;
 			buildPhases = (
 				DCCF8DAB1ABDB3CB00655FFB /* Sources */,
 				DCCF8DAC1ABDB3CB00655FFB /* Frameworks */,
@@ -242,14 +242,14 @@
 			);
 			dependencies = (
 			);
-			name = TipsForCityDLUT;
+			name = ClassBoxForCityDLUT;
 			productName = TipsForCityDLUT;
-			productReference = DCCF8DAF1ABDB3CB00655FFB /* TipsForCityDLUT.app */;
+			productReference = DCCF8DAF1ABDB3CB00655FFB /* ClassBoxForCityDLUT.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DCCF8DCA1ABDB3CB00655FFB /* TipsForCityDLUTTests */ = {
+		DCCF8DCA1ABDB3CB00655FFB /* ClassBoxForCityDLUTTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DCCF8DD81ABDB3CB00655FFB /* Build configuration list for PBXNativeTarget "TipsForCityDLUTTests" */;
+			buildConfigurationList = DCCF8DD81ABDB3CB00655FFB /* Build configuration list for PBXNativeTarget "ClassBoxForCityDLUTTests" */;
 			buildPhases = (
 				DCCF8DC71ABDB3CB00655FFB /* Sources */,
 				DCCF8DC81ABDB3CB00655FFB /* Frameworks */,
@@ -260,9 +260,9 @@
 			dependencies = (
 				DCCF8DCD1ABDB3CB00655FFB /* PBXTargetDependency */,
 			);
-			name = TipsForCityDLUTTests;
+			name = ClassBoxForCityDLUTTests;
 			productName = TipsForCityDLUTTests;
-			productReference = DCCF8DCB1ABDB3CB00655FFB /* TipsForCityDLUTTests.xctest */;
+			productReference = DCCF8DCB1ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +292,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DCCF8DAA1ABDB3CB00655FFB /* Build configuration list for PBXProject "TipsForCityDLUT" */;
+			buildConfigurationList = DCCF8DAA1ABDB3CB00655FFB /* Build configuration list for PBXProject "ClassBoxForCityDLUT" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -305,8 +305,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DCCF8DAE1ABDB3CB00655FFB /* TipsForCityDLUT */,
-				DCCF8DCA1ABDB3CB00655FFB /* TipsForCityDLUTTests */,
+				DCCF8DAE1ABDB3CB00655FFB /* ClassBoxForCityDLUT */,
+				DCCF8DCA1ABDB3CB00655FFB /* ClassBoxForCityDLUTTests */,
 			);
 		};
 /* End PBXProject section */
@@ -340,7 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
-				DCCF8DBB1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld in Sources */,
+				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
 				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
@@ -354,7 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCCF8DD21ABDB3CB00655FFB /* TipsForCityDLUTTests.m in Sources */,
+				DCCF8DD21ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +363,7 @@
 /* Begin PBXTargetDependency section */
 		DCCF8DCD1ABDB3CB00655FFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DCCF8DAE1ABDB3CB00655FFB /* TipsForCityDLUT */;
+			target = DCCF8DAE1ABDB3CB00655FFB /* ClassBoxForCityDLUT */;
 			targetProxy = DCCF8DCC1ABDB3CB00655FFB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -470,9 +470,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = TipsForCityDLUT/Info.plist;
+				INFOPLIST_FILE = ClassBoxForCityDLUT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ClassBoxForCityDLUT;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -483,9 +483,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = TipsForCityDLUT/Info.plist;
+				INFOPLIST_FILE = ClassBoxForCityDLUT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ClassBoxForCityDLUT;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -502,10 +502,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TipsForCityDLUTTests/Info.plist;
+				INFOPLIST_FILE = ClassBoxForCityDLUTTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TipsForCityDLUT.app/TipsForCityDLUT";
+				PRODUCT_NAME = ClassBoxForCityDLUTTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClassBoxForCityDLUT.app/ClassBoxForCityDLUT";
 			};
 			name = Debug;
 		};
@@ -517,17 +517,17 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TipsForCityDLUTTests/Info.plist;
+				INFOPLIST_FILE = ClassBoxForCityDLUTTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TipsForCityDLUT.app/TipsForCityDLUT";
+				PRODUCT_NAME = ClassBoxForCityDLUTTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClassBoxForCityDLUT.app/ClassBoxForCityDLUT";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DCCF8DAA1ABDB3CB00655FFB /* Build configuration list for PBXProject "TipsForCityDLUT" */ = {
+		DCCF8DAA1ABDB3CB00655FFB /* Build configuration list for PBXProject "ClassBoxForCityDLUT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCCF8DD31ABDB3CB00655FFB /* Debug */,
@@ -536,7 +536,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCCF8DD51ABDB3CB00655FFB /* Build configuration list for PBXNativeTarget "TipsForCityDLUT" */ = {
+		DCCF8DD51ABDB3CB00655FFB /* Build configuration list for PBXNativeTarget "ClassBoxForCityDLUT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCCF8DD61ABDB3CB00655FFB /* Debug */,
@@ -545,7 +545,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCCF8DD81ABDB3CB00655FFB /* Build configuration list for PBXNativeTarget "TipsForCityDLUTTests" */ = {
+		DCCF8DD81ABDB3CB00655FFB /* Build configuration list for PBXNativeTarget "ClassBoxForCityDLUTTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCCF8DD91ABDB3CB00655FFB /* Debug */,
@@ -557,13 +557,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DCCF8DB91ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodeld */ = {
+		DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DCCF8DBA1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodel */,
+				DCCF8DBA1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodel */,
 			);
-			currentVersion = DCCF8DBA1ABDB3CB00655FFB /* TipsForCityDLUT.xcdatamodel */;
-			path = TipsForCityDLUT.xcdatamodeld;
+			currentVersion = DCCF8DBA1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodel */;
+			path = ClassBoxForCityDLUT.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
