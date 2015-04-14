@@ -29,7 +29,8 @@
     [super viewDidLoad];
     
     [self refreshSpinner:self.refresh];
-    //[self fetchNews];
+    
+    //self.hidesBottomBarWhenPushed = YES;
 }
 
 - (void)fetchNews

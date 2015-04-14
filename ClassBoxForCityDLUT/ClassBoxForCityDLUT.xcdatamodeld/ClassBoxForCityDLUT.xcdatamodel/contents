@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Student" syncable="YES">
+    <entity name="Student" representedClassName="Student" syncable="YES">
         <attribute name="birth" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="classNum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="facuilty" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="major" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="classes" optional="YES" maxCount="1" deletionRule="Nullify" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Student" positionX="-6147" positionY="-3348" width="128" height="148"/>
+        <element name="Student" positionX="-6147" positionY="-3348" width="128" height="135"/>
     </elements>
 </model>

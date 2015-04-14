@@ -15,6 +15,9 @@
 		DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A421ACDB94B0042200A /* NewsTableViewController.m */; };
 		DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A451ACDC63D0042200A /* JustPostNewsTVC.m */; };
 		DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */; };
+		DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCA27861ADBC34400BA290C /* LoginViewController.m */; };
+		DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCA27891ADBC36C00BA290C /* DiscoveryViewController.m */; };
+		DCCA278D1ADBF13E00BA290C /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCA278C1ADBF13E00BA290C /* Student.m */; };
 		DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB41ABDB3CB00655FFB /* main.m */; };
 		DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */; };
 		DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */; };
@@ -52,6 +55,12 @@
 		DCA31A491ACFE50E0042200A /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		DCA31A4C1ACFEA9F0042200A /* NewsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFetcher.h; sourceTree = "<group>"; };
 		DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFetcher.m; sourceTree = "<group>"; };
+		DCCA27851ADBC34400BA290C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		DCCA27861ADBC34400BA290C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		DCCA27881ADBC36C00BA290C /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
+		DCCA27891ADBC36C00BA290C /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
+		DCCA278B1ADBF13E00BA290C /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		DCCA278C1ADBF13E00BA290C /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		DCCF8DAF1ABDB3CB00655FFB /* ClassBoxForCityDLUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassBoxForCityDLUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCF8DB31ABDB3CB00655FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCCF8DB41ABDB3CB00655FFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -127,6 +136,9 @@
 		DC9E24631AD6801D0068ACE8 /* Discovery */ = {
 			isa = PBXGroup;
 			children = (
+				DCCA27841ADBC32700BA290C /* Login */,
+				DCCA27881ADBC36C00BA290C /* DiscoveryViewController.h */,
+				DCCA27891ADBC36C00BA290C /* DiscoveryViewController.m */,
 			);
 			name = Discovery;
 			sourceTree = "<group>";
@@ -174,9 +186,20 @@
 		DCA31A3B1ACDB6570042200A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DCCA278B1ADBF13E00BA290C /* Student.h */,
+				DCCA278C1ADBF13E00BA290C /* Student.m */,
 				DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		DCCA27841ADBC32700BA290C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DCCA27851ADBC34400BA290C /* LoginViewController.h */,
+				DCCA27861ADBC34400BA290C /* LoginViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		DCCF8DA61ABDB3CB00655FFB = {
@@ -398,11 +421,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCCA278D1ADBF13E00BA290C /* Student.m in Sources */,
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
+				DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */,
 				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
+				DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
 				DCCF8DBE1ABDB3CB00655FFB /* ViewController.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
