@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DiscoveryViewController.h"
 
 @interface LoginViewController : UIViewController
+
+@property DiscoveryViewController *discoveryVC;
 
 @end

@@ -18,6 +18,7 @@
 		DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCA27861ADBC34400BA290C /* LoginViewController.m */; };
 		DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCA27891ADBC36C00BA290C /* DiscoveryViewController.m */; };
 		DCCA278D1ADBF13E00BA290C /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCA278C1ADBF13E00BA290C /* Student.m */; };
+		DCCA27901ADF93F800BA290C /* StudentProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCA278F1ADF93F800BA290C /* StudentProfile.m */; };
 		DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB41ABDB3CB00655FFB /* main.m */; };
 		DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */; };
 		DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */; };
@@ -61,6 +62,8 @@
 		DCCA27891ADBC36C00BA290C /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
 		DCCA278B1ADBF13E00BA290C /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		DCCA278C1ADBF13E00BA290C /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		DCCA278E1ADF93F800BA290C /* StudentProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentProfile.h; sourceTree = "<group>"; };
+		DCCA278F1ADF93F800BA290C /* StudentProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentProfile.m; sourceTree = "<group>"; };
 		DCCF8DAF1ABDB3CB00655FFB /* ClassBoxForCityDLUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassBoxForCityDLUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCF8DB31ABDB3CB00655FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCCF8DB41ABDB3CB00655FFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 				DCA31A491ACFE50E0042200A /* API.h */,
 				DCA31A4C1ACFEA9F0042200A /* NewsFetcher.h */,
 				DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */,
+				DCCA278E1ADF93F800BA290C /* StudentProfile.h */,
+				DCCA278F1ADF93F800BA290C /* StudentProfile.m */,
 			);
 			name = "API ";
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
 				DCCF8DBE1ABDB3CB00655FFB /* ViewController.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
+				DCCA27901ADF93F800BA290C /* StudentProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

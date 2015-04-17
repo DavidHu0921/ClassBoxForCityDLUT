@@ -10,6 +10,9 @@
 
 @interface DiscoveryViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIView *profileView;
+
 @end
 
 @implementation DiscoveryViewController
@@ -26,7 +29,14 @@
 
 - (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
 {
-    
+    if (!self.stuName) {
+        self.nameLabel.text = self.stuName;
+        NSLog(@"4 %@", self.stuName);
+        [self.profileView reloadInputViews];
+    }
+    else{
+        self.nameLabel.text = @"未登录";
+    }
 }
 
 /*
