@@ -320,7 +320,7 @@
                                     <navigationItem title="登录" id="n3J-5M-Sgm">
                                         <barButtonItem key="leftBarButtonItem" title="取消" id="Q79-rJ-xnU">
                                             <connections>
-                                                <segue destination="Qyr-vl-A6f" kind="unwind" identifier="unwindLogin" unwindAction="unwindToLogin:" id="0sa-1X-DPN"/>
+                                                <action selector="cancelButton:" destination="LIO-ly-wsc" id="hVc-gI-svw"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -362,6 +362,7 @@
                         <outlet property="password" destination="KVA-aN-X5m" id="tD9-sC-Uid"/>
                         <outlet property="spinner" destination="Qhk-9k-bZQ" id="aVQ-3z-OG9"/>
                         <outlet property="stuID" destination="HzP-tn-bwA" id="80R-aC-GfE"/>
+                        <segue destination="Qyr-vl-A6f" kind="unwind" identifier="unwindLogin" unwindAction="unwindToLogin:" id="0zA-Jd-RHn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxb-89-ZJj" userLabel="First Responder" sceneMemberID="firstResponder"/>

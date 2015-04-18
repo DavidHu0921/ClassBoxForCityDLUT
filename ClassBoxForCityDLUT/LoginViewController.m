@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 - (IBAction)login:(UIButton *)sender;
+- (IBAction)cancelButton:(UIBarButtonItem *)sender;
 
 @end
 
@@ -49,6 +50,14 @@
     return YES;
 }
 
+- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    if (self.stuName != NULL) {
+        self.discoveryVC = [[DiscoveryViewController alloc]init];
+        self.discoveryVC.stuName = self.stuName;
+        NSLog(@"2 %@", self.discoveryVC.stuName);
+    }
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"unwindLogin"]) {
@@ -75,21 +84,23 @@
     
     UIAlertView *alter;
     if (self.stuID.text.length != 0 && self.password.text.length != 0) {
+        
         NSURL *url = [StudentProfile URLforStuProfile:self.stuID.text password:self.password.text];
         NSArray *veriftyInfo = [self verityStudentProfile:url];
         
-        if (!veriftyInfo) {
-            [self.stuName initWithString:veriftyInfo.lastObject];
-            NSLog(@"2 %@", self.stuName);
-            UIStoryboardSegue *segue = [[UIStoryboardSegue alloc] init];
+        if (veriftyInfo != nil) {
+            self.stuName = veriftyInfo.lastObject;
+            NSLog(@"1 %@", self.stuName);
             
-            self.discoveryVC = (DiscoveryViewController *)segue.destinationViewController;
-            [self prepareForSegue:segue sender:sender];
-            [self.discoveryVC unwindToLogin:segue];
-            self.discoveryVC.stuName = self.stuName;
+            //这边能跳转了，但是没调用到unwindLogin那个函数
+            [self performSegueWithIdentifier:@"unwindLogin" sender:self];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+
         }
         else{
             alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alter show];
         }
     }
     else{
@@ -99,12 +110,15 @@
     [self.spinner stopAnimating];
 }
 
+- (IBAction)cancelButton:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (NSArray *) verityStudentProfile: (NSURL *) url {
-    NSArray *verityInfo;
+    NSMutableArray *verityInfo = [[NSMutableArray alloc]init];
 
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     NSError *error;
     
     NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
@@ -116,10 +130,9 @@
                                                                            error:&error];
             NSString *status = [returnStatus valueForKey:ISCORRECT];
             NSString *stuName = [returnStatus valueForKey:STU_NAME];
-            NSLog(@"1 %@", stuName);
             
-            [verityInfo initWithObjects:status, stuName];
-            NSLog(@"11 %@", verityInfo);
+            [verityInfo addObject:status];
+            [verityInfo addObject:stuName];
         }
     }
     if ([verityInfo.firstObject isEqualToString:[NSString stringWithFormat:@"success"]]) {
@@ -129,5 +142,5 @@
         return nil;
     }
 }
-         
+
 @end

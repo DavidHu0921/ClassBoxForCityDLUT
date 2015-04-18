@@ -29,9 +29,10 @@
 
 - (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
 {
-    if (!self.stuName) {
+    
+    NSLog(@"%@", self.stuName);
+    if (self.stuName != NULL) {
         self.nameLabel.text = self.stuName;
-        NSLog(@"4 %@", self.stuName);
         [self.profileView reloadInputViews];
     }
     else{
