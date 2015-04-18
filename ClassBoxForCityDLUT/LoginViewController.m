@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "StudentProfile.h"
+#import "User.h"
+#import <MagicalRecord/CoreData+MagicalRecord.h>
 
 @interface LoginViewController ()
 
@@ -96,6 +98,19 @@
             [self performSegueWithIdentifier:@"unwindLogin" sender:self];
             
             [self dismissViewControllerAnimated:YES completion:nil];
+            
+            // Save userinfo
+            User *user = [User MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+            user.username = self.stuID.text;
+            user.passwd = self.password.text;
+            [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+            }];
+            
+            NSArray *users = [User MR_findAll];
+            for (int i = 0; i < users.count; i++) {
+                NSLog(@"All Users: USERNAME: %@, PASSWD: %@", [users[i] valueForKey:@"username"], [users[i] valueForKey:@"passwd"]);
+            }
 
         }
         else{

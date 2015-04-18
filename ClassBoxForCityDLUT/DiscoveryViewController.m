@@ -33,6 +33,7 @@
     NSLog(@"%@", self.stuName);
     if (self.stuName != NULL) {
         self.nameLabel.text = self.stuName;
+        self.nameLabel.text = @"233333333";
         [self.profileView reloadInputViews];
     }
     else{
