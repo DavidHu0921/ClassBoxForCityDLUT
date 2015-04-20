@@ -10,14 +10,39 @@
 
 NSString *const SharedContextUserLoginNotificationName = @"SharedContextUserLoginNotificationName";
 NSString *const SharedContextUserLogoutNotificationName = @"SharedContextUserLogoutNotificationName";
+NSString *const SharedContextUserLoginFailedNotificationName = @"SharedContextUserLoginFailedNotificationName";
+NSString *const SharedContextUserIdentifierKeyName = @"SharedContextUserIdentifierKeyName";
 
 @implementation SharedContext (User)
 
-+ (void)postUserLoginNotification {
-    [[NSNotificationCenter defaultCenter] postNotificationName:SharedContextUserLoginNotificationName object:nil];
++ (void)postUserLoginNotification:(NSString *)userIdentifier {
+    [self storeString:userIdentifier forKey:SharedContextUserIdentifierKeyName];
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:SharedContextUserLoginNotificationName
+     object:nil
+     userInfo:@{
+                SharedContextUserIdentifierKeyName : [userIdentifier copy]
+                }];
 }
 
-+ (void)postUserLogoutNotification {
-    [[NSNotificationCenter defaultCenter] postNotificationName:SharedContextUserLogoutNotificationName object:nil];
++ (void)postUserLogoutNotification:(NSString *)userIdentifier {
+    [self storeString:userIdentifier forKey:SharedContextUserIdentifierKeyName];
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:SharedContextUserLogoutNotificationName
+     object:nil
+     userInfo:@{
+                SharedContextUserIdentifierKeyName : [userIdentifier copy]
+                }];
 }
+
++ (void)postUserLoginFailedNotification {
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:SharedContextUserLoginFailedNotificationName
+     object:nil];
+}
+
++ (NSString *)userIdentifier {
+    return [self getStringValue:SharedContextUserIdentifierKeyName];
+}
+
 @end

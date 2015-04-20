@@ -10,10 +10,14 @@
 
 extern NSString *const SharedContextUserLoginNotificationName;
 extern NSString *const SharedContextUserLogoutNotificationName;
+extern NSString *const SharedContextUserLoginFailedNotificationName;
+extern NSString *const SharedContextUserIdentifierKeyName;
 
 @interface SharedContext (User)
 
-+ (void)postUserLoginNotification;
-+ (void)postUserLogoutNotification;
++ (void)postUserLoginNotification:(NSString *)userIdentifier;
++ (void)postUserLogoutNotification:(NSString *)userIdentifier;
++ (void)postUserLoginFailedNotification;
++ (NSString *)userIdentifier;
 
 @end
