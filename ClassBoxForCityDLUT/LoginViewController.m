@@ -10,6 +10,7 @@
 #import "StudentProfile.h"
 #import "User.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
+#import "SharedContext+User.h"
 
 @interface LoginViewController ()
 
@@ -111,6 +112,9 @@
             for (int i = 0; i < users.count; i++) {
                 NSLog(@"All Users: USERNAME: %@, PASSWD: %@", [users[i] valueForKey:@"username"], [users[i] valueForKey:@"passwd"]);
             }
+            
+            // Post notification
+            [SharedContext postUserLoginNotification];
 
         }
         else{

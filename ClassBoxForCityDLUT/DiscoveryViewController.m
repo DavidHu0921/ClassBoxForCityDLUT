@@ -7,6 +7,7 @@
 //
 
 #import "DiscoveryViewController.h"
+#import "SharedContext+User.h"
 
 @interface DiscoveryViewController ()
 
@@ -16,6 +17,25 @@
 @end
 
 @implementation DiscoveryViewController
+
+- (void)viewWillAppear {
+    __weak DiscoveryViewController *weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:SharedContextUserLoginNotificationName
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      NSString *userInfo = [NSString stringWithFormat:@"%@", note.userInfo];
+                                                      NSLog(@"userinfo: %@", userInfo);
+                                                      [weakSelf loadUserProfile:userInfo];
+                                                  }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:SharedContextUserLogoutNotificationName
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [weakSelf loadLoginUserInterface];
+                                                  }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +59,15 @@
     else{
         self.nameLabel.text = @"未登录";
     }
+}
+
+- (void)loadUserProfile:userInfo {
+    NSLog(@"Login Success.");
+}
+
+- (void)loadLoginUserInterface {
+    // TODO: do somthing
+    NSLog(@"Login Failed.");
 }
 
 /*
