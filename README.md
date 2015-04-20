@@ -1,4 +1,4 @@
 # ClassBoxForCityDLUT
-城院小助手iOS客户端
+City Institute Assistant for iOS
 
 Run "pod install"/"pod update" before you build this project.
