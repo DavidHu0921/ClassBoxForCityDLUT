@@ -114,17 +114,22 @@
             }
             
             // Post notification
-            [SharedContext postUserLoginNotification];
-
+            [SharedContext postUserLoginNotification:self.stuName];
         }
         else{
             alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alter show];
+            
+            // Post notification
+            [SharedContext postUserLoginFailedNotification];
         }
     }
     else{
         alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入账号或密码" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alter show];
+        
+        // Post notification
+        [SharedContext postUserLoginFailedNotification];
     }
     [self.spinner stopAnimating];
 }

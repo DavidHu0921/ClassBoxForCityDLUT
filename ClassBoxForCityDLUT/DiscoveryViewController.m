@@ -18,28 +18,35 @@
 
 @implementation DiscoveryViewController
 
-- (void)viewWillAppear {
-    __weak DiscoveryViewController *weakSelf = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:SharedContextUserLoginNotificationName
-                                                      object:nil
-                                                       queue:[NSOperationQueue mainQueue]
-                                                  usingBlock:^(NSNotification *note) {
-                                                      NSString *userInfo = [NSString stringWithFormat:@"%@", note.userInfo];
-                                                      NSLog(@"userinfo: %@", userInfo);
-                                                      [weakSelf loadUserProfile:userInfo];
-                                                  }];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:SharedContextUserLogoutNotificationName
-                                                      object:nil
-                                                       queue:[NSOperationQueue mainQueue]
-                                                  usingBlock:^(NSNotification *note) {
-                                                      [weakSelf loadLoginUserInterface];
-                                                  }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    __weak DiscoveryViewController *weakSelf = self;
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:SharedContextUserLoginNotificationName
+     object:nil
+     queue:[NSOperationQueue mainQueue]
+     usingBlock:^(NSNotification *note) {
+         NSString *userInfo = [NSString stringWithFormat:@"%@", note.userInfo];
+         [weakSelf loadUserProfile:userInfo];
+     }];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:SharedContextUserLogoutNotificationName
+     object:nil
+     queue:[NSOperationQueue mainQueue]
+     usingBlock:^(NSNotification *note) {
+         [weakSelf loadLoginUserInterface];
+     }];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:SharedContextUserLoginFailedNotificationName
+     object:nil
+     queue:[NSOperationQueue mainQueue]
+     usingBlock:^(NSNotification *note) {
+         [weakSelf loadLoginFailedAlert];
+     }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +60,6 @@
     NSLog(@"%@", self.stuName);
     if (self.stuName != NULL) {
         self.nameLabel.text = self.stuName;
-        NSLog(@"stu name: %@", self.stuName);
         [self.profileView reloadInputViews];
     }
     else{
@@ -62,10 +68,16 @@
 }
 
 - (void)loadUserProfile:userInfo {
-    NSLog(@"Login Success.");
+    // TODO: do somthing
+    NSLog(@"Login Success with user: %@.", userInfo);
 }
 
 - (void)loadLoginUserInterface {
+    // TODO: do somthing
+    NSLog(@"Logout.");
+}
+
+- (void)loadLoginFailedAlert {
     // TODO: do somthing
     NSLog(@"Login Failed.");
 }
