@@ -20,9 +20,7 @@ NSString *const SharedContextUserIdentifierKeyName = @"SharedContextUserIdentifi
     [[NSNotificationCenter defaultCenter]
      postNotificationName:SharedContextUserLoginNotificationName
      object:nil
-     userInfo:@{
-                SharedContextUserIdentifierKeyName : [userIdentifier copy]
-                }];
+     userInfo:[userIdentifier copy]];
 }
 
 + (void)postUserLogoutNotification:(NSString *)userIdentifier {
@@ -30,9 +28,7 @@ NSString *const SharedContextUserIdentifierKeyName = @"SharedContextUserIdentifi
     [[NSNotificationCenter defaultCenter]
      postNotificationName:SharedContextUserLogoutNotificationName
      object:nil
-     userInfo:@{
-                SharedContextUserIdentifierKeyName : [userIdentifier copy]
-                }];
+     userInfo:[userIdentifier copy]];
 }
 
 + (void)postUserLoginFailedNotification {

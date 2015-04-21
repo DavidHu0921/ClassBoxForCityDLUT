@@ -12,6 +12,7 @@
 @interface DiscoveryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *loginLogoutBtn;
 @property (weak, nonatomic) IBOutlet UIView *profileView;
 
 @end
@@ -70,6 +71,8 @@
 - (void)loadUserProfile:userInfo {
     // TODO: do somthing
     NSLog(@"Login Success with user: %@.", userInfo);
+    self.nameLabel.text = userInfo;
+    self.loginLogoutBtn.titleLabel.text = @"注销";
 }
 
 - (void)loadLoginUserInterface {
