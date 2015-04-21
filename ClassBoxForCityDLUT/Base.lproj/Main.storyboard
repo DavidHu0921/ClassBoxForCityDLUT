@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pVz-Vy-dq8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pVz-Vy-dq8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="1106" y="337"/>
         </scene>
-        <!--发现-->
+        <!--DIscovery-->
         <scene sceneID="P2v-49-XwR">
             <objects>
-                <viewController id="XUF-rO-sjh" customClass="DiscoveryViewController" sceneMemberID="viewController">
+                <viewController title="DIscovery" id="XUF-rO-sjh" customClass="DiscoveryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g81-DY-B1q"/>
                         <viewControllerLayoutGuide type="bottom" id="oWz-Ic-fDk"/>
@@ -209,7 +209,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="LIO-ly-wsc" kind="modal" id="QjY-cg-hT2"/>
+                                            <action selector="LoginBTN:" destination="XUF-rO-sjh" eventType="touchUpInside" id="AV1-g0-39g"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="城院小助手Logo1W" translatesAutoresizingMaskIntoConstraints="NO" id="dPD-aZ-xGi">
@@ -246,16 +246,17 @@
                         <outlet property="loginLogoutBtn" destination="pJq-Ia-OIB" id="A0v-eT-7xB"/>
                         <outlet property="nameLabel" destination="eno-yV-88h" id="lHv-4n-Ose"/>
                         <outlet property="profileView" destination="bFG-SO-DyN" id="shN-dE-43P"/>
+                        <segue destination="LIO-ly-wsc" kind="modal" identifier="ToLogin" id="q9H-BI-Lcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cc6-gn-kMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1106" y="1092"/>
         </scene>
-        <!--登录-->
+        <!--Login-->
         <scene sceneID="6eF-9n-dq2">
             <objects>
-                <viewController title="登录" id="LIO-ly-wsc" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController title="Login" id="LIO-ly-wsc" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ASS-pK-ddW"/>
                         <viewControllerLayoutGuide type="bottom" id="u97-6b-qrc"/>
@@ -369,7 +370,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxb-89-ZJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qyr-vl-A6f" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="1814"/>
+            <point key="canvasLocation" x="1106" y="1859"/>
         </scene>
     </scenes>
     <resources>

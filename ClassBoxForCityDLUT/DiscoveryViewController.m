@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginLogoutBtn;
 @property (weak, nonatomic) IBOutlet UIView *profileView;
 
+- (IBAction)LoginBTN:(UIButton *)sender;
+
 @end
 
 @implementation DiscoveryViewController
@@ -22,6 +24,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    __weak DiscoveryViewController *weakSelf = self;
+//    [[NSNotificationCenter defaultCenter]
+//     addObserverForName:SharedContextUserLoginNotificationName
+//     object:nil
+//     queue:[NSOperationQueue mainQueue]
+//     usingBlock:^(NSNotification *note) {
+//         NSString *userInfo = [NSString stringWithFormat:@"%@", note.userInfo];
+//         [weakSelf loadUserProfile:userInfo];
+//     }];
+//    
+//    [[NSNotificationCenter defaultCenter]
+//     addObserverForName:SharedContextUserLogoutNotificationName
+//     object:nil
+//     queue:[NSOperationQueue mainQueue]
+//     usingBlock:^(NSNotification *note) {
+//         [weakSelf loadLoginUserInterface];
+//     }];
+//    
+//    [[NSNotificationCenter defaultCenter]
+//     addObserverForName:SharedContextUserLoginFailedNotificationName
+//     object:nil
+//     queue:[NSOperationQueue mainQueue]
+//     usingBlock:^(NSNotification *note) {
+//         [weakSelf loadLoginFailedAlert];
+//     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
     
     __weak DiscoveryViewController *weakSelf = self;
     [[NSNotificationCenter defaultCenter]
@@ -57,7 +88,6 @@
 
 - (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
 {
-    
     NSLog(@"%@", self.stuName);
     if (self.stuName != NULL) {
         self.nameLabel.text = self.stuName;
@@ -99,4 +129,19 @@
 }
 */
 
+- (IBAction)LoginBTN:(UIButton *)sender {
+    NSString *loginText = self.loginLogoutBtn.titleLabel.text;
+    NSLog(@"%@", loginText);
+    UIAlertView *alter;
+    
+    NSLog(@"1");
+    if ([loginText isEqualToString:[NSString stringWithFormat:@"登录"]] ) {
+        NSLog(@"2");
+        [self performSegueWithIdentifier:@"ToLogin" sender:self];
+    }
+    else{
+        alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"真的要注销登录吗？" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alter show];
+    }
+}
 @end
