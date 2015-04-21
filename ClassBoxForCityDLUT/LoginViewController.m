@@ -101,17 +101,26 @@
             [self dismissViewControllerAnimated:YES completion:nil];
             
             // Save userinfo
+            // TODO: do this in the backkground
             User *user = [User MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
             user.username = self.stuID.text;
             user.passwd = self.password.text;
-            [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
-                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
-            }];
-            
             NSArray *users = [User MR_findAll];
             for (int i = 0; i < users.count; i++) {
                 NSLog(@"All Users: USERNAME: %@, PASSWD: %@", [users[i] valueForKey:@"username"], [users[i] valueForKey:@"passwd"]);
             }
+            BOOL identicalStringFound = NO;
+            NSString *loginUser = self.stuID.text;
+            for (loginUser in users) {
+                identicalStringFound = YES;
+                break;
+            }
+            if (!identicalStringFound) {
+                [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+                }];
+            }
+            
             
             // Post notification
             [SharedContext postUserLoginNotification:self.stuName];
