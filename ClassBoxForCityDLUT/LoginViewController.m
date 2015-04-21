@@ -115,6 +115,7 @@
             
             // Post notification
             [SharedContext postUserLoginNotification:self.stuName];
+            [self.spinner stopAnimating];
         }
         else{
             alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -122,6 +123,7 @@
             
             // Post notification
             [SharedContext postUserLoginFailedNotification];
+            [self.spinner stopAnimating];
         }
     }
     else{
@@ -130,8 +132,9 @@
         
         // Post notification
         [SharedContext postUserLoginFailedNotification];
+        [self.spinner stopAnimating];
     }
-    [self.spinner stopAnimating];
+//    [self.spinner stopAnimating];
 }
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {

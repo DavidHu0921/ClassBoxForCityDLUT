@@ -78,11 +78,15 @@
 - (void)loadLoginUserInterface {
     // TODO: do somthing
     NSLog(@"Logout.");
+    self.nameLabel.text = @"未登录";
+    self.loginLogoutBtn.titleLabel.text = @"登录";
 }
 
 - (void)loadLoginFailedAlert {
     // TODO: do somthing
     NSLog(@"Login Failed.");
+    self.nameLabel.text = @"未登录";
+    self.loginLogoutBtn.titleLabel.text = @"登录";
 }
 
 /*

@@ -243,7 +243,7 @@
                     <tabBarItem key="tabBarItem" title="发现" image="Explore" id="LDd-cz-hts"/>
                     <navigationItem key="navigationItem" id="IJc-um-dde"/>
                     <connections>
-                        <outlet property="loginLogoutBtn" destination="pJq-Ia-OIB" id="h6q-v4-gHr"/>
+                        <outlet property="loginLogoutBtn" destination="pJq-Ia-OIB" id="A0v-eT-7xB"/>
                         <outlet property="nameLabel" destination="eno-yV-88h" id="lHv-4n-Ose"/>
                         <outlet property="profileView" destination="bFG-SO-DyN" id="shN-dE-43P"/>
                     </connections>
