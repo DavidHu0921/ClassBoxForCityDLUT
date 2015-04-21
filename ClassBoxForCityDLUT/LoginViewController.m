@@ -8,6 +8,9 @@
 
 #import "LoginViewController.h"
 #import "StudentProfile.h"
+#import "User.h"
+#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import "SharedContext+User.h"
 
 @interface LoginViewController ()
 
@@ -80,6 +83,7 @@
 */
 
 - (IBAction)login:(UIButton *)sender {
+    // TODO: use GCD
     [self.spinner startAnimating];
     
     UIAlertView *alter;
@@ -96,18 +100,51 @@
             [self performSegueWithIdentifier:@"unwindLogin" sender:self];
             
             [self dismissViewControllerAnimated:YES completion:nil];
-
+            
+            // Save userinfo
+            // TODO: do this in the backkground
+            User *user = [User MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+            user.username = self.stuID.text;
+            user.passwd = self.password.text;
+            NSArray *users = [User MR_findAll];
+            for (int i = 0; i < users.count; i++) {
+                NSLog(@"All Users: USERNAME: %@, PASSWD: %@", [users[i] valueForKey:@"username"], [users[i] valueForKey:@"passwd"]);
+            }
+            BOOL identicalStringFound = NO;
+            NSString *loginUser = self.stuID.text;
+            for (loginUser in users) {
+                identicalStringFound = YES;
+                break;
+            }
+            if (!identicalStringFound) {
+                [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+                }];
+            }
+            
+            
+            // Post notification
+            [SharedContext postUserLoginNotification:self.stuName];
+            [self.spinner stopAnimating];
         }
         else{
             alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alter show];
+            
+            // Post notification
+            [SharedContext postUserLoginFailedNotification];
+            [self.spinner stopAnimating];
         }
     }
     else{
         alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入账号或密码" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alter show];
+        
+        // Post notification
+        [SharedContext postUserLoginFailedNotification];
+        [self.spinner stopAnimating];
     }
-    [self.spinner stopAnimating];
+//    [self.spinner stopAnimating];
 }
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {

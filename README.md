@@ -1,2 +1,4 @@
 # ClassBoxForCityDLUT
-城院小助手iOS客户端
+City Institute(Dalian University of Technology) Assistant for iOS
+
+Run "pod install"/"pod update" before you build this project.
