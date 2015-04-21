@@ -83,6 +83,7 @@
 */
 
 - (IBAction)login:(UIButton *)sender {
+    // TODO: use GCD
     [self.spinner startAnimating];
     
     UIAlertView *alter;
