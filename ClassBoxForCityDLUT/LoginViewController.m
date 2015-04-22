@@ -97,7 +97,7 @@
             NSLog(@"1 %@", self.stuName);
             
             //这边能跳转了，但是没调用到unwindLogin那个函数
-            [self performSegueWithIdentifier:@"unwindLogin" sender:self];
+            //[self performSegueWithIdentifier:@"unwindLogin" sender:self];
             
             [self dismissViewControllerAnimated:YES completion:nil];
             

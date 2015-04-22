@@ -8,6 +8,8 @@
 
 #import "DiscoveryViewController.h"
 #import "SharedContext+User.h"
+#import "User.h"
+#import <MagicalRecord/CoreData+MagicalRecord.h>
 
 @interface DiscoveryViewController ()
 
@@ -26,6 +28,11 @@
     // Do any additional setup after loading the view.
     
     __weak DiscoveryViewController *weakSelf = self;
+    
+//    User *user = [User MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+//    user.username = self.nameLabel.text;
+//    NSArray *users = [User MR_findAll];
+//    NSLog(@"%@", users);
     
     [[NSNotificationCenter defaultCenter]
      addObserverForName:SharedContextUserLoginNotificationName
