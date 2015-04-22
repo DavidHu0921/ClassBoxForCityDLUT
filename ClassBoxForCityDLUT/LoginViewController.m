@@ -107,6 +107,7 @@
             user.username = self.stuID.text;
             user.passwd = self.password.text;
             NSArray *users = [User MR_findAll];
+            
             for (int i = 0; i < users.count; i++) {
                 NSLog(@"All Users: USERNAME: %@, PASSWD: %@", [users[i] valueForKey:@"username"], [users[i] valueForKey:@"passwd"]);
             }
@@ -121,7 +122,6 @@
                     NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
                 }];
             }
-            
             
             // Post notification
             [SharedContext postUserLoginNotification:self.stuName];
