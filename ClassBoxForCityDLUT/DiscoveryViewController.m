@@ -79,28 +79,52 @@
 
 - (void)loadUserProfile:userInfo {
     // TODO: do somthing
-    NSLog(@"Login Success with user: %@.", userInfo);
-    self.nameLabel.text = userInfo;
-    self.loginLogoutBtn.titleLabel.text = @"注销";
+    
+    NSInteger userNumber = [self usersNum];
+    
+    if (userNumber != 0) {
+        NSLog(@"Login Success with user: %@.", userInfo);
+        self.nameLabel.text = userInfo;
+        self.loginLogoutBtn.titleLabel.text = @"注销";
+    }
 }
 
 - (void)loadLoginUserInterface {
     // TODO: do somthing
-    NSLog(@"Logout.");
-    self.nameLabel.text = @"未登录";
-    self.loginLogoutBtn.titleLabel.text = @"登录";
+    
+    NSInteger userNumber = [self usersNum];
+    
+    if (userNumber == 0) {
+        NSLog(@"Logout.");
+        self.nameLabel.text = @"未登录";
+        self.loginLogoutBtn.titleLabel.text = @"登录";
+    }
 }
 
 - (void)loadLoginFailedAlert {
     // TODO: do somthing
-    NSLog(@"Login Failed.");
-    self.nameLabel.text = @"未登录";
-    self.loginLogoutBtn.titleLabel.text = @"登录";
+    
+    NSInteger userNumber = [self usersNum];
+    
+    if (userNumber == 0) {
+        NSLog(@"Login Failed.");
+        self.nameLabel.text = @"未登录";
+        self.loginLogoutBtn.titleLabel.text = @"登录";
+    }
+    
+}
+
+- (NSInteger)usersNum{
+    
+    //User *user = [User MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+    NSArray *users = [User MR_findAll];
+    NSLog(@"现在数据库里的用户：%@ %zd", users, users.count);
+    
+    return users.count;
 }
 
 - (IBAction)LoginBTN:(UIButton *)sender {
     NSString *loginText = self.loginLogoutBtn.titleLabel.text;
-    NSLog(@"%@", loginText);
     UIAlertView *alter;
     
     if ([loginText isEqualToString:[NSString stringWithFormat:@"登录"]] ) {
