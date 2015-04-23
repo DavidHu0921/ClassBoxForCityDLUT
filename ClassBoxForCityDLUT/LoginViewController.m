@@ -54,26 +54,6 @@
     return YES;
 }
 
-- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
-    if (self.stuName != NULL) {
-        self.discoveryVC = [[DiscoveryViewController alloc]init];
-        self.discoveryVC.stuName = self.stuName;
-        NSLog(@"2 %@", self.discoveryVC.stuName);
-    }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"unwindLogin"]) {
-        if (sender != self.loginButton) return;
-        if (!self.stuName) {
-            self.discoveryVC = [[DiscoveryViewController alloc]init];
-            self.discoveryVC.stuName = self.stuName;
-            NSLog(@"3 %@", self.stuName);
-        }
-    }
-}
-
 - (IBAction)login:(UIButton *)sender {
     // TODO: use GCD
     [self.spinner startAnimating];
@@ -86,7 +66,6 @@
         
         if (veriftyInfo != nil) {
             self.stuName = veriftyInfo.lastObject;
-            NSLog(@"1 %@", self.stuName);
             
             [self dismissViewControllerAnimated:YES completion:nil];
             

@@ -11,6 +11,4 @@
 
 @interface LoginViewController : UIViewController
 
-@property DiscoveryViewController *discoveryVC;
-
 @end

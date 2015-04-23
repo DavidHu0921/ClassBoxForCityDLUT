@@ -12,6 +12,4 @@
 
 @property (nonatomic, strong)NSString *stuName;
 
-- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue;
-
 @end

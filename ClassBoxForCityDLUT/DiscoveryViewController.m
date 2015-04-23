@@ -44,27 +44,60 @@
         self.nameLabel.text = [NSString stringWithFormat:@"未登录"];
         self.loginLogoutBtn.titleLabel.text = [NSString stringWithFormat:@"登录"];
     }
-
 }
 
 - (IBAction)LoginBTN:(UIButton *)sender {
     NSString *loginText = self.loginLogoutBtn.titleLabel.text;
-    UIAlertView *alter;
+    UIAlertView *alert;
     
     if ([loginText isEqualToString:[NSString stringWithFormat:@"登录"]] ) {
         [self performSegueWithIdentifier:@"ToLogin" sender:self];
     }
     else{
-        alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"真的要注销登录吗？" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alter show];
+        alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"真的要注销登录吗？"
+                                          delegate:self cancelButtonTitle:@"取消"
+                                            otherButtonTitles:@"确定", nil];
+        [alert show];
         
         //To delete Student info
         
     }
 }
 
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+            [self showStudentsNum];
+            break;
+        case 1:
+            [self deleteStudent];
+            [self showStudentsNum];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)deleteStudent{
+    [Student MR_truncateAll];
+}
+
+- (void) showStudentsNum {
+    NSArray *students = [Student MR_findAll];
+    NSLog(@"%ld", students.count);
+}
 
 @end
+
+
+
+
+
+
+
+
+
 
 //viewdidload
 //    __weak DiscoveryViewController *weakSelf = self;
