@@ -8,10 +8,10 @@
 
 #import "LoginViewController.h"
 #import "StudentProfile.h"
-#import "User.h"
+//#import "User.h"
 #import "Student.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
-#import "SharedContext+User.h"
+//#import "SharedContext+User.h"
 
 @interface LoginViewController ()
 

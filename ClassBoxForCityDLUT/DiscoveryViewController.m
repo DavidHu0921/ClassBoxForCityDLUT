@@ -7,7 +7,7 @@
 //
 
 #import "DiscoveryViewController.h"
-#import "SharedContext+User.h"
+//#import "SharedContext+User.h"
 #import "User.h"
 #import "Student.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
@@ -27,7 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -38,11 +37,13 @@
     
     if (student.count != 0) {
         self.nameLabel.text = [student[0] valueForKeyPath:@"studentname"];
-        self.loginLogoutBtn.titleLabel.text = [NSString stringWithFormat:@"注销"];
+        [self.loginLogoutBtn setTitle:@"注销" forState:UIControlStateNormal];
+        //self.loginLogoutBtn.titleLabel.text = [NSString stringWithFormat:@"注销"];
     }
     else{
         self.nameLabel.text = [NSString stringWithFormat:@"未登录"];
-        self.loginLogoutBtn.titleLabel.text = [NSString stringWithFormat:@"登录"];
+        [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
+        //self.loginLogoutBtn.titleLabel.text = [NSString stringWithFormat:@"登录"];
     }
 }
 
@@ -89,14 +90,6 @@
 }
 
 @end
-
-
-
-
-
-
-
-
 
 
 //viewdidload
