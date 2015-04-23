@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "StudentProfile.h"
 #import "User.h"
+#import "Student.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "SharedContext+User.h"
 
@@ -72,15 +73,6 @@
         }
     }
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)login:(UIButton *)sender {
     // TODO: use GCD
@@ -96,24 +88,23 @@
             self.stuName = veriftyInfo.lastObject;
             NSLog(@"1 %@", self.stuName);
             
-            //这边能跳转了，但是没调用到unwindLogin那个函数
-            //[self performSegueWithIdentifier:@"unwindLogin" sender:self];
-            
             [self dismissViewControllerAnimated:YES completion:nil];
             
             // Save userinfo
             // TODO: do this in the backkground
-            User *user = [User MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
-            user.username = self.stuID.text;
-            user.passwd = self.password.text;
-            NSArray *users = [User MR_findAll];
             
-            for (int i = 0; i < users.count; i++) {
-                NSLog(@"All Users: USERNAME: %@, PASSWD: %@", [users[i] valueForKey:@"username"], [users[i] valueForKey:@"passwd"]);
-            }
+            Student *student = [Student MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+            student.username = self.stuID.text;
+            student.studentname = veriftyInfo.lastObject;
+            student.password = self.password.text;
+            NSArray *students = [Student MR_findAll];
+            
+//            for (int i = 0; i < students.count; i++) {
+//                NSLog(@"All Users: USERNAME: %@, PASSWD: %@", [students[i] valueForKey:@"username"], [students[i] valueForKey:@"passwd"]);
+//            }
             BOOL identicalStringFound = NO;
             NSString *loginUser = self.stuID.text;
-            for (loginUser in users) {
+            for (loginUser in students) {
                 identicalStringFound = YES;
                 break;
             }
@@ -124,7 +115,7 @@
             }
             
             // Post notification
-            [SharedContext postUserLoginNotification:self.stuName];
+            //[SharedContext postUserLoginNotification:self.stuName];
             [self.spinner stopAnimating];
         }
         else{
@@ -132,7 +123,7 @@
             [alter show];
             
             // Post notification
-            [SharedContext postUserLoginFailedNotification];
+            //[SharedContext postUserLoginFailedNotification];
             [self.spinner stopAnimating];
         }
     }
@@ -141,7 +132,7 @@
         [alter show];
         
         // Post notification
-        [SharedContext postUserLoginFailedNotification];
+        //[SharedContext postUserLoginFailedNotification];
         [self.spinner stopAnimating];
     }
 //    [self.spinner stopAnimating];

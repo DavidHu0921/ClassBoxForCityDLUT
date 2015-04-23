@@ -2,7 +2,7 @@
 //  Student.m
 //  ClassBoxForCityDLUT
 //
-//  Created by 胡啸晨 on 15/4/13.
+//  Created by 胡啸晨 on 15/4/23.
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 
@@ -15,7 +15,8 @@
 @dynamic classNum;
 @dynamic facuilty;
 @dynamic major;
-@dynamic name;
 @dynamic password;
+@dynamic studentname;
+@dynamic username;
 
 @end

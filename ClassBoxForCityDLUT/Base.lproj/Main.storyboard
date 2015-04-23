@@ -17,7 +17,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4Gl-Kc-M3k" kind="relationship" relationship="viewControllers" id="aqe-oD-FdG"/>
+                        <segue destination="a2T-Yw-qfz" kind="relationship" relationship="viewControllers" id="aqe-oD-FdG"/>
                         <segue destination="0Cs-dP-NpZ" kind="relationship" relationship="viewControllers" id="kbP-uK-5n3"/>
                         <segue destination="XUF-rO-sjh" kind="relationship" relationship="viewControllers" id="ycN-d0-Gci"/>
                     </connections>
@@ -26,31 +26,34 @@
             </objects>
             <point key="canvasLocation" x="380" y="337"/>
         </scene>
-        <!--课程表-->
-        <scene sceneID="Pms-oc-Iuf">
+        <!--View Controller-->
+        <scene sceneID="CLF-TE-agG">
             <objects>
-                <collectionViewController id="4Gl-Kc-M3k" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jQc-az-hGd">
+                <viewController id="LJq-ED-8bh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UDW-Y0-NRg"/>
+                        <viewControllerLayoutGuide type="bottom" id="sVb-YV-loS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Uj-Lt-oH1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fKz-T4-n7X">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells/>
-                        <connections>
-                            <outlet property="dataSource" destination="4Gl-Kc-M3k" id="yWb-Rb-s61"/>
-                            <outlet property="delegate" destination="4Gl-Kc-M3k" id="zgB-j3-acb"/>
-                        </connections>
-                    </collectionView>
-                    <tabBarItem key="tabBarItem" title="课程表" image="ClassBox" id="gXK-HV-suq"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KCS-1b-oYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="676-fa-v2k">
+                                <rect key="frame" x="0.0" y="64" width="600" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Nm-Pw-JDc">
+                                <rect key="frame" x="0.0" y="84" width="600" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ys5-fN-dWC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dki-S7-Dil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="-405"/>
+            <point key="canvasLocation" x="1784" y="-405"/>
         </scene>
         <!--Just Post NewsTVC-->
         <scene sceneID="Ra7-xO-0ah">
@@ -69,13 +72,13 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rW3-vU-70q">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9oK-yv-GCh">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -246,7 +249,7 @@
                         <outlet property="loginLogoutBtn" destination="pJq-Ia-OIB" id="A0v-eT-7xB"/>
                         <outlet property="nameLabel" destination="eno-yV-88h" id="lHv-4n-Ose"/>
                         <outlet property="profileView" destination="bFG-SO-DyN" id="shN-dE-43P"/>
-                        <segue destination="LIO-ly-wsc" kind="modal" identifier="ToLogin" id="q9H-BI-Lcf"/>
+                        <segue destination="LIO-ly-wsc" kind="modal" identifier="ToLogin" modalTransitionStyle="flipHorizontal" id="q9H-BI-Lcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cc6-gn-kMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -364,13 +367,30 @@
                         <outlet property="password" destination="KVA-aN-X5m" id="tD9-sC-Uid"/>
                         <outlet property="spinner" destination="Qhk-9k-bZQ" id="aVQ-3z-OG9"/>
                         <outlet property="stuID" destination="HzP-tn-bwA" id="80R-aC-GfE"/>
-                        <segue destination="Qyr-vl-A6f" kind="unwind" identifier="unwindLogin" unwindAction="unwindToLogin:" id="0zA-Jd-RHn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxb-89-ZJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Qyr-vl-A6f" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1106" y="1859"/>
+        </scene>
+        <!--课程表-->
+        <scene sceneID="OyI-qL-0yF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a2T-Yw-qfz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="课程表" image="ClassBox" id="gXK-HV-suq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VUx-4b-NYK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LJq-ED-8bh" kind="relationship" relationship="rootViewController" id="QOq-aZ-Tq8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8tA-mi-z1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="-405"/>
         </scene>
     </scenes>
     <resources>
