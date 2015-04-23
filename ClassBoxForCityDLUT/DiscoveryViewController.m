@@ -82,6 +82,9 @@
 
 - (void)deleteStudent{
     [Student MR_truncateAll];
+    self.nameLabel.text = @"未登录";
+    [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
+    [self.profileView setNeedsDisplay];
 }
 
 - (void) showStudentsNum {
