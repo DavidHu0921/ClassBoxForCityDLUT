@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIView *profileView;
 
 - (IBAction)LoginBTN:(UIButton *)sender;
-- (IBAction)showData:(UIButton *)sender;
 
 @end
 
@@ -56,28 +55,6 @@
         alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"真的要注销登录吗？"
                                           delegate:self cancelButtonTitle:@"取消"
                                             otherButtonTitles:@"确定", nil];
-        [alert show];
-    }
-}
-
-- (IBAction)showData:(UIButton *)sender {
-    NSArray *student = [Student MR_findAll];
-    NSLog(@"%@", student);
-    if (student.count != 0) {
-        NSString *data = [student[0] valueForKeyPath:@"studentname"];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"data1"
-                                                        message:data
-                                                       delegate:nil
-                                              cancelButtonTitle:@"cancel"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-    }
-    else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"data2"
-                                                        message:@"没有数据"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"cancel"
-                                              otherButtonTitles:nil, nil];
         [alert show];
     }
 }
