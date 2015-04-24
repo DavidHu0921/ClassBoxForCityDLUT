@@ -24,12 +24,12 @@
 		DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB41ABDB3CB00655FFB /* main.m */; };
 		DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */; };
 		DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */; };
-		DCCF8DBE1ABDB3CB00655FFB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DBD1ABDB3CB00655FFB /* ViewController.m */; };
 		DCCF8DC11ABDB3CB00655FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DBF1ABDB3CB00655FFB /* Main.storyboard */; };
 		DCCF8DC31ABDB3CB00655FFB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DC21ABDB3CB00655FFB /* Images.xcassets */; };
 		DCCF8DC61ABDB3CB00655FFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DC41ABDB3CB00655FFB /* LaunchScreen.xib */; };
 		DCCF8DD21ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
+		DCDE0FB01AEA748A00CAF63D /* ClassBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FAF1AEA748A00CAF63D /* ClassBoxViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +77,6 @@
 		DCCF8DB61ABDB3CB00655FFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DCCF8DBA1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClassBoxForCityDLUT.xcdatamodel; sourceTree = "<group>"; };
-		DCCF8DBC1ABDB3CB00655FFB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DCCF8DBD1ABDB3CB00655FFB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DCCF8DC01ABDB3CB00655FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCCF8DC21ABDB3CB00655FFB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DCCF8DC51ABDB3CB00655FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -87,6 +85,8 @@
 		DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassBoxForCityDLUTTests.m; sourceTree = "<group>"; };
 		DCDE0FA81AE8DAC900CAF63D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		DCDE0FA91AE8DAC900CAF63D /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		DCDE0FAE1AEA748A00CAF63D /* ClassBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassBoxViewController.h; sourceTree = "<group>"; };
+		DCDE0FAF1AEA748A00CAF63D /* ClassBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBoxViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +152,8 @@
 		DC9E24621AD53C370068ACE8 /* ClassCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				DCDE0FAE1AEA748A00CAF63D /* ClassBoxViewController.h */,
+				DCDE0FAF1AEA748A00CAF63D /* ClassBoxViewController.m */,
 			);
 			name = ClassCalendar;
 			sourceTree = "<group>";
@@ -191,8 +193,6 @@
 				DC9E24631AD6801D0068ACE8 /* Discovery */,
 				DC9E24621AD53C370068ACE8 /* ClassCalendar */,
 				DC9E24611AD53C240068ACE8 /* News and Reports */,
-				DCCF8DBC1ABDB3CB00655FFB /* ViewController.h */,
-				DCCF8DBD1ABDB3CB00655FFB /* ViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -254,7 +254,6 @@
 				DCA31A3E1ACDB6870042200A /* ClassBoxForCityDLUT.entitlements */,
 				DCA31A3B1ACDB6570042200A /* Data */,
 				DCA31A3A1ACDB6410042200A /* UI */,
-				0B3A324F1AE55AA6001E5E4A /* SharedContext */,
 				DCA31A391ACDB6290042200A /* Controller */,
 				DCA31A381ACA6F3D0042200A /* Delegate */,
 				DCD3ECB91AC54D2E0014971C /* API  */,
@@ -267,6 +266,7 @@
 		DCCF8DB21ABDB3CB00655FFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0B3A324F1AE55AA6001E5E4A /* SharedContext */,
 				DCCF8DB31ABDB3CB00655FFB /* Info.plist */,
 				DCCF8DB41ABDB3CB00655FFB /* main.m */,
 			);
@@ -457,11 +457,11 @@
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
 				DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */,
+				DCDE0FB01AEA748A00CAF63D /* ClassBoxViewController.m in Sources */,
 				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
 				DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
 				0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */,
-				DCCF8DBE1ABDB3CB00655FFB /* ViewController.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
 				DCCA27901ADF93F800BA290C /* StudentProfile.m in Sources */,
 			);

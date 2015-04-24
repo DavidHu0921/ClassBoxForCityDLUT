@@ -56,7 +56,9 @@
 
 - (IBAction)login:(UIButton *)sender {
     // TODO: use GCD
-    [self.spinner startAnimating];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.spinner startAnimating];
+    });
     
     UIAlertView *alter;
     if (self.stuID.text.length != 0 && self.password.text.length != 0) {
@@ -67,8 +69,6 @@
         if (veriftyInfo != nil) {
             self.stuName = veriftyInfo.lastObject;
             
-            [self dismissViewControllerAnimated:YES completion:nil];
-            
             // Save userinfo
             // TODO: do this in the backkground
             
@@ -78,24 +78,17 @@
             student.password = self.password.text;
             NSArray *students = [Student MR_findAll];
             
-//            for (int i = 0; i < students.count; i++) {
-//                NSLog(@"All Users: USERNAME: %@, PASSWD: %@", [students[i] valueForKey:@"username"], [students[i] valueForKey:@"passwd"]);
-//            }
-            BOOL identicalStringFound = NO;
-            NSString *loginUser = self.stuID.text;
-            for (loginUser in students) {
-                identicalStringFound = YES;
-                break;
-            }
-            if (!identicalStringFound) {
-                [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
-                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
-                }];
-            }
+            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+            }];
             
             // Post notification
             //[SharedContext postUserLoginNotification:self.stuName];
-            [self.spinner stopAnimating];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.spinner stopAnimating];
+            });
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         else{
             alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -151,3 +144,20 @@
 }
 
 @end
+
+// to verify if the data is in the database now
+//            for (int i = 0; i < students.count; i++) {
+//                NSLog(@"All Users: USERNAME: %@, PASSWD: %@", [students[i] valueForKey:@"username"], [students[i] valueForKey:@"passwd"]);
+//            }
+//            BOOL identicalStringFound = NO;
+//            NSString *loginUser = self.stuID.text;
+//            NSLog(@"%@", students);
+//            for (loginUser in students) {
+//                identicalStringFound = YES;
+//                break;
+//            }
+//            if (!identicalStringFound) {
+//                [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+//                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+//                }];
+//            }

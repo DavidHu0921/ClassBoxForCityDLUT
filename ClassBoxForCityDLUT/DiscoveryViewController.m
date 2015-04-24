@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *profileView;
 
 - (IBAction)LoginBTN:(UIButton *)sender;
+- (IBAction)showData:(UIButton *)sender;
 
 @end
 
@@ -33,17 +34,14 @@
     [super viewWillAppear:animated];
     
     NSArray *student = [Student MR_findAll];
-    NSLog(@"%@", student);
     
     if (student.count != 0) {
         self.nameLabel.text = [student[0] valueForKeyPath:@"studentname"];
         [self.loginLogoutBtn setTitle:@"注销" forState:UIControlStateNormal];
-        //self.loginLogoutBtn.titleLabel.text = [NSString stringWithFormat:@"注销"];
     }
     else{
         self.nameLabel.text = [NSString stringWithFormat:@"未登录"];
         [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
-        //self.loginLogoutBtn.titleLabel.text = [NSString stringWithFormat:@"登录"];
     }
 }
 
@@ -59,9 +57,28 @@
                                           delegate:self cancelButtonTitle:@"取消"
                                             otherButtonTitles:@"确定", nil];
         [alert show];
-        
-        //To delete Student info
-        
+    }
+}
+
+- (IBAction)showData:(UIButton *)sender {
+    NSArray *student = [Student MR_findAll];
+    NSLog(@"%@", student);
+    if (student.count != 0) {
+        NSString *data = [student[0] valueForKeyPath:@"studentname"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"data1"
+                                                        message:data
+                                                       delegate:nil
+                                              cancelButtonTitle:@"cancel"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"data2"
+                                                        message:@"没有数据"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"cancel"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
     }
 }
 
@@ -69,11 +86,9 @@
     switch (buttonIndex) {
         case 0:
             [alertView dismissWithClickedButtonIndex:0 animated:YES];
-            [self showStudentsNum];
             break;
         case 1:
             [self deleteStudent];
-            [self showStudentsNum];
             break;
         default:
             break;
@@ -85,11 +100,6 @@
     self.nameLabel.text = @"未登录";
     [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
     [self.profileView setNeedsDisplay];
-}
-
-- (void) showStudentsNum {
-    NSArray *students = [Student MR_findAll];
-    NSLog(@"%ld", students.count);
 }
 
 @end

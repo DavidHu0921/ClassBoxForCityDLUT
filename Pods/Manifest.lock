@@ -20,16 +20,19 @@ PODS:
   - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - DateTools (1.5.0)
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - DateTools
   - MagicalRecord
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  DateTools: b93a2c2017747329c6077c7d7e8a75106e23d0d7
   MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
 
 COCOAPODS: 0.36.3

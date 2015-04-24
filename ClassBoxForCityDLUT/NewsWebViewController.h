@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface NewsWebViewController : ViewController
+@interface NewsWebViewController : UIViewController
 
 @property (strong, nonatomic) NSURL *newsWebURL;
 
