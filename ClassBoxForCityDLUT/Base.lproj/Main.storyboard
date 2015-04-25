@@ -38,13 +38,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vk2-JY-ib0">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vk2-JY-ib0" userLabel="Month CollectionView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="20"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="rBH-IB-QCv"/>
+                                    <constraint firstAttribute="height" constant="20" id="njr-vI-lmr"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qCq-fO-SZS">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xuP-bO-3AQ" userLabel="Week Collection View">
+                                <rect key="frame" x="0.0" y="82" width="600" height="20"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="GMx-II-zx8"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vF6-1Y-YG9">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -55,12 +69,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Vk2-JY-ib0" secondAttribute="trailing" id="8Xr-Ew-4PQ"/>
-                            <constraint firstItem="Vk2-JY-ib0" firstAttribute="leading" secondItem="3Uj-Lt-oH1" secondAttribute="leading" id="NWa-zD-ez2"/>
-                            <constraint firstItem="Vk2-JY-ib0" firstAttribute="top" secondItem="UDW-Y0-NRg" secondAttribute="bottom" id="qP9-5T-tMa"/>
+                            <constraint firstItem="Vk2-JY-ib0" firstAttribute="leading" secondItem="3Uj-Lt-oH1" secondAttribute="leading" id="NcG-Yf-Bkd"/>
+                            <constraint firstAttribute="trailing" secondItem="Vk2-JY-ib0" secondAttribute="trailing" id="Qx8-MU-2BI"/>
+                            <constraint firstItem="xuP-bO-3AQ" firstAttribute="leading" secondItem="Vk2-JY-ib0" secondAttribute="leading" id="ZWx-g7-dWV"/>
+                            <constraint firstItem="xuP-bO-3AQ" firstAttribute="top" secondItem="UDW-Y0-NRg" secondAttribute="bottom" constant="18" id="gbY-Em-gbz"/>
+                            <constraint firstItem="Vk2-JY-ib0" firstAttribute="trailing" secondItem="xuP-bO-3AQ" secondAttribute="trailing" id="luB-gZ-LKh"/>
+                            <constraint firstItem="Vk2-JY-ib0" firstAttribute="top" secondItem="UDW-Y0-NRg" secondAttribute="bottom" id="n8q-aM-O5A"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ys5-fN-dWC"/>
+                    <connections>
+                        <outlet property="monthView" destination="Vk2-JY-ib0" id="6dd-0h-cIB"/>
+                        <outlet property="weekView" destination="xuP-bO-3AQ" id="nkz-fb-5qU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dki-S7-Dil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

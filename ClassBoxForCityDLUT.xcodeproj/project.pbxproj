@@ -30,6 +30,7 @@
 		DCCF8DD21ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
 		DCDE0FB01AEA748A00CAF63D /* ClassBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FAF1AEA748A00CAF63D /* ClassBoxViewController.m */; };
+		DCDE0FB31AEBB84400CAF63D /* DrawWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FB21AEBB84400CAF63D /* DrawWeekViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		DCDE0FA91AE8DAC900CAF63D /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		DCDE0FAE1AEA748A00CAF63D /* ClassBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassBoxViewController.h; sourceTree = "<group>"; };
 		DCDE0FAF1AEA748A00CAF63D /* ClassBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBoxViewController.m; sourceTree = "<group>"; };
+		DCDE0FB11AEBB84400CAF63D /* DrawWeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawWeekViewController.h; sourceTree = "<group>"; };
+		DCDE0FB21AEBB84400CAF63D /* DrawWeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawWeekViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 			children = (
 				DCDE0FAE1AEA748A00CAF63D /* ClassBoxViewController.h */,
 				DCDE0FAF1AEA748A00CAF63D /* ClassBoxViewController.m */,
+				DCDE0FB11AEBB84400CAF63D /* DrawWeekViewController.h */,
+				DCDE0FB21AEBB84400CAF63D /* DrawWeekViewController.m */,
 			);
 			name = ClassCalendar;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
 				DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
+				DCDE0FB31AEBB84400CAF63D /* DrawWeekViewController.m in Sources */,
 				0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
 				DCCA27901ADF93F800BA290C /* StudentProfile.m in Sources */,
