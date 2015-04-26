@@ -78,6 +78,10 @@
             student.password = self.password.text;
             NSArray *students = [Student MR_findAll];
             
+            if (students.count != 0) {
+                [Student MR_truncateAll];
+            }
+            
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
                 NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
             }];

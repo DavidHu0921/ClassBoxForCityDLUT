@@ -36,6 +36,7 @@
     CGFloat screenWidth = screenRect.size.width;
     
     NSLog(@"%f", screenWidth);
+    [self.weekView numberOfItemsInSection:1];
 }
 
 
