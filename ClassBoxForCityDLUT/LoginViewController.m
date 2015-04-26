@@ -69,19 +69,21 @@
         if (veriftyInfo != nil) {
             self.stuName = veriftyInfo.lastObject;
             
-            // Save userinfo
+            // Save student info
             // TODO: do this in the backkground
             
             Student *student = [Student MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
             student.username = self.stuID.text;
             student.studentname = veriftyInfo.lastObject;
             student.password = self.password.text;
-            NSArray *students = [Student MR_findAll];
             
+            //if some stuff already exits, delete it
+            NSArray *students = [Student MR_findAll];
             if (students.count != 0) {
                 [Student MR_truncateAll];
             }
             
+            //and then save the entity
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
                 NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
             }];

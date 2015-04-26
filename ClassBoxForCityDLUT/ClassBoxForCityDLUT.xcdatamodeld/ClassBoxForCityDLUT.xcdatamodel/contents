@@ -9,12 +9,7 @@
         <attribute name="studentname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES">
-        <attribute name="passwd" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <elements>
         <element name="Student" positionX="-6147" positionY="-3348" width="128" height="30"/>
-        <element name="User" positionX="-6147" positionY="-3303" width="128" height="75"/>
     </elements>
 </model>
