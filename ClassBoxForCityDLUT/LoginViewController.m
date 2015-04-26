@@ -13,6 +13,8 @@
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 //#import "SharedContext+User.h"
 
+typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
+
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *stuID;
@@ -23,6 +25,8 @@
 
 - (IBAction)login:(UIButton *)sender;
 - (IBAction)cancelButton:(UIBarButtonItem *)sender;
+
+- (void)requestStudentInfo:(NSURL *)url withCallback:(VerifyUserNameBlock)callback;
 
 @end
 
@@ -60,96 +64,168 @@
         [self.spinner startAnimating];
     });
     
-    UIAlertView *alter;
+    __block UIAlertView *alter;
     if (self.stuID.text.length != 0 && self.password.text.length != 0) {
         
         NSURL *url = [StudentProfile URLforStuProfile:self.stuID.text password:self.password.text];
-        NSArray *veriftyInfo = [self verityStudentProfile:url];
+        __block NSMutableArray *veriftyInfo = [[NSMutableArray alloc]init];
         
-        if (veriftyInfo != nil) {
-            self.stuName = veriftyInfo.lastObject;
+        VerifyUserNameBlock callback = ^(BOOL wasSuccessful, NSArray *studentInfo) {
+            //begin the block
             
-            // Save student info
-            // TODO: do this in the backkground
-            
-            Student *student = [Student MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
-            student.username = self.stuID.text;
-            student.studentname = veriftyInfo.lastObject;
-            student.password = self.password.text;
-            
-            //if some stuff already exits, delete it
-            NSArray *students = [Student MR_findAll];
-            if (students.count != 0) {
-                [Student MR_truncateAll];
+            if (wasSuccessful) {
+                [veriftyInfo addObjectsFromArray:studentInfo];
+                
+                //self.stuName = veriftyInfo.lastObject;
+                NSLog(@"name:%@", veriftyInfo.lastObject);
+                
+                // Save student info
+                // TODO: do this in the backkground
+                Student *student = [Student MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+                student.username = self.stuID.text;
+                student.studentname = veriftyInfo.lastObject;
+                student.password = self.password.text;
+
+                //and then save the entity
+                [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+                }];
+                
+                // Post notification
+                //[SharedContext postUserLoginNotification:self.stuName];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.spinner stopAnimating];
+                });
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+                [alter show];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.spinner stopAnimating];
+                });
+                // Post notification
+                //[SharedContext postUserLoginFailedNotification];
             }
-            
-            //and then save the entity
-            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
-            }];
-            
-            // Post notification
-            //[SharedContext postUserLoginNotification:self.stuName];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.spinner stopAnimating];
-            });
-            
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
-        else{
-            alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alter show];
-            
-            // Post notification
-            //[SharedContext postUserLoginFailedNotification];
-            [self.spinner stopAnimating];
-        }
+        };
+        
+        [self requestStudentInfo:url withCallback:callback];
     }
     else{
-        alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入账号或密码" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入账号或密码" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
         [alter show];
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.spinner stopAnimating];
+        });
         // Post notification
         //[SharedContext postUserLoginFailedNotification];
-        [self.spinner stopAnimating];
     }
-//    [self.spinner stopAnimating];
 }
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (NSArray *) verityStudentProfile: (NSURL *) url {
+- (void)requestStudentInfo:(NSURL *)url withCallback:(VerifyUserNameBlock)callback{
     NSMutableArray *verityInfo = [[NSMutableArray alloc]init];
-
+    
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    NSURLResponse *response;
-    NSError *error;
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
-    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+    NSLog(@"begin web request");
     
-    if (!error) {
-        if (response.URL == url) {
-            NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
-                                                                         options:0
-                                                                           error:&error];
-            NSString *status = [returnStatus valueForKey:ISCORRECT];
-            NSString *stuName = [returnStatus valueForKey:STU_NAME];
-            
-            [verityInfo addObject:status];
-            [verityInfo addObject:stuName];
-        }
-    }
-    if ([verityInfo.firstObject isEqualToString:[NSString stringWithFormat:@"success"]]) {
-        return verityInfo;
-    }
-    else{
-        return nil;
-    }
+    [NSURLConnection sendAsynchronousRequest:urlRequest
+                                       queue:queue
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                               if (!connectionError) {
+                                   if (response.URL == url) {
+                                       NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
+                                                                                                    options:0
+                                                                                                      error:&connectionError];
+                                       NSString *status = [returnStatus valueForKey:ISCORRECT];
+                                       NSString *stuName = [returnStatus valueForKey:STU_NAME];
+                                       NSLog(@"request success");
+                                       
+                                       if ([status isEqualToString:[NSString stringWithFormat:@"success"]]) {
+                                           [verityInfo addObject:status];
+                                           [verityInfo addObject:stuName];
+                                           
+                                           callback(YES, verityInfo);
+                                           NSLog(@"send success");
+                                       }
+                                       else{
+                                           callback(NO, nil);
+                                           NSLog(@"send fail");
+                                       }
+                                   }
+                               }
+                           }];
+    
+//    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+//    NSURLResponse *response;
+//    NSError *error;
+//    
+//    NSLog(@"begin web request");
+//
+//    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+//
+//    if (!error) {
+//        if (response.URL == url) {
+//            NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
+//                                                                         options:0
+//                                                                           error:&error];
+//            NSString *status = [returnStatus valueForKey:ISCORRECT];
+//            NSString *stuName = [returnStatus valueForKey:STU_NAME];
+//
+//            if ([status isEqualToString:[NSString stringWithFormat:@"success"]]) {
+//                [verityInfo addObject:status];
+//                [verityInfo addObject:stuName];
+//                
+//                callback(YES, verityInfo);
+//                NSLog(@"send success");
+//            }
+//            else{
+//                callback(NO, nil);
+//                NSLog(@"send fail");
+//            }
+//        }
+//    }
 }
 
 @end
+
+//
+//- (NSArray *) verityStudentProfile: (NSURL *) url {
+//    NSMutableArray *verityInfo = [[NSMutableArray alloc]init];
+//
+//    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+//    NSURLResponse *response;
+//    NSError *error;
+//
+//    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+//
+//    if (!error) {
+//        if (response.URL == url) {
+//            NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
+//                                                                         options:0
+//                                                                           error:&error];
+//            NSString *status = [returnStatus valueForKey:ISCORRECT];
+//            NSString *stuName = [returnStatus valueForKey:STU_NAME];
+//
+//            [verityInfo addObject:status];
+//            [verityInfo addObject:stuName];
+//        }
+//    }
+//    if ([verityInfo.firstObject isEqualToString:[NSString stringWithFormat:@"success"]]) {
+//        return verityInfo;
+//    }
+//    else{
+//        return nil;
+//    }
+//}
+
 
 // to verify if the data is in the database now
 //            for (int i = 0; i < students.count; i++) {

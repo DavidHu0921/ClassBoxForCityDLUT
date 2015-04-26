@@ -8,7 +8,7 @@
 
 #import "DiscoveryViewController.h"
 //#import "SharedContext+User.h"
-#import "User.h"
+//#import "User.h"
 #import "Student.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
@@ -36,6 +36,7 @@
     
     if (student.count != 0) {
         self.nameLabel.text = [student[0] valueForKeyPath:@"studentname"];
+        NSLog(@"%@", student);
         [self.loginLogoutBtn setTitle:@"注销" forState:UIControlStateNormal];
     }
     else{
@@ -77,6 +78,9 @@
     self.nameLabel.text = @"未登录";
     [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
     [self.profileView setNeedsDisplay];
+    
+    NSArray *stu = [Student MR_findAll];
+    NSLog(@"%ld", stu.count);
 }
 
 @end
