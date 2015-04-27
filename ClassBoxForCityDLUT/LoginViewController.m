@@ -62,6 +62,8 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
     // TODO: use GCD
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.spinner startAnimating];
+        self.loginButton.enabled = NO;
+        [self.loginButton setTitle:@"登录中" forState:UIControlStateDisabled];
     });
     
     __block UIAlertView *alter;
@@ -80,7 +82,6 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
                 NSLog(@"name:%@", veriftyInfo.lastObject);
                 
                 // Save student info
-                // TODO: do this in the backkground
                 Student *student = [Student MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
                 student.username = self.stuID.text;
                 student.studentname = veriftyInfo.lastObject;
@@ -95,16 +96,21 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
                 //[SharedContext postUserLoginNotification:self.stuName];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.spinner stopAnimating];
+                    self.loginButton.enabled = YES;
+                    [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
                 });
                 
                 [self dismissViewControllerAnimated:YES completion:nil];
-            } else {
-                alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
-                [alter show];
-                
+            }
+            else {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.spinner stopAnimating];
+                    self.loginButton.enabled = YES;
+                    [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
                 });
+                
+                alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+                [alter show];
                 // Post notification
                 //[SharedContext postUserLoginFailedNotification];
             }
@@ -113,28 +119,25 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
         [self requestStudentInfo:url withCallback:callback];
     }
     else{
-        alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入账号或密码" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
-        [alter show];
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.spinner stopAnimating];
+            self.loginButton.enabled = YES;
+            [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
         });
+        
+        alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入账号或密码" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+        [alter show];
         // Post notification
         //[SharedContext postUserLoginFailedNotification];
     }
 }
 
-- (IBAction)cancelButton:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
+//callback function
 - (void)requestStudentInfo:(NSURL *)url withCallback:(VerifyUserNameBlock)callback{
     NSMutableArray *verityInfo = [[NSMutableArray alloc]init];
     
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    
-    NSLog(@"begin web request");
     
     [NSURLConnection sendAsynchronousRequest:urlRequest
                                        queue:queue
@@ -146,52 +149,23 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
                                                                                                       error:&connectionError];
                                        NSString *status = [returnStatus valueForKey:ISCORRECT];
                                        NSString *stuName = [returnStatus valueForKey:STU_NAME];
-                                       NSLog(@"request success");
                                        
                                        if ([status isEqualToString:[NSString stringWithFormat:@"success"]]) {
                                            [verityInfo addObject:status];
                                            [verityInfo addObject:stuName];
                                            
                                            callback(YES, verityInfo);
-                                           NSLog(@"send success");
                                        }
                                        else{
                                            callback(NO, nil);
-                                           NSLog(@"send fail");
                                        }
                                    }
                                }
                            }];
-    
-//    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-//    NSURLResponse *response;
-//    NSError *error;
-//    
-//    NSLog(@"begin web request");
-//
-//    NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
-//
-//    if (!error) {
-//        if (response.URL == url) {
-//            NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
-//                                                                         options:0
-//                                                                           error:&error];
-//            NSString *status = [returnStatus valueForKey:ISCORRECT];
-//            NSString *stuName = [returnStatus valueForKey:STU_NAME];
-//
-//            if ([status isEqualToString:[NSString stringWithFormat:@"success"]]) {
-//                [verityInfo addObject:status];
-//                [verityInfo addObject:stuName];
-//                
-//                callback(YES, verityInfo);
-//                NSLog(@"send success");
-//            }
-//            else{
-//                callback(NO, nil);
-//                NSLog(@"send fail");
-//            }
-//        }
-//    }
+}
+
+- (IBAction)cancelButton:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
