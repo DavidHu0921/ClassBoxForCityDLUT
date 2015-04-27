@@ -59,7 +59,7 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
 }
 
 - (IBAction)login:(UIButton *)sender {
-    // TODO: use GCD
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.spinner startAnimating];
         self.loginButton.enabled = NO;
@@ -78,17 +78,19 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
             if (wasSuccessful) {
                 [veriftyInfo addObjectsFromArray:studentInfo];
                 
-                //self.stuName = veriftyInfo.lastObject;
-                NSLog(@"name:%@", veriftyInfo.lastObject);
-                
                 // Save student info
+                NSArray *stu = [Student MR_findAll];
+                if (stu.count != 0) {
+                    [Student MR_truncateAll];
+                }
+                
                 Student *student = [Student MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
                 student.username = self.stuID.text;
                 student.studentname = veriftyInfo.lastObject;
                 student.password = self.password.text;
 
                 //and then save the entity
-                [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+                [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
                     NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
                 }];
                 

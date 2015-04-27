@@ -74,6 +74,8 @@
 }
 
 - (void)deleteStudent{
+    
+    //still have some problems
     [Student MR_truncateAll];
     self.nameLabel.text = @"未登录";
     [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
