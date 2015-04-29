@@ -59,7 +59,7 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
 }
 
 - (IBAction)login:(UIButton *)sender {
-
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.spinner startAnimating];
         self.loginButton.enabled = NO;
@@ -70,25 +70,21 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
     if (self.stuID.text.length != 0 && self.password.text.length != 0) {
         
         NSURL *url = [StudentProfile URLforStuProfile:self.stuID.text password:self.password.text];
-        __block NSMutableArray *veriftyInfo = [[NSMutableArray alloc]init];
         
+        //begin the block
         VerifyUserNameBlock callback = ^(BOOL wasSuccessful, NSArray *studentInfo) {
-            //begin the block
-            
             if (wasSuccessful) {
-                [veriftyInfo addObjectsFromArray:studentInfo];
-                
-                // Save student info
                 NSArray *stu = [Student MR_findAll];
                 if (stu.count != 0) {
                     [Student MR_truncateAll];
                 }
                 
+                // Save student info
                 Student *student = [Student MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
                 student.username = self.stuID.text;
-                student.studentname = veriftyInfo.lastObject;
+                student.studentname = studentInfo.lastObject;
                 student.password = self.password.text;
-
+                
                 //and then save the entity
                 [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
                     NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
@@ -105,11 +101,10 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
             else {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.spinner stopAnimating];
-                    self.loginButton.enabled = YES;
-                    [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
-                });
+                
+                [self.spinner stopAnimating];
+                self.loginButton.enabled = YES;
+                [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
                 
                 alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
                 [alter show];
