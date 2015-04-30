@@ -92,11 +92,9 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
                 
                 // Post notification
                 //[SharedContext postUserLoginNotification:self.stuName];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.spinner stopAnimating];
-                    self.loginButton.enabled = YES;
-                    [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
-                });
+                [self.spinner stopAnimating];
+                self.loginButton.enabled = YES;
+                [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
                 
                 [self dismissViewControllerAnimated:YES completion:nil];
             }
@@ -116,11 +114,9 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
         [self requestStudentInfo:url withCallback:callback];
     }
     else{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.spinner stopAnimating];
-            self.loginButton.enabled = YES;
-            [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
-        });
+        [self.spinner stopAnimating];
+        self.loginButton.enabled = YES;
+        [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
         
         alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入账号或密码" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
         [alter show];
