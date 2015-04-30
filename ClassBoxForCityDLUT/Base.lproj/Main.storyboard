@@ -17,7 +17,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="a2T-Yw-qfz" kind="relationship" relationship="viewControllers" id="aqe-oD-FdG"/>
+                        <segue destination="9Te-k5-yUd" kind="relationship" relationship="viewControllers" id="EHS-ja-CLp"/>
                         <segue destination="0Cs-dP-NpZ" kind="relationship" relationship="viewControllers" id="kbP-uK-5n3"/>
                         <segue destination="XUF-rO-sjh" kind="relationship" relationship="viewControllers" id="ycN-d0-Gci"/>
                     </connections>
@@ -25,67 +25,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgS-Fl-btt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="337"/>
-        </scene>
-        <!--Class Box View Controller-->
-        <scene sceneID="CLF-TE-agG">
-            <objects>
-                <viewController id="LJq-ED-8bh" customClass="ClassBoxViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UDW-Y0-NRg"/>
-                        <viewControllerLayoutGuide type="bottom" id="sVb-YV-loS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3Uj-Lt-oH1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vk2-JY-ib0" userLabel="Month CollectionView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="20"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="njr-vI-lmr"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qCq-fO-SZS">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xuP-bO-3AQ" userLabel="Week Collection View">
-                                <rect key="frame" x="0.0" y="82" width="600" height="20"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="GMx-II-zx8"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vF6-1Y-YG9">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Vk2-JY-ib0" firstAttribute="leading" secondItem="3Uj-Lt-oH1" secondAttribute="leading" id="NcG-Yf-Bkd"/>
-                            <constraint firstAttribute="trailing" secondItem="Vk2-JY-ib0" secondAttribute="trailing" id="Qx8-MU-2BI"/>
-                            <constraint firstItem="xuP-bO-3AQ" firstAttribute="leading" secondItem="Vk2-JY-ib0" secondAttribute="leading" id="ZWx-g7-dWV"/>
-                            <constraint firstItem="xuP-bO-3AQ" firstAttribute="top" secondItem="UDW-Y0-NRg" secondAttribute="bottom" constant="18" id="gbY-Em-gbz"/>
-                            <constraint firstItem="Vk2-JY-ib0" firstAttribute="trailing" secondItem="xuP-bO-3AQ" secondAttribute="trailing" id="luB-gZ-LKh"/>
-                            <constraint firstItem="Vk2-JY-ib0" firstAttribute="top" secondItem="UDW-Y0-NRg" secondAttribute="bottom" id="n8q-aM-O5A"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="ys5-fN-dWC"/>
-                    <connections>
-                        <outlet property="monthView" destination="Vk2-JY-ib0" id="6dd-0h-cIB"/>
-                        <outlet property="weekView" destination="xuP-bO-3AQ" id="nkz-fb-5qU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dki-S7-Dil" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1784" y="-405"/>
         </scene>
         <!--Just Post NewsTVC-->
         <scene sceneID="Ra7-xO-0ah">
@@ -405,24 +344,74 @@
             </objects>
             <point key="canvasLocation" x="1106" y="1859"/>
         </scene>
-        <!--课程表-->
-        <scene sceneID="OyI-qL-0yF">
+        <!--Calendar View Controller-->
+        <scene sceneID="VG9-Hl-iXb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a2T-Yw-qfz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="课程表" image="ClassBox" id="gXK-HV-suq"/>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="4zs-QR-1MP" customClass="CalendarViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="rWz-4A-Zw4">
+                        <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewLayout key="collectionViewLayout" id="4r5-zu-5q5" customClass="WeekCalendarLayout"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarEventCell" id="JcQ-yA-ElE" customClass="CalendarEventCell">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxk-g9-pni">
+                                            <rect key="frame" x="10" y="10" width="180" height="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.64461620269999997" green="0.84125071760000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gxk-g9-pni" firstAttribute="top" secondItem="JcQ-yA-ElE" secondAttribute="top" constant="10" id="N8b-za-FPg"/>
+                                    <constraint firstAttribute="trailing" secondItem="gxk-g9-pni" secondAttribute="trailing" constant="10" id="Rin-U0-EZs"/>
+                                    <constraint firstItem="gxk-g9-pni" firstAttribute="leading" secondItem="JcQ-yA-ElE" secondAttribute="leading" constant="10" id="xVF-gH-XDN"/>
+                                </constraints>
+                                <size key="customSize" width="200" height="200"/>
+                                <connections>
+                                    <outlet property="titleLabel" destination="gxk-g9-pni" id="GtA-EK-Q2M"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="nVu-4G-bTi" id="B9b-OZ-wIx"/>
+                            <outlet property="delegate" destination="4zs-QR-1MP" id="DMO-BR-OJE"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="6oA-N9-vtK"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3I9-v7-cJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="nVu-4G-bTi" customClass="CalendarDataSource"/>
+            </objects>
+            <point key="canvasLocation" x="1784" y="-357"/>
+        </scene>
+        <!--课程表-->
+        <scene sceneID="c8l-pb-ZXn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Te-k5-yUd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="课程表" image="ClassBox" id="Ro8-MW-cvf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VUx-4b-NYK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iKv-H6-Cq0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LJq-ED-8bh" kind="relationship" relationship="rootViewController" id="QOq-aZ-Tq8"/>
+                        <segue destination="4zs-QR-1MP" kind="relationship" relationship="rootViewController" id="KZh-WH-310"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8tA-mi-z1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EPa-EC-D3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="-405"/>
+            <point key="canvasLocation" x="1106" y="-357"/>
         </scene>
     </scenes>
     <resources>

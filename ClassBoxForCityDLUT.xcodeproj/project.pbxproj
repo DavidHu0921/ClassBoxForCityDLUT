@@ -17,6 +17,13 @@
 		DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A421ACDB94B0042200A /* NewsTableViewController.m */; };
 		DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A451ACDC63D0042200A /* JustPostNewsTVC.m */; };
 		DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */; };
+		DCB58B1D1AF2144E0085EAA6 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB58B101AF2144E0085EAA6 /* CalendarViewController.m */; };
+		DCB58B1E1AF2144E0085EAA6 /* CalendarDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB58B121AF2144E0085EAA6 /* CalendarDataSource.m */; };
+		DCB58B1F1AF2144E0085EAA6 /* WeekCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB58B141AF2144E0085EAA6 /* WeekCalendarLayout.m */; };
+		DCB58B201AF2144E0085EAA6 /* CalendarEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB58B161AF2144E0085EAA6 /* CalendarEventCell.m */; };
+		DCB58B211AF2144E0085EAA6 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB58B181AF2144E0085EAA6 /* HeaderView.m */; };
+		DCB58B221AF2144E0085EAA6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB58B191AF2144E0085EAA6 /* HeaderView.xib */; };
+		DCB58B231AF2144E0085EAA6 /* SampleCalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB58B1C1AF2144E0085EAA6 /* SampleCalendarEvent.m */; };
 		DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCA27861ADBC34400BA290C /* LoginViewController.m */; };
 		DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCA27891ADBC36C00BA290C /* DiscoveryViewController.m */; };
 		DCCA27901ADF93F800BA290C /* StudentProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCA278F1ADF93F800BA290C /* StudentProfile.m */; };
@@ -28,8 +35,6 @@
 		DCCF8DC61ABDB3CB00655FFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DC41ABDB3CB00655FFB /* LaunchScreen.xib */; };
 		DCCF8DD21ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
-		DCDE0FB01AEA748A00CAF63D /* ClassBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FAF1AEA748A00CAF63D /* ClassBoxViewController.m */; };
-		DCDE0FB31AEBB84400CAF63D /* DrawWeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FB21AEBB84400CAF63D /* DrawWeekViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,20 @@
 		DCA31A491ACFE50E0042200A /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		DCA31A4C1ACFEA9F0042200A /* NewsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFetcher.h; sourceTree = "<group>"; };
 		DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFetcher.m; sourceTree = "<group>"; };
+		DCB58B0F1AF2144E0085EAA6 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		DCB58B101AF2144E0085EAA6 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		DCB58B111AF2144E0085EAA6 /* CalendarDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDataSource.h; sourceTree = "<group>"; };
+		DCB58B121AF2144E0085EAA6 /* CalendarDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDataSource.m; sourceTree = "<group>"; };
+		DCB58B131AF2144E0085EAA6 /* WeekCalendarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekCalendarLayout.h; sourceTree = "<group>"; };
+		DCB58B141AF2144E0085EAA6 /* WeekCalendarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCalendarLayout.m; sourceTree = "<group>"; };
+		DCB58B151AF2144E0085EAA6 /* CalendarEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarEventCell.h; sourceTree = "<group>"; };
+		DCB58B161AF2144E0085EAA6 /* CalendarEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarEventCell.m; sourceTree = "<group>"; };
+		DCB58B171AF2144E0085EAA6 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		DCB58B181AF2144E0085EAA6 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		DCB58B191AF2144E0085EAA6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		DCB58B1A1AF2144E0085EAA6 /* CalendarEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarEvent.h; sourceTree = "<group>"; };
+		DCB58B1B1AF2144E0085EAA6 /* SampleCalendarEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleCalendarEvent.h; sourceTree = "<group>"; };
+		DCB58B1C1AF2144E0085EAA6 /* SampleCalendarEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleCalendarEvent.m; sourceTree = "<group>"; };
 		DCCA27851ADBC34400BA290C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		DCCA27861ADBC34400BA290C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		DCCA27881ADBC36C00BA290C /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
@@ -83,10 +102,6 @@
 		DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassBoxForCityDLUTTests.m; sourceTree = "<group>"; };
 		DCDE0FA81AE8DAC900CAF63D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		DCDE0FA91AE8DAC900CAF63D /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		DCDE0FAE1AEA748A00CAF63D /* ClassBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassBoxViewController.h; sourceTree = "<group>"; };
-		DCDE0FAF1AEA748A00CAF63D /* ClassBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBoxViewController.m; sourceTree = "<group>"; };
-		DCDE0FB11AEBB84400CAF63D /* DrawWeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawWeekViewController.h; sourceTree = "<group>"; };
-		DCDE0FB21AEBB84400CAF63D /* DrawWeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawWeekViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,10 +167,20 @@
 		DC9E24621AD53C370068ACE8 /* ClassCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				DCDE0FAE1AEA748A00CAF63D /* ClassBoxViewController.h */,
-				DCDE0FAF1AEA748A00CAF63D /* ClassBoxViewController.m */,
-				DCDE0FB11AEBB84400CAF63D /* DrawWeekViewController.h */,
-				DCDE0FB21AEBB84400CAF63D /* DrawWeekViewController.m */,
+				DCB58B0F1AF2144E0085EAA6 /* CalendarViewController.h */,
+				DCB58B101AF2144E0085EAA6 /* CalendarViewController.m */,
+				DCB58B111AF2144E0085EAA6 /* CalendarDataSource.h */,
+				DCB58B121AF2144E0085EAA6 /* CalendarDataSource.m */,
+				DCB58B131AF2144E0085EAA6 /* WeekCalendarLayout.h */,
+				DCB58B141AF2144E0085EAA6 /* WeekCalendarLayout.m */,
+				DCB58B151AF2144E0085EAA6 /* CalendarEventCell.h */,
+				DCB58B161AF2144E0085EAA6 /* CalendarEventCell.m */,
+				DCB58B171AF2144E0085EAA6 /* HeaderView.h */,
+				DCB58B181AF2144E0085EAA6 /* HeaderView.m */,
+				DCB58B191AF2144E0085EAA6 /* HeaderView.xib */,
+				DCB58B1A1AF2144E0085EAA6 /* CalendarEvent.h */,
+				DCB58B1B1AF2144E0085EAA6 /* SampleCalendarEvent.h */,
+				DCB58B1C1AF2144E0085EAA6 /* SampleCalendarEvent.m */,
 			);
 			name = ClassCalendar;
 			sourceTree = "<group>";
@@ -399,6 +424,7 @@
 				DC9E24601AD3AB2D0068ACE8 /* NewsAndReports.pdf in Resources */,
 				DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */,
 				DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */,
+				DCB58B221AF2144E0085EAA6 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,17 +476,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B3A32521AE55D2F001E5E4A /* SharedContext.m in Sources */,
+				DCB58B211AF2144E0085EAA6 /* HeaderView.m in Sources */,
+				DCB58B231AF2144E0085EAA6 /* SampleCalendarEvent.m in Sources */,
 				DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */,
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
+				DCB58B201AF2144E0085EAA6 /* CalendarEventCell.m in Sources */,
+				DCB58B1F1AF2144E0085EAA6 /* WeekCalendarLayout.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
+				DCB58B1D1AF2144E0085EAA6 /* CalendarViewController.m in Sources */,
 				DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */,
-				DCDE0FB01AEA748A00CAF63D /* ClassBoxViewController.m in Sources */,
 				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
 				DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
-				DCDE0FB31AEBB84400CAF63D /* DrawWeekViewController.m in Sources */,
+				DCB58B1E1AF2144E0085EAA6 /* CalendarDataSource.m in Sources */,
 				0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
 				DCCA27901ADF93F800BA290C /* StudentProfile.m in Sources */,
