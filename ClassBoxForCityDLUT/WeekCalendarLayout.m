@@ -10,11 +10,11 @@
 #import "CalendarDataSource.h"
 
 static const NSUInteger DaysPerWeek = 7;
-static const NSUInteger HoursPerDay = 24;
-static const CGFloat HorizontalSpacing = 10;
+static const NSUInteger HoursPerDay = 12;
+//static const CGFloat HorizontalSpacing = 10;
 static const CGFloat HeightPerHour = 50;
 static const CGFloat DayHeaderHeight = 40;
-static const CGFloat HourHeaderWidth = 100;
+static const CGFloat HourHeaderWidth = 25;
 
 @interface WeekCalendarLayout ()
 
@@ -168,7 +168,9 @@ static const CGFloat HourHeaderWidth = 100;
     frame.size.width = widthPerDay;
     frame.size.height = event.durationInHours * HeightPerHour;
     
-    frame = CGRectInset(frame, HorizontalSpacing/2.0, 0);
+    //frame = CGRectInset(frame, HorizontalSpacing/2.0, 0);
+    frame = CGRectInset(frame, 0, 0);
+
     return frame;
 }
 
