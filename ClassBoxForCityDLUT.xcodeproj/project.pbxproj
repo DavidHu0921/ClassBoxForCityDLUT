@@ -10,6 +10,9 @@
 		0B3A32521AE55D2F001E5E4A /* SharedContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A32511AE55D2F001E5E4A /* SharedContext.m */; };
 		0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A32541AE55DD2001E5E4A /* SharedContext+User.m */; };
 		73F2CE23BB49B6360EE8E7B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FC75BF74BBD3DF531984F /* libPods.a */; };
+		DC92EF2C1AF4A88B00E766C6 /* ClassCalendarCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC92EF2B1AF4A88B00E766C6 /* ClassCalendarCollectionViewController.m */; };
+		DC92EF2F1AF4A8D000E766C6 /* ClassCalendarDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DC92EF2E1AF4A8D000E766C6 /* ClassCalendarDataSource.m */; };
+		DC92EF321AF4A8F500E766C6 /* ClassCalendarViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DC92EF311AF4A8F500E766C6 /* ClassCalendarViewLayout.m */; };
 		DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */; };
 		DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */; };
 		DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245C1AD3AB2D0068ACE8 /* Explore.pdf */; };
@@ -55,6 +58,12 @@
 		0B3A32541AE55DD2001E5E4A /* SharedContext+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SharedContext+User.m"; sourceTree = "<group>"; };
 		121FC75BF74BBD3DF531984F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B39D0F7502D18E9B9C9E3A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DC92EF2A1AF4A88B00E766C6 /* ClassCalendarCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassCalendarCollectionViewController.h; sourceTree = "<group>"; };
+		DC92EF2B1AF4A88B00E766C6 /* ClassCalendarCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassCalendarCollectionViewController.m; sourceTree = "<group>"; };
+		DC92EF2D1AF4A8D000E766C6 /* ClassCalendarDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassCalendarDataSource.h; sourceTree = "<group>"; };
+		DC92EF2E1AF4A8D000E766C6 /* ClassCalendarDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassCalendarDataSource.m; sourceTree = "<group>"; };
+		DC92EF301AF4A8F500E766C6 /* ClassCalendarViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassCalendarViewLayout.h; sourceTree = "<group>"; };
+		DC92EF311AF4A8F500E766C6 /* ClassCalendarViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassCalendarViewLayout.m; sourceTree = "<group>"; };
 		DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
 		DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ClassBox.pdf; path = Resoucre/ClassBox.pdf; sourceTree = "<group>"; };
@@ -151,6 +160,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC92EF291AF4A4BF00E766C6 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				DC92EF2A1AF4A88B00E766C6 /* ClassCalendarCollectionViewController.h */,
+				DC92EF2B1AF4A88B00E766C6 /* ClassCalendarCollectionViewController.m */,
+				DC92EF2D1AF4A8D000E766C6 /* ClassCalendarDataSource.h */,
+				DC92EF2E1AF4A8D000E766C6 /* ClassCalendarDataSource.m */,
+				DC92EF301AF4A8F500E766C6 /* ClassCalendarViewLayout.h */,
+				DC92EF311AF4A8F500E766C6 /* ClassCalendarViewLayout.m */,
+			);
+			name = test;
+			sourceTree = "<group>";
+		};
 		DC9E24611AD53C240068ACE8 /* News and Reports */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +189,7 @@
 		DC9E24621AD53C370068ACE8 /* ClassCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				DC92EF291AF4A4BF00E766C6 /* test */,
 				DCB58B0F1AF2144E0085EAA6 /* CalendarViewController.h */,
 				DCB58B101AF2144E0085EAA6 /* CalendarViewController.m */,
 				DCB58B111AF2144E0085EAA6 /* CalendarDataSource.h */,
@@ -481,9 +504,11 @@
 				DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */,
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
 				DCB58B201AF2144E0085EAA6 /* CalendarEventCell.m in Sources */,
+				DC92EF2F1AF4A8D000E766C6 /* ClassCalendarDataSource.m in Sources */,
 				DCB58B1F1AF2144E0085EAA6 /* WeekCalendarLayout.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
+				DC92EF2C1AF4A88B00E766C6 /* ClassCalendarCollectionViewController.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
 				DCB58B1D1AF2144E0085EAA6 /* CalendarViewController.m in Sources */,
 				DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */,
@@ -494,6 +519,7 @@
 				0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
 				DCCA27901ADF93F800BA290C /* StudentProfile.m in Sources */,
+				DC92EF321AF4A8F500E766C6 /* ClassCalendarViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

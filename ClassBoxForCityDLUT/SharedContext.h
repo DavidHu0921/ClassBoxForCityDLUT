@@ -3,7 +3,7 @@
 //  ClassBoxForCityDLUT
 //
 //  Created by Eli Lien on 4/21/15.
-//  Copyright (c) 2015 com.DavidHu. All rights reserved.
+//  Copyright (c) 2015 DavidHu All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

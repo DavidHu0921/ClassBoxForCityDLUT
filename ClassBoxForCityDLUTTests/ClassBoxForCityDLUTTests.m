@@ -3,7 +3,7 @@
 //  ClassBoxForCityDLUTTests
 //
 //  Created by 胡啸晨 on 15/3/21.
-//  Copyright (c) 2015年 com.DavidHu. All rights reserved.
+//  Copyright (c) 2015年 DavidHu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
