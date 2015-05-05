@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ClassesCollectionViewCell.h"
+#import "WeekReuse.h"
 
-@interface ClassCalendarDataSource : NSObject
+//typedef void (^ConfigureCellBlock)(ClassesCollectionViewCell *cell, NSIndexPath *indexPath, id<CalendarEvent> event);
+typedef void (^ConfigureWeekViewBlock)(WeekReuse *weekReuseView, NSString *kind, NSIndexPath *indexPath);
+
+@interface ClassCalendarDataSource : NSObject <UICollectionViewDataSource>
+
+//@property (copy, nonatomic) ConfigureCellBlock configureCellBlock;
+@property (copy, nonatomic) ConfigureWeekViewBlock configureWeekViewBlock;
+
+//- (id<CalendarEvent>)eventAtIndexPath:(NSIndexPath *)indexPath;
+//- (NSArray *)indexPathsOfEventsBetweenMinDayIndex:(NSInteger)minDayIndex maxDayIndex:(NSInteger)maxDayIndex minStartHour:(NSInteger)minStartHour maxStartHour:(NSInteger)maxStartHour;
 
 @end

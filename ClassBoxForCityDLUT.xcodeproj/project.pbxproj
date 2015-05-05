@@ -14,7 +14,8 @@
 		DC92EF2F1AF4A8D000E766C6 /* ClassCalendarDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DC92EF2E1AF4A8D000E766C6 /* ClassCalendarDataSource.m */; };
 		DC92EF321AF4A8F500E766C6 /* ClassCalendarViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DC92EF311AF4A8F500E766C6 /* ClassCalendarViewLayout.m */; };
 		DC92EF341AF4B63300E766C6 /* ReuseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC92EF331AF4B63300E766C6 /* ReuseView.xib */; };
-		DC92EF371AF4B65900E766C6 /* ReuseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC92EF361AF4B65900E766C6 /* ReuseView.m */; };
+		DC92EF371AF4B65900E766C6 /* WeekReuse.m in Sources */ = {isa = PBXBuildFile; fileRef = DC92EF361AF4B65900E766C6 /* WeekReuse.m */; };
+		DC92EF3A1AF4BEE500E766C6 /* ClassesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC92EF391AF4BEE500E766C6 /* ClassesCollectionViewCell.m */; };
 		DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */; };
 		DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */; };
 		DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245C1AD3AB2D0068ACE8 /* Explore.pdf */; };
@@ -67,8 +68,10 @@
 		DC92EF301AF4A8F500E766C6 /* ClassCalendarViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassCalendarViewLayout.h; sourceTree = "<group>"; };
 		DC92EF311AF4A8F500E766C6 /* ClassCalendarViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassCalendarViewLayout.m; sourceTree = "<group>"; };
 		DC92EF331AF4B63300E766C6 /* ReuseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReuseView.xib; sourceTree = "<group>"; };
-		DC92EF351AF4B65900E766C6 /* ReuseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReuseView.h; sourceTree = "<group>"; };
-		DC92EF361AF4B65900E766C6 /* ReuseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReuseView.m; sourceTree = "<group>"; };
+		DC92EF351AF4B65900E766C6 /* WeekReuse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekReuse.h; sourceTree = "<group>"; };
+		DC92EF361AF4B65900E766C6 /* WeekReuse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekReuse.m; sourceTree = "<group>"; };
+		DC92EF381AF4BEE500E766C6 /* ClassesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesCollectionViewCell.h; sourceTree = "<group>"; };
+		DC92EF391AF4BEE500E766C6 /* ClassesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesCollectionViewCell.m; sourceTree = "<group>"; };
 		DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
 		DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ClassBox.pdf; path = Resoucre/ClassBox.pdf; sourceTree = "<group>"; };
@@ -174,9 +177,11 @@
 				DC92EF2E1AF4A8D000E766C6 /* ClassCalendarDataSource.m */,
 				DC92EF301AF4A8F500E766C6 /* ClassCalendarViewLayout.h */,
 				DC92EF311AF4A8F500E766C6 /* ClassCalendarViewLayout.m */,
-				DC92EF351AF4B65900E766C6 /* ReuseView.h */,
-				DC92EF361AF4B65900E766C6 /* ReuseView.m */,
+				DC92EF351AF4B65900E766C6 /* WeekReuse.h */,
+				DC92EF361AF4B65900E766C6 /* WeekReuse.m */,
 				DC92EF331AF4B63300E766C6 /* ReuseView.xib */,
+				DC92EF381AF4BEE500E766C6 /* ClassesCollectionViewCell.h */,
+				DC92EF391AF4BEE500E766C6 /* ClassesCollectionViewCell.m */,
 			);
 			name = test;
 			sourceTree = "<group>";
@@ -518,7 +523,8 @@
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
 				DC92EF2C1AF4A88B00E766C6 /* ClassCalendarCollectionViewController.m in Sources */,
-				DC92EF371AF4B65900E766C6 /* ReuseView.m in Sources */,
+				DC92EF3A1AF4BEE500E766C6 /* ClassesCollectionViewCell.m in Sources */,
+				DC92EF371AF4B65900E766C6 /* WeekReuse.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
 				DCB58B1D1AF2144E0085EAA6 /* CalendarViewController.m in Sources */,
 				DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */,

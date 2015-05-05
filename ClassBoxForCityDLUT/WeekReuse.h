@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReuseView : UICollectionReusableView
+@interface WeekReuse : UICollectionReusableView
+
+@property (weak, nonatomic) IBOutlet UILabel *WeekTitle;
 
 @end

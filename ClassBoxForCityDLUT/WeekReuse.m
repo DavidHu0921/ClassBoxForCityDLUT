@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 
-#import "ReuseView.h"
+#import "WeekReuse.h"
 
-@implementation ReuseView
+@implementation WeekReuse
 
 @end

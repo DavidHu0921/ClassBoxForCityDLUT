@@ -354,14 +354,39 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewLayout key="collectionViewLayout" id="tRM-SR-mSO" customClass="ClassCalendarViewLayout"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FrH-Sq-NCi">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Classes" id="FrH-Sq-NCi" customClass="ClassesCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="156" height="124"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7o-tO-GJs">
+                                            <rect key="frame" x="57" y="8" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVe-tA-wK1">
+                                            <rect key="frame" x="57" y="36" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="fVe-tA-wK1" firstAttribute="leading" secondItem="N7o-tO-GJs" secondAttribute="leading" id="A36-hN-kW4"/>
+                                    <constraint firstItem="N7o-tO-GJs" firstAttribute="top" secondItem="FrH-Sq-NCi" secondAttribute="topMargin" id="Yh8-mK-crF"/>
+                                    <constraint firstItem="fVe-tA-wK1" firstAttribute="top" secondItem="N7o-tO-GJs" secondAttribute="bottom" constant="7" id="yIR-wU-8y2"/>
+                                    <constraint firstItem="fVe-tA-wK1" firstAttribute="centerX" secondItem="FrH-Sq-NCi" secondAttribute="centerX" id="yjV-cG-8VN"/>
+                                </constraints>
+                                <size key="customSize" width="156" height="124"/>
+                                <connections>
+                                    <outlet property="classNameLabel" destination="N7o-tO-GJs" id="wX2-pN-L0d"/>
+                                    <outlet property="classroomLabel" destination="fVe-tA-wK1" id="vA8-wi-6qi"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -369,11 +394,14 @@
                             <outlet property="delegate" destination="JIu-Ac-lpU" id="9sd-Bq-XSo"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="classedDataSource" destination="D3a-NK-LlT" id="Be7-NL-rh7"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5W-Pi-y59" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="D3a-NK-LlT" customClass="ClassCalendarDataSource"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="-1025"/>
+            <point key="canvasLocation" x="1792" y="-1044"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="VG9-Hl-iXb">

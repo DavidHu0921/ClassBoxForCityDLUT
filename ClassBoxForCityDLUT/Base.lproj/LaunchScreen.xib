@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,16 +17,30 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="城院小助手Logo1W" translatesAutoresizingMaskIntoConstraints="NO" id="WRB-aq-NoB">
+                    <rect key="frame" x="165" y="57" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="Nfa-aQ-NU5"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Oti-7J-P6w"/>
+                        <constraint firstAttribute="width" secondItem="WRB-aq-NoB" secondAttribute="height" multiplier="1:1" id="fhb-gm-Oxo"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="tjI-k2-OVK"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstItem="WRB-aq-NoB" firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="HOF-lL-qY6"/>
+                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Klh-QV-LEt"/>
+                <constraint firstItem="WRB-aq-NoB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="57" id="Tau-oP-nIu"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="gbD-fD-drV"/>
+                <constraint firstItem="WRB-aq-NoB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="h42-Hv-amj"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="城院小助手Logo1W" width="544" height="544"/>
+    </resources>
 </document>
