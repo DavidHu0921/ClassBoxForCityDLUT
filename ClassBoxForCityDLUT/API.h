@@ -21,6 +21,8 @@
 
 /*
  图书馆 http://1.csxyxzs.sinaapp.com/library.php?book_name=%s
+ http://csxyxzs.sinaapp.com/new_query.php?q=[]&p=[]&type=[]
+ 
  课程表 http://1.csxyxzs1.sinaapp.com/schedule?name=%s&password=%s[&term=%s]
  成绩 http://1.csxyxzs1.sinaapp.com/grades?name=%s&password=%s[&term=%s]
  
