@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSArray *weekDay = (@"周一", @"周二", @"周三", @"周四", @"周五", @"周六", @"周日");
     
     // Register NIB for supplementary views
     UINib *headerViewNib = [UINib nibWithNibName:@"HeaderView" bundle:nil];
@@ -41,8 +42,9 @@
 //        if ([kind isEqualToString:@"DateHeaderView"]) {
 //            headerView.titleLabel.text = [NSString stringWithFormat:@"Day %d", indexPath.item + 1];
 //        }else
-            if ([kind isEqualToString:@"DayHeaderView"]) {
+        if ([kind isEqualToString:@"DayHeaderView"]) {
             headerView.titleLabel.text = [NSString stringWithFormat:@"Day %d", indexPath.item + 1];
+            //headerView.titleLabel.text = [NSString stringWithFormat:@"%@", weekDay[indexPath.item]];
         } else if ([kind isEqualToString:@"HourHeaderView"]) {
             headerView.titleLabel.text = [NSString stringWithFormat:@"%2d", indexPath.item + 1];
         }
