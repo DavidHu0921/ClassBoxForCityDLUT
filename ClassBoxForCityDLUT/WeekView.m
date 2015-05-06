@@ -25,7 +25,7 @@
     for (int i = 0; i<7; i++) {
         UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(25 + i*(self.frame.size.width - 25)/7, 0, (self.frame.size.width - 25)/7, 20)];
         week.text = [weekDay objectAtIndex:i];
-        week.font = [UIFont systemFontOfSize:14];
+        week.font = [UIFont systemFontOfSize:12];
         week.textAlignment = NSTextAlignmentCenter;
         week.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"weekDayBGI"]];
         week.textColor = [UIColor blackColor];

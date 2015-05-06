@@ -20,89 +20,85 @@
 }
 
 - (void)layoutSubviews{
-    
-//    for (int i = 0; i<7; i++) {
-//        UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(25 + i*(self.frame.size.width - 25)/7, 0, (self.frame.size.width - 25)/7, 20)];
-//        week.text = [weekDay objectAtIndex:i];
-//        //        [week setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"weekDayBGI"]]];
-//        //背景加不上，暂时不知道为什么
-//        week.font = [UIFont systemFontOfSize:14];
-//        week.textAlignment = NSTextAlignmentCenter;
-//        week.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"weekDayBGI"]];
-//        week.textColor = [UIColor blackColor];
-//        [self addSubview:week];
-//    }
-    
-    
+ 
     //获取当前日历信息
-//    NSCalendar *calender = [NSCalendar currentCalendar];
-//    NSDateComponents *dateComponent = [calender components:(NSWeekOfYearCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit |  NSYearCalendarUnit | NSWeekdayCalendarUnit) fromDate:[NSDate date]];
-//    NSLog(@"%@",dateComponent);
-    
-    NSInteger year,month,day,week,weekNum;
-    NSString *weekStr=nil;
+    NSDate *now = [NSDate date];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSInteger weekNumber =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:now] weekOfYear];
+    NSInteger todaysMonth =[[calendar components: NSCalendarUnitMonth fromDate:now] month];
     
-    NSDate *now = [NSDate date];
-    NSInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitWeekOfYear;
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comp = [gregorian components:NSCalendarUnitYear fromDate:now];
+    [comp setWeekOfYear:weekNumber];  //Week number.
     
-    //test
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
-    NSDate *testdate = [dateFormatter dateFromString:@"2015-05-01"];
+    NSInteger monthNum, dayNum;
     
-    NSDateComponents *comps = [calendar components:unitFlags fromDate:testdate];
-    year = [comps year];
-    week = [comps weekday];
-    month = [comps month];
-    day = [comps day];
-    weekNum = [comps weekOfYear];
-    
-    switch (week) {
-        case 1:
-            weekStr = @"星期天";
-            break;
-        case 2:
-            weekStr = @"星期一";
-            break;
-        case 3:
-            weekStr = @"星期二";
-            break;
-        case 4:
-            weekStr = @"星期三";
-            break;
-        case 5:
-            weekStr = @"星期四";
-            break;
-        case 6:
-            weekStr = @"星期五";
-            break;
-        case 7:
-            weekStr = @"星期六";
-            break;
-        default:
-            NSLog(@"error!");
-            break;
+    for (int i = 0; i < 8; i=i+1){
+        if (i == 0) {
+            //这里把第一格设置成当前月份
+            UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 25, 20)];
+            week.text = [NSString stringWithFormat:@"%ld月", todaysMonth];
+            
+            week.font = [UIFont systemFontOfSize:12];
+            week.textAlignment = NSTextAlignmentCenter;
+            week.textColor = [UIColor blackColor];
+            [self addSubview:week];
+        }
+        else if (i != 7) {
+            //这里设置所有的日期，并且判断在日期等于1的时候直接表示月份
+            [comp setWeekday:i + 1]; //First day of the week. Change it to 7 to get the last date of the week
+            NSDate *resultDate = [gregorian dateFromComponents:comp];
+            
+            NSCalendar *newCalendar = [NSCalendar currentCalendar];
+            NSDateComponents *newComp = [newCalendar components:NSCalendarUnitMonth | NSCalendarUnitDay fromDate:resultDate];
+            
+            monthNum = [newComp month];
+            dayNum   = [newComp day];
+            
+            UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(25 + (i - 1)*(self.frame.size.width - 25)/7, 0, (self.frame.size.width - 25)/7, 20)];
+            if (dayNum == 1) {
+                week.text = [NSString stringWithFormat:@"%ld月", monthNum];
+            }
+            else{
+                week.text = [NSString stringWithFormat:@"%ld", dayNum];
+            }
+            
+            week.font = [UIFont systemFontOfSize:12];
+            week.textAlignment = NSTextAlignmentCenter;
+            week.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"weekDayBGI"]];
+            week.textColor = [UIColor blackColor];
+            [self addSubview:week];
+        }
+        else{
+            //这里把所有的周日移到最后，因为系统日历以周日为一周的开始，而学校日历以周一为一周的开始
+            [comp setWeekOfYear:weekNumber + 1];
+            [comp setWeekday:1]; //First day of the week. Change it to 7 to get the last date of the week
+            
+            NSDate *resultDate = [gregorian dateFromComponents:comp];
+            
+            NSCalendar *newCalendar = [NSCalendar currentCalendar];
+            NSDateComponents *newComp = [newCalendar components:NSCalendarUnitMonth | NSCalendarUnitDay fromDate:resultDate];
+            
+            monthNum = [newComp month];
+            dayNum   = [newComp day];
+            
+            UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(25 + (i - 1)*(self.frame.size.width - 25)/7, 0, (self.frame.size.width - 25)/7, 20)];
+            if (dayNum == 1) {
+                week.text = [NSString stringWithFormat:@"%ld月", monthNum];
+            }
+            else{
+                week.text = [NSString stringWithFormat:@"%ld", dayNum];
+            }
+            
+            week.font = [UIFont systemFontOfSize:12];
+            week.textAlignment = NSTextAlignmentCenter;
+            week.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"weekDayBGI"]];
+            week.textColor = [UIColor blackColor];
+            [self addSubview:week];
+        }
     }
-
-    
-    NSLog(@"现在是:%ld年%ld月%ld日 今年第%ld周  %@",year, month,day,weekNum,weekStr);
-    
-    NSInteger Monday = day - week+1+1;
-
-    for (int i=1; i<=7; i++) {
-        NSLog(@"本周 星期%d :%ld年%ld月%ld日 ",i,year,month, Monday);
-        Monday+=1;
-    }
-
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+
 
 @end
