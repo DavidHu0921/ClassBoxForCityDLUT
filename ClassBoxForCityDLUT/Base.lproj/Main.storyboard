@@ -358,6 +358,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="dK6-M8-kUg"/>
+                    <connections>
+                        <outlet property="ClassBoxNC" destination="dK6-M8-kUg" id="m1Z-ZX-b70"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bA5-q4-4p5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

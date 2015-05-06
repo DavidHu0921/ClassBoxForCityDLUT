@@ -39,7 +39,6 @@
             //这里把第一格设置成当前月份
             UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 25, 20)];
             week.text = [NSString stringWithFormat:@"%ld月", todaysMonth];
-            
             week.font = [UIFont systemFontOfSize:12];
             week.textAlignment = NSTextAlignmentCenter;
             week.textColor = [UIColor blackColor];

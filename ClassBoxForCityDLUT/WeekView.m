@@ -20,6 +20,13 @@
 }
 
 - (void)layoutSubviews{
+    UILabel *blink = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 25, 20)];
+    blink.text = [NSString stringWithFormat:@""];
+    blink.font = [UIFont systemFontOfSize:12];
+    blink.textAlignment = NSTextAlignmentCenter;
+    blink.textColor = [UIColor blackColor];
+    [self addSubview:blink];
+    
     NSArray *weekDay = [NSArray arrayWithObjects:@"周一", @"周二", @"周三", @"周四", @"周五", @"周六", @"周日", nil];
     
     for (int i = 0; i<7; i++) {
