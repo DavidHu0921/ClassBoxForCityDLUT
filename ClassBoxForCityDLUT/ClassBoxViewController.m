@@ -8,6 +8,7 @@
 
 #import "ClassBoxViewController.h"
 #import "WeekView.h"
+#import "DateView.h"
 
 @interface ClassBoxViewController ()
 
@@ -23,7 +24,10 @@
 }
 
 - (void)createView{
-    WeekView *weekView = [[WeekView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 20)];
+    DateView *dateView = [[DateView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 20)];
+    WeekView *weekView = [[WeekView alloc]initWithFrame:CGRectMake(0, 84, self.view.frame.size.width, 20)];
+    
+    [self.view addSubview:dateView];
     [self.view addSubview:weekView];
 }
 
