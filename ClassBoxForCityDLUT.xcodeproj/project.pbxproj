@@ -38,6 +38,9 @@
 		DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */; };
 		DCF1F5571AFA18A300A126E9 /* WeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5561AFA18A300A126E9 /* WeekView.m */; };
 		DCF1F55A1AFA2EAD00A126E9 /* DateView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5591AFA2EAD00A126E9 /* DateView.m */; };
+		DCF1F55D1AFA620100A126E9 /* ClassesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F55C1AFA620100A126E9 /* ClassesCollectionView.m */; };
+		DCF1F5601AFA65B300A126E9 /* ClassesCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F55F1AFA65B300A126E9 /* ClassesCollectionViewLayout.m */; };
+		DCF1F5631AFA683500A126E9 /* ClassesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5621AFA683500A126E9 /* ClassesDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,12 @@
 		DCF1F5561AFA18A300A126E9 /* WeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekView.m; sourceTree = "<group>"; };
 		DCF1F5581AFA2EAD00A126E9 /* DateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateView.h; sourceTree = "<group>"; };
 		DCF1F5591AFA2EAD00A126E9 /* DateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateView.m; sourceTree = "<group>"; };
+		DCF1F55B1AFA620100A126E9 /* ClassesCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesCollectionView.h; sourceTree = "<group>"; };
+		DCF1F55C1AFA620100A126E9 /* ClassesCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesCollectionView.m; sourceTree = "<group>"; };
+		DCF1F55E1AFA65B300A126E9 /* ClassesCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesCollectionViewLayout.h; sourceTree = "<group>"; };
+		DCF1F55F1AFA65B300A126E9 /* ClassesCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesCollectionViewLayout.m; sourceTree = "<group>"; };
+		DCF1F5611AFA683500A126E9 /* ClassesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesDataSource.h; sourceTree = "<group>"; };
+		DCF1F5621AFA683500A126E9 /* ClassesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +178,12 @@
 				DCF1F5561AFA18A300A126E9 /* WeekView.m */,
 				DCF1F5581AFA2EAD00A126E9 /* DateView.h */,
 				DCF1F5591AFA2EAD00A126E9 /* DateView.m */,
+				DCF1F55B1AFA620100A126E9 /* ClassesCollectionView.h */,
+				DCF1F55C1AFA620100A126E9 /* ClassesCollectionView.m */,
+				DCF1F55E1AFA65B300A126E9 /* ClassesCollectionViewLayout.h */,
+				DCF1F55F1AFA65B300A126E9 /* ClassesCollectionViewLayout.m */,
+				DCF1F5611AFA683500A126E9 /* ClassesDataSource.h */,
+				DCF1F5621AFA683500A126E9 /* ClassesDataSource.m */,
 			);
 			name = test;
 			sourceTree = "<group>";
@@ -501,16 +516,19 @@
 				DCF1F5571AFA18A300A126E9 /* WeekView.m in Sources */,
 				0B3A32521AE55D2F001E5E4A /* SharedContext.m in Sources */,
 				DCB58B211AF2144E0085EAA6 /* HeaderView.m in Sources */,
+				DCF1F5601AFA65B300A126E9 /* ClassesCollectionViewLayout.m in Sources */,
 				DCB58B231AF2144E0085EAA6 /* SampleCalendarEvent.m in Sources */,
 				DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */,
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
 				DCB58B201AF2144E0085EAA6 /* CalendarEventCell.m in Sources */,
 				DCB58B1F1AF2144E0085EAA6 /* WeekCalendarLayout.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
+				DCF1F55D1AFA620100A126E9 /* ClassesCollectionView.m in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
 				DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */,
 				DCB58B1D1AF2144E0085EAA6 /* CalendarViewController.m in Sources */,
+				DCF1F5631AFA683500A126E9 /* ClassesDataSource.m in Sources */,
 				DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */,
 				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
 				DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */,

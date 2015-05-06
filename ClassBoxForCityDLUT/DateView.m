@@ -20,7 +20,6 @@
 }
 
 - (void)layoutSubviews{
- 
     //获取当前日历信息
     NSDate *now = [NSDate date];
     
