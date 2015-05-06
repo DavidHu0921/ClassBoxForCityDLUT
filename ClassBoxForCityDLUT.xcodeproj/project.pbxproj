@@ -37,6 +37,7 @@
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
 		DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */; };
 		DCF1F5571AFA18A300A126E9 /* WeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5561AFA18A300A126E9 /* WeekView.m */; };
+		DCF1F55A1AFA2EAD00A126E9 /* DateView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5591AFA2EAD00A126E9 /* DateView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBoxViewController.m; sourceTree = "<group>"; };
 		DCF1F5551AFA18A300A126E9 /* WeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekView.h; sourceTree = "<group>"; };
 		DCF1F5561AFA18A300A126E9 /* WeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekView.m; sourceTree = "<group>"; };
+		DCF1F5581AFA2EAD00A126E9 /* DateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateView.h; sourceTree = "<group>"; };
+		DCF1F5591AFA2EAD00A126E9 /* DateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 				DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */,
 				DCF1F5551AFA18A300A126E9 /* WeekView.h */,
 				DCF1F5561AFA18A300A126E9 /* WeekView.m */,
+				DCF1F5581AFA2EAD00A126E9 /* DateView.h */,
+				DCF1F5591AFA2EAD00A126E9 /* DateView.m */,
 			);
 			name = test;
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 				DCB58B1E1AF2144E0085EAA6 /* CalendarDataSource.m in Sources */,
 				0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
+				DCF1F55A1AFA2EAD00A126E9 /* DateView.m in Sources */,
 				DCCA27901ADF93F800BA290C /* StudentProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
