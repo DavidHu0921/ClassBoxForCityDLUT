@@ -23,7 +23,7 @@
 
 @interface StudentProfile : NSObject
 
-+ (NSURL *)URLforStuVerify: (NSString *) stuID password: (NSString *)password;
+//+ (NSURL *)URLforStuVerify: (NSString *) stuID password: (NSString *)password;
 
 + (NSURL *)URLforStuProfile: (NSString *) stuID password: (NSString *)password;
 
