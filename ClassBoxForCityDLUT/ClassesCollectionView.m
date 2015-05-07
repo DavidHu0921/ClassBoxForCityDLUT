@@ -7,18 +7,11 @@
 //
 
 #import "ClassesCollectionView.h"
-#import "ClassesCollectionViewLayout.h"
-#import "ClassesDataSource.h"
 
 @implementation ClassesCollectionView
 
 - (void)layoutSubviews{
-    ClassesCollectionViewLayout *layout = [[ClassesCollectionViewLayout alloc]init];
     
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) collectionViewLayout:layout];
-    
-    id collectionViewDataSource = [[ClassesDataSource alloc]init];
-    collectionView.dataSource = collectionViewDataSource;
 }
 
 @end

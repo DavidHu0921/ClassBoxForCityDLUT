@@ -32,11 +32,11 @@
     
     DateView *dateView = [[DateView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 20)];
     WeekView *weekView = [[WeekView alloc]initWithFrame:CGRectMake(0, 84, self.view.frame.size.width, 20)];
-    ClassesCollectionView *classesView = [[ClassesCollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height - 40)];
+//    ClassesCollectionView *classesView = [[ClassesCollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height - 40)];
     
     [self.view addSubview:dateView];
     [self.view addSubview:weekView];
-    [self.view addSubview:classesView];
+//    [self.view addSubview:classesView];
 }
 
 - (void)setNavigationBar{
