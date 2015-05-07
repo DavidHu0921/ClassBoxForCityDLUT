@@ -9,9 +9,10 @@
 #import "ClassBoxViewController.h"
 #import "WeekView.h"
 #import "DateView.h"
-#import "ClassesCollectionView.h"
+#import "ClassesDataSource.h"
+#import "ClassesDelegateFlowLayout.h"
 
-@interface ClassBoxViewController ()
+@interface ClassBoxViewController () <UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *ClassBoxNC;
 
@@ -23,20 +24,43 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self createView];
+    [self createHeaderView];
+    //添加collectionView
+    [self createCollectionView];
 }
 
-- (void)createView{
+- (void)createHeaderView{
     //添加navigation的title
     [self setNavigationBar];
     
     DateView *dateView = [[DateView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 20)];
     WeekView *weekView = [[WeekView alloc]initWithFrame:CGRectMake(0, 84, self.view.frame.size.width, 20)];
-    ClassesCollectionView *classesView = [[ClassesCollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height - 104)];
     
     [self.view addSubview:dateView];
     [self.view addSubview:weekView];
-    [self.view addSubview:classesView];
+}
+
+- (void)createCollectionView{
+    //set layout
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.sectionInset = UIEdgeInsetsMake(0,0,0,0);
+    flowLayout.minimumInteritemSpacing = 0;
+    flowLayout.minimumLineSpacing =0;
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) collectionViewLayout:flowLayout];
+    
+    collectionView.backgroundColor = [UIColor whiteColor];
+    //注册cell
+    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    
+    ClassesDataSource *classesDataSource = [[ClassesDataSource alloc]init];
+    ClassesDelegateFlowLayout *delegateLayout = [[ClassesDelegateFlowLayout alloc]init];
+    
+    collectionView.delegate = delegateLayout;
+    collectionView.dataSource = classesDataSource;
+    
+    [self.view addSubview:collectionView];
 }
 
 - (void)setNavigationBar{
@@ -52,7 +76,6 @@
     NSInteger weekNumberOfOpenDay =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:openDay] weekOfYear];
     
     //赋值给NC
-//    NSString *numberOfWeek = [NSString stringWithFormat:@"第%ld周", weekNumberOfNow - weekNumberOfOpenDay + 1];
     self.ClassBoxNC.title = [NSString stringWithFormat:@"第%ld周", weekNumberOfNow - weekNumberOfOpenDay + 1];
 }
 
