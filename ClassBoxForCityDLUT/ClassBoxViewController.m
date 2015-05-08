@@ -36,6 +36,7 @@ static const CGFloat CellHieght = 50;
 }
 
 #pragma mark - createHeaderPart
+
 - (void)createHeaderView{
     //添加navigation的title
     [self setNavigationBar];
@@ -180,5 +181,6 @@ static const CGFloat CellHieght = 50;
     return cell;
 }
 
+#pragma mark - add Button
 
 @end
