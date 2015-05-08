@@ -9,10 +9,10 @@
 #import "ClassBoxViewController.h"
 #import "WeekView.h"
 #import "DateView.h"
-#import "ClassesDataSource.h"
-#import "ClassesDelegateFlowLayout.h"
 
-@interface ClassBoxViewController () <UICollectionViewDelegateFlowLayout>
+static const CGFloat CellHieght = 50;
+
+@interface ClassBoxViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *ClassBoxNC;
 
@@ -29,6 +29,12 @@
     [self createCollectionView];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - createHeaderPart
 - (void)createHeaderView{
     //添加navigation的title
     [self setNavigationBar];
@@ -38,29 +44,6 @@
     
     [self.view addSubview:dateView];
     [self.view addSubview:weekView];
-}
-
-- (void)createCollectionView{
-    //set layout
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.sectionInset = UIEdgeInsetsMake(0,0,0,0);
-    flowLayout.minimumInteritemSpacing = 0;
-    flowLayout.minimumLineSpacing =0;
-    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) collectionViewLayout:flowLayout];
-    
-    collectionView.backgroundColor = [UIColor whiteColor];
-    //注册cell
-    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
-    
-    ClassesDataSource *classesDataSource = [[ClassesDataSource alloc]init];
-    ClassesDelegateFlowLayout *delegateLayout = [[ClassesDelegateFlowLayout alloc]init];
-    
-    collectionView.delegate = delegateLayout;
-    collectionView.dataSource = classesDataSource;
-    
-    [self.view addSubview:collectionView];
 }
 
 - (void)setNavigationBar{
@@ -79,9 +62,50 @@
     self.ClassBoxNC.title = [NSString stringWithFormat:@"第%ld周", weekNumberOfNow - weekNumberOfOpenDay + 1];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - createCollectionPart
+
+- (void)createCollectionView{
+    //set layout
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.sectionInset = UIEdgeInsetsMake(0,0,0,0);
+    flowLayout.minimumLineSpacing = 0;//纵向间距
+    flowLayout.minimumInteritemSpacing = 0;//横向间距
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height-104) collectionViewLayout:flowLayout];
+    collectionView.backgroundColor = [UIColor whiteColor];
+    //注册cell
+    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
+    [self.view addSubview:collectionView];
 }
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return CGSizeMake(25, CellHieght);
+    }
+    else{
+        return CGSizeMake((self.view.frame.size.width - 25)/7, CellHieght);
+    }
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 12;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 8;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor blueColor];
+    return cell;
+}
+
 
 @end
