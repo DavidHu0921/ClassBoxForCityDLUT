@@ -140,10 +140,22 @@ static const CGFloat CellHieght = 50;
                 cell.backgroundColor = nil;
             }
         }
-        else{
-            cell.classedNum.text = nil;
-            cell.backgroundView = nil;
-            cell.backgroundColor = [UIColor lightGrayColor];
+        else if (indexPath.section == 11){
+            if (indexPath.row == 1) {
+                cell.classedNum.text = nil;
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bottomLeft"]];
+                cell.backgroundColor = nil;
+            }
+            else if (indexPath.row == 7){
+                cell.classedNum.text = nil;
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bottomRight"]];
+                cell.backgroundColor = nil;
+            }
+            else{
+                cell.classedNum.text = nil;
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bottom"]];
+                cell.backgroundColor = nil;
+            }
         }
         
     }
