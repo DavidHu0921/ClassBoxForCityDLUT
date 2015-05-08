@@ -108,14 +108,44 @@ static const CGFloat CellHieght = 50;
     [cell.classedNum setFrame:CGRectMake(0, 0, 25, CellHieght)];
     
     if (indexPath.row == 0) {
-        cell.backgroundColor = [UIColor whiteColor];
-        cell.classedNum.text = [NSString stringWithFormat:@"%ld", indexPath.section + 1];
-        cell.classedNum.font = [UIFont systemFontOfSize:12];
-        cell.classedNum.textAlignment = NSTextAlignmentCenter;
+        if (indexPath.section == 0) {
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"classNum1"]];
+            cell.backgroundColor = nil;
+            cell.classedNum.text = [NSString stringWithFormat:@"%ld", indexPath.section + 1];
+            cell.classedNum.font = [UIFont systemFontOfSize:12];
+            cell.classedNum.textAlignment = NSTextAlignmentCenter;
+        }
+        else{
+            cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"classNum2"]];
+            cell.classedNum.text = [NSString stringWithFormat:@"%ld", indexPath.section + 1];
+            cell.classedNum.font = [UIFont systemFontOfSize:12];
+            cell.classedNum.textAlignment = NSTextAlignmentCenter;
+        }
     }
     else{
-        cell.classedNum.text = nil;
-        cell.backgroundColor = [UIColor lightGrayColor];
+        if (indexPath.section == 0) {
+            if (indexPath.row == 1) {
+                cell.classedNum.text = nil;
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"topLeft"]];
+                cell.backgroundColor = nil;
+            }
+            else if (indexPath.row == 7){
+                cell.classedNum.text = nil;
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"topRight"]];
+                cell.backgroundColor = nil;
+            }
+            else{
+                cell.classedNum.text = nil;
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"top"]];
+                cell.backgroundColor = nil;
+            }
+        }
+        else{
+            cell.classedNum.text = nil;
+            cell.backgroundView = nil;
+            cell.backgroundColor = [UIColor lightGrayColor];
+        }
+        
     }
     
     return cell;
