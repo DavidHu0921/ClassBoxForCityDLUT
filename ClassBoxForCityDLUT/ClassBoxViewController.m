@@ -9,6 +9,7 @@
 #import "ClassBoxViewController.h"
 #import "WeekView.h"
 #import "DateView.h"
+#import "ClassesNumCollectionViewCell.h"
 
 static const CGFloat CellHieght = 50;
 
@@ -75,7 +76,7 @@ static const CGFloat CellHieght = 50;
     UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height-104) collectionViewLayout:flowLayout];
     collectionView.backgroundColor = [UIColor whiteColor];
     //注册cell
-    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    [collectionView registerClass:[ClassesNumCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -103,17 +104,17 @@ static const CGFloat CellHieght = 50;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    UILabel *classNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 25, CellHieght)];
-
+    ClassesNumCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    [cell.classedNum setFrame:CGRectMake(0, 0, 25, CellHieght)];
+    
     if (indexPath.row == 0) {
         cell.backgroundColor = [UIColor whiteColor];
-        classNum.text = [NSString stringWithFormat:@"%ld", indexPath.section + 1];
-        classNum.font = [UIFont systemFontOfSize:12];
-        classNum.textAlignment = NSTextAlignmentCenter;
-        [cell addSubview:classNum];
+        cell.classedNum.text = [NSString stringWithFormat:@"%ld", indexPath.section + 1];
+        cell.classedNum.font = [UIFont systemFontOfSize:12];
+        cell.classedNum.textAlignment = NSTextAlignmentCenter;
     }
     else{
+        cell.classedNum.text = nil;
         cell.backgroundColor = [UIColor lightGrayColor];
     }
     
