@@ -76,6 +76,7 @@ static const CGFloat CellHieght = 50;
     collectionView.backgroundColor = [UIColor whiteColor];
     //注册cell
     [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    
     collectionView.delegate = self;
     collectionView.dataSource = self;
     [self.view addSubview:collectionView];
@@ -103,7 +104,17 @@ static const CGFloat CellHieght = 50;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor blueColor];
+    if (indexPath.row == 0) {
+        cell.backgroundColor = [UIColor whiteColor];
+        UILabel *classNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 25, CellHieght)];
+        classNum.text = [NSString stringWithFormat:@"%ld", indexPath.section + 1];
+        classNum.font = [UIFont systemFontOfSize:12];
+        classNum.textAlignment = NSTextAlignmentCenter;
+        [cell addSubview:classNum];
+    }
+    else{
+        cell.backgroundColor = [UIColor blueColor];
+    }
     return cell;
 }
 
