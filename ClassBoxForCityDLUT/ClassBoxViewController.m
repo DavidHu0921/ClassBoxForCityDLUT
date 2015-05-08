@@ -104,17 +104,19 @@ static const CGFloat CellHieght = 50;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    UILabel *classNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 25, CellHieght)];
+
     if (indexPath.row == 0) {
         cell.backgroundColor = [UIColor whiteColor];
-        UILabel *classNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 25, CellHieght)];
         classNum.text = [NSString stringWithFormat:@"%ld", indexPath.section + 1];
         classNum.font = [UIFont systemFontOfSize:12];
         classNum.textAlignment = NSTextAlignmentCenter;
         [cell addSubview:classNum];
     }
     else{
-        cell.backgroundColor = [UIColor blueColor];
+        cell.backgroundColor = [UIColor lightGrayColor];
     }
+    
     return cell;
 }
 
