@@ -74,7 +74,8 @@ static const CGFloat CellHieght = 50;
     flowLayout.minimumInteritemSpacing = 0;//横向间距
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height-104) collectionViewLayout:flowLayout];
+    //154 = tabbar + navigation + week + date + state
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height-154) collectionViewLayout:flowLayout];
     collectionView.backgroundColor = [UIColor whiteColor];
     //注册cell
     [collectionView registerClass:[ClassesNumCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
