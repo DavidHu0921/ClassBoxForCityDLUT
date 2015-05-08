@@ -157,6 +157,23 @@ static const CGFloat CellHieght = 50;
                 cell.backgroundColor = nil;
             }
         }
+        else{
+            if (indexPath.row == 1) {
+                cell.classedNum.text = nil;
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"left"]];
+                cell.backgroundColor = nil;
+            }
+            else if (indexPath.row == 7){
+                cell.classedNum.text = nil;
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"right"]];
+                cell.backgroundColor = nil;
+            }
+            else{
+                cell.classedNum.text = nil;
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"cellBody"]];
+                cell.backgroundColor = nil;
+            }
+        }
         
     }
     
