@@ -112,6 +112,7 @@ static const CGFloat CellHieght = 50;
     ClassesNumCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     [cell.classedNum setFrame:CGRectMake(0, 0, 25, CellHieght)];
     
+    //主要是设定背景
     if (indexPath.row == 0) {
         if (indexPath.section == 0) {
             cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"classNum1"]];
