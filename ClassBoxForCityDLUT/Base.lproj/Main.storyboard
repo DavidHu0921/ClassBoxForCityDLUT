@@ -357,14 +357,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dK6-M8-kUg"/>
+                    <navigationItem key="navigationItem" id="dK6-M8-kUg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yRy-Ab-yZc">
+                            <connections>
+                                <action selector="addClassesButton:" destination="E2B-Xw-FMR" id="Vz8-2Q-mOr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ClassBoxNC" destination="dK6-M8-kUg" id="m1Z-ZX-b70"/>
+                        <segue destination="bqD-Mo-75U" kind="show" identifier="addClasses" id="G5b-6I-xAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bA5-q4-4p5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1784" y="-384"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="USN-a6-S2R">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="bqD-Mo-75U" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="irC-z6-h2a"/>
+                        <viewControllerLayoutGuide type="bottom" id="UeP-ha-uVE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ivL-bM-TYp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CyB-qY-HJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2471" y="-384"/>
         </scene>
         <!--课程表-->
         <scene sceneID="YUk-U8-VOR">

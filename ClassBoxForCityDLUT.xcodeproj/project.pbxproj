@@ -29,6 +29,7 @@
 		DCCF8DD21ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */; };
 		DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
+		DCE076EE1AFE080500D65302 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE076ED1AFE080500D65302 /* Course.m */; };
 		DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */; };
 		DCF1F5571AFA18A300A126E9 /* WeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5561AFA18A300A126E9 /* WeekView.m */; };
 		DCF1F55A1AFA2EAD00A126E9 /* DateView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5591AFA2EAD00A126E9 /* DateView.m */; };
@@ -87,6 +88,8 @@
 		DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesNumCollectionViewCell.m; sourceTree = "<group>"; };
 		DCDE0FA81AE8DAC900CAF63D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		DCDE0FA91AE8DAC900CAF63D /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		DCE076EC1AFE080500D65302 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		DCE076ED1AFE080500D65302 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		DCF1F5521AFA183F00A126E9 /* ClassBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassBoxViewController.h; sourceTree = "<group>"; };
 		DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBoxViewController.m; sourceTree = "<group>"; };
 		DCF1F5551AFA18A300A126E9 /* WeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekView.h; sourceTree = "<group>"; };
@@ -221,6 +224,8 @@
 		DCA31A3B1ACDB6570042200A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DCE076EC1AFE080500D65302 /* Course.h */,
+				DCE076ED1AFE080500D65302 /* Course.m */,
 				DCDE0FA81AE8DAC900CAF63D /* Student.h */,
 				DCDE0FA91AE8DAC900CAF63D /* Student.m */,
 				DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */,
@@ -463,6 +468,7 @@
 				0B3A32521AE55D2F001E5E4A /* SharedContext.m in Sources */,
 				DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */,
 				DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */,
+				DCE076EE1AFE080500D65302 /* Course.m in Sources */,
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,

@@ -10,12 +10,15 @@
 #import "WeekView.h"
 #import "DateView.h"
 #import "ClassesNumCollectionViewCell.h"
+#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import "Student.h"
 
 static const CGFloat CellHieght = 50;
 
 @interface ClassBoxViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *ClassBoxNC;
+- (IBAction)addClassesButton:(UIBarButtonItem *)sender;
 
 @end
 
@@ -183,5 +186,19 @@ static const CGFloat CellHieght = 50;
 }
 
 #pragma mark - add Button
+
+- (IBAction)addClassesButton:(UIBarButtonItem *)sender {
+    NSArray *student = [Student MR_findAll];
+    UIAlertView *alert;
+    
+    if (student.count == 0) {
+        alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请先登录"
+                                          delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
+        [alert show];
+    }
+    else{
+        [self performSegueWithIdentifier:@"addClasses" sender:nil];
+    }
+}
 
 @end

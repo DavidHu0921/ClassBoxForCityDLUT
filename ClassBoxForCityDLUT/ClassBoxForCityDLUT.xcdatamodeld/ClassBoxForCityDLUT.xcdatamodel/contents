@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Classes" representedClassName="Class" syncable="YES">
-        <attribute name="classLength" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Course" representedClassName="Course" syncable="YES">
+        <attribute name="classesName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="classroom" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="howLong" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="techer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weekday" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="weeks" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weekNumber" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES">
         <attribute name="birth" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,6 +20,6 @@
     </entity>
     <elements>
         <element name="Student" positionX="-6147" positionY="-3348" width="128" height="30"/>
-        <element name="Classes" positionX="-6147" positionY="-3357" width="128" height="150"/>
+        <element name="Course" positionX="-6147" positionY="-3357" width="128" height="150"/>
     </elements>
 </model>
