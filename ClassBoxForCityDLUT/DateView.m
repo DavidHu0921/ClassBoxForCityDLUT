@@ -28,8 +28,16 @@
     NSInteger todaysMonth =[[calendar components: NSCalendarUnitMonth fromDate:now] month];
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *comp = [gregorian components:NSCalendarUnitYear fromDate:now];
-    [comp setWeekOfYear:weekNumber];  //Week number.
+    NSDateComponents *comp = [gregorian components:NSCalendarUnitYear | NSCalendarUnitWeekday fromDate:now];
+    NSInteger thisWeekDay = [comp weekday];
+    
+    //判断当前是不是周日，是的话减一周
+    if (thisWeekDay == 1) {
+        [comp setWeekOfYear:weekNumber - 1];
+    }
+    else{
+        [comp setWeekOfYear:weekNumber];  //Week number.
+    }
     
     NSInteger monthNum, dayNum;
     
@@ -70,7 +78,15 @@
         }
         else{
             //这里把所有的周日移到最后，因为系统日历以周日为一周的开始，而学校日历以周一为一周的开始
-            [comp setWeekOfYear:weekNumber + 1];
+            
+            //判断当前是不是周日，不是的话就要加一周
+            if (thisWeekDay == 1) {
+                [comp setWeekOfYear:weekNumber];
+            }
+            else{
+                [comp setWeekOfYear:weekNumber + 1];
+            }
+            
             [comp setWeekday:1]; //First day of the week. Change it to 7 to get the last date of the week
             
             NSDate *resultDate = [gregorian dateFromComponents:comp];
