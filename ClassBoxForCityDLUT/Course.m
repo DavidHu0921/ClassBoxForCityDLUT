@@ -2,7 +2,7 @@
 //  Course.m
 //  ClassBoxForCityDLUT
 //
-//  Created by 胡啸晨 on 15/5/9.
+//  Created by 胡啸晨 on 15/5/12.
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 
@@ -12,11 +12,11 @@
 @implementation Course
 
 @dynamic classesName;
-@dynamic teacherName;
 @dynamic classroom;
-@dynamic weekday;
-@dynamic startTime;
 @dynamic howLong;
+@dynamic startTime;
+@dynamic teacherName;
+@dynamic weekday;
 @dynamic weekNumber;
 
 @end

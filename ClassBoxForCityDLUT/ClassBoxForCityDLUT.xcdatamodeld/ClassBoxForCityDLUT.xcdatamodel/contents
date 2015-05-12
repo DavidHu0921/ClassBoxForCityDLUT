@@ -7,7 +7,7 @@
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teacherName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weekday" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="weekNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weekNumber" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES">
         <attribute name="birth" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,7 +19,7 @@
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Student" positionX="-6147" positionY="-3348" width="128" height="30"/>
         <element name="Course" positionX="-6147" positionY="-3357" width="128" height="150"/>
+        <element name="Student" positionX="-6147" positionY="-3348" width="128" height="30"/>
     </elements>
 </model>
