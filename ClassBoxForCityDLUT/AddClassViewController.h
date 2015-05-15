@@ -10,6 +10,4 @@
 
 @interface AddClassViewController : UIViewController<UITextFieldDelegate>
 
-@property (retain, nonatomic) NSMutableArray *itemArray;
-
 @end

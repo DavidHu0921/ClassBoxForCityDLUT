@@ -36,7 +36,6 @@
     
     if (student.count != 0) {
         self.nameLabel.text = [student[0] valueForKeyPath:@"studentname"];
-        NSLog(@"%@", student);
         [self.loginLogoutBtn setTitle:@"注销" forState:UIControlStateNormal];
     }
     else{
@@ -82,7 +81,6 @@
     [self.profileView setNeedsDisplay];
     
     NSArray *stu = [Student MR_findAll];
-    NSLog(@"%ld", stu.count);
 }
 
 @end

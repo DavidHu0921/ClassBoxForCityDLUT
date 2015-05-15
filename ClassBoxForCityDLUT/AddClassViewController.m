@@ -10,21 +10,37 @@
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "Student.h"
 
-@interface AddClassViewController ()
+@interface AddClassViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *addClassNG;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *stuIDLabel;
-
 @property (weak, nonatomic) IBOutlet UITextField *itemTextField;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBarCancelDone;
+@property (weak, nonatomic) IBOutlet UIPickerView *itemPicker;
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender;
+- (IBAction)itemCancel:(UIBarButtonItem *)sender;
+- (IBAction)itemDone:(UIBarButtonItem *)sender;
 
 @end
 
 @implementation AddClassViewController
+{
+    
+    NSMutableArray *itemArray;
+    
+    NSString *currentMonthString;
+    
+    int selectedYearRow;
+    int selectedMonthRow;
+    int selectedDayRow;
+    
+    BOOL firstTimeLoad;
+    
+}
 
-@synthesize  itemArray, itemTextField;
+@synthesize itemTextField;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +55,9 @@
     self.stuIDLabel.text = [NSString stringWithFormat:@"学生学号:%@", stuID];
     
     [self.addClassNG setTitle:[NSString stringWithFormat:@"添加课程表"]];
+    
+    //add picker
+    [self.itemPicker selectRow:0 inComponent:0 animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,40 +66,110 @@
 }
 
 #pragma mark - pickerView
+- (UIView *)pickerView:(UIPickerView *)pickerView
+            viewForRow:(NSInteger)row
+          forComponent:(NSInteger)component
+           reusingView:(UIView *)view {
+    
+    // Custom View created for each component
+    
+    UILabel *pickerLabel = (UILabel *)view;
+    
+    if (pickerLabel == nil) {
+        CGRect frame = CGRectMake(0.0, 0.0, 50, 60);
+        pickerLabel = [[UILabel alloc] initWithFrame:frame];
+        [pickerLabel setTextAlignment:NSTextAlignmentCenter];
+        [pickerLabel setBackgroundColor:[UIColor clearColor]];
+        [pickerLabel setFont:[UIFont systemFontOfSize:15.0f]];
+//        pickerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0];
+        pickerLabel.textColor = [UIColor whiteColor];
+    }
+//continue!!!
+    for (int i = 0 ; i < 9; i++) {
+        pickerLabel.text = itemArray[i];
+    }
+    return pickerLabel;
+    
+}
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    
-    UIPickerView *pickerView = [[UIPickerView alloc] init];
-    
-    [pickerView sizeToFit];
-    pickerView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-    pickerView.delegate = self;
-    pickerView.dataSource = self;
-    pickerView.showsSelectionIndicator = YES;
-    textField.inputView = pickerView;
-    
-    UIToolbar* keyboardDoneButtonView = [[UIToolbar alloc] init];
-    keyboardDoneButtonView.barStyle = UIBarStyleBlack;
-    keyboardDoneButtonView.translucent = YES;
-    keyboardDoneButtonView.tintColor = nil;
-    [keyboardDoneButtonView sizeToFit];
-    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithTitle:@"确定"
-                                                                    style:UIBarButtonItemStyleBordered
-                                                                  target:self
-                                                                   action:@selector(pickerDoneClicked)];
-    
-    [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:doneButton, nil]];
-    textField.inputAccessoryView = keyboardDoneButtonView;
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
 
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return 1;
+}
+
+- (IBAction)itemCancel:(UIBarButtonItem *)sender {
+    [UIView animateWithDuration:0.5
+                          delay:0.1
+                        options: UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         self.itemPicker.hidden = YES;
+                         self.toolBarCancelDone.hidden = YES;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    
+}
+
+- (IBAction)itemDone:(UIBarButtonItem *)sender {
+    self.itemTextField.text = [NSString stringWithFormat:@"%@",[itemArray objectAtIndex:[self.itemPicker selectedRowInComponent:0]]];
+    
+    [UIView animateWithDuration:0.5
+                          delay:0.1
+                        options: UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         self.itemPicker.hidden = YES;
+                         self.toolBarCancelDone.hidden = YES;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.view endEditing:YES];
+    
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    
+    [UIView animateWithDuration:0.5
+                          delay:0.1
+                        options: UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         self.itemPicker.hidden = NO;
+                         self.toolBarCancelDone.hidden = NO;
+                         self.itemTextField.text = @"";
+                         
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    
+    
+    self.itemPicker.hidden = NO;
+    self.toolBarCancelDone.hidden = NO;
+    self.itemTextField.text = @"";
     
     return YES;
     
 }
 
-- (void)pickerDoneClicked:(id)sender
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    //    [self.view endEditing:YES];
-    [itemTextField resignFirstResponder];
+    [textField resignFirstResponder];
+    
+    return  YES;
 }
 
 #pragma mark - cancelButton
@@ -88,5 +177,6 @@
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 @end
