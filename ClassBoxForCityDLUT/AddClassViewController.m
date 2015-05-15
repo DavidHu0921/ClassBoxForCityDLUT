@@ -22,6 +22,7 @@
 - (IBAction)cancelButton:(UIBarButtonItem *)sender;
 - (IBAction)itemCancel:(UIBarButtonItem *)sender;
 - (IBAction)itemDone:(UIBarButtonItem *)sender;
+- (IBAction)fetchClasses:(UIButton *)sender;
 
 @end
 
@@ -116,6 +117,7 @@
                      }];
 }
 
+
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -138,13 +140,11 @@
                          
                      }];
     
-    
     self.itemPicker.hidden = NO;
     self.toolBarCancelDone.hidden = NO;
     self.itemTextField.text = @"";
     
     return NO;
-    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -158,6 +158,11 @@
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - fetchClasses
+
+- (IBAction)fetchClasses:(UIButton *)sender {
 }
 
 
