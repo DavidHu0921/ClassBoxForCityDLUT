@@ -125,8 +125,6 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    [textField resignFirstResponder];
-    
     [UIView animateWithDuration:0.5
                           delay:0.1
                         options: UIViewAnimationOptionCurveEaseIn
