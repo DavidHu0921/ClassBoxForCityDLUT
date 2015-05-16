@@ -16,6 +16,8 @@
 
 #define ProfileAPI @"http://1.csxyxzs1.sinaapp.com/info?name=%@&password=%@"                                //个人信息
 
+#define ClassesAPI @"http://1.csxyxzs1.sinaapp.com/schedule?name=%@&password=%@&term=%ld"
+
 //http://1.csxyxzs.sinaapp.com/xyxw.php 20个
 //http://1.csxyxzs.sinaapp.com/xygg.php 20个，时间顺序从新到旧
 
@@ -23,7 +25,7 @@
  图书馆 http://1.csxyxzs.sinaapp.com/library.php?book_name=%s
  http://csxyxzs.sinaapp.com/new_query.php?q=[]&p=[]&type=[]
  
- 课程表 http://1.csxyxzs1.sinaapp.com/schedule?name=%s&password=%s[&term=%s]
+
  成绩 http://1.csxyxzs1.sinaapp.com/grades?name=%s&password=%s[&term=%s]
  
  halfcrazy 4月28日

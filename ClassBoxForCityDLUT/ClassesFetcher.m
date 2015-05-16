@@ -10,4 +10,9 @@
 
 @implementation ClassesFetcher
 
++ (NSURL *)URLforClassesInfo: (NSString *) stuID password:(NSString *)password item:(NSInteger)item{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ClassesAPI, stuID, password, item]];
+    return url;
+}
+
 @end

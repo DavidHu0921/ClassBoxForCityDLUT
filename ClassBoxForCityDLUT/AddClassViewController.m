@@ -9,6 +9,7 @@
 #import "AddClassViewController.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "Student.h"
+#import "ClassesFetcher.h"
 
 typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInfo);
 
@@ -186,7 +187,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
         NSInteger thisItem = *(7 + (startItem - 2010) * 2 + itemNumber);
         NSLog(@"this item is :%ld", thisItem);
         
-        
+        NSURL *url = [ClassesFetcher URLforClassesInfo:studentName password:password item:thisItem];
     }
 }
 
@@ -204,13 +205,10 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                                        NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
                                                                                                     options:0
                                                                                                       error:&connectionError];
-                                       NSString *status = [returnStatus valueForKey:ISCORRECT];
+                                       NSString *status = [returnStatus valueForKey:ISEMPTY];
                                        
-                                       if ([status isEqualToString:[NSString stringWithFormat:@"success"]]) {
-                                           [verityInfo addObject:status];
-                                           [verityInfo addObject:stuName];
-                                           
-                                           callback(YES, verityInfo);
+                                       if ([status isEqualToString:[NSString stringWithFormat:@"false"]]) {
+                                           callback(YES, returnStatus);
                                        }
                                        else{
                                            callback(NO, nil);
