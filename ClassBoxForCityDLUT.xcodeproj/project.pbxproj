@@ -29,6 +29,7 @@
 		DCCF8DD21ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */; };
 		DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
+		DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE1B831B07459F007EA05C /* ClassesFetcher.m */; };
 		DCE076F11AFF5DDA00D65302 /* AddClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE076F01AFF5DDA00D65302 /* AddClassViewController.m */; };
 		DCE173F81B01988800B9C235 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE173F71B01988800B9C235 /* Course.m */; };
 		DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */; };
@@ -89,6 +90,8 @@
 		DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesNumCollectionViewCell.m; sourceTree = "<group>"; };
 		DCDE0FA81AE8DAC900CAF63D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		DCDE0FA91AE8DAC900CAF63D /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		DCDE1B821B07459F007EA05C /* ClassesFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesFetcher.h; sourceTree = "<group>"; };
+		DCDE1B831B07459F007EA05C /* ClassesFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesFetcher.m; sourceTree = "<group>"; };
 		DCE076EF1AFF5DDA00D65302 /* AddClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddClassViewController.h; sourceTree = "<group>"; };
 		DCE076F01AFF5DDA00D65302 /* AddClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddClassViewController.m; sourceTree = "<group>"; };
 		DCE173F61B01988800B9C235 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
@@ -317,6 +320,8 @@
 				DCA31A4D1ACFEA9F0042200A /* NewsFetcher.m */,
 				DCCA278E1ADF93F800BA290C /* StudentProfile.h */,
 				DCCA278F1ADF93F800BA290C /* StudentProfile.m */,
+				DCDE1B821B07459F007EA05C /* ClassesFetcher.h */,
+				DCDE1B831B07459F007EA05C /* ClassesFetcher.m */,
 			);
 			name = "API ";
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
 				DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */,
 				DCE173F81B01988800B9C235 /* Course.m in Sources */,
+				DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
 				0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
