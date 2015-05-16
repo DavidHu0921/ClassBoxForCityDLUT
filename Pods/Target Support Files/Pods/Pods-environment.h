@@ -18,3 +18,10 @@
 #define COCOAPODS_VERSION_MINOR_MagicalRecord_Core 2
 #define COCOAPODS_VERSION_PATCH_MagicalRecord_Core 0
 
+// UITableView+FDTemplateLayoutCell
+#define COCOAPODS_POD_AVAILABLE_UITableView_FDTemplateLayoutCell
+// This library does not follow semantic-versioning,
+// so we were not able to define version macros.
+// Please contact the author.
+// Version: 1.1-beta.
+

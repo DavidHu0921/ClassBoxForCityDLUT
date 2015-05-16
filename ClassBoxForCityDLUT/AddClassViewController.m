@@ -28,7 +28,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
 - (IBAction)itemDone:(UIBarButtonItem *)sender;
 - (IBAction)fetchClasses:(UIButton *)sender;
 
-- (void)requestStudentInfo:(NSURL *)url withCallback:(VerifyClassesBlock)callback;
+- (void)requestClassesInfo:(NSURL *)url withCallback:(VerifyClassesBlock)callback;
 
 @end
 
