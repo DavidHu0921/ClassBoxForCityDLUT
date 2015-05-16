@@ -79,8 +79,6 @@
     self.nameLabel.text = @"未登录";
     [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
     [self.profileView setNeedsDisplay];
-    
-    NSArray *stu = [Student MR_findAll];
 }
 
 @end

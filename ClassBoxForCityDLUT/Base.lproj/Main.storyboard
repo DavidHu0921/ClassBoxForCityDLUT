@@ -467,6 +467,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addClassNG" destination="o9C-Oi-ie1" id="zTT-14-VUU"/>
+                        <outlet property="fetchButton" destination="cFU-Jm-Jd8" id="AAW-pm-n2Y"/>
                         <outlet property="itemPicker" destination="xfa-j6-v2P" id="Wzu-sd-fbz"/>
                         <outlet property="itemTextField" destination="VfO-9a-kGX" id="czR-DN-JjI"/>
                         <outlet property="nameLabel" destination="6X3-lo-RbG" id="fpA-Tm-Ltu"/>

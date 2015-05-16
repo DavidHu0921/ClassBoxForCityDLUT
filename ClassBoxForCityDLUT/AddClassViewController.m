@@ -21,6 +21,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
 @property (weak, nonatomic) IBOutlet UITextField *itemTextField;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBarCancelDone;
 @property (weak, nonatomic) IBOutlet UIPickerView *itemPicker;
+@property (weak, nonatomic) IBOutlet UIButton *fetchButton;
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender;
 - (IBAction)itemCancel:(UIBarButtonItem *)sender;
@@ -44,9 +45,12 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.fetchButton setTitle:@"获取课程" forState:UIControlStateNormal];
+    [self.fetchButton setTitle:@"获取中..." forState:UIControlStateDisabled];
+
     // Do any additional setup after loading the view.
     itemArray = @[@"大一上学期", @"大一下学期",@"大二上学期", @"大二下学期",@"大三上学期", @"大三下学期",@"大四上学期", @"大四下学期",@"大五上学期", @"大五下学期"];
-//    NSLog(@"%ld", itemArray.count);
     
     firstTimeLoad = YES;
     self.itemPicker.hidden = YES;
@@ -168,26 +172,47 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
 #pragma mark - fetchClasses
 
 - (IBAction)fetchClasses:(UIButton *)sender {
-    UIAlertView *alert;
+    self.fetchButton.enabled = NO;
+    
+    __block UIAlertView *alert;
     if (self.itemTextField.text == [NSString stringWithFormat:@""]) {
         alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请选择学期" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
         [alert show];
+        
+        self.fetchButton.enabled = YES;
     }
     else{
         NSArray *student = [Student MR_findAll];
         
-        NSString *studentName = [student[0] valueForKeyPath:@"studentname"];
+        NSString *studentName = [student[0] valueForKeyPath:@"username"];
         NSString *password = [student[0] valueForKeyPath:@"password"];
         NSInteger startItem = [[studentName substringToIndex:4] intValue];
         NSLog(@"start item is :%ld", startItem);
         
-        NSInteger *itemNumber = [self numberOfItem:self.itemTextField.text];
+        NSInteger itemNumber = [self numberOfItem:self.itemTextField.text];
         
         // 计算选择的学期是哪个学期
-        NSInteger thisItem = *(7 + (startItem - 2010) * 2 + itemNumber);
+        NSInteger thisItem = 7 + (startItem - 2010) * 2 + itemNumber;
         NSLog(@"this item is :%ld", thisItem);
         
         NSURL *url = [ClassesFetcher URLforClassesInfo:studentName password:password item:thisItem];
+        
+        VerifyClassesBlock callback = ^(BOOL wasSuccessful, NSDictionary *classesInfo){
+            if (wasSuccessful) {
+                NSLog(@"%@", classesInfo);
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+                self.fetchButton.enabled = YES;
+            }
+            else{
+                alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"课程表为空" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+                [alert show];
+                
+                self.fetchButton.enabled = YES;
+            }
+        };
+        
+        [self requestClassesInfo:url withCallback:callback];
     }
 }
 
@@ -205,9 +230,9 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                                        NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
                                                                                                     options:0
                                                                                                       error:&connectionError];
-                                       NSString *status = [returnStatus valueForKey:ISEMPTY];
+                                       BOOL status = [returnStatus valueForKeyPath:ISEMPTY];
                                        
-                                       if ([status isEqualToString:[NSString stringWithFormat:@"false"]]) {
+                                       if (!status) {
                                            callback(YES, returnStatus);
                                        }
                                        else{
