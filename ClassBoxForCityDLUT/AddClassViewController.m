@@ -175,22 +175,18 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     self.fetchButton.enabled = NO;
     
     __block UIAlertView *alert;
-    if (self.itemTextField.text == [NSString stringWithFormat:@""]) {
-        alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请选择学期" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
-        [alert show];
-        
-        self.fetchButton.enabled = YES;
-    }
-    else{
-        NSArray *student = [Student MR_findAll];
-        
-        NSString *studentName = [student[0] valueForKeyPath:@"username"];
-        NSString *password = [student[0] valueForKeyPath:@"password"];
-        NSInteger startItem = [[studentName substringToIndex:4] intValue];
-        NSLog(@"start item is :%ld", startItem);
-        
-        NSInteger itemNumber = [self numberOfItem:self.itemTextField.text];
-        
+   
+    NSArray *student = [Student MR_findAll];
+    
+    NSString *studentName = [student[0] valueForKeyPath:@"username"];
+    NSString *password = [student[0] valueForKeyPath:@"password"];
+    NSInteger startItem = [[studentName substringToIndex:4] intValue];
+    NSLog(@"start item is :%ld", startItem);
+    
+    NSInteger itemNumber = [self numberOfItem:self.itemTextField.text];
+    
+    //判断不是空
+    if (itemNumber != 10) {
         // 计算选择的学期是哪个学期
         NSInteger thisItem = 7 + (startItem - 2010) * 2 + itemNumber;
         NSLog(@"this item is :%ld", thisItem);
@@ -214,6 +210,13 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
         
         [self requestClassesInfo:url withCallback:callback];
     }
+    else{
+        alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请选择学期" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+        [alert show];
+        
+        self.fetchButton.enabled = YES;
+    }
+    
 }
 
 //callback function
@@ -230,7 +233,8 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                                        NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
                                                                                                     options:0
                                                                                                       error:&connectionError];
-                                       BOOL status = [returnStatus valueForKeyPath:ISEMPTY];
+                                       NSString *status = [returnStatus valueForKeyPath:ISEMPTY];
+                                       NSLog(@"%@", status);
                                        
                                        if (!status) {
                                            callback(YES, returnStatus);
