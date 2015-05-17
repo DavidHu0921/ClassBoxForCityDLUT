@@ -172,12 +172,14 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
 #pragma mark - fetchClasses
 
 - (IBAction)fetchClasses:(UIButton *)sender {
-    self.fetchButton.enabled = NO;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.fetchButton.enabled = NO;
+    });
     
     __block UIAlertView *alert;
    
+    //获取CoreData里面的学生信息
     NSArray *student = [Student MR_findAll];
-    
     NSString *studentName = [student[0] valueForKeyPath:@"username"];
     NSString *password = [student[0] valueForKeyPath:@"password"];
     NSInteger startItem = [[studentName substringToIndex:4] intValue];
@@ -202,9 +204,12 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
             }
             else{
                 alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"课程表为空" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
-                [alert show];
                 
-                self.fetchButton.enabled = YES;
+                //不用GCD就 会影响效率
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [alert show];
+                    self.fetchButton.enabled = YES;
+                });
             }
         };
         
@@ -212,11 +217,12 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     }
     else{
         alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请选择学期" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
-        [alert show];
         
-        self.fetchButton.enabled = YES;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alert show];
+            self.fetchButton.enabled = YES;
+        });
     }
-    
 }
 
 //callback function
@@ -233,10 +239,9 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                                        NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
                                                                                                     options:0
                                                                                                       error:&connectionError];
-                                       NSString *status = [returnStatus valueForKeyPath:ISEMPTY];
-                                       NSLog(@"%@", status);
-                                       
-                                       if (!status) {
+                                       NSNumber *status = [returnStatus valueForKeyPath:ISEMPTY];
+
+                                       if ([status isEqualToNumber:[NSNumber numberWithInteger:0]]) {
                                            callback(YES, returnStatus);
                                        }
                                        else{
