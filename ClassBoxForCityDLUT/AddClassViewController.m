@@ -198,6 +198,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
         VerifyClassesBlock callback = ^(BOOL wasSuccessful, NSDictionary *classesInfo){
             if (wasSuccessful) {
                 NSLog(@"%@", classesInfo);
+                //要存数据
                 
                 [self dismissViewControllerAnimated:YES completion:nil];
                 self.fetchButton.enabled = YES;
@@ -239,6 +240,9 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                                        NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
                                                                                                     options:0
                                                                                                       error:&connectionError];
+                                       //这里只能是NSNumber型！！！！！
+                                       //这里只能是NSNumber型！！！！！
+                                       //这里只能是NSNumber型！！！！！
                                        NSNumber *status = [returnStatus valueForKeyPath:ISEMPTY];
 
                                        if ([status isEqualToNumber:[NSNumber numberWithInteger:0]]) {
