@@ -10,6 +10,7 @@
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "Student.h"
 #import "ClassesFetcher.h"
+#import "analysisClassesJSON.h"
 
 typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInfo);
 
@@ -177,6 +178,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     });
     
     __block UIAlertView *alert;
+    __block analysisClassesJSON *analysis = [[analysisClassesJSON alloc]init];
    
     //获取CoreData里面的学生信息
     NSArray *student = [Student MR_findAll];
@@ -200,6 +202,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                 NSLog(@"%@", classesInfo);
                 //要存数据
                 
+                [analysis analysisAndStore:classesInfo];
                 [self dismissViewControllerAnimated:YES completion:nil];
                 self.fetchButton.enabled = YES;
             }

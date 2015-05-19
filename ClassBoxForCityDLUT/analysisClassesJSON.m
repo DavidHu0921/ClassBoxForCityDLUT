@@ -9,8 +9,17 @@
 #import "analysisClassesJSON.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "Course.h"
+#import "ClassesFetcher.h"
 
-@implementation analysisClassesJSON
+@implementation analysisClassesJSON{
+    NSString * classesName;
+    NSString * classroom;
+    NSString * howLong;
+    NSString * startTime;
+    NSString * teacherName;
+    NSString * weekday;
+    NSArray * weekNumber;
+}
 
 - (instancetype)init
 {
@@ -22,7 +31,34 @@
 }
 
 - (void)analysisAndStore:(NSDictionary *)classesInfo{
+    NSArray *classes = [classesInfo valueForKeyPath:INFO];
+    NSLog(@"weekday with no blank:%@", classes);
     
+    for (int i = 0 ; i < 6; i++) {
+        NSString *monday = [self cleanTheBlank:[classes[i] valueForKeyPath:MONDAY]];
+        NSString *thursday = [self cleanTheBlank:[classes[i] valueForKeyPath:THURSDAY]];
+        NSString *wednesday = [self cleanTheBlank:[classes[i] valueForKeyPath:WEDNESDAY]];
+        NSString *tuesday = [self cleanTheBlank:[classes[i] valueForKeyPath:TUESDAY]];
+        NSString *friday = [self cleanTheBlank:[classes[i] valueForKeyPath:FRIDAY]];
+        NSString *saturday = [self cleanTheBlank:[classes[i] valueForKeyPath:SATURDAY]];
+        NSString *sunday = [self cleanTheBlank:[classes[i] valueForKeyPath:SUNDAY]];
+        
+        
+    }
 }
 
-@end
+- (NSString *)cleanTheBlank:(NSString *)weekday{
+    NSString *withNoBlank;
+    
+    NSRegularExpression *regular;
+    
+    regular = [[NSRegularExpression alloc] initWithPattern:@"\\s{1,}"
+                                                   options:NSRegularExpressionCaseInsensitive
+                                                     error:nil];
+    withNoBlank = [regular stringByReplacingMatchesInString:withNoBlank options:NSRegularExpressionCaseInsensitive  range:NSMakeRange(0, [withNoBlank length]) withTemplate:@" "];
+    
+    NSLog(@"weekday with no blank:%@", withNoBlank);
+    return withNoBlank;
+}
+
+@end   

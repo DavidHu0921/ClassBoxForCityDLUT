@@ -185,6 +185,21 @@ static const CGFloat CellHieght = 50;
     return cell;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    //底部还能滚动，后续再写死
+    if (scrollView.contentOffset.y <= 0 || scrollView.contentOffset.y >= CellHieght * 12) {
+        CGPoint offset = scrollView.contentOffset;
+        offset.y = 0;
+        scrollView.contentOffset = offset;
+    }
+//    
+//    if (scrollView.contentOffset.y >= CellHieght * 12){
+//        CGPoint offset = scrollView.contentOffset;
+//        offset.y = CellHieght * 12;
+//        scrollView.contentOffset = offset;
+//    }
+}
+
 #pragma mark - add Button
 
 - (IBAction)addClassesButton:(UIBarButtonItem *)sender {
