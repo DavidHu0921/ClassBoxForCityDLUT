@@ -87,7 +87,7 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
                 
                 //and then save the entity
                 [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
-                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+//                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
                 }];
                 
                 // Post notification

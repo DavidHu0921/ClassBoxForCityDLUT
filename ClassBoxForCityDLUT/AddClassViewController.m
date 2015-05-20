@@ -185,7 +185,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     NSString *studentName = [student[0] valueForKeyPath:@"username"];
     NSString *password = [student[0] valueForKeyPath:@"password"];
     NSInteger startItem = [[studentName substringToIndex:4] intValue];
-    NSLog(@"start item is :%ld", startItem);
+//    NSLog(@"start item is :%ld", startItem);
     
     NSInteger itemNumber = [self numberOfItem:self.itemTextField.text];
     
@@ -193,13 +193,13 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     if (itemNumber != 10) {
         // 计算选择的学期是哪个学期
         NSInteger thisItem = 7 + (startItem - 2010) * 2 + itemNumber;
-        NSLog(@"this item is :%ld", thisItem);
+//        NSLog(@"this item is :%ld", thisItem);
         
         NSURL *url = [ClassesFetcher URLforClassesInfo:studentName password:password item:thisItem];
         
         VerifyClassesBlock callback = ^(BOOL wasSuccessful, NSDictionary *classesInfo){
             if (wasSuccessful) {
-                NSLog(@"%@", classesInfo);
+//                NSLog(@"%@", classesInfo);
                 //要存数据
                 
                 [analysis analysisAndStore:classesInfo];
