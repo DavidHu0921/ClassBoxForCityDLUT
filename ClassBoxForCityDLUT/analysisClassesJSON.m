@@ -11,14 +11,18 @@
 #import "Course.h"
 #import "ClassesFetcher.h"
 
+static const NSString *NORMAL_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
+static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
+static const NSString *ENGLISH_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
+
 @implementation analysisClassesJSON{
     NSString * classesName;
-    NSString * classroom;
-    NSString * howLong;
-    NSString * startTime;
     NSString * teacherName;
-    NSString * weekday;
-    NSArray * weekNumber;
+    NSString * classroom;
+    NSNumber * startTime;
+    NSNumber * weekday;
+    NSNumber * howLong;
+    NSArray *allweekNumber;
 }
 
 - (instancetype)init
@@ -52,11 +56,55 @@
         NSArray *saturdayArray = [saturday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
         NSArray *sundayArray = [sunday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
 
-//        for (int j = 0; j < mondayArray.count; j++) {
-//            NSLog(@"%@", mondayArray[j]);
-//        }
+        [self storeTheWeekday:mondayArray weekday:1 numberOfClass:i];
+        [self storeTheWeekday:thursdayArray weekday:2 numberOfClass:i];
+        [self storeTheWeekday:wednesdayArray weekday:3 numberOfClass:i];
+        [self storeTheWeekday:tuesdayArray weekday:4 numberOfClass:i];
+        [self storeTheWeekday:fridayArray weekday:5 numberOfClass:i];
+        [self storeTheWeekday:saturdayArray weekday:6 numberOfClass:i];
+        [self storeTheWeekday:sundayArray weekday:7 numberOfClass:i];
+
     }
 }
+
+- (void)storeTheWeekday:(NSArray *)weekArray weekday:(NSInteger)dayInWeek numberOfClass:(NSInteger)numberOfClass{
+    for (int i = 0; i < weekArray.count; i++) {
+        NSPredicate *isEqualToNormal = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", NORMAL_REGEX];
+        NSPredicate *isEqualToSport = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", SPORTS_REGEX];
+        NSPredicate *isEqualToEnglish = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", ENGLISH_REGEX];
+        
+        if ([isEqualToNormal evaluateWithObject: weekArray[i]]){
+            //Matches
+            NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
+            
+            classesName = classesDetail[0];
+            teacherName = classesDetail[1];
+            classroom = classesDetail[2];
+            startTime = [[NSNumber alloc]initWithInteger:numberOfClass];
+            weekday = [[NSNumber alloc]initWithInteger:dayInWeek];
+//            weekNumber =
+            howLong = [[NSNumber alloc]initWithInt:[[classesDetail[5] substringToIndex:1] intValue]];
+            
+            NSLog(@"%@ 是普通课程类型", classesDetail);
+        }
+        else if ([isEqualToSport evaluateWithObject: weekArray[i]]){
+            //Matches
+            NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
+            
+            NSLog(@"%@是体育课程类型", classesDetail );
+        }
+        else if ([isEqualToEnglish evaluateWithObject: weekArray[i]]){
+            NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
+            
+            NSLog(@"%@是英语课程类型", classesDetail );
+        }
+        else{
+            NSLog(@"不是默认的课程类型");
+        }
+    }
+}
+
+#pragma mark - helper
 
 - (NSString *)cleanTheBlank:(NSString *)weekday{
     NSString *withNoBlank;

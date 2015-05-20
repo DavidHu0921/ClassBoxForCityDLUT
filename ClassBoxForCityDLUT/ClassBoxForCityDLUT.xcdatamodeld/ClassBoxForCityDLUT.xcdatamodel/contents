@@ -3,10 +3,10 @@
     <entity name="Course" representedClassName="Course" syncable="YES">
         <attribute name="classesName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="classroom" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="howLong" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="howLong" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="teacherName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="weekday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weekday" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="weekNumber" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES">

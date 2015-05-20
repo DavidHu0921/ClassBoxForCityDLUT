@@ -2,7 +2,7 @@
 //  Course.m
 //  ClassBoxForCityDLUT
 //
-//  Created by 胡啸晨 on 15/5/12.
+//  Created by 胡啸晨 on 15/5/20.
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 

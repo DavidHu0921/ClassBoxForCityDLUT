@@ -191,8 +191,8 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     
     //判断不是空
     if (itemNumber != 10) {
-        // 计算选择的学期是哪个学期
-        NSInteger thisItem = 7 + (startItem - 2010) * 2 + itemNumber;
+        // 计算选择的学期是哪个学期,接口改了，14-15下学期变成14了，所以第一个数字由7改为5
+        NSInteger thisItem = 5 + (startItem - 2010) * 2 + itemNumber;
 //        NSLog(@"this item is :%ld", thisItem);
         
         NSURL *url = [ClassesFetcher URLforClassesInfo:studentName password:password item:thisItem];
