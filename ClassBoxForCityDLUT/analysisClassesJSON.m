@@ -32,7 +32,7 @@
 
 - (void)analysisAndStore:(NSDictionary *)classesInfo{
     NSArray *classes = [classesInfo valueForKeyPath:INFO];
-    NSLog(@"weekday with no blank:%@", classes);
+
     
     for (int i = 0 ; i < 6; i++) {
         NSString *monday = [self cleanTheBlank:[classes[i] valueForKeyPath:MONDAY]];
@@ -55,7 +55,7 @@
     regular = [[NSRegularExpression alloc] initWithPattern:@"\\s{1,}"
                                                    options:NSRegularExpressionCaseInsensitive
                                                      error:nil];
-    withNoBlank = [regular stringByReplacingMatchesInString:withNoBlank options:NSRegularExpressionCaseInsensitive  range:NSMakeRange(0, [withNoBlank length]) withTemplate:@" "];
+    withNoBlank = [regular stringByReplacingMatchesInString:weekday options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [weekday length]) withTemplate:@" "];
     
     NSLog(@"weekday with no blank:%@", withNoBlank);
     return withNoBlank;
