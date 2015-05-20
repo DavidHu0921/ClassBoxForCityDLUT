@@ -12,6 +12,7 @@
 #import "ClassesNumCollectionViewCell.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "Student.h"
+#import "Course.h"
 
 static const CGFloat CellHieght = 50;
 
@@ -204,10 +205,16 @@ static const CGFloat CellHieght = 50;
 
 - (IBAction)addClassesButton:(UIBarButtonItem *)sender {
     NSArray *student = [Student MR_findAll];
+    NSArray *courses = [Course MR_findAll];
     UIAlertView *alert;
     
     if (student.count == 0) {
         alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请先登录"
+                                          delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
+        [alert show];
+    }
+    else if (courses.count != 0){
+        alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"已有课表，请先删除再添加新课表"
                                           delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
         [alert show];
     }

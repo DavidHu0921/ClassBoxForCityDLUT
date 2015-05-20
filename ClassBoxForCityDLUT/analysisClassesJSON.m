@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 
+//这个类如果看不懂联系这个邮箱：davidhu920921@gmail.com
+
 #import "analysisClassesJSON.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "Course.h"
@@ -74,37 +76,94 @@ static const NSString *ENGLISH_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\
         NSPredicate *isEqualToEnglish = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", ENGLISH_REGEX];
         
         if ([isEqualToNormal evaluateWithObject: weekArray[i]]){
-            //Matches
+
+            //把所有内容按空格分开
             NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
             
+            // handle with allWeekNum
+            allweekNumber = [self handleWithWeekNumber:classesDetail[3] weekType:classesDetail[4]];
+            //other value
             classesName = classesDetail[0];
             teacherName = classesDetail[1];
             classroom = classesDetail[2];
             startTime = [[NSNumber alloc]initWithInteger:numberOfClass];
             weekday = [[NSNumber alloc]initWithInteger:dayInWeek];
-//            weekNumber =
             howLong = [[NSNumber alloc]initWithInt:[[classesDetail[5] substringToIndex:1] intValue]];
             
-            NSLog(@"%@ 是普通课程类型", classesDetail);
+            NSLog(@"classname:%@, teacherName:%@, classroom:%@, allweekNumber:%@, startTime:%@, weekday:%@, howLong:%@", classesName, teacherName, classroom, allweekNumber, startTime, weekday, howLong);
         }
         else if ([isEqualToSport evaluateWithObject: weekArray[i]]){
-            //Matches
             NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
             
-            NSLog(@"%@是体育课程类型", classesDetail );
+//            NSLog(@"%@是体育课程类型", classesDetail );
         }
         else if ([isEqualToEnglish evaluateWithObject: weekArray[i]]){
             NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
             
-            NSLog(@"%@是英语课程类型", classesDetail );
+//            NSLog(@"%@是英语课程类型", classesDetail );
         }
         else{
-            NSLog(@"不是默认的课程类型");
+//            NSLog(@"不是默认的课程类型");
         }
     }
 }
 
 #pragma mark - helper
+
+- (NSArray *)handleWithWeekNumber:(NSString *)thisweeknumber weekType:(NSString *)weekType{
+    
+//    NSString *weekType = classesDetail[4];
+    //去掉“周”
+    NSRegularExpression *newRegular;
+    newRegular = [[NSRegularExpression alloc] initWithPattern:@"周" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSString *newString = [newRegular stringByReplacingMatchesInString:thisweeknumber options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [thisweeknumber length]) withTemplate:@""];
+    
+    //remove .
+    NSArray *weekNumberDetail = [newString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"."]];
+    NSMutableArray *weekNumber = [[NSMutableArray alloc]init] ;//Store an array
+    NSMutableArray *finalReturn = [[NSMutableArray alloc]init] ;
+    
+//    NSLog(@"type: %@ , array: %@", weekType, weekNumberDetail);
+    for (int k = 0; k < weekNumberDetail.count; k++) {
+        if ([weekNumberDetail[k] containsString:@"-"]) {
+            NSArray *startAndEnd = [weekNumberDetail[k] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"-"]];
+            NSInteger start = [startAndEnd[0] integerValue];
+            NSInteger end = [startAndEnd[1] integerValue];
+            
+//            NSLog(@"start: %ld, end: %ld", start, end);
+            for (NSInteger m = start; m < end + 1; m++) {
+                //                        [weekNumber addObject:m];
+//                NSLog(@"number:%ld", m);
+                [weekNumber addObject:[NSNumber numberWithInteger:m]];
+            }
+        }
+        else{
+//            NSLog(@"week Number is :%@", weekNumberDetail[k]);
+            [weekNumber addObject:[NSNumber numberWithInt:[weekNumberDetail[k] intValue]]];
+        }
+    }
+//    NSLog(@"weekArray: %@", weekNumber);
+    //需要处理单双周
+    if ([weekType isEqualToString:@"双周"]) {
+        for (int x = 0; x < weekNumber.count; x++) {
+            if ([weekNumber[x] integerValue]%2 == 0) {
+                [finalReturn addObject:weekNumber[x]];
+            }
+        }
+    }
+    else if([weekType isEqualToString:@"单周"]){
+        for (int y = 0; y < weekNumber.count; y++) {
+            if ([weekNumber[y] integerValue]%2 == 0) {
+                [finalReturn addObject:weekNumber[y]];
+            }
+        }
+    }
+    else{
+        finalReturn = weekNumber;
+    }
+    
+    return finalReturn;
+}
 
 - (NSString *)cleanTheBlank:(NSString *)weekday{
     NSString *withNoBlank;
