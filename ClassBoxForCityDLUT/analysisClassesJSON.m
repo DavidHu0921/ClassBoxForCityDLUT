@@ -15,7 +15,6 @@
 
 static const NSString *NORMAL_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
 static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
-static const NSString *ENGLISH_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
 
 @implementation analysisClassesJSON{
     NSString * classesName;
@@ -73,10 +72,8 @@ static const NSString *ENGLISH_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\
     for (int i = 0; i < weekArray.count; i++) {
         NSPredicate *isEqualToNormal = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", NORMAL_REGEX];
         NSPredicate *isEqualToSport = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", SPORTS_REGEX];
-        NSPredicate *isEqualToEnglish = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", ENGLISH_REGEX];
         
         if ([isEqualToNormal evaluateWithObject: weekArray[i]]){
-
             //把所有内容按空格分开
             NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
             
@@ -95,12 +92,18 @@ static const NSString *ENGLISH_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\
         else if ([isEqualToSport evaluateWithObject: weekArray[i]]){
             NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
             
-//            NSLog(@"%@是体育课程类型", classesDetail );
-        }
-        else if ([isEqualToEnglish evaluateWithObject: weekArray[i]]){
-            NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
+            // handle with allWeekNum
+            allweekNumber = [self handleWithWeekNumber:classesDetail[2] weekType:classesDetail[3]];
+            //other value
+            classesName = classesDetail[0];
+            teacherName = classesDetail[1];
+//            classroom = classesDetail[2];
+            startTime = [[NSNumber alloc]initWithInteger:numberOfClass];
+            weekday = [[NSNumber alloc]initWithInteger:dayInWeek];
+            howLong = [[NSNumber alloc]initWithInt:[[classesDetail[4] substringToIndex:1] intValue]];
             
-//            NSLog(@"%@是英语课程类型", classesDetail );
+            NSLog(@"classname:%@, teacherName:%@, allweekNumber:%@, startTime:%@, weekday:%@, howLong:%@", classesName, teacherName, allweekNumber, startTime, weekday, howLong);
+//            NSLog(@"%@是体育课程类型", classesDetail );
         }
         else{
 //            NSLog(@"不是默认的课程类型");
@@ -112,38 +115,33 @@ static const NSString *ENGLISH_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\
 
 - (NSArray *)handleWithWeekNumber:(NSString *)thisweeknumber weekType:(NSString *)weekType{
     
-//    NSString *weekType = classesDetail[4];
     //去掉“周”
     NSRegularExpression *newRegular;
     newRegular = [[NSRegularExpression alloc] initWithPattern:@"周" options:NSRegularExpressionCaseInsensitive error:nil];
     NSString *newString = [newRegular stringByReplacingMatchesInString:thisweeknumber options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [thisweeknumber length]) withTemplate:@""];
     
-    //remove .
+    //去掉.
     NSArray *weekNumberDetail = [newString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"."]];
     NSMutableArray *weekNumber = [[NSMutableArray alloc]init] ;//Store an array
     NSMutableArray *finalReturn = [[NSMutableArray alloc]init] ;
     
-//    NSLog(@"type: %@ , array: %@", weekType, weekNumberDetail);
+    //把周数拆开变成一个nsnumber的数组
     for (int k = 0; k < weekNumberDetail.count; k++) {
         if ([weekNumberDetail[k] containsString:@"-"]) {
             NSArray *startAndEnd = [weekNumberDetail[k] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"-"]];
             NSInteger start = [startAndEnd[0] integerValue];
             NSInteger end = [startAndEnd[1] integerValue];
             
-//            NSLog(@"start: %ld, end: %ld", start, end);
             for (NSInteger m = start; m < end + 1; m++) {
-                //                        [weekNumber addObject:m];
-//                NSLog(@"number:%ld", m);
                 [weekNumber addObject:[NSNumber numberWithInteger:m]];
             }
         }
         else{
-//            NSLog(@"week Number is :%@", weekNumberDetail[k]);
             [weekNumber addObject:[NSNumber numberWithInt:[weekNumberDetail[k] intValue]]];
         }
     }
-//    NSLog(@"weekArray: %@", weekNumber);
-    //需要处理单双周
+
+    //处理单双周
     if ([weekType isEqualToString:@"双周"]) {
         for (int x = 0; x < weekNumber.count; x++) {
             if ([weekNumber[x] integerValue]%2 == 0) {
@@ -168,14 +166,20 @@ static const NSString *ENGLISH_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\
 - (NSString *)cleanTheBlank:(NSString *)weekday{
     NSString *withNoBlank;
     NSString *newString;
+    NSString *newString2;
     
     NSRegularExpression *regular;
     regular = [[NSRegularExpression alloc] initWithPattern:@"\\s{1,}" options:NSRegularExpressionCaseInsensitive error:nil];
     withNoBlank = [regular stringByReplacingMatchesInString:weekday options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [weekday length]) withTemplate:@" "];
     
+    //处理英语外教的姓名和课程里可能有的带英文和空格的课程名
+    NSRegularExpression *regular2;
+    regular2 = [[NSRegularExpression alloc] initWithPattern:@"([A-Za-z]) ([A-Za-z])" options:NSRegularExpressionCaseInsensitive error:nil];
+    newString2 = [regular2 stringByReplacingMatchesInString:withNoBlank options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [withNoBlank length]) withTemplate:@"$1_$2"];
+    
     NSRegularExpression *newRegular;
     newRegular = [[NSRegularExpression alloc] initWithPattern:@"节\\s" options:NSRegularExpressionCaseInsensitive error:nil];
-    newString = [newRegular stringByReplacingMatchesInString:withNoBlank options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [withNoBlank length]) withTemplate:@"节,"];
+    newString = [newRegular stringByReplacingMatchesInString:newString2 options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [newString2 length]) withTemplate:@"节,"];
     
     return newString;
 }

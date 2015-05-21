@@ -86,6 +86,15 @@ static const CGFloat CellHieght = 50;
     
     collectionView.delegate = self;
     collectionView.dataSource = self;
+    
+//    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(25, 0, (self.view.frame.size.width-25)/7 , 100)];
+    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    [button addTarget:self action:@selector(aMethod:) forControlEvents:UIControlEventTouchUpInside];
+    [btn2 setTitle:@"Show View" forState:UIControlStateNormal];
+    btn2.frame = CGRectMake(25, 0, (self.view.frame.size.width-25)/7 , 100);
+    [btn2 setBackgroundColor:[UIColor lightGrayColor]];
+    [collectionView addSubview:btn2];
+    
     [self.view addSubview:collectionView];
 }
 
