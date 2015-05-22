@@ -151,7 +151,7 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
     }
     else if([weekType isEqualToString:@"单周"]){
         for (int y = 0; y < weekNumber.count; y++) {
-            if ([weekNumber[y] integerValue]%2 == 0) {
+            if ([weekNumber[y] integerValue]%2 != 0) {
                 [finalReturn addObject:weekNumber[y]];
             }
         }

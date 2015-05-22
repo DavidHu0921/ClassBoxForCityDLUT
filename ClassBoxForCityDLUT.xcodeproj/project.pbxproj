@@ -291,11 +291,11 @@
 		DCCF8DB21ABDB3CB00655FFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DCDE1B851B086CB6007EA05C /* analysisClassesJSON.h */,
+				DCDE1B861B086CB6007EA05C /* analysisClassesJSON.m */,
 				0B3A324F1AE55AA6001E5E4A /* SharedContext */,
 				DCCF8DB31ABDB3CB00655FFB /* Info.plist */,
 				DCCF8DB41ABDB3CB00655FFB /* main.m */,
-				DCDE1B851B086CB6007EA05C /* analysisClassesJSON.h */,
-				DCDE1B861B086CB6007EA05C /* analysisClassesJSON.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
