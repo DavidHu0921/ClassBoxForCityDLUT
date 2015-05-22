@@ -88,6 +88,21 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
             howLong = [[NSNumber alloc]initWithInt:[[classesDetail[5] substringToIndex:1] intValue]];
             
             NSLog(@"classname:%@, teacherName:%@, classroom:%@, allweekNumber:%@, startTime:%@, weekday:%@, howLong:%@", classesName, teacherName, classroom, allweekNumber, startTime, weekday, howLong);
+            
+            //store the classes
+            Course *course = [Course MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+            course.classesName = classesName;
+            course.teacherName = teacherName;
+            course.classroom = classroom;
+            course.startTime = startTime;
+            course.weekday = weekday;
+            course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
+            course.howLong = howLong;
+            
+            //and then save the entity
+            [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+                                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+            }];
         }
         else if ([isEqualToSport evaluateWithObject: weekArray[i]]){
             NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
@@ -97,13 +112,25 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
             //other value
             classesName = classesDetail[0];
             teacherName = classesDetail[1];
-//            classroom = classesDetail[2];
             startTime = [[NSNumber alloc]initWithInteger:numberOfClass];
             weekday = [[NSNumber alloc]initWithInteger:dayInWeek];
             howLong = [[NSNumber alloc]initWithInt:[[classesDetail[4] substringToIndex:1] intValue]];
             
             NSLog(@"classname:%@, teacherName:%@, allweekNumber:%@, startTime:%@, weekday:%@, howLong:%@", classesName, teacherName, allweekNumber, startTime, weekday, howLong);
-//            NSLog(@"%@是体育课程类型", classesDetail );
+
+            //store the classes
+            Course *course = [Course MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+            course.classesName = classesName;
+            course.teacherName = teacherName;
+            course.startTime = startTime;
+            course.weekday = weekday;
+            course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
+            course.howLong = howLong;
+            
+            //and then save the entity
+            [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+            }];
         }
         else{
 //            NSLog(@"不是默认的课程类型");
