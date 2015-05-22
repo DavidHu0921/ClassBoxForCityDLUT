@@ -193,15 +193,12 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     if (itemNumber != 10) {
         // 计算选择的学期是哪个学期,接口改了，14-15下学期变成14了，所以第一个数字由7改为5
         NSInteger thisItem = 5 + (startItem - 2010) * 2 + itemNumber;
-//        NSLog(@"this item is :%ld", thisItem);
         
         NSURL *url = [ClassesFetcher URLforClassesInfo:studentName password:password item:thisItem];
         
         VerifyClassesBlock callback = ^(BOOL wasSuccessful, NSDictionary *classesInfo){
             if (wasSuccessful) {
-//                NSLog(@"%@", classesInfo);
                 //要存数据
-                
                 [analysis analysisAndStore:classesInfo];
                 [self dismissViewControllerAnimated:YES completion:nil];
                 self.fetchButton.enabled = YES;
@@ -243,9 +240,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                                        NSDictionary *returnStatus = [NSJSONSerialization JSONObjectWithData:data
                                                                                                     options:0
                                                                                                       error:&connectionError];
-                                       //这里只能是NSNumber型！！！！！
-                                       //这里只能是NSNumber型！！！！！
-                                       //这里只能是NSNumber型！！！！！
+                                       //这里只能是NSNumber型
                                        NSNumber *status = [returnStatus valueForKeyPath:ISEMPTY];
 
                                        if ([status isEqualToNumber:[NSNumber numberWithInteger:0]]) {

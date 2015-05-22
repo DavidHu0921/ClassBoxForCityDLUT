@@ -87,15 +87,32 @@ static const CGFloat CellHieght = 50;
     collectionView.delegate = self;
     collectionView.dataSource = self;
     
-//    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(25, 0, (self.view.frame.size.width-25)/7 , 100)];
-    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    [button addTarget:self action:@selector(aMethod:) forControlEvents:UIControlEventTouchUpInside];
-    [btn2 setTitle:@"Show View" forState:UIControlStateNormal];
-    btn2.frame = CGRectMake(25, 0, (self.view.frame.size.width-25)/7 , 100);
-    [btn2 setBackgroundColor:[UIColor lightGrayColor]];
-    [collectionView addSubview:btn2];
+    [self drawButton:collectionView];
     
     [self.view addSubview:collectionView];
+}
+
+- (void)drawButton:(UIView *)classview{
+    //add button
+    NSArray *courses = [Course MR_findAll];
+    
+    NSLog(@"all the class: %@", courses);
+
+//    if (courses.count != 0) {
+//        NSLog(@"one of class: %@", [courses[0] valueForKey:@"classesName"]);
+//        NSLog(@"two of class: %@", [courses[1] valueForKey:@"classesName"]);
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        button.frame = CGRectMake(25, 0, (self.view.frame.size.width-25)/7 , CellHieght*2);
+        [button setBackgroundColor:[UIColor lightGrayColor]];
+
+        button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        // you probably want to center it
+        button.titleLabel.textAlignment = NSTextAlignmentCenter; // if you want to
+        [button setTitle: @"Line1ShowView\nLine2ShowView" forState: UIControlStateNormal];
+        
+        [classview addSubview:button];
+//    }
+    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -224,11 +241,25 @@ static const CGFloat CellHieght = 50;
     }
     else if (courses.count != 0){
         alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"已有课表，请先删除再添加新课表"
-                                          delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
+                                          delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alert show];
     }
     else{
         [self performSegueWithIdentifier:@"addClasses" sender:nil];
     }
 }
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+            break;
+        case 1:
+            [Course MR_truncateAll];
+            break;
+        default:
+            break;
+    }
+}
+
 @end
