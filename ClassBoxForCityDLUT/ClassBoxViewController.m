@@ -14,11 +14,12 @@
 #import "Student.h"
 #import "Course.h"
 
-static const CGFloat CellHieght = 50;
+static const CGFloat CellHieght = 70;
 
 @interface ClassBoxViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *ClassBoxNC;
+
 - (IBAction)addClassesButton:(UIBarButtonItem *)sender;
 
 @end
@@ -32,6 +33,11 @@ static const CGFloat CellHieght = 50;
     [self createHeaderView];
     //添加collectionView
     [self createCollectionView];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.view setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +59,13 @@ static const CGFloat CellHieght = 50;
 }
 
 - (void)setNavigationBar{
+    
+    //赋值给NC
+    NSInteger thisWeekNumber = [self countForThisWeek];
+    self.ClassBoxNC.title = [NSString stringWithFormat:@"第%ld周", thisWeekNumber];
+}
+
+- (NSInteger)countForThisWeek{
     //获取当前周数
     NSDate *now = [NSDate date];
     
@@ -64,8 +77,7 @@ static const CGFloat CellHieght = 50;
     NSInteger weekNumberOfNow =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:now] weekOfYear];
     NSInteger weekNumberOfOpenDay =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:openDay] weekOfYear];
     
-    //赋值给NC
-    self.ClassBoxNC.title = [NSString stringWithFormat:@"第%ld周", weekNumberOfNow - weekNumberOfOpenDay + 1];
+    return weekNumberOfNow - weekNumberOfOpenDay + 1;
 }
 
 #pragma mark - createCollectionPart
@@ -98,21 +110,37 @@ static const CGFloat CellHieght = 50;
     
     NSLog(@"all the class: %@", courses);
 
-//    if (courses.count != 0) {
-//        NSLog(@"one of class: %@", [courses[0] valueForKey:@"classesName"]);
-//        NSLog(@"two of class: %@", [courses[1] valueForKey:@"classesName"]);
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        button.frame = CGRectMake(25, 0, (self.view.frame.size.width-25)/7 , CellHieght*2);
-        [button setBackgroundColor:[UIColor lightGrayColor]];
+    if (courses.count != 0) {
 
-        button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        // you probably want to center it
-        button.titleLabel.textAlignment = NSTextAlignmentCenter; // if you want to
-        [button setTitle: @"Line1ShowView\nLine2ShowView" forState: UIControlStateNormal];
-        
-        [classview addSubview:button];
-//    }
-    
+        for (int i = 0; i < courses.count; i++) {
+            
+            NSMutableArray *weekArray = [NSKeyedUnarchiver unarchiveObjectWithData:[courses[i] valueForKeyPath:@"weekNumber"]];
+            NSLog(@"weeknumber: %@", weekArray);
+            
+            for (NSNumber *thisWeekNumber in weekArray){
+                if ([thisWeekNumber isEqualToNumber:[NSNumber numberWithInteger:[self countForThisWeek]]]) {
+                    NSString *cname = [courses[i] valueForKeyPath:@"classesName"];
+                    NSString *rname = [courses[i] valueForKeyPath:@"classroom"];
+                    NSInteger startNumber = [[courses[i] valueForKeyPath:@"startTime"] integerValue];
+                    NSInteger longLast = [[courses[i] valueForKeyPath:@"howLong"] integerValue];
+                    NSInteger weekDay = [[courses[i] valueForKeyPath:@"weekday"] integerValue];
+                    
+                    NSString *btnName = [NSString stringWithFormat:@"%@\n%@", cname, rname];
+                    
+                    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                    button.frame = CGRectMake(25 + (self.view.frame.size.width-25)/7*(weekDay-1) , CellHieght*startNumber , (self.view.frame.size.width-25)/7 , CellHieght*longLast);
+                    [button setBackgroundColor:[UIColor lightGrayColor]];
+                    
+                    button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+                    button.titleLabel.textAlignment = NSTextAlignmentCenter;
+                    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
+                    [button setTitle:btnName forState: UIControlStateNormal];
+                    
+                    [classview addSubview:button];
+                }
+            }
+        }
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
