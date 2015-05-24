@@ -30,13 +30,15 @@ static const CGFloat CellHieght = 70;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self createHeaderView];
-    //添加collectionView
-    [self createCollectionView];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+    [self createHeaderView];
+    //添加collectionView
+    [self createCollectionView];
+    
     [self.view setNeedsDisplay];
 }
 
@@ -107,15 +109,13 @@ static const CGFloat CellHieght = 70;
 - (void)drawButton:(UIView *)classview{
     //add button
     NSArray *courses = [Course MR_findAll];
-    
-    NSLog(@"all the class: %@", courses);
 
     if (courses.count != 0) {
 
         for (int i = 0; i < courses.count; i++) {
             
             NSMutableArray *weekArray = [NSKeyedUnarchiver unarchiveObjectWithData:[courses[i] valueForKeyPath:@"weekNumber"]];
-            NSLog(@"weeknumber: %@", weekArray);
+//            NSLog(@"weeknumber: %@", weekArray);
             
             for (NSNumber *thisWeekNumber in weekArray){
                 if ([thisWeekNumber isEqualToNumber:[NSNumber numberWithInteger:[self countForThisWeek]]]) {
@@ -128,7 +128,7 @@ static const CGFloat CellHieght = 70;
                     NSString *btnName = [NSString stringWithFormat:@"%@\n%@", cname, rname];
                     
                     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-                    button.frame = CGRectMake(25 + (self.view.frame.size.width-25)/7*(weekDay-1) , CellHieght*startNumber , (self.view.frame.size.width-25)/7 , CellHieght*longLast);
+                    button.frame = CGRectMake(25 + (self.view.frame.size.width-25)/7*(weekDay-1) , (CellHieght*startNumber)*2 , (self.view.frame.size.width-25)/7 , CellHieght*longLast);
                     [button setBackgroundColor:[UIColor lightGrayColor]];
                     
                     button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -247,12 +247,7 @@ static const CGFloat CellHieght = 70;
         offset.y = 0;
         scrollView.contentOffset = offset;
     }
-//    
-//    if (scrollView.contentOffset.y >= CellHieght * 12){
-//        CGPoint offset = scrollView.contentOffset;
-//        offset.y = CellHieght * 12;
-//        scrollView.contentOffset = offset;
-//    }
+
 }
 
 #pragma mark - add Button

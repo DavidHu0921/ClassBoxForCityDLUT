@@ -50,21 +50,20 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
         
         //把所有课按“，”分开
         NSArray *mondayArray = [monday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
-        NSArray *thursdayArray = [thursday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
-        NSArray *wednesdayArray = [wednesday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
         NSArray *tuesdayArray = [tuesday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+        NSArray *wednesdayArray = [wednesday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+        NSArray *thursdayArray = [thursday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
         NSArray *fridayArray = [friday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
         NSArray *saturdayArray = [saturday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
         NSArray *sundayArray = [sunday componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
 
         [self storeTheWeekday:mondayArray weekday:1 numberOfClass:i];
-        [self storeTheWeekday:thursdayArray weekday:2 numberOfClass:i];
+        [self storeTheWeekday:tuesdayArray weekday:2 numberOfClass:i];
         [self storeTheWeekday:wednesdayArray weekday:3 numberOfClass:i];
-        [self storeTheWeekday:tuesdayArray weekday:4 numberOfClass:i];
+        [self storeTheWeekday:thursdayArray weekday:4 numberOfClass:i];
         [self storeTheWeekday:fridayArray weekday:5 numberOfClass:i];
         [self storeTheWeekday:saturdayArray weekday:6 numberOfClass:i];
         [self storeTheWeekday:sundayArray weekday:7 numberOfClass:i];
-
     }
 }
 
