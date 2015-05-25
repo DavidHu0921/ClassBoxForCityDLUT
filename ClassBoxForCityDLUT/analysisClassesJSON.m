@@ -88,20 +88,44 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
             
             NSLog(@"classname:%@, teacherName:%@, classroom:%@, allweekNumber:%@, startTime:%@, weekday:%@, howLong:%@", classesName, teacherName, classroom, allweekNumber, startTime, weekday, howLong);
             
-            //store the classes
-            Course *course = [Course MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
-            course.classesName = classesName;
-            course.teacherName = teacherName;
-            course.classroom = classroom;
-            course.startTime = startTime;
-            course.weekday = weekday;
-            course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
-            course.howLong = howLong;
+//            //store the classes
+//            Course *course = [Course MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+//            course.classesName = classesName;
+//            course.teacherName = teacherName;
+//            course.classroom = classroom;
+//            course.startTime = startTime;
+//            course.weekday = weekday;
+//            course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
+//            course.howLong = howLong;
+//            
+//            //and then save the entity
+//            [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+//                                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+//            }];
             
-            //and then save the entity
-            [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
-                                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+            [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+//                NSArray *courseArray = [Course MR_findAll];
+                Course *course;
+                
+//                if ([courseArray count]) {
+//                    course = [courseArray objectAtIndex:0];
+//                } else {
+                    course = [Course MR_createInContext:localContext];
+//                }
+                
+                course.classesName = classesName;
+                course.teacherName = teacherName;
+                course.classroom = classroom;
+                course.startTime = startTime;
+                course.weekday = weekday;
+                course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
+                course.howLong = howLong;
+                
+            } completion:^(BOOL success, NSError *error) {
+                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
             }];
+            
+            
         }
         else if ([isEqualToSport evaluateWithObject: weekArray[i]]){
             NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
@@ -117,19 +141,43 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
             
             NSLog(@"classname:%@, teacherName:%@, allweekNumber:%@, startTime:%@, weekday:%@, howLong:%@", classesName, teacherName, allweekNumber, startTime, weekday, howLong);
 
-            //store the classes
-            Course *course = [Course MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
-            course.classesName = classesName;
-            course.teacherName = teacherName;
-            course.startTime = startTime;
-            course.weekday = weekday;
-            course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
-            course.howLong = howLong;
+//            //store the classes
+//            Course *course = [Course MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+//            course.classesName = classesName;
+//            course.teacherName = teacherName;
+//            course.classroom = @"体育馆";
+//            course.startTime = startTime;
+//            course.weekday = weekday;
+//            course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
+//            course.howLong = howLong;
+//            
+//            //and then save the entity
+//            [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+//                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+//            }];
             
-            //and then save the entity
-            [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
+            [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+//                NSArray *courseArray = [Course MR_findAll];
+                Course *course;
+                
+//                if ([courseArray count]) {
+//                    course = [courseArray objectAtIndex:0];
+//                } else {
+                course = [Course MR_createInContext:localContext];
+//                }
+                
+                course.classesName = classesName;
+                course.teacherName = teacherName;
+                course.classroom = @"体育馆";
+                course.startTime = startTime;
+                course.weekday = weekday;
+                course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
+                course.howLong = howLong;
+                
+            } completion:^(BOOL success, NSError *error) {
                 NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
             }];
+            
         }
         else{
 //            NSLog(@"不是默认的课程类型");

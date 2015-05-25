@@ -20,8 +20,7 @@
 
 // UITableView+FDTemplateLayoutCell
 #define COCOAPODS_POD_AVAILABLE_UITableView_FDTemplateLayoutCell
-// This library does not follow semantic-versioning,
-// so we were not able to define version macros.
-// Please contact the author.
-// Version: 1.1-beta.
+#define COCOAPODS_VERSION_MAJOR_UITableView_FDTemplateLayoutCell 1
+#define COCOAPODS_VERSION_MINOR_UITableView_FDTemplateLayoutCell 2
+#define COCOAPODS_VERSION_PATCH_UITableView_FDTemplateLayoutCell 0
 

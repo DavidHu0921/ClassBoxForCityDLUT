@@ -79,7 +79,14 @@ static const CGFloat CellHieght = 70;
     NSInteger weekNumberOfNow =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:now] weekOfYear];
     NSInteger weekNumberOfOpenDay =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:openDay] weekOfYear];
     
-    return weekNumberOfNow - weekNumberOfOpenDay + 1;
+    NSInteger weekDayNow = [[calendar components:NSCalendarUnitWeekday fromDate:now] weekday];
+    
+    if (weekDayNow == 1) {
+        return weekNumberOfNow - weekNumberOfOpenDay;
+    }
+    else{
+        return weekNumberOfNow - weekNumberOfOpenDay + 1;
+    }
 }
 
 #pragma mark - createCollectionPart

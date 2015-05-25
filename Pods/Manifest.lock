@@ -2,7 +2,7 @@ PODS:
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
-  - UITableView+FDTemplateLayoutCell (1.1-beta)
+  - UITableView+FDTemplateLayoutCell (1.2)
 
 DEPENDENCIES:
   - MagicalRecord
@@ -10,6 +10,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
-  UITableView+FDTemplateLayoutCell: 058bc73b876f3bf0fb7f0bcb31c92af7ecd2587c
+  UITableView+FDTemplateLayoutCell: 355e1c52461bf51e2338f443ee358faca9628878
 
 COCOAPODS: 0.37.1
