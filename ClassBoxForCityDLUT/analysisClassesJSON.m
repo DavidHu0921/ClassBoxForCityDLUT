@@ -75,44 +75,18 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
         if ([isEqualToNormal evaluateWithObject: weekArray[i]]){
             //把所有内容按空格分开
             NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
-            
-            // handle with allWeekNum
-            allweekNumber = [self handleWithWeekNumber:classesDetail[3] weekType:classesDetail[4]];
-            //other value
-            classesName = classesDetail[0];
-            teacherName = classesDetail[1];
-            classroom = classesDetail[2];
-            startTime = [[NSNumber alloc]initWithInteger:numberOfClass];
-            weekday = [[NSNumber alloc]initWithInteger:dayInWeek];
-            howLong = [[NSNumber alloc]initWithInt:[[classesDetail[5] substringToIndex:1] intValue]];
-            
-            NSLog(@"classname:%@, teacherName:%@, classroom:%@, allweekNumber:%@, startTime:%@, weekday:%@, howLong:%@", classesName, teacherName, classroom, allweekNumber, startTime, weekday, howLong);
-            
-//            //store the classes
-//            Course *course = [Course MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
-//            course.classesName = classesName;
-//            course.teacherName = teacherName;
-//            course.classroom = classroom;
-//            course.startTime = startTime;
-//            course.weekday = weekday;
-//            course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
-//            course.howLong = howLong;
-//            
-//            //and then save the entity
-//            [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
-//                                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
-//            }];
-            
+
+            //store the classes
             [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
                 Course *course = [Course MR_createInContext:localContext];
                 
-                course.classesName = classesName;
-                course.teacherName = teacherName;
-                course.classroom = classroom;
-                course.startTime = startTime;
-                course.weekday = weekday;
-                course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
-                course.howLong = howLong;
+                course.classesName = classesDetail[0];
+                course.teacherName = classesDetail[1];
+                course.classroom = classesDetail[2];
+                course.startTime = [[NSNumber alloc]initWithInteger:numberOfClass];
+                course.weekday = [[NSNumber alloc]initWithInteger:dayInWeek];
+                course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:[self handleWithWeekNumber:classesDetail[3] weekType:classesDetail[4]]];
+                course.howLong = [[NSNumber alloc]initWithInt:[[classesDetail[5] substringToIndex:1] intValue]];
                 
             } completion:^(BOOL success, NSError *error) {
                 NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
@@ -122,43 +96,18 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
         }
         else if ([isEqualToSport evaluateWithObject: weekArray[i]]){
             NSArray *classesDetail = [weekArray[i] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
-            
-            // handle with allWeekNum
-            allweekNumber = [self handleWithWeekNumber:classesDetail[2] weekType:classesDetail[3]];
-            //other value
-            classesName = classesDetail[0];
-            teacherName = classesDetail[1];
-            startTime = [[NSNumber alloc]initWithInteger:numberOfClass];
-            weekday = [[NSNumber alloc]initWithInteger:dayInWeek];
-            howLong = [[NSNumber alloc]initWithInt:[[classesDetail[4] substringToIndex:1] intValue]];
-            
-            NSLog(@"classname:%@, teacherName:%@, allweekNumber:%@, startTime:%@, weekday:%@, howLong:%@", classesName, teacherName, allweekNumber, startTime, weekday, howLong);
 
-//            //store the classes
-//            Course *course = [Course MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
-//            course.classesName = classesName;
-//            course.teacherName = teacherName;
-//            course.classroom = @"体育馆";
-//            course.startTime = startTime;
-//            course.weekday = weekday;
-//            course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
-//            course.howLong = howLong;
-//            
-//            //and then save the entity
-//            [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfWithCompletion:^(BOOL success, NSError *error) {
-//                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
-//            }];
-            
+            //store the classes
             [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
                 Course *course = [Course MR_createInContext:localContext];
                 
-                course.classesName = classesName;
-                course.teacherName = teacherName;
+                course.classesName = classesDetail[0];
+                course.teacherName = classesDetail[1];
                 course.classroom = @"体育馆";
-                course.startTime = startTime;
-                course.weekday = weekday;
-                course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:allweekNumber];
-                course.howLong = howLong;
+                course.startTime = [[NSNumber alloc]initWithInteger:numberOfClass];
+                course.weekday = [[NSNumber alloc]initWithInteger:dayInWeek];
+                course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:[self handleWithWeekNumber:classesDetail[2] weekType:classesDetail[3]]];
+                course.howLong = [[NSNumber alloc]initWithInt:[[classesDetail[4] substringToIndex:1] intValue]];
                 
             } completion:^(BOOL success, NSError *error) {
                 NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
@@ -219,6 +168,15 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
     else{
         finalReturn = weekNumber;
     }
+    
+//    for (int q = 0; q < finalReturn.count; q++) {
+//        if ([finalReturn[q] isKindOfClass:[NSNumber class]]) {
+//            NSLog(@"is nsnumber");
+//        }
+//        else{
+//            NSLog(@"not nsnumber");
+//        }
+//    }
     
     return finalReturn;
 }

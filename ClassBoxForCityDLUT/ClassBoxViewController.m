@@ -29,7 +29,6 @@ static const CGFloat CellHieght = 70;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -116,13 +115,11 @@ static const CGFloat CellHieght = 70;
 - (void)drawButton:(UIView *)classview{
     //add button
     NSArray *courses = [Course MR_findAll];
-
+    NSLog(@"number in store: %ld", courses.count);
+    
     if (courses.count != 0) {
-
         for (int i = 0; i < courses.count; i++) {
-            
             NSMutableArray *weekArray = [NSKeyedUnarchiver unarchiveObjectWithData:[courses[i] valueForKeyPath:@"weekNumber"]];
-//            NSLog(@"weeknumber: %@", weekArray);
             
             for (NSNumber *thisWeekNumber in weekArray){
                 if ([thisWeekNumber isEqualToNumber:[NSNumber numberWithInteger:[self countForThisWeek]]]) {
