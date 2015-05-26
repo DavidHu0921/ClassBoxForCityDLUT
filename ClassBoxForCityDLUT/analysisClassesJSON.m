@@ -16,15 +16,7 @@
 static const NSString *NORMAL_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
 static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
 
-@implementation analysisClassesJSON{
-    NSString * classesName;
-    NSString * teacherName;
-    NSString * classroom;
-    NSNumber * startTime;
-    NSNumber * weekday;
-    NSNumber * howLong;
-    NSArray *allweekNumber;
-}
+@implementation analysisClassesJSON
 
 - (instancetype)init
 {

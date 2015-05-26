@@ -132,11 +132,14 @@ static const CGFloat CellHieght = 70;
                     NSString *btnName = [NSString stringWithFormat:@"%@\n%@", cname, rname];
                     
                     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-                    button.frame = CGRectMake(25 + (self.view.frame.size.width-25)/7*(weekDay-1) , (CellHieght*startNumber)*2 , (self.view.frame.size.width-25)/7 , CellHieght*longLast);
+                    button.frame = CGRectMake(25 + (self.view.frame.size.width-25)/7*(weekDay-1) + 1 , (CellHieght*startNumber)*2 + 1, (self.view.frame.size.width-25)/7 - 2 , CellHieght*longLast - 2);
                     [button setBackgroundColor:[UIColor lightGrayColor]];
                     
                     button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
                     button.titleLabel.textAlignment = NSTextAlignmentCenter;
+                    button.titleLabel.textColor = [UIColor whiteColor];
+                    button.layer.cornerRadius = 5; // this value vary as per your desire
+                    button.clipsToBounds = YES;
                     [button.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
                     [button setTitle:btnName forState: UIControlStateNormal];
                     
