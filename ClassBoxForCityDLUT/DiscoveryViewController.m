@@ -76,6 +76,7 @@
     
     //still have some problems
     [Student MR_truncateAll];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     self.nameLabel.text = @"未登录";
     [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
     [self.profileView setNeedsDisplay];

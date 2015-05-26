@@ -285,11 +285,17 @@ static const CGFloat CellHieght = 70;
             [alertView dismissWithClickedButtonIndex:0 animated:YES];
             break;
         case 1:
-            [Course MR_truncateAll];
+            [self deleteCourse];
             break;
         default:
             break;
     }
+}
+
+- (void)deleteCourse{
+    [Course MR_truncateAll];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [self.view setNeedsDisplay];
 }
 
 @end

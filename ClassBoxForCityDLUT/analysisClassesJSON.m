@@ -104,14 +104,7 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
 //            }];
             
             [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-//                NSArray *courseArray = [Course MR_findAll];
-                Course *course;
-                
-//                if ([courseArray count]) {
-//                    course = [courseArray objectAtIndex:0];
-//                } else {
-                    course = [Course MR_createInContext:localContext];
-//                }
+                Course *course = [Course MR_createInContext:localContext];
                 
                 course.classesName = classesName;
                 course.teacherName = teacherName;
@@ -157,14 +150,7 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
 //            }];
             
             [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-//                NSArray *courseArray = [Course MR_findAll];
-                Course *course;
-                
-//                if ([courseArray count]) {
-//                    course = [courseArray objectAtIndex:0];
-//                } else {
-                course = [Course MR_createInContext:localContext];
-//                }
+                Course *course = [Course MR_createInContext:localContext];
                 
                 course.classesName = classesName;
                 course.teacherName = teacherName;
