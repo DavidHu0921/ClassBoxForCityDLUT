@@ -19,6 +19,7 @@ static const CGFloat CellHieght = 70;
 @interface ClassBoxViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *ClassBoxNC;
+@property (strong, nonatomic) UICollectionView *collection;
 
 - (IBAction)addClassesButton:(UIBarButtonItem *)sender;
 
@@ -34,9 +35,13 @@ static const CGFloat CellHieght = 70;
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [self createHeaderView];
-    //添加collectionView
-    [self createCollectionView];
+    if (self.collection == nil) {
+        [self createHeaderView];
+        //添加collectionView
+        [self createCollectionView];
+    }
+    
+    [self drawButton:self.collection];
     
     [self.view setNeedsDisplay];
 }
@@ -99,23 +104,22 @@ static const CGFloat CellHieght = 70;
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     //154 = tabbar + navigation + week + date + state
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height-154) collectionViewLayout:flowLayout];
-    collectionView.backgroundColor = [UIColor whiteColor];
+    self.collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height-154) collectionViewLayout:flowLayout];
+    self.collection.backgroundColor = [UIColor whiteColor];
     //注册cell
-    [collectionView registerClass:[ClassesNumCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.collection registerClass:[ClassesNumCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
-    collectionView.delegate = self;
-    collectionView.dataSource = self;
+    self.collection.delegate = self;
+    self.collection.dataSource = self;
     
-    [self drawButton:collectionView];
+//    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height-154) collectionViewLayout:flowLayout];
     
-    [self.view addSubview:collectionView];
+    [self.view addSubview:self.collection];
 }
 
 - (void)drawButton:(UIView *)classview{
     //add button
     NSArray *courses = [Course MR_findAll];
-    NSLog(@"number in store: %ld", courses.count);
     
     if (courses.count != 0) {
         for (int i = 0; i < courses.count; i++) {
@@ -249,9 +253,14 @@ static const CGFloat CellHieght = 70;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     //底部还能滚动，后续再写死
-    if (scrollView.contentOffset.y <= 0 || scrollView.contentOffset.y >= CellHieght * 12) {
+    if (scrollView.contentOffset.y < 0) {
         CGPoint offset = scrollView.contentOffset;
         offset.y = 0;
+        scrollView.contentOffset = offset;
+    }
+    else if (scrollView.contentOffset.y > CellHieght * 12){
+        CGPoint offset = scrollView.contentOffset;
+        offset.y = CellHieght * 12;
         scrollView.contentOffset = offset;
     }
 
@@ -295,7 +304,16 @@ static const CGFloat CellHieght = 70;
 - (void)deleteCourse{
     [Course MR_truncateAll];
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-    [self.view setNeedsDisplay];
+    
+    NSMutableArray *buttonsToRemove = [NSMutableArray array];
+    for (UIView *subview in self.collection.subviews) {
+        if ([subview isKindOfClass:[UIButton class]]) {
+            [buttonsToRemove addObject:subview];
+        }
+    }
+    [buttonsToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    [self.collection setNeedsDisplay];
 }
 
 @end
