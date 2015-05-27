@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginLogoutBtn;
 @property (weak, nonatomic) IBOutlet UIView *profileView;
+@property (weak, nonatomic) UICollectionView;
 
 - (IBAction)LoginBTN:(UIButton *)sender;
 
@@ -44,6 +45,8 @@
         [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
     }
 }
+
+#pragma mark - login Button
 
 - (IBAction)LoginBTN:(UIButton *)sender {
     NSString *loginText = self.loginLogoutBtn.titleLabel.text;
@@ -83,6 +86,9 @@
     [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
     [self.profileView setNeedsDisplay];
 }
+
+#pragma mark - collection
+
 
 @end
 

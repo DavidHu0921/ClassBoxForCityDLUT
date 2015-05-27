@@ -38,6 +38,8 @@
     NSDictionary *new = self.news[indexPath.row];
     NSString *newsTitle = [new valueForKeyPath:NEWS_TITLE];
     cell.textLabel.text = newsTitle;
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.numberOfLines = 0;
 //  放假嘛，当然要醒目   滚动时会出现红字错位，暂时注释掉
 //    if ([newsTitle rangeOfString:holiday].location != NSNotFound) {
 //        cell.textLabel.textColor = [UIColor redColor];
@@ -51,6 +53,23 @@
     }
 
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSDictionary *new = self.news[indexPath.row];
+    NSString *cellText = [new valueForKeyPath:NEWS_TITLE];
+    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:16.0];
+    
+    NSAttributedString *attributedText =
+    [[NSAttributedString alloc] initWithString:cellText attributes:@{
+                                                                     NSFontAttributeName: cellFont
+                                                                     }];
+    
+    CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX)
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                               context:nil];
+    return rect.size.height + 20;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
