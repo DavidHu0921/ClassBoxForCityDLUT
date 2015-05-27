@@ -57,13 +57,14 @@
             NSDate *resultDate = [gregorian dateFromComponents:comp];
             
             NSCalendar *newCalendar = [NSCalendar currentCalendar];
-            NSDateComponents *newComp = [newCalendar components:NSCalendarUnitMonth | NSCalendarUnitDay fromDate:resultDate];
+            NSDateComponents *newComp = [newCalendar components:NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday fromDate:resultDate];
             
             monthNum = [newComp month];
             dayNum   = [newComp day];
+            NSInteger wDay = [newComp weekday];
             
             UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(25 + (i - 1)*(self.frame.size.width - 25)/7, 0, (self.frame.size.width - 25)/7, 20)];
-            if (dayNum == 1) {
+            if (dayNum == 1 && wDay != 2) {
                 week.text = [NSString stringWithFormat:@"%ld月", monthNum];
             }
             else{

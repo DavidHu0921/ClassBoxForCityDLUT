@@ -2,7 +2,7 @@
 //  Course.h
 //  ClassBoxForCityDLUT
 //
-//  Created by 胡啸晨 on 15/5/20.
+//  Created by 胡啸晨 on 15/5/27.
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 
@@ -19,5 +19,6 @@
 @property (nonatomic, retain) NSString * teacherName;
 @property (nonatomic, retain) NSNumber * weekday;
 @property (nonatomic, retain) NSData * weekNumber;
+@property (nonatomic, retain) NSNumber * backgroundColor;
 
 @end

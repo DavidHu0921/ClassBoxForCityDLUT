@@ -10,7 +10,6 @@
 		0B3A32521AE55D2F001E5E4A /* SharedContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A32511AE55D2F001E5E4A /* SharedContext.m */; };
 		0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A32541AE55DD2001E5E4A /* SharedContext+User.m */; };
 		73F2CE23BB49B6360EE8E7B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FC75BF74BBD3DF531984F /* libPods.a */; };
-		DC5AD9E61B0CA6EA007493FC /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5AD9E51B0CA6EA007493FC /* Course.m */; };
 		DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */; };
 		DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */; };
 		DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245C1AD3AB2D0068ACE8 /* Explore.pdf */; };
@@ -25,7 +24,6 @@
 		DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */; };
 		DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */; };
 		DCCF8DC11ABDB3CB00655FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DBF1ABDB3CB00655FFB /* Main.storyboard */; };
-		DCCF8DC31ABDB3CB00655FFB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DC21ABDB3CB00655FFB /* Images.xcassets */; };
 		DCCF8DC61ABDB3CB00655FFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DC41ABDB3CB00655FFB /* LaunchScreen.xib */; };
 		DCCF8DD21ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */; };
 		DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */; };
@@ -33,6 +31,8 @@
 		DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE1B831B07459F007EA05C /* ClassesFetcher.m */; };
 		DCDE1B871B086CB6007EA05C /* analysisClassesJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE1B861B086CB6007EA05C /* analysisClassesJSON.m */; };
 		DCE076F11AFF5DDA00D65302 /* AddClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE076F01AFF5DDA00D65302 /* AddClassViewController.m */; };
+		DCE1C3A21B15C73F005566E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE1C3A11B15C73E005566E8 /* Images.xcassets */; };
+		DCE1C3A51B15E8CA005566E8 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE1C3A41B15E8CA005566E8 /* Course.m */; };
 		DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */; };
 		DCF1F5571AFA18A300A126E9 /* WeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5561AFA18A300A126E9 /* WeekView.m */; };
 		DCF1F55A1AFA2EAD00A126E9 /* DateView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5591AFA2EAD00A126E9 /* DateView.m */; };
@@ -56,8 +56,6 @@
 		0B3A32541AE55DD2001E5E4A /* SharedContext+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SharedContext+User.m"; sourceTree = "<group>"; };
 		121FC75BF74BBD3DF531984F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B39D0F7502D18E9B9C9E3A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		DC5AD9E41B0CA6EA007493FC /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		DC5AD9E51B0CA6EA007493FC /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
 		DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ClassBox.pdf; path = Resoucre/ClassBox.pdf; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 		DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DCCF8DBA1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClassBoxForCityDLUT.xcdatamodel; sourceTree = "<group>"; };
 		DCCF8DC01ABDB3CB00655FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DCCF8DC21ABDB3CB00655FFB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DCCF8DC51ABDB3CB00655FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DCCF8DCB1ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassBoxForCityDLUTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCF8DD01ABDB3CB00655FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +96,9 @@
 		DCDE1B861B086CB6007EA05C /* analysisClassesJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = analysisClassesJSON.m; sourceTree = "<group>"; };
 		DCE076EF1AFF5DDA00D65302 /* AddClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddClassViewController.h; sourceTree = "<group>"; };
 		DCE076F01AFF5DDA00D65302 /* AddClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddClassViewController.m; sourceTree = "<group>"; };
+		DCE1C3A11B15C73E005566E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DCE1C3A31B15E8CA005566E8 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		DCE1C3A41B15E8CA005566E8 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		DCF1F5521AFA183F00A126E9 /* ClassBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassBoxViewController.h; sourceTree = "<group>"; };
 		DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBoxViewController.m; sourceTree = "<group>"; };
 		DCF1F5551AFA18A300A126E9 /* WeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekView.h; sourceTree = "<group>"; };
@@ -234,8 +234,8 @@
 		DCA31A3B1ACDB6570042200A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DC5AD9E41B0CA6EA007493FC /* Course.h */,
-				DC5AD9E51B0CA6EA007493FC /* Course.m */,
+				DCE1C3A31B15E8CA005566E8 /* Course.h */,
+				DCE1C3A41B15E8CA005566E8 /* Course.m */,
 				DCDE0FA81AE8DAC900CAF63D /* Student.h */,
 				DCDE0FA91AE8DAC900CAF63D /* Student.m */,
 				DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */,
@@ -282,7 +282,6 @@
 				DCA31A391ACDB6290042200A /* Controller */,
 				DCA31A381ACA6F3D0042200A /* Delegate */,
 				DCD3ECB91AC54D2E0014971C /* API  */,
-				DCCF8DC21ABDB3CB00655FFB /* Images.xcassets */,
 				DCCF8DB21ABDB3CB00655FFB /* Supporting Files */,
 			);
 			path = ClassBoxForCityDLUT;
@@ -291,6 +290,7 @@
 		DCCF8DB21ABDB3CB00655FFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DCE1C3A11B15C73E005566E8 /* Images.xcassets */,
 				DCDE1B851B086CB6007EA05C /* analysisClassesJSON.h */,
 				DCDE1B861B086CB6007EA05C /* analysisClassesJSON.m */,
 				0B3A324F1AE55AA6001E5E4A /* SharedContext */,
@@ -433,8 +433,8 @@
 			files = (
 				DCCF8DC11ABDB3CB00655FFB /* Main.storyboard in Resources */,
 				DCCF8DC61ABDB3CB00655FFB /* LaunchScreen.xib in Resources */,
-				DCCF8DC31ABDB3CB00655FFB /* Images.xcassets in Resources */,
 				DC9E24601AD3AB2D0068ACE8 /* NewsAndReports.pdf in Resources */,
+				DCE1C3A21B15C73F005566E8 /* Images.xcassets in Resources */,
 				DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */,
 				DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */,
 			);
@@ -494,7 +494,7 @@
 				DCDE1B871B086CB6007EA05C /* analysisClassesJSON.m in Sources */,
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
-				DC5AD9E61B0CA6EA007493FC /* Course.m in Sources */,
+				DCE1C3A51B15E8CA005566E8 /* Course.m in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
 				DCE076F11AFF5DDA00D65302 /* AddClassViewController.m in Sources */,

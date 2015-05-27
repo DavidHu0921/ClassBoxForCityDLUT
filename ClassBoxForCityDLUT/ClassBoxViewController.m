@@ -68,7 +68,12 @@ static const CGFloat CellHieght = 70;
     
     //赋值给NC
     NSInteger thisWeekNumber = [self countForThisWeek];
-    self.ClassBoxNC.title = [NSString stringWithFormat:@"第%ld周", thisWeekNumber];
+    if (thisWeekNumber > 18) {
+        self.ClassBoxNC.title = [NSString stringWithFormat:@"放假"];
+    }
+    else{
+        self.ClassBoxNC.title = [NSString stringWithFormat:@"第%ld周", thisWeekNumber];
+    }
 }
 
 - (NSInteger)countForThisWeek{
@@ -118,6 +123,10 @@ static const CGFloat CellHieght = 70;
 }
 
 - (void)drawButton:(UIView *)classview{
+    
+    CGFloat redColor[] = {0.0, 159.0, 243.0, 243.0, 242.0};
+    CGFloat greenColor[] = {146.0, 224.0, 229.0, 181.0, 156.0};
+    CGFloat blueColor[] = {199.0, 246.0, 154.0, 155.0, 156.0};
     //add button
     NSArray *courses = [Course MR_findAll];
     
@@ -132,21 +141,25 @@ static const CGFloat CellHieght = 70;
                     NSInteger startNumber = [[courses[i] valueForKeyPath:@"startTime"] integerValue];
                     NSInteger longLast = [[courses[i] valueForKeyPath:@"howLong"] integerValue];
                     NSInteger weekDay = [[courses[i] valueForKeyPath:@"weekday"] integerValue];
+                    NSInteger x = [[courses[i] valueForKey:@"backgroundColor"] integerValue];
                     
                     NSString *btnName = [NSString stringWithFormat:@"%@\n%@", cname, rname];
                     
                     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
                     button.frame = CGRectMake(25 + (self.view.frame.size.width-25)/7*(weekDay-1) + 1 , (CellHieght*startNumber)*2 + 1, (self.view.frame.size.width-25)/7 - 2 , CellHieght*longLast - 2);
-                    [button setBackgroundColor:[UIColor lightGrayColor]];
                     
+                    //set attribute for button
+                    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                     button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
                     button.titleLabel.textAlignment = NSTextAlignmentCenter;
-                    button.titleLabel.textColor = [UIColor whiteColor];
-                    button.layer.cornerRadius = 5; // this value vary as per your desire
+                    button.layer.cornerRadius = 6; // this value vary as per your desire
                     button.clipsToBounds = YES;
                     [button.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
                     [button setTitle:btnName forState: UIControlStateNormal];
                     
+                    //set button color
+                    [button setBackgroundColor:[UIColor colorWithRed:redColor[x]/255.0 green:greenColor[x]/255.0 blue:blueColor[x]/255.0 alpha:1]];
+
                     [classview addSubview:button];
                 }
             }
@@ -197,51 +210,51 @@ static const CGFloat CellHieght = 70;
         if (indexPath.section == 0) {
             if (indexPath.row == 1) {
                 cell.classedNum.text = nil;
-                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"topLeft"]];
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"CellBG1"]];
                 cell.backgroundColor = nil;
             }
             else if (indexPath.row == 7){
                 cell.classedNum.text = nil;
-                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"topRight"]];
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"CellBG3"]];
                 cell.backgroundColor = nil;
             }
             else{
                 cell.classedNum.text = nil;
-                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"top"]];
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"CellBG2"]];
                 cell.backgroundColor = nil;
             }
         }
         else if (indexPath.section == 11){
             if (indexPath.row == 1) {
                 cell.classedNum.text = nil;
-                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bottomLeft"]];
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"CellBG7"]];
                 cell.backgroundColor = nil;
             }
             else if (indexPath.row == 7){
                 cell.classedNum.text = nil;
-                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bottomRight"]];
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"CellBG9"]];
                 cell.backgroundColor = nil;
             }
             else{
                 cell.classedNum.text = nil;
-                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bottom"]];
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"CellBG8"]];
                 cell.backgroundColor = nil;
             }
         }
         else{
             if (indexPath.row == 1) {
                 cell.classedNum.text = nil;
-                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"left"]];
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"CellBG4"]];
                 cell.backgroundColor = nil;
             }
             else if (indexPath.row == 7){
                 cell.classedNum.text = nil;
-                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"right"]];
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"CellBG6"]];
                 cell.backgroundColor = nil;
             }
             else{
                 cell.classedNum.text = nil;
-                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"cellBody"]];
+                cell.backgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"CellBG5"]];
                 cell.backgroundColor = nil;
             }
         }

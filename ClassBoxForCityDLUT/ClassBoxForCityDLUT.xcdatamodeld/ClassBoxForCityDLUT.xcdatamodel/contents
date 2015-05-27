@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Course" representedClassName="Course" syncable="YES">
+        <attribute name="backgroundColor" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="classesName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="classroom" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="howLong" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -19,7 +20,7 @@
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-6147" positionY="-3357" width="128" height="150"/>
+        <element name="Course" positionX="-6147" positionY="-3357" width="128" height="165"/>
         <element name="Student" positionX="-6147" positionY="-3348" width="128" height="30"/>
     </elements>
 </model>

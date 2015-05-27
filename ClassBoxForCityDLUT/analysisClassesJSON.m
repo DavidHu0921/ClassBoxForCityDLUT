@@ -79,6 +79,7 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
                 course.weekday = [[NSNumber alloc]initWithInteger:dayInWeek];
                 course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:[self handleWithWeekNumber:classesDetail[3] weekType:classesDetail[4]]];
                 course.howLong = [[NSNumber alloc]initWithInt:[[classesDetail[5] substringToIndex:1] intValue]];
+                course.backgroundColor = [[NSNumber alloc]initWithInteger:arc4random() % 5];
                 
             } completion:^(BOOL success, NSError *error) {
                 NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
@@ -100,6 +101,9 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
                 course.weekday = [[NSNumber alloc]initWithInteger:dayInWeek];
                 course.weekNumber = [NSKeyedArchiver archivedDataWithRootObject:[self handleWithWeekNumber:classesDetail[2] weekType:classesDetail[3]]];
                 course.howLong = [[NSNumber alloc]initWithInt:[[classesDetail[4] substringToIndex:1] intValue]];
+                
+                //get the class a random color
+                course.backgroundColor = [[NSNumber alloc]initWithInteger:arc4random() % 5];
                 
             } completion:^(BOOL success, NSError *error) {
                 NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);

@@ -11,6 +11,7 @@
 //#import "User.h"
 #import "Student.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
+#import "Course.h"
 
 @interface DiscoveryViewController ()
 
@@ -76,6 +77,7 @@
     
     //still have some problems
     [Student MR_truncateAll];
+    [Course MR_truncateAll];
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     self.nameLabel.text = @"未登录";
     [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
