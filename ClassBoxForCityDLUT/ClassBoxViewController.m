@@ -122,51 +122,6 @@ static const CGFloat CellHieght = 70;
     [self.view addSubview:self.collection];
 }
 
-- (void)drawButton:(UIView *)classview{
-    
-    CGFloat redColor[] = {0.0, 159.0, 243.0, 243.0, 242.0};
-    CGFloat greenColor[] = {146.0, 224.0, 229.0, 181.0, 156.0};
-    CGFloat blueColor[] = {199.0, 246.0, 154.0, 155.0, 156.0};
-    //add button
-    NSArray *courses = [Course MR_findAll];
-    
-    if (courses.count != 0) {
-        for (int i = 0; i < courses.count; i++) {
-            NSMutableArray *weekArray = [NSKeyedUnarchiver unarchiveObjectWithData:[courses[i] valueForKeyPath:@"weekNumber"]];
-            
-            for (NSNumber *thisWeekNumber in weekArray){
-                if ([thisWeekNumber isEqualToNumber:[NSNumber numberWithInteger:[self countForThisWeek]]]) {
-                    NSString *cname = [courses[i] valueForKeyPath:@"classesName"];
-                    NSString *rname = [courses[i] valueForKeyPath:@"classroom"];
-                    NSInteger startNumber = [[courses[i] valueForKeyPath:@"startTime"] integerValue];
-                    NSInteger longLast = [[courses[i] valueForKeyPath:@"howLong"] integerValue];
-                    NSInteger weekDay = [[courses[i] valueForKeyPath:@"weekday"] integerValue];
-                    NSInteger x = [[courses[i] valueForKey:@"backgroundColor"] integerValue];
-                    
-                    NSString *btnName = [NSString stringWithFormat:@"%@\n%@", cname, rname];
-                    
-                    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-                    button.frame = CGRectMake(25 + (self.view.frame.size.width-25)/7*(weekDay-1) + 1 , (CellHieght*startNumber)*2 + 1, (self.view.frame.size.width-25)/7 - 2 , CellHieght*longLast - 2);
-                    
-                    //set attribute for button
-                    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-                    button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-                    button.titleLabel.textAlignment = NSTextAlignmentCenter;
-                    button.layer.cornerRadius = 6; // this value vary as per your desire
-                    button.clipsToBounds = YES;
-                    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
-                    [button setTitle:btnName forState: UIControlStateNormal];
-                    
-                    //set button color
-                    [button setBackgroundColor:[UIColor colorWithRed:redColor[x]/255.0 green:greenColor[x]/255.0 blue:blueColor[x]/255.0 alpha:1]];
-
-                    [classview addSubview:button];
-                }
-            }
-        }
-    }
-}
-
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
@@ -277,6 +232,52 @@ static const CGFloat CellHieght = 70;
         scrollView.contentOffset = offset;
     }
 
+}
+
+#pragma mark - drawButtonPart
+- (void)drawButton:(UIView *)classview{
+    
+    CGFloat redColor[] = {0.0, 159.0, 243.0, 243.0, 242.0};
+    CGFloat greenColor[] = {146.0, 224.0, 229.0, 181.0, 156.0};
+    CGFloat blueColor[] = {199.0, 246.0, 154.0, 155.0, 156.0};
+    //add button
+    NSArray *courses = [Course MR_findAll];
+    
+    if (courses.count != 0) {
+        for (int i = 0; i < courses.count; i++) {
+            NSMutableArray *weekArray = [NSKeyedUnarchiver unarchiveObjectWithData:[courses[i] valueForKeyPath:@"weekNumber"]];
+            
+            for (NSNumber *thisWeekNumber in weekArray){
+                if ([thisWeekNumber isEqualToNumber:[NSNumber numberWithInteger:[self countForThisWeek]]]) {
+                    NSString *cname = [courses[i] valueForKeyPath:@"classesName"];
+                    NSString *rname = [courses[i] valueForKeyPath:@"classroom"];
+                    NSInteger startNumber = [[courses[i] valueForKeyPath:@"startTime"] integerValue];
+                    NSInteger longLast = [[courses[i] valueForKeyPath:@"howLong"] integerValue];
+                    NSInteger weekDay = [[courses[i] valueForKeyPath:@"weekday"] integerValue];
+                    NSInteger x = [[courses[i] valueForKey:@"backgroundColor"] integerValue];
+                    
+                    NSString *btnName = [NSString stringWithFormat:@"%@\n%@", cname, rname];
+                    
+                    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                    button.frame = CGRectMake(25 + (self.view.frame.size.width-25)/7*(weekDay-1) + 1 , (CellHieght*startNumber)*2 + 1, (self.view.frame.size.width-25)/7 - 2 , CellHieght*longLast - 2);
+                    
+                    //set attribute for button
+                    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                    button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+                    button.titleLabel.textAlignment = NSTextAlignmentCenter;
+                    button.layer.cornerRadius = 6; // this value vary as per your desire
+                    button.clipsToBounds = YES;
+                    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
+                    [button setTitle:btnName forState: UIControlStateNormal];
+                    
+                    //set button color
+                    [button setBackgroundColor:[UIColor colorWithRed:redColor[x]/255.0 green:greenColor[x]/255.0 blue:blueColor[x]/255.0 alpha:1]];
+                    
+                    [classview addSubview:button];
+                }
+            }
+        }
+    }
 }
 
 #pragma mark - add Button

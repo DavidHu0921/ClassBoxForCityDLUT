@@ -12,13 +12,14 @@
 #import "Student.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "Course.h"
+#import "CollectionViewCell.h"
 
-@interface DiscoveryViewController ()
+@interface DiscoveryViewController () <UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginLogoutBtn;
 @property (weak, nonatomic) IBOutlet UIView *profileView;
-@property (weak, nonatomic) UICollectionView;
+@property (strong, nonatomic) UICollectionView *collection;
 
 - (IBAction)LoginBTN:(UIButton *)sender;
 
@@ -43,6 +44,10 @@
     else{
         self.nameLabel.text = [NSString stringWithFormat:@"未登录"];
         [self.loginLogoutBtn setTitle:@"登录" forState:UIControlStateNormal];
+    }
+    
+    if (self.collection == nil) {
+        [self createDiscoveryCollectionView];
     }
 }
 
@@ -88,6 +93,96 @@
 }
 
 #pragma mark - collection
+
+- (void)createDiscoveryCollectionView{
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.sectionInset = UIEdgeInsetsMake(0,0,0,0);
+    flowLayout.minimumLineSpacing = 0;//纵向间距
+    flowLayout.minimumInteritemSpacing = 0;//横向间距
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    self.collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height) collectionViewLayout:flowLayout];
+    self.collection.backgroundColor = [UIColor whiteColor];
+    [self.collection registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    
+    self.collection.delegate = self;
+    self.collection.dataSource = self;
+    
+    [self.view addSubview:self.collection];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(self.view.frame.size.width/3, self.view.frame.size.width/3);
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 2;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor lightGrayColor];
+
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            cell.logoTitle.text = [NSString stringWithFormat:@"图书馆查询"];
+            cell.logoTitle.textAlignment = NSTextAlignmentCenter;
+            cell.logoTitle.textColor = [UIColor blackColor];
+            cell.logoTitle.font = [UIFont systemFontOfSize:14];
+            cell.logoImage.image = [UIImage imageNamed:@"library"];
+        }
+        else if (indexPath.row == 1){
+            cell.logoTitle.text = [NSString stringWithFormat:@"成绩查询"];
+            cell.logoTitle.textAlignment = NSTextAlignmentCenter;
+            cell.logoTitle.textColor = [UIColor blackColor];
+            cell.logoTitle.font = [UIFont systemFontOfSize:14];
+            cell.logoImage.image = [UIImage imageNamed:@"examination"];
+        }
+        else if (indexPath.row  == 2){
+            cell.logoTitle.text = [NSString stringWithFormat:@"订餐查询"];
+            cell.logoTitle.textAlignment = NSTextAlignmentCenter;
+            cell.logoTitle.textColor = [UIColor blackColor];
+            cell.logoTitle.font = [UIFont systemFontOfSize:14];
+            cell.logoImage.image = [UIImage imageNamed:@"cnpin"];
+        }
+    }
+    else if (indexPath.section == 1){
+        if (indexPath.row == 0) {
+            cell.logoTitle.text = [NSString stringWithFormat:@"关于"];
+            cell.logoTitle.textAlignment = NSTextAlignmentCenter;
+            cell.logoTitle.textColor = [UIColor blackColor];
+            cell.logoTitle.font = [UIFont systemFontOfSize:14];
+            cell.logoImage.image = [UIImage imageNamed:@"about"];
+        }
+        else if (indexPath.row == 1){
+//            NSLog(@"并没有什么卵用");
+        }
+        else if (indexPath.row  == 2){
+//            NSLog(@"并没有什么卵用");
+        }
+    }
+    else{
+//        NSLog(@"并没有什么卵用");
+    }
+    return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    //底部还能滚动，后续再写死
+    if (scrollView.contentOffset.y < 0) {
+        CGPoint offset = scrollView.contentOffset;
+        offset.y = 0;
+        scrollView.contentOffset = offset;
+    }
+}
 
 
 @end

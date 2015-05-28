@@ -190,10 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				DCCA27841ADBC32700BA290C /* Login */,
-				DCE1C3A61B15F63E005566E8 /* CollectionViewCell.h */,
-				DCE1C3A71B15F63E005566E8 /* CollectionViewCell.m */,
 				DCCA27881ADBC36C00BA290C /* DiscoveryViewController.h */,
 				DCCA27891ADBC36C00BA290C /* DiscoveryViewController.m */,
+				DCE1C3A61B15F63E005566E8 /* CollectionViewCell.h */,
+				DCE1C3A71B15F63E005566E8 /* CollectionViewCell.m */,
 			);
 			name = Discovery;
 			sourceTree = "<group>";

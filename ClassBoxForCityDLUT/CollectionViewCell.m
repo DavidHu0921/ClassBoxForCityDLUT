@@ -14,9 +14,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        self.classedNum = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-//        [self.contentView addSubview:self.classedNum];
-        
+        self.logoImage = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 30, 15, 60, 60)];
+        self.logoTitle = [[UILabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 40, 80, 80, 30)];
+
+        [self.contentView addSubview:self.logoImage];
+        [self.contentView addSubview:self.logoTitle];
     }
     return self;
 }

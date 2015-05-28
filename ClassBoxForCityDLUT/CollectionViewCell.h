@@ -10,7 +10,7 @@
 
 @interface CollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) UIImage *logoImage;
-@property (weak, nonatomic) UILabel *logoTitle;
+@property (strong, nonatomic) UIImageView *logoImage;
+@property (strong, nonatomic) UILabel *logoTitle;
 
 @end
