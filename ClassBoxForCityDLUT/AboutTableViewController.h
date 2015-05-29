@@ -1,5 +1,5 @@
 //
-//  AboutViewController.h
+//  AboutTableViewController.h
 //  ClassBoxForCityDLUT
 //
 //  Created by 胡啸晨 on 15/5/29.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AboutViewController : UIViewController
+@interface AboutTableViewController : UITableViewController
 
 @end

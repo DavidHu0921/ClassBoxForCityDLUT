@@ -10,6 +10,7 @@
 		0B3A32521AE55D2F001E5E4A /* SharedContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A32511AE55D2F001E5E4A /* SharedContext.m */; };
 		0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A32541AE55DD2001E5E4A /* SharedContext+User.m */; };
 		73F2CE23BB49B6360EE8E7B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FC75BF74BBD3DF531984F /* libPods.a */; };
+		DC3E305D1B1853990003BBD2 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3E305C1B1853990003BBD2 /* AboutTableViewController.m */; };
 		DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */; };
 		DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */; };
 		DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245C1AD3AB2D0068ACE8 /* Explore.pdf */; };
@@ -29,7 +30,6 @@
 		DCDC3FFD1B1763C5003BECEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCDC3FFB1B1763C5003BECEB /* Main.storyboard */; };
 		DCDC40001B182DE9003BECEB /* ExaminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */; };
 		DCDC40031B182DF9003BECEB /* DiningHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC40021B182DF9003BECEB /* DiningHallViewController.m */; };
-		DCDC40061B182E05003BECEB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC40051B182E05003BECEB /* AboutViewController.m */; };
 		DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
 		DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE1B831B07459F007EA05C /* ClassesFetcher.m */; };
@@ -61,6 +61,8 @@
 		0B3A32541AE55DD2001E5E4A /* SharedContext+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SharedContext+User.m"; sourceTree = "<group>"; };
 		121FC75BF74BBD3DF531984F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B39D0F7502D18E9B9C9E3A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DC3E305B1B1853990003BBD2 /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
+		DC3E305C1B1853990003BBD2 /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
 		DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
 		DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ClassBox.pdf; path = Resoucre/ClassBox.pdf; sourceTree = "<group>"; };
@@ -97,8 +99,6 @@
 		DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationViewController.m; sourceTree = "<group>"; };
 		DCDC40011B182DF9003BECEB /* DiningHallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningHallViewController.h; sourceTree = "<group>"; };
 		DCDC40021B182DF9003BECEB /* DiningHallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningHallViewController.m; sourceTree = "<group>"; };
-		DCDC40041B182E05003BECEB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		DCDC40051B182E05003BECEB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		DCDD0E2E1AFCF163007601B1 /* ClassesNumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesNumCollectionViewCell.h; sourceTree = "<group>"; };
 		DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesNumCollectionViewCell.m; sourceTree = "<group>"; };
 		DCDE0FA81AE8DAC900CAF63D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -212,8 +212,8 @@
 				DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */,
 				DCDC40011B182DF9003BECEB /* DiningHallViewController.h */,
 				DCDC40021B182DF9003BECEB /* DiningHallViewController.m */,
-				DCDC40041B182E05003BECEB /* AboutViewController.h */,
-				DCDC40051B182E05003BECEB /* AboutViewController.m */,
+				DC3E305B1B1853990003BBD2 /* AboutTableViewController.h */,
+				DC3E305C1B1853990003BBD2 /* AboutTableViewController.m */,
 			);
 			name = Discovery;
 			sourceTree = "<group>";
@@ -523,6 +523,7 @@
 				DCE1C3A51B15E8CA005566E8 /* Course.m in Sources */,
 				DCDC40031B182DF9003BECEB /* DiningHallViewController.m in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
+				DC3E305D1B1853990003BBD2 /* AboutTableViewController.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
 				DCE076F11AFF5DDA00D65302 /* AddClassViewController.m in Sources */,
 				DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */,
@@ -536,7 +537,6 @@
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
 				DCF1F55A1AFA2EAD00A126E9 /* DateView.m in Sources */,
 				DCE1C3A81B15F63F005566E8 /* CollectionViewCell.m in Sources */,
-				DCDC40061B182E05003BECEB /* AboutViewController.m in Sources */,
 				DCCA27901ADF93F800BA290C /* StudentProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-#define NewsAPI @"https://www.kimonolabs.com/api/bg3nrkz0?apikey=600efbca1fa20767b1ab92a9283f2b1d"
+//#define NewsAPI @"https://www.kimonolabs.com/api/bg3nrkz0?apikey=600efbca1fa20767b1ab92a9283f2b1d"
 
-#define ReportsAPI @"https://www.kimonolabs.com/api/arrsbbjc?apikey=600efbca1fa20767b1ab92a9283f2b1d"
+//#define ReportsAPI @"https://www.kimonolabs.com/api/arrsbbjc?apikey=600efbca1fa20767b1ab92a9283f2b1d"
 
+#define NewsAPI @"http://1.csxyxzs.sinaapp.com/xyxw.php"
+#define ReportsAPI @"http://1.csxyxzs.sinaapp.com/xygg.php"
 #define VerifyAPI @"http://1.csxyxzs1.sinaapp.com/verify?name=%@&password=%@"                               //验证登录
-
 #define ProfileAPI @"http://1.csxyxzs1.sinaapp.com/info?name=%@&password=%@"                                //个人信息
-
 #define ClassesAPI @"http://1.csxyxzs1.sinaapp.com/schedule?name=%@&password=%@&term=%ld"
 
 //http://1.csxyxzs.sinaapp.com/xyxw.php 20个

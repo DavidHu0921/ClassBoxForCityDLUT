@@ -51,10 +51,14 @@
             completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                 if (!connectionError) {
                     if (response.URL == url) {
-                        NSDictionary *newsList = [NSJSONSerialization JSONObjectWithData:data
-                                                                                 options:0
-                                                                                   error: &connectionError];
-                        NSArray *news = [newsList valueForKeyPath:NEWS_COLLECTION];
+//                        NSDictionary *newsList = [NSJSONSerialization JSONObjectWithData:data
+//                                                                                 options:0
+//                                                                                   error: &connectionError];
+//                        NSArray *news = [newsList valueForKeyPath:nil];
+                        NSArray *news = [NSJSONSerialization JSONObjectWithData:data
+                                                                        options:0
+                                                                          error: &connectionError];
+
                         dispatch_async(dispatch_get_main_queue(), ^{ self.news = news; });
                     }
                 }

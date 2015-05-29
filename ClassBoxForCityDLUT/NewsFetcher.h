@@ -23,8 +23,8 @@
 
 // news
 #define NEWS_CONTENT @"content"
-#define NEWS_TITLE @"title.text"
-#define NEWS_HREF @"title.href"
+#define NEWS_TITLE @"title"
+#define NEWS_HREF @"href"
 
 @interface NewsFetcher : NSObject
 

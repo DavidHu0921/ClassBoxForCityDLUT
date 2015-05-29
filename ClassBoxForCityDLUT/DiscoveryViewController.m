@@ -16,7 +16,7 @@
 #import "LibraryViewController.h"
 #import "ExaminationViewController.h"
 #import "DiningHallViewController.h"
-#import "AboutViewController.h"
+#import "AboutTableViewController.h"
 
 @interface DiscoveryViewController () <UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -249,7 +249,7 @@
     else if (indexPath.section == 1){
         if (indexPath.row == 0) {
 //            cell.logoTitle.text = [NSString stringWithFormat:@"关于"];
-            AboutViewController *about = [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
+            AboutTableViewController *about = [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
             [self showViewController:about sender:nil];
         }
         else if (indexPath.row == 1){
