@@ -8,10 +8,10 @@
 
 #import "NewsWebViewController.h"
 
-@interface NewsWebViewController ()
+@interface NewsWebViewController () <UIWebViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWebView *newsWebView;
-@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -32,14 +32,25 @@
     [super viewDidLoad];
     
     [self startLoadWeb];
+    self.newsWebView.delegate = self;
+    [self.spinner startAnimating];
 }
 
 - (void)startLoadWeb
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSURLRequest *request=[NSURLRequest requestWithURL:_newsWebURL];
-        [_newsWebView loadRequest:request];
-    });
+    NSURLRequest *request=[NSURLRequest requestWithURL:_newsWebURL];
+    [_newsWebView loadRequest:request];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    //Check here if still webview is loding the content
+    if (webView.isLoading){
+        return;
+    }
+    else{
+        [self.spinner stopAnimating];
+    }
 }
 
 @end

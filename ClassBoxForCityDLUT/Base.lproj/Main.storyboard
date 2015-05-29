@@ -108,25 +108,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BSe-a3-Bkj">
-                                <rect key="frame" x="0.0" y="64" width="600" height="2"/>
-                            </progressView>
+                            <activityIndicatorView opaque="NO" alpha="0.39999999999999963" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="PM1-tA-buU">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tJJ-YI-Uj3" secondAttribute="trailing" id="5ax-W2-wo7"/>
+                            <constraint firstAttribute="centerY" secondItem="PM1-tA-buU" secondAttribute="centerY" constant="0.5" id="EIO-mf-owd"/>
                             <constraint firstItem="tJJ-YI-Uj3" firstAttribute="top" secondItem="3Xt-9t-ztG" secondAttribute="top" id="IzK-qv-LKY"/>
                             <constraint firstAttribute="bottom" secondItem="tJJ-YI-Uj3" secondAttribute="bottom" id="SE0-zt-GQ9"/>
+                            <constraint firstAttribute="centerX" secondItem="PM1-tA-buU" secondAttribute="centerX" constant="-0.5" id="gpY-ae-X4e"/>
                             <constraint firstItem="tJJ-YI-Uj3" firstAttribute="leading" secondItem="3Xt-9t-ztG" secondAttribute="leading" id="juA-va-kmJ"/>
-                            <constraint firstItem="BSe-a3-Bkj" firstAttribute="trailing" secondItem="tJJ-YI-Uj3" secondAttribute="trailing" id="moH-kV-lSE"/>
-                            <constraint firstItem="BSe-a3-Bkj" firstAttribute="top" secondItem="SvA-0J-ywD" secondAttribute="bottom" id="nIb-zE-lyq"/>
-                            <constraint firstItem="BSe-a3-Bkj" firstAttribute="leading" secondItem="tJJ-YI-Uj3" secondAttribute="leading" id="s3Q-rO-spP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T7y-kb-fpY"/>
                     <connections>
                         <outlet property="newsWebView" destination="tJJ-YI-Uj3" id="Pqh-4w-JVd"/>
-                        <outlet property="progressView" destination="BSe-a3-Bkj" id="6Vo-lC-1cX"/>
+                        <outlet property="spinner" destination="PM1-tA-buU" id="qUd-6u-qp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oP4-LS-cPm" userLabel="First Responder" sceneMemberID="firstResponder"/>

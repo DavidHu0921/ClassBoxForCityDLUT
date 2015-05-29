@@ -25,7 +25,6 @@
     self.navigationController.navigationBarHidden = NO;
     
     self.librarySearchBar.keyboardType = UIKeyboardTypeDefault; // 设置弹出键盘的类型
-//    self.librarySearchBar.tintColor = [UIColor blueColor]; // 设置UISearchBar的颜色 使用clearColor就是去掉背景
     self.librarySearchBar.placeholder = @"请输入书名"; // 设置提示文字
     self.librarySearchBar.delegate = self; // 设置代理
     self.librarySearchBar.showsCancelButton = YES;
@@ -41,13 +40,11 @@
 
 #pragma mark - 实现取消按钮的方法
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    NSLog(@"您点击了取消按钮");
     [searchBar resignFirstResponder]; // 丢弃第一使用者
 }
 
 #pragma mark - 实现键盘上Search按钮的方法
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    NSLog(@"您点击了键盘上的Search按钮");
     [self.spinner startAnimating];
     [searchBar resignFirstResponder];
     
@@ -56,7 +53,6 @@
 
 - (void)fetchResult{
     NSString *bookName = self.librarySearchBar.text;
-    NSLog(@"get book : %@", bookName);
     NSString *bookapi = [NSString stringWithFormat:LibraryAPI, bookName];
     
     NSURL *url = [NSURL URLWithString:bookapi];
