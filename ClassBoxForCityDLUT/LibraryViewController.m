@@ -58,12 +58,10 @@
     NSURL *url = [NSURL URLWithString:bookapi];
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
     [_libraryWebView loadRequest:request];
-
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    //Check here if still webview is loding the content
     if (webView.isLoading){
         return;
     }
