@@ -1,0 +1,114 @@
+
+/* Class = "UINavigationItem"; title = "关于"; ObjectID = "4pO-HF-nOC"; */
+"4pO-HF-nOC.title" = "关于";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6X3-lo-RbG"; */
+"6X3-lo-RbG.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "考试成绩查询"; ObjectID = "8Ha-xI-T9N"; */
+"8Ha-xI-T9N.title" = "考试成绩查询";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "9oK-yv-GCh"; */
+"9oK-yv-GCh.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "AnH-UN-f7H"; */
+"AnH-UN-f7H.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "发现"; ObjectID = "IJc-um-dde"; */
+"IJc-um-dde.title" = "发现";
+
+/* Class = "UILabel"; text = "感谢UIT的小伙伴们\n朱彦、康佳星、豆子、王鹤\n\n感谢大师们\nElilien、赵发凯、林卓宸、余畅\n\n感谢亲爱的\n\n（排名不分先后）"; ObjectID = "Iwx-4t-mGR"; */
+"Iwx-4t-mGR.text" = "感谢UIT的小伙伴们\n朱彦、康佳星、豆子、王鹤\n\n感谢大师们\nElilien、赵发凯、林卓宸、余畅\n\n感谢亲爱的\n\n（排名不分先后）";
+
+/* Class = "UINavigationItem"; title = "注意事项"; ObjectID = "KPP-Em-JZE"; */
+"KPP-Em-JZE.title" = "注意事项";
+
+/* Class = "UINavigationItem"; title = "图书馆查询"; ObjectID = "KxT-TV-z9q"; */
+"KxT-TV-z9q.title" = "图书馆查询";
+
+/* Class = "UITabBarItem"; title = "发现"; ObjectID = "LDd-cz-hts"; */
+"LDd-cz-hts.title" = "发现";
+
+/* Class = "UIViewController"; title = "Login"; ObjectID = "LIO-ly-wsc"; */
+"LIO-ly-wsc.title" = "Login";
+
+/* Class = "UILabel"; text = "密码："; ObjectID = "Pk0-E0-TsK"; */
+"Pk0-E0-TsK.text" = "密码：";
+
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "Q79-rJ-xnU"; */
+"Q79-rJ-xnU.title" = "取消";
+
+/* Class = "UITableViewSection"; headerTitle = "  "; ObjectID = "SPA-dk-og2"; */
+"SPA-dk-og2.headerTitle" = "  ";
+
+/* Class = "UISegmentedControl"; SU2-PY-tG9.segmentTitles[0] = "城院公告"; ObjectID = "SU2-PY-tG9"; */
+"SU2-PY-tG9.segmentTitles[0]" = "城院公告";
+
+/* Class = "UISegmentedControl"; SU2-PY-tG9.segmentTitles[1] = "新闻资讯"; ObjectID = "SU2-PY-tG9"; */
+"SU2-PY-tG9.segmentTitles[1]" = "新闻资讯";
+
+/* Class = "UILabel"; text = "学号："; ObjectID = "WMz-j5-KHQ"; */
+"WMz-j5-KHQ.text" = "学号：";
+
+/* Class = "UIViewController"; title = "DIscovery"; ObjectID = "XUF-rO-sjh"; */
+"XUF-rO-sjh.title" = "DIscovery";
+
+/* Class = "UILabel"; text = "反馈"; ObjectID = "alp-Lc-ADH"; */
+"alp-Lc-ADH.text" = "反馈";
+
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "bas-RN-99u"; */
+"bas-RN-99u.title" = "取消";
+
+/* Class = "UILabel"; text = "有任何使用问题欢迎给我发送邮件并反馈：davidhu920921@gmail.com"; ObjectID = "bdr-Lo-Ri3"; */
+"bdr-Lo-Ri3.text" = "有任何使用问题欢迎给我发送邮件并反馈：davidhu920921@gmail.com";
+
+/* Class = "UIButton"; normalTitle = "添加课表"; ObjectID = "cFU-Jm-Jd8"; */
+"cFU-Jm-Jd8.normalTitle" = "添加课表";
+
+/* Class = "UILabel"; text = "未登录"; ObjectID = "eno-yV-88h"; */
+"eno-yV-88h.text" = "未登录";
+
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "ev1-RN-nEh"; */
+"ev1-RN-nEh.title" = "取消";
+
+/* Class = "UITabBarItem"; title = "新闻公告"; ObjectID = "jXg-xQ-OBb"; */
+"jXg-xQ-OBb.title" = "新闻公告";
+
+/* Class = "UINavigationItem"; title = "订餐查询"; ObjectID = "kGn-JO-wnO"; */
+"kGn-JO-wnO.title" = "订餐查询";
+
+/* Class = "UILabel"; text = "1、在获取课表的过程中可能会出现目前学期但是依然显示没有课的情况，这种情况的出现是因为校网在使用过程中非常不稳定，导致数据读不出来，对于这个情况我们表示抱歉的同时也无能为力。\n\n2、应用第一页右上角那个按钮是用来添加课程的。\n\n3、我们不会存储你的学号和密码，所有数据都存在你的手机里，只要删除应用所有数据都会跟着销毁，请放心使用。\n\n4、头像目前只可以换成男生或者女生，点击切换，切换后应用会记住您的选择。"; ObjectID = "mFg-Ic-Gvd"; */
+"mFg-Ic-Gvd.text" = "1、在获取课表的过程中可能会出现目前学期但是依然显示没有课的情况，这种情况的出现是因为校网在使用过程中非常不稳定，导致数据读不出来，对于这个情况我们表示抱歉的同时也无能为力。\n\n2、应用第一页右上角那个按钮是用来添加课程的。\n\n3、我们不会存储你的学号和密码，所有数据都存在你的手机里，只要删除应用所有数据都会跟着销毁，请放心使用。\n\n4、头像目前只可以换成男生或者女生，点击切换，切换后应用会记住您的选择。";
+
+/* Class = "UINavigationItem"; title = "反馈"; ObjectID = "mgW-QP-KAy"; */
+"mgW-QP-KAy.title" = "反馈";
+
+/* Class = "UINavigationItem"; title = "登录"; ObjectID = "n3J-5M-Sgm"; */
+"n3J-5M-Sgm.title" = "登录";
+
+/* Class = "UILabel"; text = "注意事项"; ObjectID = "nJS-5i-zWo"; */
+"nJS-5i-zWo.text" = "注意事项";
+
+/* Class = "UINavigationItem"; title = "鸣谢"; ObjectID = "nYx-pB-1tt"; */
+"nYx-pB-1tt.title" = "鸣谢";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "p6p-HJ-bfs"; */
+"p6p-HJ-bfs.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "pJq-Ia-OIB"; */
+"pJq-Ia-OIB.normalTitle" = "登录";
+
+/* Class = "UILabel"; text = "鸣谢"; ObjectID = "q1r-Oj-G4b"; */
+"q1r-Oj-G4b.text" = "鸣谢";
+
+/* Class = "UIBarButtonItem"; title = "确定"; ObjectID = "qef-1A-hX6"; */
+"qef-1A-hX6.title" = "确定";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "rW3-vU-70q"; */
+"rW3-vU-70q.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "课程表"; ObjectID = "trs-ZG-Pg4"; */
+"trs-ZG-Pg4.title" = "课程表";
+
+/* Class = "UITableViewSection"; headerTitle = "  "; ObjectID = "v9y-Sy-ecO"; */
+"v9y-Sy-ecO.headerTitle" = "  ";

@@ -238,9 +238,43 @@
                     <view key="view" contentMode="scaleToFill" id="Rr3-zk-aGF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pzw-cq-Tou">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="etP-nH-JWw" id="wvO-Oo-5vT"/>
+                                </connections>
+                            </searchBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-u8-9dV">
+                                <rect key="frame" x="0.0" y="108" width="606" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yGN-89-dmK">
+                                <rect key="frame" x="285" y="335" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="yGN-89-dmK" secondAttribute="centerX" constant="-3.5" id="7B2-FZ-efZ"/>
+                            <constraint firstAttribute="trailing" secondItem="pzw-cq-Tou" secondAttribute="trailing" id="8Ba-Cg-zvu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yyg-u8-9dV" secondAttribute="trailing" constant="-22" id="9cF-2h-Ams"/>
+                            <constraint firstItem="pzw-cq-Tou" firstAttribute="leading" secondItem="Yyg-u8-9dV" secondAttribute="leading" id="E0K-Ga-a3g"/>
+                            <constraint firstItem="pzw-cq-Tou" firstAttribute="top" secondItem="s8i-rU-CF1" secondAttribute="bottom" id="II9-yE-C6Q"/>
+                            <constraint firstItem="pzw-cq-Tou" firstAttribute="leading" secondItem="Rr3-zk-aGF" secondAttribute="leading" id="Pwb-kb-XxB"/>
+                            <constraint firstItem="Yyg-u8-9dV" firstAttribute="bottom" secondItem="hKj-Nz-BU8" secondAttribute="top" id="pXU-9n-p0L"/>
+                            <constraint firstAttribute="centerY" secondItem="yGN-89-dmK" secondAttribute="centerY" constant="-53.5" id="sh3-rC-nvw"/>
+                            <constraint firstItem="Yyg-u8-9dV" firstAttribute="top" secondItem="pzw-cq-Tou" secondAttribute="bottom" id="uHU-f6-dNr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="图书馆查询" id="KxT-TV-z9q"/>
+                    <connections>
+                        <outlet property="librarySearchBar" destination="pzw-cq-Tou" id="QWn-Sa-5hC"/>
+                        <outlet property="libraryWebView" destination="Yyg-u8-9dV" id="hD0-Ia-ebj"/>
+                        <outlet property="spinner" destination="yGN-89-dmK" id="NGm-Yp-bH7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeV-EF-0Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
