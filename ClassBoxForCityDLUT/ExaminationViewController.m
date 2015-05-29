@@ -1,18 +1,18 @@
 //
-//  LibraryViewController.m
+//  ExaminationViewController.m
 //  ClassBoxForCityDLUT
 //
-//  Created by 胡啸晨 on 15/5/28.
+//  Created by 胡啸晨 on 15/5/29.
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 
-#import "LibraryViewController.h"
+#import "ExaminationViewController.h"
 
-@interface LibraryViewController ()
+@interface ExaminationViewController ()
 
 @end
 
-@implementation LibraryViewController
+@implementation ExaminationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

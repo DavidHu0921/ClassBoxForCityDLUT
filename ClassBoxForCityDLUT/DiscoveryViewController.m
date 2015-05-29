@@ -14,6 +14,9 @@
 #import "Course.h"
 #import "CollectionViewCell.h"
 #import "LibraryViewController.h"
+#import "ExaminationViewController.h"
+#import "DiningHallViewController.h"
+#import "AboutViewController.h"
 
 @interface DiscoveryViewController () <UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -33,8 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBarHidden = YES;
-    
     //set profile image
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *userProfile = [userDefaults stringForKey:@"profile"];
@@ -80,6 +81,7 @@
         [self createDiscoveryCollectionView];
     }
     
+    self.navigationController.navigationBarHidden = YES;
 }
 
 #pragma mark - tap profile
@@ -203,7 +205,7 @@
             cell.logoTitle.textAlignment = NSTextAlignmentCenter;
             cell.logoTitle.textColor = [UIColor blackColor];
             cell.logoTitle.font = [UIFont systemFontOfSize:14];
-            cell.logoImage.image = [UIImage imageNamed:@"cnpin"];
+            cell.logoImage.image = [UIImage imageNamed:@"diningHall"];
         }
     }
     else if (indexPath.section == 1){
@@ -230,26 +232,25 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-//            cell.logoTitle.text = [NSString stringWithFormat:@"图书馆查询"];
-            
-            LibraryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"library"];
-//            vc.navigationController.topViewController = [self.storyboard instantiateInitialViewController];
-            [self showViewController:vc sender:nil];
-//            [self.navigationController pushViewController:vc animated:YES];
+            LibraryViewController *library = [self.storyboard instantiateViewControllerWithIdentifier:@"library"];
+            [self showViewController:library sender:nil];
+
         }
         else if (indexPath.row == 1){
-//            cell.logoTitle.text = [NSString stringWithFormat:@"成绩查询"];
-
+            ExaminationViewController *examination = [self.storyboard instantiateViewControllerWithIdentifier:@"examination"];
+            [self showViewController:examination sender:nil];
         }
         else if (indexPath.row  == 2){
 //            cell.logoTitle.text = [NSString stringWithFormat:@"订餐查询"];
-
+            DiningHallViewController *diningHall = [self.storyboard instantiateViewControllerWithIdentifier:@"diningHall"];
+            [self showViewController:diningHall sender:nil];
         }
     }
     else if (indexPath.section == 1){
         if (indexPath.row == 0) {
 //            cell.logoTitle.text = [NSString stringWithFormat:@"关于"];
-
+            AboutViewController *about = [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
+            [self showViewController:about sender:nil];
         }
         else if (indexPath.row == 1){
             //            NSLog(@"并没有什么卵用");

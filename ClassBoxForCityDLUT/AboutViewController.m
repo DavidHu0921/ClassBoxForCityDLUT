@@ -1,23 +1,24 @@
 //
-//  LibraryViewController.m
+//  AboutViewController.m
 //  ClassBoxForCityDLUT
 //
-//  Created by 胡啸晨 on 15/5/28.
+//  Created by 胡啸晨 on 15/5/29.
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 
-#import "LibraryViewController.h"
+#import "AboutViewController.h"
 
-@interface LibraryViewController ()
+@interface AboutViewController ()
 
 @end
 
-@implementation LibraryViewController
+@implementation AboutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {

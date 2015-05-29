@@ -1,23 +1,24 @@
 //
-//  LibraryViewController.m
+//  DiningHallViewController.m
 //  ClassBoxForCityDLUT
 //
-//  Created by 胡啸晨 on 15/5/28.
+//  Created by 胡啸晨 on 15/5/29.
 //  Copyright (c) 2015年 com.DavidHu. All rights reserved.
 //
 
-#import "LibraryViewController.h"
+#import "DiningHallViewController.h"
 
-@interface LibraryViewController ()
+@interface DiningHallViewController ()
 
 @end
 
-@implementation LibraryViewController
+@implementation DiningHallViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {

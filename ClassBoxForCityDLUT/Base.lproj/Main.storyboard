@@ -256,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeV-EF-0Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3348" y="1092"/>
+            <point key="canvasLocation" x="3167" y="1092"/>
         </scene>
         <!--Login-->
         <scene sceneID="6eF-9n-dq2">
@@ -374,6 +374,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxb-89-ZJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1784" y="1839"/>
+        </scene>
+        <!--考试成绩查询-->
+        <scene sceneID="wPo-ub-4Wd">
+            <objects>
+                <viewController storyboardIdentifier="examination" hidesBottomBarWhenPushed="YES" id="d2q-fM-h0Q" customClass="ExaminationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iXV-mN-O83"/>
+                        <viewControllerLayoutGuide type="bottom" id="fwL-KV-aO1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Cq-ZY-8Jo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="考试成绩查询" id="8Ha-xI-T9N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbJ-QT-wbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3167" y="1839"/>
+        </scene>
+        <!--订餐查询-->
+        <scene sceneID="dXW-Jk-xeW">
+            <objects>
+                <viewController storyboardIdentifier="diningHall" hidesBottomBarWhenPushed="YES" id="ech-Pw-dNb" customClass="DiningHallViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hWT-sZ-0jZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ewj-bj-hSW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mef-dh-6xf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="订餐查询" id="kGn-JO-wnO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wYd-2K-hI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3167" y="2558"/>
+        </scene>
+        <!--关于-->
+        <scene sceneID="D27-CO-3Fz">
+            <objects>
+                <viewController storyboardIdentifier="about" hidesBottomBarWhenPushed="YES" id="Jtx-1X-xyL" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pic-8z-mLF"/>
+                        <viewControllerLayoutGuide type="bottom" id="TKd-ei-APE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Qs-sE-7Hf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="关于" id="u97-9s-isK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ju-00-fSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3167" y="3264"/>
         </scene>
         <!--Class Box View Controller-->
         <scene sceneID="pWT-hN-RDe">
@@ -582,7 +639,61 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlV-bC-a3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="1092"/>
+            <point key="canvasLocation" x="2471" y="1092"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aYP-LG-UZI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mi1-22-LCz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NqY-eE-EMr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d2q-fM-h0Q" kind="relationship" relationship="rootViewController" id="EKP-5Y-eVV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pda-dG-PYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2471" y="1839"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0XW-VQ-ntK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jmL-QZ-0C2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AfI-76-6dN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ech-Pw-dNb" kind="relationship" relationship="rootViewController" id="CJS-S9-1gs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDn-s4-YfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2471" y="2558"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l2F-J5-q2W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bWd-ya-12F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oH2-fM-yU8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jtx-1X-xyL" kind="relationship" relationship="rootViewController" id="8c7-Fq-TXr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AOh-t4-LTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2471" y="3264"/>
         </scene>
     </scenes>
     <resources>

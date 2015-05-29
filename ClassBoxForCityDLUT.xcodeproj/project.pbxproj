@@ -27,6 +27,9 @@
 		DCCF8DD21ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */; };
 		DCDC3FFA1B174AB5003BECEB /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC3FF91B174AB5003BECEB /* LibraryViewController.m */; };
 		DCDC3FFD1B1763C5003BECEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCDC3FFB1B1763C5003BECEB /* Main.storyboard */; };
+		DCDC40001B182DE9003BECEB /* ExaminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */; };
+		DCDC40031B182DF9003BECEB /* DiningHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC40021B182DF9003BECEB /* DiningHallViewController.m */; };
+		DCDC40061B182E05003BECEB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC40051B182E05003BECEB /* AboutViewController.m */; };
 		DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
 		DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE1B831B07459F007EA05C /* ClassesFetcher.m */; };
@@ -90,6 +93,12 @@
 		DCDC3FF81B174AB5003BECEB /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
 		DCDC3FF91B174AB5003BECEB /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
 		DCDC3FFC1B1763C5003BECEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCDC3FFE1B182DE9003BECEB /* ExaminationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExaminationViewController.h; sourceTree = "<group>"; };
+		DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationViewController.m; sourceTree = "<group>"; };
+		DCDC40011B182DF9003BECEB /* DiningHallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningHallViewController.h; sourceTree = "<group>"; };
+		DCDC40021B182DF9003BECEB /* DiningHallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningHallViewController.m; sourceTree = "<group>"; };
+		DCDC40041B182E05003BECEB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		DCDC40051B182E05003BECEB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		DCDD0E2E1AFCF163007601B1 /* ClassesNumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesNumCollectionViewCell.h; sourceTree = "<group>"; };
 		DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesNumCollectionViewCell.m; sourceTree = "<group>"; };
 		DCDE0FA81AE8DAC900CAF63D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -199,6 +208,12 @@
 				DCE1C3A71B15F63E005566E8 /* CollectionViewCell.m */,
 				DCDC3FF81B174AB5003BECEB /* LibraryViewController.h */,
 				DCDC3FF91B174AB5003BECEB /* LibraryViewController.m */,
+				DCDC3FFE1B182DE9003BECEB /* ExaminationViewController.h */,
+				DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */,
+				DCDC40011B182DF9003BECEB /* DiningHallViewController.h */,
+				DCDC40021B182DF9003BECEB /* DiningHallViewController.m */,
+				DCDC40041B182E05003BECEB /* AboutViewController.h */,
+				DCDC40051B182E05003BECEB /* AboutViewController.m */,
 			);
 			name = Discovery;
 			sourceTree = "<group>";
@@ -499,12 +514,14 @@
 			files = (
 				DCF1F5571AFA18A300A126E9 /* WeekView.m in Sources */,
 				0B3A32521AE55D2F001E5E4A /* SharedContext.m in Sources */,
+				DCDC40001B182DE9003BECEB /* ExaminationViewController.m in Sources */,
 				DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */,
 				DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */,
 				DCDE1B871B086CB6007EA05C /* analysisClassesJSON.m in Sources */,
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
 				DCE1C3A51B15E8CA005566E8 /* Course.m in Sources */,
+				DCDC40031B182DF9003BECEB /* DiningHallViewController.m in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
 				DCE076F11AFF5DDA00D65302 /* AddClassViewController.m in Sources */,
@@ -519,6 +536,7 @@
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
 				DCF1F55A1AFA2EAD00A126E9 /* DateView.m in Sources */,
 				DCE1C3A81B15F63F005566E8 /* CollectionViewCell.m in Sources */,
+				DCDC40061B182E05003BECEB /* AboutViewController.m in Sources */,
 				DCCA27901ADF93F800BA290C /* StudentProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
