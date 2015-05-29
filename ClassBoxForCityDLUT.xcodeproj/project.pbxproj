@@ -23,9 +23,10 @@
 		DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB41ABDB3CB00655FFB /* main.m */; };
 		DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */; };
 		DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DB91ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld */; };
-		DCCF8DC11ABDB3CB00655FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DBF1ABDB3CB00655FFB /* Main.storyboard */; };
 		DCCF8DC61ABDB3CB00655FFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCCF8DC41ABDB3CB00655FFB /* LaunchScreen.xib */; };
 		DCCF8DD21ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */; };
+		DCDC3FFA1B174AB5003BECEB /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC3FF91B174AB5003BECEB /* LibraryViewController.m */; };
+		DCDC3FFD1B1763C5003BECEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCDC3FFB1B1763C5003BECEB /* Main.storyboard */; };
 		DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
 		DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE1B831B07459F007EA05C /* ClassesFetcher.m */; };
@@ -82,11 +83,13 @@
 		DCCF8DB61ABDB3CB00655FFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCCF8DB71ABDB3CB00655FFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DCCF8DBA1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClassBoxForCityDLUT.xcdatamodel; sourceTree = "<group>"; };
-		DCCF8DC01ABDB3CB00655FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCCF8DC51ABDB3CB00655FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DCCF8DCB1ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassBoxForCityDLUTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCF8DD01ABDB3CB00655FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCCF8DD11ABDB3CB00655FFB /* ClassBoxForCityDLUTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassBoxForCityDLUTTests.m; sourceTree = "<group>"; };
+		DCDC3FF81B174AB5003BECEB /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
+		DCDC3FF91B174AB5003BECEB /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
+		DCDC3FFC1B1763C5003BECEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCDD0E2E1AFCF163007601B1 /* ClassesNumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesNumCollectionViewCell.h; sourceTree = "<group>"; };
 		DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesNumCollectionViewCell.m; sourceTree = "<group>"; };
 		DCDE0FA81AE8DAC900CAF63D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				DCCA27891ADBC36C00BA290C /* DiscoveryViewController.m */,
 				DCE1C3A61B15F63E005566E8 /* CollectionViewCell.h */,
 				DCE1C3A71B15F63E005566E8 /* CollectionViewCell.m */,
+				DCDC3FF81B174AB5003BECEB /* LibraryViewController.h */,
+				DCDC3FF91B174AB5003BECEB /* LibraryViewController.m */,
 			);
 			name = Discovery;
 			sourceTree = "<group>";
@@ -230,7 +235,7 @@
 		DCA31A3A1ACDB6410042200A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				DCCF8DBF1ABDB3CB00655FFB /* Main.storyboard */,
+				DCDC3FFB1B1763C5003BECEB /* Main.storyboard */,
 				DCCF8DC41ABDB3CB00655FFB /* LaunchScreen.xib */,
 			);
 			name = UI;
@@ -436,10 +441,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCCF8DC11ABDB3CB00655FFB /* Main.storyboard in Resources */,
 				DCCF8DC61ABDB3CB00655FFB /* LaunchScreen.xib in Resources */,
 				DC9E24601AD3AB2D0068ACE8 /* NewsAndReports.pdf in Resources */,
 				DCE1C3A21B15C73F005566E8 /* Images.xcassets in Resources */,
+				DCDC3FFD1B1763C5003BECEB /* Main.storyboard in Resources */,
 				DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */,
 				DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */,
 			);
@@ -510,6 +515,7 @@
 				DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
 				0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */,
+				DCDC3FFA1B174AB5003BECEB /* LibraryViewController.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
 				DCF1F55A1AFA2EAD00A126E9 /* DateView.m in Sources */,
 				DCE1C3A81B15F63F005566E8 /* CollectionViewCell.m in Sources */,
@@ -536,20 +542,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DCCF8DBF1ABDB3CB00655FFB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DCCF8DC01ABDB3CB00655FFB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DCCF8DC41ABDB3CB00655FFB /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DCCF8DC51ABDB3CB00655FFB /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		DCDC3FFB1B1763C5003BECEB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCDC3FFC1B1763C5003BECEB /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -44,13 +44,13 @@
 //    if ([newsTitle rangeOfString:holiday].location != NSNotFound) {
 //        cell.textLabel.textColor = [UIColor redColor];
 //    }
-    if ([new valueForKeyPath:NEWS_CONTENT] != nil) {
-        cell.detailTextLabel.text = [new valueForKeyPath:NEWS_CONTENT];
-    }
-    else
-    {
+//    if ([new valueForKeyPath:NEWS_CONTENT] != nil) {
+//        cell.detailTextLabel.text = [new valueForKeyPath:NEWS_CONTENT];
+//    }
+//    else
+//    {
         cell.detailTextLabel.text = nil;
-    }
+//    }
 
     return cell;
 }

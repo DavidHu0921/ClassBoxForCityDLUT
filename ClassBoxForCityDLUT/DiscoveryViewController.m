@@ -1,4 +1,4 @@
-//
+ //
 //  DiscoveryViewController.m
 //  ClassBoxForCityDLUT
 //
@@ -13,6 +13,7 @@
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "Course.h"
 #import "CollectionViewCell.h"
+#import "LibraryViewController.h"
 
 @interface DiscoveryViewController () <UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -20,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginLogoutBtn;
 @property (weak, nonatomic) IBOutlet UIView *profileView;
 @property (strong, nonatomic) UICollectionView *collection;
+@property (weak, nonatomic) IBOutlet UIImageView *profile;
+@property (strong, nonatomic) NSString *imageName;
 
 - (IBAction)LoginBTN:(UIButton *)sender;
 
@@ -30,6 +33,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBarHidden = YES;
+    
+    //set profile image
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *userProfile = [userDefaults stringForKey:@"profile"];
+    
+    if (userProfile == nil) {
+        
+        self.imageName = @"boy";
+        self.profile.image = [UIImage imageNamed:self.imageName];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+        singleTap.numberOfTapsRequired = 1;
+        [self.profile setUserInteractionEnabled:YES];
+        [self.profile addGestureRecognizer:singleTap];
+        
+        [self.profile setNeedsDisplay];
+    }
+    else{
+        self.imageName = userProfile;
+        self.profile.image = [UIImage imageNamed:self.imageName];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+        singleTap.numberOfTapsRequired = 1;
+        [self.profile setUserInteractionEnabled:YES];
+        [self.profile addGestureRecognizer:singleTap];
+        
+        [self.profile setNeedsDisplay];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -48,6 +78,28 @@
     
     if (self.collection == nil) {
         [self createDiscoveryCollectionView];
+    }
+    
+}
+
+#pragma mark - tap profile
+-(void)tapDetected{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *mystring;
+    
+    if ([self.imageName isEqualToString:@"boy"]) {
+        mystring = @"girl";
+        self.imageName = mystring;
+        [userDefaults setObject:mystring forKey:@"profile"];
+        self.profile.image = [UIImage imageNamed:self.imageName];
+        [self.profile setNeedsDisplay];
+    }
+    else{
+        mystring = @"boy";
+        self.imageName = mystring;
+        [userDefaults setObject:mystring forKey:@"profile"];
+        self.profile.image = [UIImage imageNamed:self.imageName];
+        [self.profile setNeedsDisplay];
     }
 }
 
@@ -174,6 +226,43 @@
     }
     return cell;
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+//            cell.logoTitle.text = [NSString stringWithFormat:@"图书馆查询"];
+            
+            LibraryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"library"];
+//            vc.navigationController.topViewController = [self.storyboard instantiateInitialViewController];
+            [self showViewController:vc sender:nil];
+//            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else if (indexPath.row == 1){
+//            cell.logoTitle.text = [NSString stringWithFormat:@"成绩查询"];
+
+        }
+        else if (indexPath.row  == 2){
+//            cell.logoTitle.text = [NSString stringWithFormat:@"订餐查询"];
+
+        }
+    }
+    else if (indexPath.section == 1){
+        if (indexPath.row == 0) {
+//            cell.logoTitle.text = [NSString stringWithFormat:@"关于"];
+
+        }
+        else if (indexPath.row == 1){
+            //            NSLog(@"并没有什么卵用");
+        }
+        else if (indexPath.row  == 2){
+            //            NSLog(@"并没有什么卵用");
+        }
+    }
+    else{
+        //        NSLog(@"并没有什么卵用");
+    }
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     //底部还能滚动，后续再写死

@@ -19,7 +19,7 @@
                     <connections>
                         <segue destination="gWs-LA-Waj" kind="relationship" relationship="viewControllers" id="she-As-eKx"/>
                         <segue destination="0Cs-dP-NpZ" kind="relationship" relationship="viewControllers" id="kbP-uK-5n3"/>
-                        <segue destination="XUF-rO-sjh" kind="relationship" relationship="viewControllers" id="ycN-d0-Gci"/>
+                        <segue destination="Q6D-HF-rbc" kind="relationship" relationship="viewControllers" id="ycN-d0-Gci"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgS-Fl-btt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,59 +91,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvq-BU-l1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1784" y="337"/>
-        </scene>
-        <!--图书馆查询-->
-        <scene sceneID="uQh-gQ-PTU">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3uJ-fK-aGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController hidesBottomBarWhenPushed="YES" id="eMt-8o-p0a" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1CX-dF-FBd"/>
-                        <viewControllerLayoutGuide type="bottom" id="egd-kF-xGL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="F6S-Lv-62j">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Jvv-Zp-NgU">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="eMt-8o-p0a" id="gNX-g5-KdD"/>
-                                </connections>
-                            </searchBar>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z67-Cv-WoE">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Jvv-Zp-NgU" firstAttribute="trailing" secondItem="Z67-Cv-WoE" secondAttribute="trailing" id="0u1-E4-3Ec"/>
-                            <constraint firstAttribute="bottom" secondItem="Z67-Cv-WoE" secondAttribute="bottom" id="DYA-Gz-jff"/>
-                            <constraint firstItem="Jvv-Zp-NgU" firstAttribute="leading" secondItem="Z67-Cv-WoE" secondAttribute="leading" id="Ilh-EJ-MwR"/>
-                            <constraint firstAttribute="trailing" secondItem="Z67-Cv-WoE" secondAttribute="trailing" id="J9A-7i-D2k"/>
-                            <constraint firstItem="Jvv-Zp-NgU" firstAttribute="top" secondItem="1CX-dF-FBd" secondAttribute="bottom" id="One-Qv-yXl"/>
-                            <constraint firstItem="Z67-Cv-WoE" firstAttribute="leading" secondItem="F6S-Lv-62j" secondAttribute="leading" id="wvO-R5-G9N"/>
-                            <constraint firstItem="Z67-Cv-WoE" firstAttribute="top" secondItem="F6S-Lv-62j" secondAttribute="top" id="z20-xq-Cie"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="图书馆查询" id="8oq-6X-X5u"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="hcr-B8-lXm" id="CNe-vu-Hmq"/>
-                    </connections>
-                </viewController>
-                <searchDisplayController id="hcr-B8-lXm">
-                    <connections>
-                        <outlet property="delegate" destination="eMt-8o-p0a" id="m0h-Sf-ych"/>
-                        <outlet property="searchBar" destination="Jvv-Zp-NgU" id="tU5-V6-NmS"/>
-                        <outlet property="searchContentsController" destination="eMt-8o-p0a" id="Mqs-0X-uDC"/>
-                        <outlet property="searchResultsDataSource" destination="eMt-8o-p0a" id="BJM-ES-3hS"/>
-                        <outlet property="searchResultsDelegate" destination="eMt-8o-p0a" id="vl7-MV-XGD"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="2471" y="1092"/>
         </scene>
         <!--News Web View Controller-->
         <scene sceneID="XL4-HE-H5T">
@@ -239,7 +186,7 @@
                                             <action selector="LoginBTN:" destination="XUF-rO-sjh" eventType="touchUpInside" id="AV1-g0-39g"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="城院小助手Logo1W" translatesAutoresizingMaskIntoConstraints="NO" id="dPD-aZ-xGi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="dPD-aZ-xGi">
                                         <rect key="frame" x="250" y="26" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="AMO-EN-swu"/>
@@ -267,19 +214,49 @@
                             <constraint firstItem="bFG-SO-DyN" firstAttribute="leading" secondItem="SuR-hH-z4y" secondAttribute="leading" id="utU-ad-vgH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="发现" image="Explore" id="LDd-cz-hts"/>
-                    <navigationItem key="navigationItem" id="IJc-um-dde"/>
+                    <navigationItem key="navigationItem" title="发现" id="IJc-um-dde"/>
                     <connections>
                         <outlet property="loginLogoutBtn" destination="pJq-Ia-OIB" id="A0v-eT-7xB"/>
                         <outlet property="nameLabel" destination="eno-yV-88h" id="lHv-4n-Ose"/>
+                        <outlet property="profile" destination="dPD-aZ-xGi" id="5eo-qZ-eMY"/>
                         <outlet property="profileView" destination="bFG-SO-DyN" id="shN-dE-43P"/>
                         <segue destination="LIO-ly-wsc" kind="modal" identifier="ToLogin" modalTransitionStyle="flipHorizontal" id="q9H-BI-Lcf"/>
-                        <segue destination="7ht-vg-APM" kind="show" identifier="library" id="zaA-1Y-qhu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cc6-gn-kMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="1092"/>
+            <point key="canvasLocation" x="1784" y="1092"/>
+        </scene>
+        <!--图书馆查询-->
+        <scene sceneID="i41-ND-XcW">
+            <objects>
+                <viewController storyboardIdentifier="library" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="etP-nH-JWw" customClass="LibraryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s8i-rU-CF1"/>
+                        <viewControllerLayoutGuide type="bottom" id="hKj-Nz-BU8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rr3-zk-aGF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAN-PV-rY5">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IAN-PV-rY5" firstAttribute="centerX" secondItem="Rr3-zk-aGF" secondAttribute="centerX" id="d1e-mI-bL4"/>
+                            <constraint firstItem="IAN-PV-rY5" firstAttribute="centerY" secondItem="Rr3-zk-aGF" secondAttribute="centerY" id="rRD-4s-us2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="图书馆查询" id="KxT-TV-z9q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AeV-EF-0Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3348" y="1092"/>
         </scene>
         <!--Login-->
         <scene sceneID="6eF-9n-dq2">
@@ -396,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxb-89-ZJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="1859"/>
+            <point key="canvasLocation" x="1784" y="1839"/>
         </scene>
         <!--Class Box View Controller-->
         <scene sceneID="pWT-hN-RDe">
@@ -570,77 +547,42 @@
             </objects>
             <point key="canvasLocation" x="2471" y="-384"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ytt-rs-hSJ">
+        <!--发现-->
+        <scene sceneID="cEI-2f-hdx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ht-vg-APM" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q6D-HF-rbc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="Explore" id="LDd-cz-hts"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xTQ-t2-ANU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MJ3-gw-pGY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="eMt-8o-p0a" kind="relationship" relationship="rootViewController" id="4bc-BO-Oez"/>
+                        <segue destination="XUF-rO-sjh" kind="relationship" relationship="rootViewController" id="slP-KB-6aX"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fHo-wN-LWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vwb-UW-afy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784" y="1092"/>
+            <point key="canvasLocation" x="1106" y="1092"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="bqI-5k-gms">
+        <!--Navigation Controller-->
+        <scene sceneID="Shq-3S-aBx">
             <objects>
-                <viewController id="zOC-9E-nD2" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rhg-uA-kim"/>
-                        <viewControllerLayoutGuide type="bottom" id="GS4-EK-ooB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wW0-cs-VuT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vfd-aU-BzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1WN-IA-vqf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="woo-h0-nlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="etP-nH-JWw" kind="relationship" relationship="rootViewController" id="Pjw-z2-nrd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AlV-bC-a3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784" y="1859"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ybT-VS-uph">
-            <objects>
-                <viewController id="Vmr-Ja-Po8" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VJm-QU-dCh"/>
-                        <viewControllerLayoutGuide type="bottom" id="NJg-Tp-xGP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Qgc-wK-d03">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mil-WP-Sab" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1784" y="2586"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="6YG-10-a51">
-            <objects>
-                <viewController id="iqT-xY-L0s" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QRt-qC-kUp"/>
-                        <viewControllerLayoutGuide type="bottom" id="X8o-3y-1Kk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="N4a-V0-3il">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mnY-TA-4JU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1784" y="3288"/>
+            <point key="canvasLocation" x="2652" y="1092"/>
         </scene>
     </scenes>
     <resources>
