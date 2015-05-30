@@ -54,6 +54,7 @@
 - (void)fetchResult{
     NSString *bookName = self.librarySearchBar.text;
     NSString *bookapi = [NSString stringWithFormat:LibraryAPI, bookName];
+    bookapi = [bookapi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSURL *url = [NSURL URLWithString:bookapi];
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
