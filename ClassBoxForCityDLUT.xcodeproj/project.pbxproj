@@ -11,6 +11,7 @@
 		0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A32541AE55DD2001E5E4A /* SharedContext+User.m */; };
 		73F2CE23BB49B6360EE8E7B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FC75BF74BBD3DF531984F /* libPods.a */; };
 		DC3E305D1B1853990003BBD2 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3E305C1B1853990003BBD2 /* AboutTableViewController.m */; };
+		DC3E306D1B19F8310003BBD2 /* DiningHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3E306C1B19F8310003BBD2 /* DiningHallViewController.m */; };
 		DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */; };
 		DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */; };
 		DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245C1AD3AB2D0068ACE8 /* Explore.pdf */; };
@@ -29,7 +30,6 @@
 		DCDC3FFA1B174AB5003BECEB /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC3FF91B174AB5003BECEB /* LibraryViewController.m */; };
 		DCDC3FFD1B1763C5003BECEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCDC3FFB1B1763C5003BECEB /* Main.storyboard */; };
 		DCDC40001B182DE9003BECEB /* ExaminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */; };
-		DCDC40031B182DF9003BECEB /* DiningHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC40021B182DF9003BECEB /* DiningHallViewController.m */; };
 		DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
 		DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE1B831B07459F007EA05C /* ClassesFetcher.m */; };
@@ -65,6 +65,8 @@
 		DC3E305C1B1853990003BBD2 /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
 		DC3E30621B189F600003BBD2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		DC3E30631B189F600003BBD2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		DC3E306B1B19F8310003BBD2 /* DiningHallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningHallViewController.h; sourceTree = "<group>"; };
+		DC3E306C1B19F8310003BBD2 /* DiningHallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningHallViewController.m; sourceTree = "<group>"; };
 		DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
 		DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ClassBox.pdf; path = Resoucre/ClassBox.pdf; sourceTree = "<group>"; };
@@ -99,8 +101,6 @@
 		DCDC3FFC1B1763C5003BECEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCDC3FFE1B182DE9003BECEB /* ExaminationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExaminationViewController.h; sourceTree = "<group>"; };
 		DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationViewController.m; sourceTree = "<group>"; };
-		DCDC40011B182DF9003BECEB /* DiningHallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningHallViewController.h; sourceTree = "<group>"; };
-		DCDC40021B182DF9003BECEB /* DiningHallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningHallViewController.m; sourceTree = "<group>"; };
 		DCDD0E2E1AFCF163007601B1 /* ClassesNumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesNumCollectionViewCell.h; sourceTree = "<group>"; };
 		DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesNumCollectionViewCell.m; sourceTree = "<group>"; };
 		DCDE0FA81AE8DAC900CAF63D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -201,8 +201,8 @@
 		DC3E30611B189D500003BBD2 /* DiningHall */ = {
 			isa = PBXGroup;
 			children = (
-				DCDC40011B182DF9003BECEB /* DiningHallViewController.h */,
-				DCDC40021B182DF9003BECEB /* DiningHallViewController.m */,
+				DC3E306B1B19F8310003BBD2 /* DiningHallViewController.h */,
+				DC3E306C1B19F8310003BBD2 /* DiningHallViewController.m */,
 			);
 			name = DiningHall;
 			sourceTree = "<group>";
@@ -555,7 +555,6 @@
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
 				DCE1C3A51B15E8CA005566E8 /* Course.m in Sources */,
-				DCDC40031B182DF9003BECEB /* DiningHallViewController.m in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,
 				DC3E305D1B1853990003BBD2 /* AboutTableViewController.m in Sources */,
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
@@ -563,6 +562,7 @@
 				DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */,
 				DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */,
 				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
+				DC3E306D1B19F8310003BBD2 /* DiningHallViewController.m in Sources */,
 				DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */,
 				DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
