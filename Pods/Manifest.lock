@@ -1,19 +1,16 @@
 PODS:
   - ICViewPager (1.5.1)
   - MagicalRecord (2.3.0)
-  - NKJPagerViewController (0.3.2)
   - UITableView+FDTemplateLayoutCell (1.3)
 
 DEPENDENCIES:
   - ICViewPager
   - MagicalRecord
-  - NKJPagerViewController
   - UITableView+FDTemplateLayoutCell (~> 1.1-beta)
 
 SPEC CHECKSUMS:
   ICViewPager: 032dc71a50fe898e185fae6112ded4bed0e0523c
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
-  NKJPagerViewController: e9420d009c68c1a947efd49796b7b4b4cca90860
   UITableView+FDTemplateLayoutCell: d5be6056b5060313f5955a2590ecd33142ad713d
 
 COCOAPODS: 0.37.2

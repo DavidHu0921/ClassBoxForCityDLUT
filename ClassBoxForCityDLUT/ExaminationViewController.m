@@ -53,7 +53,6 @@ static NSString *CellIdentifier = @"cell";
 
     ExaminationPagerViewController *pager;
     NSInteger itemOnTab = [pager.itemOnTab integerValue];
-    NSLog(@"item value: %ld", itemOnTab);
     
     NSInteger term = 5 + (startItem - 2010) * 2 + itemOnTab;
     
@@ -71,7 +70,7 @@ static NSString *CellIdentifier = @"cell";
                                                                                                     options:0
                                                                                                       error:&connectionError];
                                        NSArray *grade = [returnStatus valueForKey:INFO];
-                                       NSLog(@"grade: %@", grade);
+
                                        dispatch_async(dispatch_get_main_queue(), ^{
                                            self.grades = grade;
                                        });
@@ -81,7 +80,8 @@ static NSString *CellIdentifier = @"cell";
 }
 
 - (void)createTableView{
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    //height is error
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 108)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[ExaminationViewCell class] forCellReuseIdentifier:CellIdentifier];
@@ -93,17 +93,26 @@ static NSString *CellIdentifier = @"cell";
     ExaminationViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSDictionary *grade = self.grades[indexPath.row];
+//    NSLog(@"grade is:%@", grade);
     cell.name.text = [grade valueForKeyPath:NAME];
     cell.category.text = [grade valueForKeyPath:CATEGORY];
     cell.examining_method.text = [grade valueForKeyPath:EXAMINING_METHOD];
-    cell.credit_hours.text = [grade valueForKeyPath:CREDIT_HOURS];
-    cell.credit.text = [grade valueForKeyPath:CREDIT];
+    
+    NSInteger credit_hoursNum = [[grade valueForKeyPath:CREDIT_HOURS] integerValue];
+    NSInteger creditNum = [[grade valueForKeyPath:CREDIT] integerValue];
+    cell.credit_hours.text = [NSString stringWithFormat:@"%ld学分", credit_hoursNum];
+    cell.credit.text = [NSString stringWithFormat:@"%ld学时", creditNum];
+    
     cell.average_gradesTitle.text = @"平时成绩";
     cell.final_gradesTitle.text = @"期末成绩";
     cell.general_gradesTitle.text = @"综合成绩";
-    cell.average_grades.text = [grade valueForKeyPath:AVERAGE_GRADES];
-    cell.final_grades.text = [grade valueForKeyPath:FINAL_GRADES];
-    cell.general_grades.text = [grade valueForKeyPath:GENERAL_GRADES];
+    NSInteger average_gradesNum = [[grade valueForKeyPath:AVERAGE_GRADES] integerValue];
+    NSInteger final_gradesNum = [[grade valueForKeyPath:FINAL_GRADES] integerValue];
+    NSInteger general_gradesNum = [[grade valueForKeyPath:GENERAL_GRADES] integerValue];
+    
+    cell.average_grades.text = [NSString stringWithFormat:@"%ld分", average_gradesNum];
+    cell.final_grades.text = [NSString stringWithFormat:@"%ld分", final_gradesNum];
+    cell.general_grades.text = [NSString stringWithFormat:@"%ld分", general_gradesNum];
     
     return cell;
 }
