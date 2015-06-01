@@ -11,6 +11,4 @@
 
 @interface ExaminationPagerViewController : ViewPagerController
 
-@property (strong, nonatomic) NSString *itemOnTab;
-
 @end

@@ -51,10 +51,15 @@ static NSString *CellIdentifier = @"cell";
     NSString *password = [student[0] valueForKeyPath:@"password"];
     NSInteger startItem = [[studentName substringToIndex:4] intValue];
 
-    ExaminationPagerViewController *pager;
-    NSInteger itemOnTab = [pager.itemOnTab integerValue];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger nowOnTab = [userDefaults integerForKey:@"term"];
     
-    NSInteger term = 5 + (startItem - 2010) * 2 + itemOnTab;
+    NSNumber *num = [[NSNumber alloc]initWithInteger:nowOnTab];
+    if (num == nil) {
+        nowOnTab = self.grades.count - 1;
+    }
+    
+    NSInteger term = 5 + (startItem - 2010) * 2 + nowOnTab;
     
     NSURL *url = [ExaminationFetcher URLforExamination:studentName password:password term:term];
     
