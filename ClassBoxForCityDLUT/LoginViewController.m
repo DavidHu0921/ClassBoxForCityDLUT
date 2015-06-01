@@ -10,7 +10,7 @@
 #import "StudentProfile.h"
 //#import "User.h"
 #import "Student.h"
-#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 //#import "SharedContext+User.h"
 
 typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
@@ -80,7 +80,7 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
                 }
                 
                 // Save student info
-                Student *student = [Student MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+                Student *student = [Student MR_createEntityInContext:[NSManagedObjectContext MR_defaultContext]];
                 student.username = self.stuID.text;
                 student.studentname = studentInfo.lastObject;
                 student.password = self.password.text;

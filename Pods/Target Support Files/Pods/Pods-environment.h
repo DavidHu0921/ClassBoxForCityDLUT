@@ -6,6 +6,12 @@
 // project.
 
 
+// ICViewPager
+#define COCOAPODS_POD_AVAILABLE_ICViewPager
+#define COCOAPODS_VERSION_MAJOR_ICViewPager 1
+#define COCOAPODS_VERSION_MINOR_ICViewPager 5
+#define COCOAPODS_VERSION_PATCH_ICViewPager 1
+
 // MagicalRecord
 #define COCOAPODS_POD_AVAILABLE_MagicalRecord
 #define COCOAPODS_VERSION_MAJOR_MagicalRecord 2

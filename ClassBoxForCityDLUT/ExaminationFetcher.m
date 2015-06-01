@@ -17,7 +17,7 @@
 }
 
 + (NSURL *)URLforExamination: (NSString *) stuID password: (NSString *)password term:(NSInteger)term{
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ExaminationAPI, stuID, password, term]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ExaminationAPI, stuID, password, (long)term]];
     return url;
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "AddClassViewController.h"
-#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 #import "Student.h"
 #import "ClassesFetcher.h"
 #import "analysisClassesJSON.h"

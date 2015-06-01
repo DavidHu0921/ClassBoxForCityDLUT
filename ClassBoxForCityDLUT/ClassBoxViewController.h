@@ -10,4 +10,7 @@
 
 @interface ClassBoxViewController : UIViewController
 
+- (NSInteger)countForThisWeek;
+
 @end
+

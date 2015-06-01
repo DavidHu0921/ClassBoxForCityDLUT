@@ -29,6 +29,18 @@
         self.final_grades = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth/3, 120, ScreenWidth/3, 30)];
         self.general_grades = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth/3 * 2, 120, ScreenWidth/3, 30)];
         
+        self.name.textAlignment = NSTextAlignmentCenter;
+        self.category.textAlignment = NSTextAlignmentCenter;
+        self.examining_method.textAlignment = NSTextAlignmentCenter;
+        self.credit_hours.textAlignment = NSTextAlignmentCenter;
+        self.credit.textAlignment = NSTextAlignmentCenter;
+        self.average_gradesTitle.textAlignment = NSTextAlignmentCenter;
+        self.final_gradesTitle.textAlignment = NSTextAlignmentCenter;
+        self.general_gradesTitle.textAlignment = NSTextAlignmentCenter;
+        self.average_grades.textAlignment = NSTextAlignmentCenter;
+        self.final_grades.textAlignment = NSTextAlignmentCenter;
+        self.general_grades.textAlignment = NSTextAlignmentCenter;
+        
         [self addSubview:self.name];
         [self addSubview:self.category];
         [self addSubview:self.examining_method];

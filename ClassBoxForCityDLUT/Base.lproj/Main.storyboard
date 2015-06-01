@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pVz-Vy-dq8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Ip-54-myR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -409,9 +409,22 @@
                     <view key="view" contentMode="scaleToFill" id="3Cq-ZY-8Jo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" alpha="0.29999999999999966" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lX0-em-TOe">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="lX0-em-TOe" secondAttribute="centerX" constant="-0.5" id="0zm-iN-3AJ"/>
+                            <constraint firstAttribute="centerY" secondItem="lX0-em-TOe" secondAttribute="centerY" constant="0.5" id="7m4-ic-cH6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="考试成绩查询" id="8Ha-xI-T9N"/>
+                    <connections>
+                        <outlet property="spinner" destination="lX0-em-TOe" id="1zC-JT-4VY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbJ-QT-wbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -808,24 +821,6 @@ Elilien、赵发凯、林卓宸、余畅
             <point key="canvasLocation" x="2471" y="1092"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="aYP-LG-UZI">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mi1-22-LCz" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NqY-eE-EMr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="d2q-fM-h0Q" kind="relationship" relationship="rootViewController" id="EKP-5Y-eVV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pda-dG-PYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2471" y="1839"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="kDB-XQ-hKT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fWX-KG-86K" sceneMemberID="viewController">
@@ -949,24 +944,6 @@ Elilien、赵发凯、林卓宸、余畅
             </objects>
             <point key="canvasLocation" x="372" y="4006"/>
         </scene>
-        <!--Haha Table View Controller-->
-        <scene sceneID="Olv-ob-f3i">
-            <objects>
-                <viewController id="6H0-pm-HYW" customClass="HahaTableViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gwP-Ii-73Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="bch-Ev-Evm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kjx-Xg-Poj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0zE-hB-eYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2673" y="3513"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="wZe-Nn-E4f">
             <objects>
@@ -984,6 +961,43 @@ Elilien、赵发凯、林卓宸、余畅
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZg-ym-umo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2471" y="2558"/>
+        </scene>
+        <!--成绩-->
+        <scene sceneID="skS-4t-s1g">
+            <objects>
+                <viewController storyboardIdentifier="examinationPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CT3-ly-pvc" customClass="ExaminationPagerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d43-uS-72c"/>
+                        <viewControllerLayoutGuide type="bottom" id="wRk-Gt-nYj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Ue-f1-F18">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="成绩" id="JoO-Zt-oPI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dXx-Ir-3n3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3459" y="3358"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PPa-Qi-Eep">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Ip-54-myR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FEg-ab-6wF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CT3-ly-pvc" kind="relationship" relationship="rootViewController" id="28g-6c-1SF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZfF-Vx-4eE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2746" y="3358"/>
         </scene>
     </scenes>
     <resources>

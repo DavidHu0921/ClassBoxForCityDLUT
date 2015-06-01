@@ -9,7 +9,7 @@
 //这个类如果看不懂联系这个邮箱：davidhu920921@gmail.com
 
 #import "analysisClassesJSON.h"
-#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 #import "Course.h"
 #import "ClassesFetcher.h"
 
@@ -70,7 +70,7 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
 
             //store the classes
             [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-                Course *course = [Course MR_createInContext:localContext];
+                Course *course = [Course MR_createEntityInContext:localContext];
                 
                 course.classesName = classesDetail[0];
                 course.teacherName = classesDetail[1];
@@ -92,7 +92,7 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
 
             //store the classes
             [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-                Course *course = [Course MR_createInContext:localContext];
+                Course *course = [Course MR_createEntityInContext:localContext];
                 
                 course.classesName = classesDetail[0];
                 course.teacherName = classesDetail[1];

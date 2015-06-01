@@ -45,7 +45,7 @@
         if (i == 0) {
             //这里把第一格设置成当前月份
             UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 25, 20)];
-            week.text = [NSString stringWithFormat:@"%ld月", todaysMonth];
+            week.text = [NSString stringWithFormat:@"%ld月", (long)todaysMonth];
             week.font = [UIFont systemFontOfSize:12];
             week.textAlignment = NSTextAlignmentCenter;
             week.textColor = [UIColor blackColor];
@@ -65,10 +65,10 @@
             
             UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(25 + (i - 1)*(self.frame.size.width - 25)/7, 0, (self.frame.size.width - 25)/7, 20)];
             if (dayNum == 1 && wDay != 2) {
-                week.text = [NSString stringWithFormat:@"%ld月", monthNum];
+                week.text = [NSString stringWithFormat:@"%ld月", (long)monthNum];
             }
             else{
-                week.text = [NSString stringWithFormat:@"%ld", dayNum];
+                week.text = [NSString stringWithFormat:@"%ld", (long)dayNum];
             }
             
             week.font = [UIFont systemFontOfSize:12];
@@ -100,10 +100,10 @@
             
             UILabel *week = [[UILabel alloc]initWithFrame:CGRectMake(25 + (i - 1)*(self.frame.size.width - 25)/7, 0, (self.frame.size.width - 25)/7, 20)];
             if (dayNum == 1) {
-                week.text = [NSString stringWithFormat:@"%ld月", monthNum];
+                week.text = [NSString stringWithFormat:@"%ld月", (long)monthNum];
             }
             else{
-                week.text = [NSString stringWithFormat:@"%ld", dayNum];
+                week.text = [NSString stringWithFormat:@"%ld", (long)dayNum];
             }
             
             week.font = [UIFont systemFontOfSize:12];

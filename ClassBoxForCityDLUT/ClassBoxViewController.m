@@ -10,7 +10,7 @@
 #import "WeekView.h"
 #import "DateView.h"
 #import "ClassesNumCollectionViewCell.h"
-#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 #import "Student.h"
 #import "Course.h"
 
@@ -72,7 +72,7 @@ static const CGFloat CellHieght = 70;
         self.ClassBoxNC.title = [NSString stringWithFormat:@"放假"];
     }
     else{
-        self.ClassBoxNC.title = [NSString stringWithFormat:@"第%ld周", thisWeekNumber];
+        self.ClassBoxNC.title = [NSString stringWithFormat:@"第%ld周", (long)thisWeekNumber];
     }
 }
 

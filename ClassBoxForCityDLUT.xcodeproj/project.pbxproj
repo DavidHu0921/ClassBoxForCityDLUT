@@ -33,6 +33,7 @@
 		DCDC40001B182DE9003BECEB /* ExaminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */; };
 		DCDC44B11B1C86DF00BB0A95 /* ExaminationViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC44B01B1C86DF00BB0A95 /* ExaminationViewCell.m */; };
 		DCDC44B41B1C9E0800BB0A95 /* ExaminationFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC44B31B1C9E0800BB0A95 /* ExaminationFetcher.m */; };
+		DCDC44B71B1CAE8E00BB0A95 /* ExaminationPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC44B61B1CAE8E00BB0A95 /* ExaminationPagerViewController.m */; };
 		DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
 		DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE1B831B07459F007EA05C /* ClassesFetcher.m */; };
@@ -110,6 +111,8 @@
 		DCDC44B01B1C86DF00BB0A95 /* ExaminationViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationViewCell.m; sourceTree = "<group>"; };
 		DCDC44B21B1C9E0800BB0A95 /* ExaminationFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExaminationFetcher.h; sourceTree = "<group>"; };
 		DCDC44B31B1C9E0800BB0A95 /* ExaminationFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationFetcher.m; sourceTree = "<group>"; };
+		DCDC44B51B1CAE8E00BB0A95 /* ExaminationPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExaminationPagerViewController.h; sourceTree = "<group>"; };
+		DCDC44B61B1CAE8E00BB0A95 /* ExaminationPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationPagerViewController.m; sourceTree = "<group>"; };
 		DCDD0E2E1AFCF163007601B1 /* ClassesNumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesNumCollectionViewCell.h; sourceTree = "<group>"; };
 		DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesNumCollectionViewCell.m; sourceTree = "<group>"; };
 		DCDE0FA81AE8DAC900CAF63D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */,
 				DCDC44AF1B1C86DF00BB0A95 /* ExaminationViewCell.h */,
 				DCDC44B01B1C86DF00BB0A95 /* ExaminationViewCell.m */,
+				DCDC44B51B1CAE8E00BB0A95 /* ExaminationPagerViewController.h */,
+				DCDC44B61B1CAE8E00BB0A95 /* ExaminationPagerViewController.m */,
 			);
 			name = Examination;
 			sourceTree = "<group>";
@@ -571,6 +576,7 @@
 				DCDC44B41B1C9E0800BB0A95 /* ExaminationFetcher.m in Sources */,
 				DCDE1B871B086CB6007EA05C /* analysisClassesJSON.m in Sources */,
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
+				DCDC44B71B1CAE8E00BB0A95 /* ExaminationPagerViewController.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
 				DCE1C3A51B15E8CA005566E8 /* Course.m in Sources */,
 				DCA31A461ACDC63D0042200A /* JustPostNewsTVC.m in Sources */,

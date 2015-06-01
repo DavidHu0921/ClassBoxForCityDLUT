@@ -10,7 +10,7 @@
 //#import "SharedContext+User.h"
 //#import "User.h"
 #import "Student.h"
-#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 #import "Course.h"
 #import "CollectionViewCell.h"
 #import "LibraryViewController.h"
