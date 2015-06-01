@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Ip-54-myR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pVz-Vy-dq8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -428,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbJ-QT-wbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3167" y="1839"/>
+            <point key="canvasLocation" x="3896" y="1839"/>
         </scene>
         <!--订餐查询-->
         <scene sceneID="XVG-mE-wRa">
@@ -965,7 +965,7 @@ Elilien、赵发凯、林卓宸、余畅
         <!--成绩-->
         <scene sceneID="skS-4t-s1g">
             <objects>
-                <viewController storyboardIdentifier="examinationPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CT3-ly-pvc" customClass="ExaminationPagerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="examinationPage" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CT3-ly-pvc" customClass="ExaminationPagerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d43-uS-72c"/>
                         <viewControllerLayoutGuide type="bottom" id="wRk-Gt-nYj"/>
@@ -979,7 +979,7 @@ Elilien、赵发凯、林卓宸、余畅
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXx-Ir-3n3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3459" y="3358"/>
+            <point key="canvasLocation" x="3167" y="1839"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PPa-Qi-Eep">
@@ -997,7 +997,7 @@ Elilien、赵发凯、林卓宸、余畅
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfF-Vx-4eE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2746" y="3358"/>
+            <point key="canvasLocation" x="2471" y="1839"/>
         </scene>
     </scenes>
     <resources>

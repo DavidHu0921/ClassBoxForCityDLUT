@@ -14,7 +14,7 @@
 #import "Course.h"
 #import "CollectionViewCell.h"
 #import "LibraryViewController.h"
-#import "ExaminationViewController.h"
+#import "ExaminationPagerViewController.h"
 #import "DiningHallViewController.h"
 #import "AboutTableViewController.h"
 
@@ -239,7 +239,7 @@
         else if (indexPath.row == 1){
             NSArray *isLogin = [Student MR_findAll];
             if (isLogin.count != 0) {
-                ExaminationViewController *examination = [self.storyboard instantiateViewControllerWithIdentifier:@"examination"];
+                ExaminationPagerViewController *examination = [self.storyboard instantiateViewControllerWithIdentifier:@"examinationPage"];
                 [self showViewController:examination sender:nil];
             }
             else{
