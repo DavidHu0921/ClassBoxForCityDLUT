@@ -25,6 +25,5 @@
 
 //+ (NSURL *)URLforStuVerify: (NSString *) stuID password: (NSString *)password;
 
-+ (NSURL *)URLforStuProfile: (NSString *) stuID password: (NSString *)password;
 
 @end

@@ -203,7 +203,7 @@
         }
     }
     cell.textView.textAlignment = NSTextAlignmentCenter;
-    [cell.textView setFont:[UIFont fontWithName:@"ArialMT" size:16]];
+    [cell.textView setFont:[UIFont fontWithName:@"Helvetica" size:16]];
     cell.textView.editable = NO;
     cell.textView.scrollEnabled = NO;
     cell.textView.dataDetectorTypes = UIDataDetectorTypePhoneNumber;

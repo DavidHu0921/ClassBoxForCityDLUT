@@ -10,4 +10,6 @@
 
 @interface ExaminationViewController : UIViewController
 
+@property (nonatomic, strong) NSArray *grades;
+
 @end

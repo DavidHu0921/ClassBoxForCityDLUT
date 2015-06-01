@@ -15,6 +15,7 @@
 #define ProfileAPI  @"http://1.csxyxzs1.sinaapp.com/info?name=%@&password=%@"                                //个人信息
 #define ClassesAPI  @"http://1.csxyxzs1.sinaapp.com/schedule?name=%@&password=%@&term=%ld"
 #define LibraryAPI  @"http://1.csxyxzs.sinaapp.com/library.php?book_name=%@"
+#define ExaminationAPI @"http://1.csxyxzs1.sinaapp.com/grades?name=%@&password=%@&term=%ld"
 
 /*
  成绩 http://1.csxyxzs1.sinaapp.com/grades?name=%s&password=%s[&term=%s]

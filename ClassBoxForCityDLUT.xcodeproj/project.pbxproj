@@ -31,6 +31,8 @@
 		DCDC3FFA1B174AB5003BECEB /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC3FF91B174AB5003BECEB /* LibraryViewController.m */; };
 		DCDC3FFD1B1763C5003BECEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCDC3FFB1B1763C5003BECEB /* Main.storyboard */; };
 		DCDC40001B182DE9003BECEB /* ExaminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */; };
+		DCDC44B11B1C86DF00BB0A95 /* ExaminationViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC44B01B1C86DF00BB0A95 /* ExaminationViewCell.m */; };
+		DCDC44B41B1C9E0800BB0A95 /* ExaminationFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC44B31B1C9E0800BB0A95 /* ExaminationFetcher.m */; };
 		DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */; };
 		DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE0FA91AE8DAC900CAF63D /* Student.m */; };
 		DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE1B831B07459F007EA05C /* ClassesFetcher.m */; };
@@ -104,6 +106,10 @@
 		DCDC3FFC1B1763C5003BECEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCDC3FFE1B182DE9003BECEB /* ExaminationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExaminationViewController.h; sourceTree = "<group>"; };
 		DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationViewController.m; sourceTree = "<group>"; };
+		DCDC44AF1B1C86DF00BB0A95 /* ExaminationViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExaminationViewCell.h; sourceTree = "<group>"; };
+		DCDC44B01B1C86DF00BB0A95 /* ExaminationViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationViewCell.m; sourceTree = "<group>"; };
+		DCDC44B21B1C9E0800BB0A95 /* ExaminationFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExaminationFetcher.h; sourceTree = "<group>"; };
+		DCDC44B31B1C9E0800BB0A95 /* ExaminationFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationFetcher.m; sourceTree = "<group>"; };
 		DCDD0E2E1AFCF163007601B1 /* ClassesNumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesNumCollectionViewCell.h; sourceTree = "<group>"; };
 		DCDD0E2F1AFCF163007601B1 /* ClassesNumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesNumCollectionViewCell.m; sourceTree = "<group>"; };
 		DCDE0FA81AE8DAC900CAF63D /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -197,6 +203,8 @@
 			children = (
 				DCDC3FFE1B182DE9003BECEB /* ExaminationViewController.h */,
 				DCDC3FFF1B182DE9003BECEB /* ExaminationViewController.m */,
+				DCDC44AF1B1C86DF00BB0A95 /* ExaminationViewCell.h */,
+				DCDC44B01B1C86DF00BB0A95 /* ExaminationViewCell.m */,
 			);
 			name = Examination;
 			sourceTree = "<group>";
@@ -391,6 +399,8 @@
 				DCCA278F1ADF93F800BA290C /* StudentProfile.m */,
 				DCDE1B821B07459F007EA05C /* ClassesFetcher.h */,
 				DCDE1B831B07459F007EA05C /* ClassesFetcher.m */,
+				DCDC44B21B1C9E0800BB0A95 /* ExaminationFetcher.h */,
+				DCDC44B31B1C9E0800BB0A95 /* ExaminationFetcher.m */,
 			);
 			name = "API ";
 			sourceTree = "<group>";
@@ -551,12 +561,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCDC44B11B1C86DF00BB0A95 /* ExaminationViewCell.m in Sources */,
 				DCF1F5571AFA18A300A126E9 /* WeekView.m in Sources */,
 				0B3A32521AE55D2F001E5E4A /* SharedContext.m in Sources */,
 				DC3E30A81B1C4BDA0003BBD2 /* DiningHallViewController.m in Sources */,
 				DCDC40001B182DE9003BECEB /* ExaminationViewController.m in Sources */,
 				DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */,
 				DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */,
+				DCDC44B41B1C9E0800BB0A95 /* ExaminationFetcher.m in Sources */,
 				DCDE1B871B086CB6007EA05C /* analysisClassesJSON.m in Sources */,
 				DCA31A431ACDB94B0042200A /* NewsTableViewController.m in Sources */,
 				DCCF8DBB1ABDB3CB00655FFB /* ClassBoxForCityDLUT.xcdatamodeld in Sources */,
