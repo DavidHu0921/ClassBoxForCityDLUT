@@ -1,5 +1,5 @@
 //
-//  DiningHallViewController.h
+//  CustomTableViewCell.h
 //  ClassBoxForCityDLUT
 //
 //  Created by 胡啸晨 on 15/6/1.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DiningHallViewController : UIViewController
+@interface CustomTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) UITextView *textView;
 
 @end

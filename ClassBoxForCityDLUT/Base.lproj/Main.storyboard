@@ -418,29 +418,21 @@
             <point key="canvasLocation" x="3167" y="1839"/>
         </scene>
         <!--订餐查询-->
-        <scene sceneID="NVA-Dc-HK0">
+        <scene sceneID="XVG-mE-wRa">
             <objects>
-                <tableViewController storyboardIdentifier="diningHall" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1yI-yX-Ahn" customClass="DiningHallViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LbR-F8-Pef">
+                <viewController storyboardIdentifier="diningHall" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hkr-Rq-IHe" customClass="DiningHallViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h3H-cr-Fxb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rgu-qz-ZRf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YQu-kI-NNl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jTa-IQ-FdM">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jTa-IQ-FdM" id="cm8-AS-9xW">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="1yI-yX-Ahn" id="7fv-UE-aIa"/>
-                            <outlet property="delegate" destination="1yI-yX-Ahn" id="B2d-NK-ZEU"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="订餐查询" id="GDM-Z7-pDW"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8VK-Qh-Kg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="订餐查询" id="Lpq-Br-WkY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CtZ-w9-8BK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3167" y="2558"/>
         </scene>
@@ -957,21 +949,39 @@ Elilien、赵发凯、林卓宸、余畅
             </objects>
             <point key="canvasLocation" x="372" y="4006"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="X3F-dD-7f9">
+        <!--Haha Table View Controller-->
+        <scene sceneID="Olv-ob-f3i">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c6c-HI-4Tr" sceneMemberID="viewController">
+                <viewController id="6H0-pm-HYW" customClass="HahaTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gwP-Ii-73Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="bch-Ev-Evm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kjx-Xg-Poj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0zE-hB-eYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2673" y="3513"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wZe-Nn-E4f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MK1-sV-cxC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uJC-ms-kgs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4e6-Py-CdS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1yI-yX-Ahn" kind="relationship" relationship="rootViewController" id="zNy-Jy-V3d"/>
+                        <segue destination="hkr-Rq-IHe" kind="relationship" relationship="rootViewController" id="h6n-Xy-SfG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EyR-hD-frl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZg-ym-umo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2471" y="2558"/>
         </scene>

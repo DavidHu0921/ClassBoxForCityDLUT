@@ -11,7 +11,8 @@
 		0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A32541AE55DD2001E5E4A /* SharedContext+User.m */; };
 		73F2CE23BB49B6360EE8E7B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FC75BF74BBD3DF531984F /* libPods.a */; };
 		DC3E305D1B1853990003BBD2 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3E305C1B1853990003BBD2 /* AboutTableViewController.m */; };
-		DC3E306D1B19F8310003BBD2 /* DiningHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3E306C1B19F8310003BBD2 /* DiningHallViewController.m */; };
+		DC3E30A51B1C34DC0003BBD2 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3E30A41B1C34DC0003BBD2 /* CustomTableViewCell.m */; };
+		DC3E30A81B1C4BDA0003BBD2 /* DiningHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3E30A71B1C4BDA0003BBD2 /* DiningHallViewController.m */; };
 		DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */; };
 		DC9E245E1AD3AB2D0068ACE8 /* ClassBox.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */; };
 		DC9E245F1AD3AB2D0068ACE8 /* Explore.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E245C1AD3AB2D0068ACE8 /* Explore.pdf */; };
@@ -65,8 +66,10 @@
 		DC3E305C1B1853990003BBD2 /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
 		DC3E30621B189F600003BBD2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		DC3E30631B189F600003BBD2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		DC3E306B1B19F8310003BBD2 /* DiningHallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningHallViewController.h; sourceTree = "<group>"; };
-		DC3E306C1B19F8310003BBD2 /* DiningHallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningHallViewController.m; sourceTree = "<group>"; };
+		DC3E30A31B1C34DC0003BBD2 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		DC3E30A41B1C34DC0003BBD2 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		DC3E30A61B1C4BDA0003BBD2 /* DiningHallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningHallViewController.h; sourceTree = "<group>"; };
+		DC3E30A71B1C4BDA0003BBD2 /* DiningHallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningHallViewController.m; sourceTree = "<group>"; };
 		DC9E24241AD1393A0068ACE8 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
 		DC9E24251AD1393A0068ACE8 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		DC9E245B1AD3AB2D0068ACE8 /* ClassBox.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ClassBox.pdf; path = Resoucre/ClassBox.pdf; sourceTree = "<group>"; };
@@ -201,8 +204,10 @@
 		DC3E30611B189D500003BBD2 /* DiningHall */ = {
 			isa = PBXGroup;
 			children = (
-				DC3E306B1B19F8310003BBD2 /* DiningHallViewController.h */,
-				DC3E306C1B19F8310003BBD2 /* DiningHallViewController.m */,
+				DC3E30A61B1C4BDA0003BBD2 /* DiningHallViewController.h */,
+				DC3E30A71B1C4BDA0003BBD2 /* DiningHallViewController.m */,
+				DC3E30A31B1C34DC0003BBD2 /* CustomTableViewCell.h */,
+				DC3E30A41B1C34DC0003BBD2 /* CustomTableViewCell.m */,
 			);
 			name = DiningHall;
 			sourceTree = "<group>";
@@ -548,6 +553,7 @@
 			files = (
 				DCF1F5571AFA18A300A126E9 /* WeekView.m in Sources */,
 				0B3A32521AE55D2F001E5E4A /* SharedContext.m in Sources */,
+				DC3E30A81B1C4BDA0003BBD2 /* DiningHallViewController.m in Sources */,
 				DCDC40001B182DE9003BECEB /* ExaminationViewController.m in Sources */,
 				DCDD0E301AFCF163007601B1 /* ClassesNumCollectionViewCell.m in Sources */,
 				DCDE0FAA1AE8DAC900CAF63D /* Student.m in Sources */,
@@ -562,11 +568,11 @@
 				DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */,
 				DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */,
 				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
-				DC3E306D1B19F8310003BBD2 /* DiningHallViewController.m in Sources */,
 				DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */,
 				DCDE1B841B07459F007EA05C /* ClassesFetcher.m in Sources */,
 				DCCF8DB81ABDB3CB00655FFB /* AppDelegate.m in Sources */,
 				0B3A32551AE55DD2001E5E4A /* SharedContext+User.m in Sources */,
+				DC3E30A51B1C34DC0003BBD2 /* CustomTableViewCell.m in Sources */,
 				DCDC3FFA1B174AB5003BECEB /* LibraryViewController.m in Sources */,
 				DCCF8DB51ABDB3CB00655FFB /* main.m in Sources */,
 				DCF1F55A1AFA2EAD00A126E9 /* DateView.m in Sources */,
