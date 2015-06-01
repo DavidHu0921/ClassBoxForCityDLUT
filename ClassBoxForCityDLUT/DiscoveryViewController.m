@@ -237,18 +237,25 @@
 
         }
         else if (indexPath.row == 1){
-            ExaminationViewController *examination = [self.storyboard instantiateViewControllerWithIdentifier:@"examination"];
-            [self showViewController:examination sender:nil];
+            NSArray *isLogin = [Student MR_findAll];
+            if (isLogin.count != 0) {
+                ExaminationViewController *examination = [self.storyboard instantiateViewControllerWithIdentifier:@"examination"];
+                [self showViewController:examination sender:nil];
+            }
+            else{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请先登录"
+                                                  delegate:self cancelButtonTitle:@"取消"
+                                         otherButtonTitles:nil, nil];
+                [alert show];
+            }
         }
         else if (indexPath.row  == 2){
-//            cell.logoTitle.text = [NSString stringWithFormat:@"订餐查询"];
             DiningHallViewController *diningHall = [self.storyboard instantiateViewControllerWithIdentifier:@"diningHall"];
             [self showViewController:diningHall sender:nil];
         }
     }
     else if (indexPath.section == 1){
         if (indexPath.row == 0) {
-//            cell.logoTitle.text = [NSString stringWithFormat:@"关于"];
             AboutTableViewController *about = [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
             [self showViewController:about sender:nil];
         }
