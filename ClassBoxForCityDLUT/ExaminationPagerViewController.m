@@ -11,6 +11,8 @@
 #import "Student.h"
 #import "ExaminationViewController.h"
 
+//这里ViewPagerController.h是一个第三方的类库
+
 @interface ExaminationPagerViewController () <ViewPagerDataSource, ViewPagerDelegate>
 
 @end
@@ -22,6 +24,10 @@
 
     self.dataSource = self;
     self.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
     self.navigationController.navigationBarHidden = NO;
 }

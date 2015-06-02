@@ -35,14 +35,19 @@ static NSString *CellIdentifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    self.navigationController.navigationBarHidden = NO;
-    [self.spinner startAnimating];
+
+//    [self.spinner startAnimating];
     
     [self fetchExamination];
     if (self.tableView == nil) {
         [self createTableView];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.spinner startAnimating];
 }
 
 - (void)fetchExamination{

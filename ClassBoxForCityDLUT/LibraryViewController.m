@@ -22,8 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBarHidden = NO;
-    
     self.librarySearchBar.keyboardType = UIKeyboardTypeDefault; // 设置弹出键盘的类型
     self.librarySearchBar.placeholder = @"请输入书名"; // 设置提示文字
     self.librarySearchBar.delegate = self; // 设置代理
@@ -32,6 +30,12 @@
     self.libraryWebView.delegate = self;
     
     [self.spinner stopAnimating];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
