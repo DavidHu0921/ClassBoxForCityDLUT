@@ -89,6 +89,7 @@ static const CGFloat CellHieght = 70;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSInteger termInStore = [userDefaults integerForKey:@"term"];
     
+    NSLog(@"number:%ld", termInStore);
     if (termInStore != 0) {
         
         NSString *openDayString = termArray[termInStore];
