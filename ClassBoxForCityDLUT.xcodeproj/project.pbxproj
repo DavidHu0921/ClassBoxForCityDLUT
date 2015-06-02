@@ -724,13 +724,13 @@
 			baseConfigurationReference = 066B0A1C63656C9D60B2D503 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Xiaochen Hu";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xiaochen Hu";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ClassBoxForCityDLUT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ClassBoxForCityDLUT;
-				PROVISIONING_PROFILE = "aaf56543-f4ff-434c-9b29-66b170616af2";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -739,13 +739,13 @@
 			baseConfigurationReference = 25B39D0F7502D18E9B9C9E3A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Xiaochen Hu";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xiaochen Hu";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ClassBoxForCityDLUT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ClassBoxForCityDLUT;
-				PROVISIONING_PROFILE = "aaf56543-f4ff-434c-9b29-66b170616af2";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
