@@ -41,6 +41,7 @@ static const CGFloat CellHieght = 70;
         [self createCollectionView];
     }
     
+    [self setNavigationBar];
     [self drawButton:self.collection];
     
     [self.view setNeedsDisplay];
@@ -55,7 +56,6 @@ static const CGFloat CellHieght = 70;
 
 - (void)createHeaderView{
     //添加navigation的title
-    [self setNavigationBar];
     
     DateView *dateView = [[DateView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 20)];
     WeekView *weekView = [[WeekView alloc]initWithFrame:CGRectMake(0, 84, self.view.frame.size.width, 20)];
@@ -69,7 +69,10 @@ static const CGFloat CellHieght = 70;
     //赋值给NC
     NSInteger thisWeekNumber = [self countForThisWeek];
     NSLog(@"num of week:%ld", thisWeekNumber);
-    if (thisWeekNumber > 18) {
+    if (thisWeekNumber == 100) {
+        self.ClassBoxNC.title = [NSString stringWithFormat:@"点击获取课表→"];
+    }
+    else if (thisWeekNumber > 18) {
         self.ClassBoxNC.title = [NSString stringWithFormat:@"放假"];
     }
     else{
@@ -82,25 +85,33 @@ static const CGFloat CellHieght = 70;
     NSDate *now = [NSDate date];
     
     NSArray *termArray = [[NSArray alloc] initWithObjects:@"",@"",@"",@"",@"",@"",@"2015-03-09",@"2011-08-29",@"2012-02-27",@"2012-09-03",@"2013-03-04",@"2013-09-02",@"2014-03-03",@"2014-09-08",@"2015-03-09",@"2015-08-31",@"2016-02-29", nil];
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSInteger termInStore = [userDefaults integerForKey:@"term"];
-    NSString *openDayString = termArray[termInStore];
-
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
-    NSDate *openDay = [dateFormatter dateFromString:openDayString];
     
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSInteger weekNumberOfNow =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:now] weekOfYear];
-    NSInteger weekNumberOfOpenDay =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:openDay] weekOfYear];
-    
-    NSInteger weekDayNow = [[calendar components:NSCalendarUnitWeekday fromDate:now] weekday];
-    
-    if (weekDayNow == 1) {
-        return weekNumberOfNow - weekNumberOfOpenDay;
+    if (termInStore != 0) {
+        
+        NSString *openDayString = termArray[termInStore];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+        NSDate *openDay = [dateFormatter dateFromString:openDayString];
+        
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSInteger weekNumberOfNow =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:now] weekOfYear];
+        NSInteger weekNumberOfOpenDay =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:openDay] weekOfYear];
+        
+        NSInteger weekDayNow = [[calendar components:NSCalendarUnitWeekday fromDate:now] weekday];
+        
+        if (weekDayNow == 1) {
+            return weekNumberOfNow - weekNumberOfOpenDay;
+        }
+        else{
+            return weekNumberOfNow - weekNumberOfOpenDay + 1;
+        }
     }
     else{
-        return weekNumberOfNow - weekNumberOfOpenDay + 1;
+        return 100;
     }
 }
 
@@ -122,8 +133,6 @@ static const CGFloat CellHieght = 70;
     
     self.collection.delegate = self;
     self.collection.dataSource = self;
-    
-//    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 104, self.view.frame.size.width, self.view.frame.size.height-154) collectionViewLayout:flowLayout];
     
     [self.view addSubview:self.collection];
 }
