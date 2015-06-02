@@ -68,7 +68,7 @@ static const CGFloat CellHieght = 70;
     
     //赋值给NC
     NSInteger thisWeekNumber = [self countForThisWeek];
-    NSLog(@"num of week:%ld", thisWeekNumber);
+//    NSLog(@"num of week:%ld", thisWeekNumber);
     if (thisWeekNumber == 100) {
         self.ClassBoxNC.title = [NSString stringWithFormat:@"点击获取课表→"];
     }
@@ -89,7 +89,7 @@ static const CGFloat CellHieght = 70;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSInteger termInStore = [userDefaults integerForKey:@"term"];
     
-    NSLog(@"number:%ld", termInStore);
+//    NSLog(@"number:%ld", termInStore);
     if (termInStore != 0) {
         
         NSString *openDayString = termArray[termInStore];

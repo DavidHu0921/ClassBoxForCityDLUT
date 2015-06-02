@@ -82,7 +82,7 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
                 course.backgroundColor = [[NSNumber alloc]initWithInteger:arc4random() % 5];
                 
             } completion:^(BOOL success, NSError *error) {
-                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+//                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
             }];
             
             
@@ -106,7 +106,7 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
                 course.backgroundColor = [[NSNumber alloc]initWithInteger:arc4random() % 5];
                 
             } completion:^(BOOL success, NSError *error) {
-                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
+//                NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
             }];
             
         }
