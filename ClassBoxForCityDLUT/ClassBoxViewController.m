@@ -68,6 +68,7 @@ static const CGFloat CellHieght = 70;
     
     //赋值给NC
     NSInteger thisWeekNumber = [self countForThisWeek];
+    NSLog(@"num of week:%ld", thisWeekNumber);
     if (thisWeekNumber > 18) {
         self.ClassBoxNC.title = [NSString stringWithFormat:@"放假"];
     }
@@ -80,9 +81,14 @@ static const CGFloat CellHieght = 70;
     //获取当前周数
     NSDate *now = [NSDate date];
     
+    NSArray *termArray = [[NSArray alloc] initWithObjects:@"",@"",@"",@"",@"",@"",@"2015-03-09",@"2011-08-29",@"2012-02-27",@"2012-09-03",@"2013-03-04",@"2013-09-02",@"2014-03-03",@"2014-09-08",@"2015-03-09",@"2015-08-31",@"2016-02-29", nil];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger termInStore = [userDefaults integerForKey:@"term"];
+    NSString *openDayString = termArray[termInStore];
+
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];
-    NSDate *openDay = [dateFormatter dateFromString:@"2015-03-09"];
+    NSDate *openDay = [dateFormatter dateFromString:openDayString];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSInteger weekNumberOfNow =  [[calendar components: NSCalendarUnitWeekOfYear fromDate:now] weekOfYear];
