@@ -89,7 +89,7 @@
         }
     }
     else{
-        [userDefaults setInteger:index forKey:@"term"];
+        [userDefaults setInteger:index forKey:@"iterm"];
     }
     
     ExaminationViewController *evc = [self.storyboard instantiateViewControllerWithIdentifier:@"examination"];

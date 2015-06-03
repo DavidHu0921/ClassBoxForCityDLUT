@@ -57,7 +57,7 @@ static NSString *CellIdentifier = @"cell";
     NSInteger startItem = [[studentName substringToIndex:4] intValue];
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSInteger nowOnTab = [userDefaults integerForKey:@"term"];
+    NSInteger nowOnTab = [userDefaults integerForKey:@"iterm"];
     
     NSNumber *num = [[NSNumber alloc]initWithInteger:nowOnTab];
     if (num == nil) {

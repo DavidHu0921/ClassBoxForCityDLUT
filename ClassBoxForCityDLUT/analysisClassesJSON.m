@@ -164,16 +164,7 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
     else{
         finalReturn = weekNumber;
     }
-    
-//    for (int q = 0; q < finalReturn.count; q++) {
-//        if ([finalReturn[q] isKindOfClass:[NSNumber class]]) {
-//            NSLog(@"is nsnumber");
-//        }
-//        else{
-//            NSLog(@"not nsnumber");
-//        }
-//    }
-    
+
     return finalReturn;
 }
 
