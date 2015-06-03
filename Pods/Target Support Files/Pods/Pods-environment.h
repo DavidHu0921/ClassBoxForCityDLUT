@@ -18,3 +18,9 @@
 #define COCOAPODS_VERSION_MINOR_MagicalRecord 3
 #define COCOAPODS_VERSION_PATCH_MagicalRecord 0
 
+// SLPagingView
+#define COCOAPODS_POD_AVAILABLE_SLPagingView
+#define COCOAPODS_VERSION_MAJOR_SLPagingView 0
+#define COCOAPODS_VERSION_MINOR_SLPagingView 0
+#define COCOAPODS_VERSION_PATCH_SLPagingView 5
+
