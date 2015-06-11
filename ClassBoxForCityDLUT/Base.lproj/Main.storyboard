@@ -720,8 +720,8 @@ Elilien、赵发凯、林卓宸、余畅
                                 <rect key="frame" x="252" y="319" width="96" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="7Ai-zw-FHw"/>
-                                    <constraint firstAttribute="height" constant="30" id="8KM-PY-maW"/>
+                                    <constraint firstAttribute="width" constant="96" id="Qw7-RL-cyd"/>
+                                    <constraint firstAttribute="height" constant="30" id="aBC-pz-Md2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="添加课表" backgroundImage="圆角矩形">
@@ -771,7 +771,7 @@ Elilien、赵发凯、林卓宸、余畅
                                 <rect key="frame" x="215" y="252" width="171" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="171" id="XVf-dG-SXf"/>
+                                    <constraint firstAttribute="width" constant="171" id="Rrm-D3-fh1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -780,20 +780,20 @@ Elilien、赵发凯、林卓宸、余畅
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="leading" secondItem="ivL-bM-TYp" secondAttribute="leading" id="9N4-9S-SEd"/>
-                            <constraint firstItem="xfa-j6-v2P" firstAttribute="top" secondItem="jnD-ZL-cCu" secondAttribute="bottom" id="A1X-rf-foR"/>
-                            <constraint firstItem="cFU-Jm-Jd8" firstAttribute="centerX" secondItem="VfO-9a-kGX" secondAttribute="centerX" id="AEb-ul-4eU"/>
-                            <constraint firstItem="xfa-j6-v2P" firstAttribute="leading" secondItem="jnD-ZL-cCu" secondAttribute="leading" id="DKF-oe-bql"/>
-                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="top" secondItem="cFU-Jm-Jd8" secondAttribute="bottom" constant="45" id="Kp5-2a-Ept"/>
-                            <constraint firstItem="AnH-UN-f7H" firstAttribute="top" secondItem="6X3-lo-RbG" secondAttribute="bottom" constant="22" id="MR4-HA-JiE"/>
-                            <constraint firstItem="cFU-Jm-Jd8" firstAttribute="centerX" secondItem="jnD-ZL-cCu" secondAttribute="centerX" id="Rpv-ij-h2e"/>
-                            <constraint firstItem="6X3-lo-RbG" firstAttribute="leading" secondItem="AnH-UN-f7H" secondAttribute="leading" id="V9Z-hn-Zrj"/>
-                            <constraint firstItem="cFU-Jm-Jd8" firstAttribute="top" secondItem="VfO-9a-kGX" secondAttribute="bottom" constant="37" id="bHZ-bC-wJV"/>
-                            <constraint firstItem="xfa-j6-v2P" firstAttribute="bottom" secondItem="UeP-ha-uVE" secondAttribute="top" id="ejU-Wc-8c5"/>
-                            <constraint firstAttribute="trailing" secondItem="xfa-j6-v2P" secondAttribute="trailing" id="mai-ae-bt6"/>
-                            <constraint firstItem="VfO-9a-kGX" firstAttribute="top" secondItem="AnH-UN-f7H" secondAttribute="bottom" constant="37" id="ssb-lT-L3N"/>
-                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="trailing" secondItem="xfa-j6-v2P" secondAttribute="trailing" id="sx1-Wo-pIe"/>
-                            <constraint firstItem="AnH-UN-f7H" firstAttribute="centerX" secondItem="VfO-9a-kGX" secondAttribute="centerX" id="uA0-WA-90g"/>
+                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="leading" secondItem="xfa-j6-v2P" secondAttribute="leading" id="05R-rl-eBg"/>
+                            <constraint firstItem="VfO-9a-kGX" firstAttribute="centerX" secondItem="AnH-UN-f7H" secondAttribute="centerX" id="1Gf-JZ-I2O"/>
+                            <constraint firstItem="xfa-j6-v2P" firstAttribute="top" secondItem="jnD-ZL-cCu" secondAttribute="bottom" id="1bl-Kk-qqS"/>
+                            <constraint firstItem="cFU-Jm-Jd8" firstAttribute="top" secondItem="VfO-9a-kGX" secondAttribute="bottom" constant="37" id="5bG-Y8-QPR"/>
+                            <constraint firstAttribute="trailing" secondItem="xfa-j6-v2P" secondAttribute="trailing" id="BcI-u9-KMi"/>
+                            <constraint firstItem="VfO-9a-kGX" firstAttribute="top" secondItem="AnH-UN-f7H" secondAttribute="bottom" constant="37" id="BvK-Rr-5y7"/>
+                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="trailing" secondItem="xfa-j6-v2P" secondAttribute="trailing" id="CtV-xw-drE"/>
+                            <constraint firstAttribute="centerX" secondItem="VfO-9a-kGX" secondAttribute="centerX" constant="-0.5" id="FeM-kV-d4n"/>
+                            <constraint firstItem="AnH-UN-f7H" firstAttribute="top" secondItem="6X3-lo-RbG" secondAttribute="bottom" constant="22" id="Frb-MB-5wz"/>
+                            <constraint firstItem="6X3-lo-RbG" firstAttribute="top" secondItem="irC-z6-h2a" secondAttribute="bottom" constant="87" id="Piq-4R-Y8v"/>
+                            <constraint firstItem="xfa-j6-v2P" firstAttribute="bottom" secondItem="UeP-ha-uVE" secondAttribute="top" id="TDm-qr-yOH"/>
+                            <constraint firstItem="xfa-j6-v2P" firstAttribute="leading" secondItem="ivL-bM-TYp" secondAttribute="leading" id="daZ-fF-rlb"/>
+                            <constraint firstItem="cFU-Jm-Jd8" firstAttribute="centerX" secondItem="VfO-9a-kGX" secondAttribute="centerX" id="ffN-OM-Qh0"/>
+                            <constraint firstItem="AnH-UN-f7H" firstAttribute="leading" secondItem="6X3-lo-RbG" secondAttribute="leading" id="qD3-yb-iOh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o9C-Oi-ie1">
