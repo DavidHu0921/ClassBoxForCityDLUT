@@ -973,7 +973,7 @@ Elilien、赵发凯、林卓宸、余畅
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="davidhu920921@gmail.com" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-1g-YdL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="davidhu920921@gmail.com" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-1g-YdL">
                                 <rect key="frame" x="16" y="125" width="568" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
