@@ -66,7 +66,7 @@
                                                                      NSFontAttributeName: cellFont
                                                                      }];
     
-    CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX)
+    CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(tableView.bounds.size.width - 50, CGFLOAT_MAX)
                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                context:nil];
     return rect.size.height + 20;

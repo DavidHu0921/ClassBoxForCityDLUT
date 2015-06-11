@@ -42,7 +42,6 @@
 		DCE1C3A21B15C73F005566E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE1C3A11B15C73E005566E8 /* Images.xcassets */; };
 		DCE1C3A51B15E8CA005566E8 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE1C3A41B15E8CA005566E8 /* Course.m */; };
 		DCE1C3A81B15F63F005566E8 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE1C3A71B15F63E005566E8 /* CollectionViewCell.m */; };
-		DCF039501B1F63000091C8DE /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF0394F1B1F63000091C8DE /* SwipeViewController.m */; };
 		DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */; };
 		DCF1F5571AFA18A300A126E9 /* WeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5561AFA18A300A126E9 /* WeekView.m */; };
 		DCF1F55A1AFA2EAD00A126E9 /* DateView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF1F5591AFA2EAD00A126E9 /* DateView.m */; };
@@ -129,8 +128,6 @@
 		DCE1C3A41B15E8CA005566E8 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		DCE1C3A61B15F63E005566E8 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		DCE1C3A71B15F63E005566E8 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
-		DCF0394E1B1F63000091C8DE /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
-		DCF0394F1B1F63000091C8DE /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 		DCF1F5521AFA183F00A126E9 /* ClassBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassBoxViewController.h; sourceTree = "<group>"; };
 		DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassBoxViewController.m; sourceTree = "<group>"; };
 		DCF1F5551AFA18A300A126E9 /* WeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekView.h; sourceTree = "<group>"; };
@@ -248,8 +245,6 @@
 				DCE076F21B008C2200D65302 /* addClasses */,
 				DCF1F5521AFA183F00A126E9 /* ClassBoxViewController.h */,
 				DCF1F5531AFA183F00A126E9 /* ClassBoxViewController.m */,
-				DCF0394E1B1F63000091C8DE /* SwipeViewController.h */,
-				DCF0394F1B1F63000091C8DE /* SwipeViewController.m */,
 			);
 			name = ClassCalendar;
 			sourceTree = "<group>";
@@ -597,7 +592,6 @@
 				DCA31A4E1ACFEA9F0042200A /* NewsFetcher.m in Sources */,
 				DCE076F11AFF5DDA00D65302 /* AddClassViewController.m in Sources */,
 				DCF1F5541AFA183F00A126E9 /* ClassBoxViewController.m in Sources */,
-				DCF039501B1F63000091C8DE /* SwipeViewController.m in Sources */,
 				DCCA27871ADBC34400BA290C /* LoginViewController.m in Sources */,
 				DC9E24261AD1393A0068ACE8 /* NewsWebViewController.m in Sources */,
 				DCCA278A1ADBC36C00BA290C /* DiscoveryViewController.m in Sources */,

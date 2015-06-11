@@ -611,24 +611,6 @@ Elilien、赵发凯、林卓宸、余畅
             </objects>
             <point key="canvasLocation" x="1106" y="2558"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Z6w-Gd-82L">
-            <objects>
-                <viewController id="1pI-5D-mGR" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="B3X-Kg-hLp"/>
-                        <viewControllerLayoutGuide type="bottom" id="0Bz-18-4hQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gNN-D2-dmg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kIp-pu-zxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1784" y="-1124"/>
-        </scene>
         <!--Class Box View Controller-->
         <scene sceneID="pWT-hN-RDe">
             <objects>
