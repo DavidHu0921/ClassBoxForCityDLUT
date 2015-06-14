@@ -65,6 +65,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.hidden = YES;
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
@@ -110,7 +111,7 @@
             cell.textView.text = @"13998486265";
         }
         else if (indexPath.row == 2){
-            cell.textLabel.text = [NSString stringWithFormat:@"排骨米饭·特色炒饼·照烧饭"];
+            cell.textLabel.text = [NSString stringWithFormat:@"排骨米饭"];
             cell.textView.text = @"15948866552";
         }
         else if (indexPath.row == 3){
@@ -118,7 +119,7 @@
             cell.textView.text = @"15640848133";
         }
         else if (indexPath.row == 4){
-            cell.textLabel.text = [NSString stringWithFormat:@"川外川水煮坊/章姐烤肉拌饭"];
+            cell.textLabel.text = [NSString stringWithFormat:@"川外川水煮坊"];
             cell.textView.text = @"13124114411";
         }
         else if (indexPath.row == 5){
@@ -208,6 +209,9 @@
             cell.textView.text = @"";
         }
     }
+    
+    cell.shopName.backgroundColor = [UIColor lightGrayColor];
+//    cell.textLabel.sizeToFit = YES;
     cell.textView.textAlignment = NSTextAlignmentCenter;
     [cell.textView setFont:[UIFont fontWithName:@"Helvetica" size:16]];
     cell.textView.editable = NO;

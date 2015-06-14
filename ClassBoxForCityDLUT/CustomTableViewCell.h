@@ -11,5 +11,6 @@
 @interface CustomTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, strong) UILabel *shopName;
 
 @end

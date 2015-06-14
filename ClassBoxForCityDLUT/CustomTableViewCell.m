@@ -14,8 +14,11 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.shopName = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, 100, 40)];
         //不知道为什么UITextView新建以后里面有两个UIImageView，怎么都去不掉，也不知道哪来的
-        self.textView = [[UITextView alloc] initWithFrame:CGRectMake(self.frame.size.width - 70, self.frame.size.height/2 -18 + 2, 120, 36)];
+        self.textView = [[UITextView alloc] initWithFrame:CGRectMake(self.frame.size.width - 130, self.frame.size.height/2 -18 + 2, 120, 36)];
+        
+        [self addSubview:self.shopName];
         [self addSubview:self.textView];
     }
     return self;
