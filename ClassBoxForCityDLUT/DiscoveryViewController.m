@@ -82,6 +82,7 @@
     }
     
     self.navigationController.navigationBarHidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 #pragma mark - tap profile

@@ -1068,7 +1068,7 @@ Elilien、赵发凯、林卓宸、余畅
         <!--成绩-->
         <scene sceneID="skS-4t-s1g">
             <objects>
-                <viewController storyboardIdentifier="examinationPage" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CT3-ly-pvc" customClass="ExaminationPagerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="examinationPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CT3-ly-pvc" customClass="ExaminationPagerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d43-uS-72c"/>
                         <viewControllerLayoutGuide type="bottom" id="wRk-Gt-nYj"/>
