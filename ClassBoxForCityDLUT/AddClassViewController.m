@@ -35,11 +35,8 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
 
 @implementation AddClassViewController
 {
-    
     NSArray *itemArray;
-    
     BOOL firstTimeLoad;
-    
 }
 
 @synthesize itemTextField;
@@ -126,7 +123,6 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                          
                      }];
 }
-
 
 #pragma mark - UITextFieldDelegate
 
