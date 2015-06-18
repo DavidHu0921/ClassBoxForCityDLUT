@@ -123,7 +123,7 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
     //去掉“周”
     NSRegularExpression *newRegular;
     newRegular = [[NSRegularExpression alloc] initWithPattern:@"周" options:NSRegularExpressionCaseInsensitive error:nil];
-    NSString *newString = [newRegular stringByReplacingMatchesInString:thisweeknumber options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [thisweeknumber length]) withTemplate:@""];
+    NSString *newString = [newRegular stringByReplacingMatchesInString:thisweeknumber options:NSMatchingReportCompletion range:NSMakeRange(0, [thisweeknumber length]) withTemplate:@""];
     
     //去掉.
     NSArray *weekNumberDetail = [newString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"."]];
@@ -175,16 +175,16 @@ static const NSString *SPORTS_REGEX=@"(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)";
     
     NSRegularExpression *regular;
     regular = [[NSRegularExpression alloc] initWithPattern:@"\\s{1,}" options:NSRegularExpressionCaseInsensitive error:nil];
-    withNoBlank = [regular stringByReplacingMatchesInString:weekday options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [weekday length]) withTemplate:@" "];
+    withNoBlank = [regular stringByReplacingMatchesInString:weekday options:NSMatchingReportCompletion range:NSMakeRange(0, [weekday length]) withTemplate:@" "];
     
     //处理英语外教的姓名和课程里可能有的带英文和空格的课程名
     NSRegularExpression *regular2;
     regular2 = [[NSRegularExpression alloc] initWithPattern:@"([A-Za-z]) ([A-Za-z])" options:NSRegularExpressionCaseInsensitive error:nil];
-    newString2 = [regular2 stringByReplacingMatchesInString:withNoBlank options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [withNoBlank length]) withTemplate:@"$1_$2"];
+    newString2 = [regular2 stringByReplacingMatchesInString:withNoBlank options:NSMatchingReportCompletion range:NSMakeRange(0, [withNoBlank length]) withTemplate:@"$1_$2"];
     
     NSRegularExpression *newRegular;
     newRegular = [[NSRegularExpression alloc] initWithPattern:@"节\\s" options:NSRegularExpressionCaseInsensitive error:nil];
-    newString = [newRegular stringByReplacingMatchesInString:newString2 options:NSRegularExpressionCaseInsensitive range:NSMakeRange(0, [newString2 length]) withTemplate:@"节,"];
+    newString = [newRegular stringByReplacingMatchesInString:newString2 options:NSMatchingReportCompletion range:NSMakeRange(0, [newString2 length]) withTemplate:@"节,"];
     
     return newString;
 }

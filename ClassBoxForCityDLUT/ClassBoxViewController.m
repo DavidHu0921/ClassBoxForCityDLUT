@@ -283,7 +283,7 @@ static const CGFloat CellHieght = 70;
                     button.titleLabel.textAlignment = NSTextAlignmentCenter;
                     button.layer.cornerRadius = 6; // this value vary as per your desire
                     button.clipsToBounds = YES;
-                    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
+                    [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
                     [button setTitle:btnName forState: UIControlStateNormal];
                     
                     //set button color
