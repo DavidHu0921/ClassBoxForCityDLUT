@@ -540,7 +540,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="pj6-1e-CQs" kind="show" id="sgI-t0-bLn"/>
+                                            <segue destination="u6v-PD-qx9" kind="show" id="A0p-Wj-9xB"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="alp-Lc-ADH" style="IBUITableViewCellStyleDefault" id="5Yb-du-j0W">
@@ -563,7 +563,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="Mzu-Sb-Mno" kind="show" id="76T-Gu-MmV"/>
+                                            <segue destination="aDb-jN-LPc" kind="show" id="quP-Qy-C3M"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -590,7 +590,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="Kkp-Os-R9r" kind="show" id="FHM-Aa-tO7"/>
+                                            <segue destination="BSc-Lk-XpB" kind="show" id="JmM-uy-MZH"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -605,7 +605,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhS-0q-zsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-360" y="2558"/>
+            <point key="canvasLocation" x="972" y="2558"/>
         </scene>
         <!--鸣谢-->
         <scene sceneID="9fC-9K-8s4">
@@ -649,7 +649,7 @@ Elilien、赵发凯、林卓宸、余畅
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCP-V2-wZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="4006"/>
+            <point key="canvasLocation" x="972" y="3312"/>
         </scene>
         <!--注意事项-->
         <scene sceneID="FZA-wR-km3">
@@ -691,7 +691,7 @@ Elilien、赵发凯、林卓宸、余畅
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjV-Gd-OTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="2558"/>
+            <point key="canvasLocation" x="1784" y="2558"/>
         </scene>
         <!--Class Box View Controller-->
         <scene sceneID="pWT-hN-RDe">
@@ -938,26 +938,7 @@ Elilien、赵发凯、林卓宸、余畅
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JK6-OC-3j5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1056" y="2558"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="W66-YZ-PtZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pj6-1e-CQs" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PPk-vK-Y1q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="u6v-PD-qx9" kind="relationship" relationship="rootViewController" id="AoU-VU-z83"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ly0-Pb-OIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="372" y="2558"/>
+            <point key="canvasLocation" x="276" y="2558"/>
         </scene>
         <!--反馈-->
         <scene sceneID="DfW-Pl-8Bx">
@@ -1032,45 +1013,7 @@ Elilien、赵发凯、林卓宸、余畅
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dk-if-Ff1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="3306"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="s1a-Kz-iUF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mzu-Sb-Mno" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1xA-FK-RZW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="aDb-jN-LPc" kind="relationship" relationship="rootViewController" id="bWf-QL-arG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6ZA-xj-SHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="372" y="3306"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="DXM-rp-EPj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kkp-Os-R9r" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DnS-4n-bVV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BSc-Lk-XpB" kind="relationship" relationship="rootViewController" id="6id-qU-wkK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jlL-AZ-wEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="372" y="4006"/>
+            <point key="canvasLocation" x="1784" y="3312"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wZe-Nn-E4f">
