@@ -32,7 +32,7 @@
 }
 
 - (void)createTableView{
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -65,7 +65,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.hidden = YES;
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
@@ -206,12 +205,10 @@
         }
         else{
             cell.textLabel.text = @"(目前只提供有送餐服务的商家)";
-            cell.textView.text = @"";
+            cell.textView.hidden = YES;
         }
     }
     
-    cell.shopName.backgroundColor = [UIColor lightGrayColor];
-//    cell.textLabel.sizeToFit = YES;
     cell.textView.textAlignment = NSTextAlignmentCenter;
     [cell.textView setFont:[UIFont fontWithName:@"Helvetica" size:16]];
     cell.textView.editable = NO;
