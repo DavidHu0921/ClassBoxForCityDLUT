@@ -35,8 +35,11 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
 
 @implementation AddClassViewController
 {
+    
     NSArray *itemArray;
+    
     BOOL firstTimeLoad;
+    
 }
 
 @synthesize itemTextField;
@@ -46,7 +49,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     
     [self.fetchButton setTitle:@"获取课程" forState:UIControlStateNormal];
     [self.fetchButton setTitle:@"获取中..." forState:UIControlStateDisabled];
-
+    
     // Do any additional setup after loading the view.
     itemArray = @[@"大一上学期", @"大一下学期",@"大二上学期", @"大二下学期",@"大三上学期", @"大三下学期",@"大四上学期", @"大四下学期",@"大五上学期", @"大五下学期"];
     
@@ -57,7 +60,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     [self createStudent];
     
     //add picker
-//    [self.itemPicker selectRow:0 inComponent:0 animated:YES];
+    //    [self.itemPicker selectRow:0 inComponent:0 animated:YES];
     self.itemPicker.dataSource = self;
     self.itemPicker.delegate = self;
     
@@ -106,7 +109,6 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                      completion:^(BOOL finished){
                          
                      }];
-    
 }
 
 - (IBAction)itemDone:(UIBarButtonItem *)sender {
@@ -123,6 +125,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                          
                      }];
 }
+
 
 #pragma mark - UITextFieldDelegate
 
@@ -175,13 +178,13 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     
     __block UIAlertView *alert;
     __block analysisClassesJSON *analysis = [[analysisClassesJSON alloc]init];
-   
+    
     //获取CoreData里面的学生信息
     NSArray *student = [Student MR_findAll];
     NSString *studentName = [student[0] valueForKeyPath:@"username"];
     NSString *password = [student[0] valueForKeyPath:@"password"];
     NSInteger startItem = [[studentName substringToIndex:4] intValue];
-//    NSLog(@"start item is :%ld", startItem);
+    //    NSLog(@"start item is :%ld", startItem);
     
     NSInteger itemNumber = [self numberOfItem:self.itemTextField.text];
     
@@ -240,7 +243,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
                                                                                                       error:&connectionError];
                                        //这里只能是NSNumber型
                                        NSNumber *status = [returnStatus valueForKeyPath:ISEMPTY];
-
+                                       
                                        if ([status isEqualToNumber:[NSNumber numberWithInteger:0]]) {
                                            callback(YES, returnStatus);
                                        }

@@ -274,8 +274,8 @@
                                     <outlet property="delegate" destination="etP-nH-JWw" id="wvO-Oo-5vT"/>
                                 </connections>
                             </searchBar>
-                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-u8-9dV">
-                                <rect key="frame" x="0.0" y="108" width="602" height="492"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-u8-9dV">
+                                <rect key="frame" x="0.0" y="108" width="606" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -618,8 +618,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpE-Yo-sLp">
-                                <rect key="frame" x="20" y="72" width="560" height="318"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpE-Yo-sLp">
+                                <rect key="frame" x="16" y="72" width="568" height="318"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">感谢UIT的小伙伴们
@@ -662,8 +662,8 @@ Elilien、赵发凯、林卓宸、余畅
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btp-FT-elO">
-                                <rect key="frame" x="20" y="72" width="560" height="508"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btp-FT-elO">
+                                <rect key="frame" x="16" y="72" width="568" height="508"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">1、在获取课表的过程中可能会出现目前学期但是依然显示没有课的情况，这种情况的出现是因为校网在使用过程中非常不稳定，导致数据读不出来，对于这个情况我们表示抱歉的同时也无能为力。
@@ -734,8 +734,8 @@ Elilien、赵发凯、林卓宸、余畅
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFU-Jm-Jd8">
-                                <rect key="frame" x="252" y="318" width="96" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFU-Jm-Jd8">
+                                <rect key="frame" x="252" y="319" width="96" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="Qw7-RL-cyd"/>
@@ -749,12 +749,37 @@ Elilien、赵发凯、林卓宸、余畅
                                     <action selector="fetchClasses:" destination="bqD-Mo-75U" eventType="touchUpInside" id="utW-NZ-oZ1"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfa-j6-v2P">
+                                <rect key="frame" x="0.0" y="438" width="600" height="162"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-lo-RbG">
+                                <rect key="frame" x="279" y="151" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnH-UN-f7H">
+                                <rect key="frame" x="279" y="194" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VfO-9a-kGX">
+                                <rect key="frame" x="215" y="252" width="171" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="Rrm-D3-fh1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnD-ZL-cCu">
                                 <rect key="frame" x="0.0" y="394" width="600" height="44"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="t2Z-1U-BTA"/>
-                                </constraints>
                                 <items>
                                     <barButtonItem title="取消" id="ev1-RN-nEh">
                                         <connections>
@@ -769,56 +794,24 @@ Elilien、赵发凯、林卓宸、余畅
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfa-j6-v2P">
-                                <rect key="frame" x="0.0" y="438" width="600" height="162"/>
-                                <animations/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="4rG-Dt-pOQ"/>
-                                </constraints>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-lo-RbG">
-                                <rect key="frame" x="279" y="151" width="42" height="20.5"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnH-UN-f7H">
-                                <rect key="frame" x="279" y="193" width="42" height="20.5"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VfO-9a-kGX">
-                                <rect key="frame" x="215" y="251" width="171" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="171" id="Rrm-D3-fh1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VfO-9a-kGX" firstAttribute="centerX" secondItem="AnH-UN-f7H" secondAttribute="centerX" id="1Gf-JZ-I2O"/>
-                            <constraint firstItem="xfa-j6-v2P" firstAttribute="top" secondItem="jnD-ZL-cCu" secondAttribute="bottom" id="1bl-Kk-qqS"/>
                             <constraint firstItem="cFU-Jm-Jd8" firstAttribute="top" secondItem="VfO-9a-kGX" secondAttribute="bottom" constant="37" id="5bG-Y8-QPR"/>
                             <constraint firstAttribute="trailing" secondItem="xfa-j6-v2P" secondAttribute="trailing" id="BcI-u9-KMi"/>
                             <constraint firstItem="VfO-9a-kGX" firstAttribute="top" secondItem="AnH-UN-f7H" secondAttribute="bottom" constant="37" id="BvK-Rr-5y7"/>
                             <constraint firstAttribute="centerX" secondItem="VfO-9a-kGX" secondAttribute="centerX" constant="-0.5" id="FeM-kV-d4n"/>
                             <constraint firstItem="AnH-UN-f7H" firstAttribute="top" secondItem="6X3-lo-RbG" secondAttribute="bottom" constant="22" id="Frb-MB-5wz"/>
-                            <constraint firstItem="6X3-lo-RbG" firstAttribute="top" secondItem="irC-z6-h2a" secondAttribute="bottom" constant="87" id="Piq-4R-Y8v"/>
-                            <constraint firstItem="xfa-j6-v2P" firstAttribute="bottom" secondItem="UeP-ha-uVE" secondAttribute="top" id="TDm-qr-yOH"/>
-                            <constraint firstAttribute="bottom" secondItem="jnD-ZL-cCu" secondAttribute="bottom" constant="162" id="Tpj-ii-udd"/>
-                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="trailing" secondItem="xfa-j6-v2P" secondAttribute="trailing" id="XcV-vJ-iIb"/>
+                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="trailing" secondItem="xfa-j6-v2P" secondAttribute="trailing" id="O6Y-Cm-iP1"/>
+                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="leading" secondItem="xfa-j6-v2P" secondAttribute="leading" id="c9Q-X2-aH9"/>
                             <constraint firstItem="xfa-j6-v2P" firstAttribute="leading" secondItem="ivL-bM-TYp" secondAttribute="leading" id="daZ-fF-rlb"/>
                             <constraint firstItem="cFU-Jm-Jd8" firstAttribute="centerX" secondItem="VfO-9a-kGX" secondAttribute="centerX" id="ffN-OM-Qh0"/>
-                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="leading" secondItem="xfa-j6-v2P" secondAttribute="leading" id="nhF-yT-6cA"/>
                             <constraint firstItem="AnH-UN-f7H" firstAttribute="leading" secondItem="6X3-lo-RbG" secondAttribute="leading" id="qD3-yb-iOh"/>
+                            <constraint firstItem="xfa-j6-v2P" firstAttribute="bottom" secondItem="UeP-ha-uVE" secondAttribute="top" id="qex-eU-ven"/>
+                            <constraint firstItem="xfa-j6-v2P" firstAttribute="top" secondItem="jnD-ZL-cCu" secondAttribute="bottom" id="sOT-fI-ojE"/>
+                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="top" secondItem="cFU-Jm-Jd8" secondAttribute="bottom" constant="45" id="sj7-Rv-Pi0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o9C-Oi-ie1">
@@ -951,8 +944,8 @@ Elilien、赵发凯、林卓宸、余畅
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdr-Lo-Ri3">
-                                <rect key="frame" x="20" y="125" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdr-Lo-Ri3">
+                                <rect key="frame" x="16" y="125" width="568" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="V0l-wI-fXw"/>
@@ -961,15 +954,15 @@ Elilien、赵发凯、林卓宸、余畅
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NL-my-1bm">
-                                <rect key="frame" x="20" y="154" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NL-my-1bm">
+                                <rect key="frame" x="16" y="154" width="0.0" height="0.0"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="有任何使用问题欢迎给我发送邮件并反馈：" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-me-Vyo">
-                                <rect key="frame" x="20" y="72" width="560" height="45"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="有任何使用问题欢迎给我发送邮件并反馈：" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-me-Vyo">
+                                <rect key="frame" x="16" y="72" width="568" height="45"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -979,8 +972,8 @@ Elilien、赵发凯、林卓宸、余畅
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="davidhu920921@gmail.com" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-1g-YdL">
-                                <rect key="frame" x="20" y="125" width="560" height="53"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="davidhu920921@gmail.com" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-1g-YdL">
+                                <rect key="frame" x="16" y="125" width="568" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
