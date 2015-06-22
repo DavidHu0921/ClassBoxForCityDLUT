@@ -35,11 +35,8 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
 
 @implementation AddClassViewController
 {
-    
     NSArray *itemArray;
-    
     BOOL firstTimeLoad;
-    
 }
 
 @synthesize itemTextField;
@@ -158,7 +155,7 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    ;[textField resignFirstResponder];
+    [textField resignFirstResponder];
     
     return  YES;
 }
