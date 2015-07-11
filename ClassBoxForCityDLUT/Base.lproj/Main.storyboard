@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pVz-Vy-dq8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="15A216g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pVz-Vy-dq8">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -82,7 +83,7 @@
                     <navigationItem key="navigationItem" id="QST-fn-5eN">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="SU2-PY-tG9">
-                            <rect key="frame" x="234" y="7" width="133" height="30"/>
+                            <rect key="frame" x="233.5" y="7" width="133" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <segments>
@@ -247,7 +248,7 @@
                         <outlet property="nameLabel" destination="eno-yV-88h" id="lHv-4n-Ose"/>
                         <outlet property="profile" destination="dPD-aZ-xGi" id="5eo-qZ-eMY"/>
                         <outlet property="profileView" destination="bFG-SO-DyN" id="shN-dE-43P"/>
-                        <segue destination="LIO-ly-wsc" kind="modal" identifier="ToLogin" modalTransitionStyle="flipHorizontal" id="q9H-BI-Lcf"/>
+                        <segue destination="LIO-ly-wsc" kind="presentation" identifier="ToLogin" modalTransitionStyle="flipHorizontal" id="q9H-BI-Lcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cc6-gn-kMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,7 +275,7 @@
                                     <outlet property="delegate" destination="etP-nH-JWw" id="wvO-Oo-5vT"/>
                                 </connections>
                             </searchBar>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-u8-9dV">
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-u8-9dV">
                                 <rect key="frame" x="0.0" y="108" width="606" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -618,7 +619,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpE-Yo-sLp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpE-Yo-sLp">
                                 <rect key="frame" x="16" y="72" width="568" height="318"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -663,7 +664,7 @@ Elilien、赵发凯、林卓宸、余畅
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btp-FT-elO">
-                                <rect key="frame" x="16" y="72" width="568" height="508"/>
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">1、在获取课表的过程中可能会出现目前学期但是依然显示没有课的情况，这种情况的出现是因为校网在使用过程中非常不稳定，导致数据读不出来，对于这个情况我们表示抱歉的同时也无能为力。
@@ -755,21 +756,21 @@ Elilien、赵发凯、林卓宸、余畅
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-lo-RbG">
-                                <rect key="frame" x="279" y="151" width="42" height="21"/>
+                                <rect key="frame" x="279" y="151" width="42" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnH-UN-f7H">
-                                <rect key="frame" x="279" y="194" width="42" height="21"/>
+                                <rect key="frame" x="279" y="193" width="42" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VfO-9a-kGX">
-                                <rect key="frame" x="215" y="252" width="171" height="30"/>
+                                <rect key="frame" x="215" y="251" width="171" height="31"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="171" id="Rrm-D3-fh1"/>
@@ -777,23 +778,32 @@ Elilien、赵发凯、林卓宸、余畅
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnD-ZL-cCu">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="75N-lh-g8K">
                                 <rect key="frame" x="0.0" y="394" width="600" height="44"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jnD-ZL-cCu">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <animations/>
+                                        <items>
+                                            <barButtonItem title="取消" id="ev1-RN-nEh">
+                                                <connections>
+                                                    <action selector="itemCancel:" destination="bqD-Mo-75U" id="H2G-yy-73m"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="Tat-jP-mkS"/>
+                                            <barButtonItem title="确定" id="qef-1A-hX6">
+                                                <connections>
+                                                    <action selector="itemDone:" destination="bqD-Mo-75U" id="OHV-Ab-1mK"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
                                 <animations/>
-                                <items>
-                                    <barButtonItem title="取消" id="ev1-RN-nEh">
-                                        <connections>
-                                            <action selector="itemCancel:" destination="bqD-Mo-75U" id="H2G-yy-73m"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Tat-jP-mkS"/>
-                                    <barButtonItem title="确定" id="qef-1A-hX6">
-                                        <connections>
-                                            <action selector="itemDone:" destination="bqD-Mo-75U" id="OHV-Ab-1mK"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yhO-bA-8fJ"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -804,14 +814,15 @@ Elilien、赵发凯、林卓宸、余畅
                             <constraint firstItem="VfO-9a-kGX" firstAttribute="top" secondItem="AnH-UN-f7H" secondAttribute="bottom" constant="37" id="BvK-Rr-5y7"/>
                             <constraint firstAttribute="centerX" secondItem="VfO-9a-kGX" secondAttribute="centerX" constant="-0.5" id="FeM-kV-d4n"/>
                             <constraint firstItem="AnH-UN-f7H" firstAttribute="top" secondItem="6X3-lo-RbG" secondAttribute="bottom" constant="22" id="Frb-MB-5wz"/>
-                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="trailing" secondItem="xfa-j6-v2P" secondAttribute="trailing" id="O6Y-Cm-iP1"/>
-                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="leading" secondItem="xfa-j6-v2P" secondAttribute="leading" id="c9Q-X2-aH9"/>
+                            <constraint firstItem="xfa-j6-v2P" firstAttribute="top" secondItem="75N-lh-g8K" secondAttribute="bottom" id="M9s-wj-3Ds"/>
+                            <constraint firstItem="75N-lh-g8K" firstAttribute="leading" secondItem="xfa-j6-v2P" secondAttribute="leading" id="Z8H-BS-d1D"/>
+                            <constraint firstItem="75N-lh-g8K" firstAttribute="top" secondItem="ivL-bM-TYp" secondAttribute="top" constant="394" id="af7-NK-H18"/>
                             <constraint firstItem="xfa-j6-v2P" firstAttribute="leading" secondItem="ivL-bM-TYp" secondAttribute="leading" id="daZ-fF-rlb"/>
                             <constraint firstItem="cFU-Jm-Jd8" firstAttribute="centerX" secondItem="VfO-9a-kGX" secondAttribute="centerX" id="ffN-OM-Qh0"/>
+                            <constraint firstItem="6X3-lo-RbG" firstAttribute="top" secondItem="irC-z6-h2a" secondAttribute="bottom" constant="87" id="gcd-ZL-t2o"/>
+                            <constraint firstItem="75N-lh-g8K" firstAttribute="top" secondItem="cFU-Jm-Jd8" secondAttribute="bottom" constant="45" id="hfu-g3-fXc"/>
                             <constraint firstItem="AnH-UN-f7H" firstAttribute="leading" secondItem="6X3-lo-RbG" secondAttribute="leading" id="qD3-yb-iOh"/>
                             <constraint firstItem="xfa-j6-v2P" firstAttribute="bottom" secondItem="UeP-ha-uVE" secondAttribute="top" id="qex-eU-ven"/>
-                            <constraint firstItem="xfa-j6-v2P" firstAttribute="top" secondItem="jnD-ZL-cCu" secondAttribute="bottom" id="sOT-fI-ojE"/>
-                            <constraint firstItem="jnD-ZL-cCu" firstAttribute="top" secondItem="cFU-Jm-Jd8" secondAttribute="bottom" constant="45" id="sj7-Rv-Pi0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o9C-Oi-ie1">
@@ -944,7 +955,7 @@ Elilien、赵发凯、林卓宸、余畅
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdr-Lo-Ri3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdr-Lo-Ri3">
                                 <rect key="frame" x="16" y="125" width="568" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -954,14 +965,14 @@ Elilien、赵发凯、林卓宸、余畅
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NL-my-1bm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NL-my-1bm">
                                 <rect key="frame" x="16" y="154" width="0.0" height="0.0"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="有任何使用问题欢迎给我发送邮件并反馈：" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-me-Vyo">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="有任何使用问题欢迎给我发送邮件并反馈：" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-me-Vyo">
                                 <rect key="frame" x="16" y="72" width="568" height="45"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -972,7 +983,7 @@ Elilien、赵发凯、林卓宸、余畅
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="davidhu920921@gmail.com" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-1g-YdL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="davidhu920921@gmail.com" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-1g-YdL">
                                 <rect key="frame" x="16" y="125" width="568" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1026,6 +1037,26 @@ Elilien、赵发凯、林卓宸、余畅
             </objects>
             <point key="canvasLocation" x="2471" y="2558"/>
         </scene>
+        <!--快递查询-->
+        <scene sceneID="9f8-YA-Fh6">
+            <objects>
+                <viewController storyboardIdentifier="express" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rOS-Dr-CEJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GxG-qP-ztG"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Hv-jJ-BB7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9zr-ml-xX5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="快递查询" id="DMC-VP-Gja"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQb-Pc-nyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3167" y="3312"/>
+        </scene>
         <!--成绩-->
         <scene sceneID="skS-4t-s1g">
             <objects>
@@ -1064,6 +1095,25 @@ Elilien、赵发凯、林卓宸、余畅
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfF-Vx-4eE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2471" y="1839"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bgU-BC-CGE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LCD-KY-xzo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LQw-Zw-mfX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rOS-Dr-CEJ" kind="relationship" relationship="rootViewController" id="Br3-If-qip"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="It3-mD-1YT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2471" y="3312"/>
         </scene>
     </scenes>
     <resources>

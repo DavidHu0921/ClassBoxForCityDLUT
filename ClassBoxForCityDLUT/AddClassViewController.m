@@ -57,7 +57,6 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
     [self createStudent];
     
     //add picker
-    //    [self.itemPicker selectRow:0 inComponent:0 animated:YES];
     self.itemPicker.dataSource = self;
     self.itemPicker.delegate = self;
     
@@ -92,6 +91,10 @@ typedef void (^VerifyClassesBlock) (BOOL wasSuccessful, NSDictionary *classesInf
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return itemArray.count;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    [self.itemPicker reloadAllComponents];
 }
 
 - (IBAction)itemCancel:(UIBarButtonItem *)sender {

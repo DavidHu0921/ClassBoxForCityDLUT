@@ -79,18 +79,5 @@
     _libraryWebView = libraryWebView;
 }
 
-//#pragma mark - 实现监听开始输入的方法
-//- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-//    NSLog(@"开始输入搜索内容");
-//    
-//    return YES;
-//}
-
-//#pragma mark - 实现监听输入完毕的方法
-//- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar {
-//    NSLog(@"输入完毕");
-//    return YES;
-//}
-
 
 @end

@@ -18,7 +18,9 @@
 #define ExaminationAPI @"http://1.csxyxzs1.sinaapp.com/grades?name=%@&password=%@&term=%ld"
 
 /*
- new 成绩 http://1.csxyxzs1.sinaapp.com/grades?name=%s&password=%s[&term=%s] CET 4/6 http://1.csxyxzs1.sinaapp.com/cet?num=%s&name=%s
+ new 成绩 http://1.csxyxzs1.sinaapp.com/grades?name=%s&password=%s[&term=%s] 
+ 
+ CET 4/6 http://1.csxyxzs1.sinaapp.com/cet?num=%s&name=%s
  
  快递 http://1.csxyxzs1.sinaapp.com/kuaidi?postid=%snote:返回跳转链接。未处理跳转链接数据
  

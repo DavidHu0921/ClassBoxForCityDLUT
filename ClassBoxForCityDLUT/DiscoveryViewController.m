@@ -211,14 +211,18 @@
     }
     else if (indexPath.section == 1){
         if (indexPath.row == 0) {
-            cell.logoTitle.text = [NSString stringWithFormat:@"关于"];
+            cell.logoTitle.text = [NSString stringWithFormat:@"快递查询"];
             cell.logoTitle.textAlignment = NSTextAlignmentCenter;
             cell.logoTitle.textColor = [UIColor blackColor];
             cell.logoTitle.font = [UIFont systemFontOfSize:14];
             cell.logoImage.image = [UIImage imageNamed:@"about"];
         }
         else if (indexPath.row == 1){
-//            NSLog(@"并没有什么卵用");
+            cell.logoTitle.text = [NSString stringWithFormat:@"关于"];
+            cell.logoTitle.textAlignment = NSTextAlignmentCenter;
+            cell.logoTitle.textColor = [UIColor blackColor];
+            cell.logoTitle.font = [UIFont systemFontOfSize:14];
+            cell.logoImage.image = [UIImage imageNamed:@"about"];
         }
         else if (indexPath.row  == 2){
 //            NSLog(@"并没有什么卵用");
@@ -261,7 +265,8 @@
             [self showViewController:about sender:nil];
         }
         else if (indexPath.row == 1){
-            //            NSLog(@"并没有什么卵用");
+            AboutTableViewController *about = [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
+            [self showViewController:about sender:nil];
         }
         else if (indexPath.row  == 2){
             //            NSLog(@"并没有什么卵用");
