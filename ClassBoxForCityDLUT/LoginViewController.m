@@ -8,10 +8,8 @@
 
 #import "LoginViewController.h"
 #import "StudentProfile.h"
-//#import "User.h"
 #import "Student.h"
 #import <MagicalRecord/MagicalRecord.h>
-//#import "SharedContext+User.h"
 
 typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
 
@@ -90,8 +88,6 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
 //                    NSLog(@"SUCCESS: %d, with ERROR: %@", success, error);
                 }];
                 
-                // Post notification
-                //[SharedContext postUserLoginNotification:self.stuName];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.spinner stopAnimating];
                     self.loginButton.enabled = YES;
@@ -108,8 +104,7 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
                 
                 alter = [[UIAlertView alloc] initWithTitle:@"错误" message:@"账号或密码错误" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
                 [alter show];
-                // Post notification
-                //[SharedContext postUserLoginFailedNotification];
+
             }
         };
         
@@ -124,8 +119,7 @@ typedef void (^VerifyUserNameBlock) (BOOL wasSuccessful, NSArray *studentInfo);
         
         alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入账号或密码" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
         [alter show];
-        // Post notification
-        //[SharedContext postUserLoginFailedNotification];
+
     }
 }
 

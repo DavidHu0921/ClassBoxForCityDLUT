@@ -20,8 +20,7 @@
 
 - (void)setNews:(NSArray *)news
 {
-    NSArray* reversedArray = [[news reverseObjectEnumerator] allObjects];
-    _news = reversedArray;
+    _news = news;
     
     if (self.refresh.refreshing) {
         //NSLog(@"end");

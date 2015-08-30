@@ -7,8 +7,6 @@
 //
 
 #import "DiscoveryViewController.h"
-//#import "SharedContext+User.h"
-//#import "User.h"
 #import "Student.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import "Course.h"
@@ -35,8 +33,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //set profile image
+
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *userProfile = [userDefaults stringForKey:@"profile"];
     
@@ -157,12 +154,14 @@
     flowLayout.minimumInteritemSpacing = 0;//横向间距
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
-    self.collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height) collectionViewLayout:flowLayout];
+    self.collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.width/3*2) collectionViewLayout:flowLayout];
     self.collection.backgroundColor = [UIColor whiteColor];
     [self.collection registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
     self.collection.delegate = self;
     self.collection.dataSource = self;
+    
+    self.collection.backgroundColor = [UIColor lightGrayColor];
     
     [self.view addSubview:self.collection];
 }
@@ -231,6 +230,8 @@
     else{
 //        NSLog(@"并没有什么卵用");
     }
+    cell.backgroundColor = [UIColor whiteColor];
+    
     return cell;
 }
 
@@ -298,78 +299,3 @@
 
 
 @end
-
-
-//viewdidload
-//    __weak DiscoveryViewController *weakSelf = self;
-//
-//    [[NSNotificationCenter defaultCenter]
-//     addObserverForName:SharedContextUserLoginNotificationName
-//     object:nil
-//     queue:[NSOperationQueue mainQueue]
-//     usingBlock:^(NSNotification *note) {
-//         NSString *userInfo = [NSString stringWithFormat:@"%@", note.userInfo];
-//         [weakSelf loadUserProfile:userInfo];
-//     }];
-//
-//    [[NSNotificationCenter defaultCenter]
-//     addObserverForName:SharedContextUserLogoutNotificationName
-//     object:nil
-//     queue:[NSOperationQueue mainQueue]
-//     usingBlock:^(NSNotification *note) {
-//         [weakSelf loadLoginUserInterface];
-//     }];
-//
-//    [[NSNotificationCenter defaultCenter]
-//     addObserverForName:SharedContextUserLoginFailedNotificationName
-//     object:nil
-//     queue:[NSOperationQueue mainQueue]
-//     usingBlock:^(NSNotification *note) {
-//         [weakSelf loadLoginFailedAlert];
-//     }];
-
-
-//- (void)loadUserProfile:userInfo {
-//    // TODO: do somthing
-//
-//    NSInteger studentsNumber = [self studentNum];
-//
-//    if (studentsNumber != 0) {
-//        NSLog(@"Login Success with user: %@.", userInfo);
-//        self.nameLabel.text = userInfo;
-//        self.loginLogoutBtn.titleLabel.text = @"注销";
-//    }
-//}
-//
-//- (void)loadLoginUserInterface {
-//    // TODO: do somthing
-//
-//    NSInteger studentsNumber = [self studentNum];
-//
-//    if (studentsNumber == 0) {
-//        NSLog(@"Logout.");
-//        self.nameLabel.text = @"未登录";
-//        self.loginLogoutBtn.titleLabel.text = @"登录";
-//    }
-//}
-//
-//- (void)loadLoginFailedAlert {
-//    // TODO: do somthing
-//
-//    NSInteger studentsNumber = [self studentNum];
-//
-//    if (studentsNumber == 0) {
-//        NSLog(@"Login Failed.");
-//        self.nameLabel.text = @"未登录";
-//        self.loginLogoutBtn.titleLabel.text = @"登录";
-//    }
-//
-//}
-//- (NSInteger)studentNum{
-//
-//    //User *user = [User MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
-//    NSArray *students = [Student MR_findAll];
-//    NSLog(@"现在数据库里的用户：%@ %zd", students, students.count);
-//
-//    return students.count;
-//}
